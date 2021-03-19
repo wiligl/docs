@@ -183,13 +183,11 @@
             
   <div class="section" id="oauth-2-0-applications">
 <h1>OAuth 2.0 Applications<a class="headerlink" href="#oauth-2-0-applications" title="Permalink to this headline">¶</a></h1>
-<p>OAuth 2.0 is a protocol that allows Mattermost to authorize API requests from external applications. The authorization allows</p>
-<blockquote>
-<div><ul class="simple">
-<li>users with an account on a Mattermost server to sign in to third-party applications. You can find a <a class="reference external" href="https://github.com/enahum/mattermost-oauth2-client-sample">sample OAuth2 Client Application for Mattermost here</a> to test the functionality.</li>
-<li>a Mattermost server to authenticate requests to a third-party API. One popular application is Zapier integration which allows you to integrate more than 700 applications with Mattermost through OAuth 2.0. See our <a class="reference external" href="https://docs.mattermost.com/integrations/zapier.html">Zapier documentation</a> to learn more.</li>
+<p>OAuth 2.0 is a protocol that allows Mattermost to authorize API requests from external applications. The authorization allows:</p>
+<ul class="simple">
+<li>Users with an account on a Mattermost server to sign in to third-party applications. You can find a <a class="reference external" href="https://github.com/enahum/mattermost-oauth2-client-sample">sample OAuth2 Client Application for Mattermost here</a> to test the functionality.</li>
+<li>A Mattermost server to authenticate requests to a third-party API. One popular application is Zapier integration which allows you to integrate more than 700 applications with Mattermost through OAuth 2.0. See our <a class="reference external" href="https://docs.mattermost.com/integrations/zapier.html">Zapier documentation</a> to learn more.</li>
 </ul>
-</div></blockquote>
 <p>This documentation includes the following details:</p>
 <blockquote>
 <div><ul class="simple">
@@ -200,33 +198,44 @@
 <div class="section" id="register-your-application-in-mattermost">
 <h2>Register your application in Mattermost<a class="headerlink" href="#register-your-application-in-mattermost" title="Permalink to this headline">¶</a></h2>
 <p>You must register your application in Mattermost to generate OAuth 2.0 credentials (client ID and secret), which your application can use to authenticate API calls to Mattermost, and which Mattermost uses to authorize API requests from the application.</p>
-<p>If you would like to set up a Zapier integration with OAuth 2.0, see our <a class="reference external" href="https://docs.mattermost.com/integrations/zapier.html">Zapier documentation</a> to learn more.</p>
+<p>If you’d like to set up a Zapier integration with OAuth 2.0, see our <a class="reference external" href="https://docs.mattermost.com/integrations/zapier.html">Zapier documentation</a> to learn more.</p>
 <div class="section" id="enable-oauth-2-0-applications">
 <h3>Enable OAuth 2.0 Applications<a class="headerlink" href="#enable-oauth-2-0-applications" title="Permalink to this headline">¶</a></h3>
-<p>OAuth 2.0 applications are off by default and can be enabled by the System Administrator as follows:</p>
-<p>1 - Login to your Mattermost server as the System Administrator.</p>
-<p>2 - Go to <strong>Main Menu &gt; System Console &gt; Integrations &gt; Custom Integrations</strong> in prior versions or <strong>System Console &gt; Integrations &gt; Integration Management</strong> in versions after 5.12.</p>
-<p>3 - Set <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#enable-oauth-2-0-service-provider">Enable OAuth 2.0 Service Provider</a> to <strong>True</strong>.</p>
-<p>4 - (Optional) If you would like to allow external applications to post with customizable usernames and profile pictures, then set <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#enable-webhooks-and-slash-commands-to-override-usernames">Enable integrations to override usernames</a> and <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#enable-webhooks-and-slash-commands-to-override-profile-picture-iconss">Enable integrations to override profile picture icons</a> to <strong>True</strong>.</p>
-<p>5 - (Optional) If you would like to allow users on your system who are not System Admins to create OAuth 2.0 applications, then set <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins">Restrict managing integrations to Admins</a> to <strong>False</strong>.</p>
+<p>OAuth 2.0 applications are off by default and can be enabled by the System Admin as follows:</p>
+<ol class="arabic simple">
+<li>Log in to your Mattermost server as the System Administrator.</li>
+<li>Go to <strong>System Console &gt; Integrations &gt; Integration Management</strong>.</li>
+<li>Set <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#enable-oauth-2-0-service-provider">Enable OAuth 2.0 Service Provider</a> to <strong>True</strong>.</li>
+<li>(Optional) If you’d like to allow external applications to post with customizable usernames and profile pictures, then set <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#enable-webhooks-and-slash-commands-to-override-usernames">Enable integrations to override usernames</a> and <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#enable-webhooks-and-slash-commands-to-override-profile-picture-iconss">Enable integrations to override profile picture icons</a> to <strong>True</strong>.</li>
+<li>(Optional) If you’d like to allow users on your system who are not System Admins to create OAuth 2.0 applications, then set <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins">Restrict managing integrations to Admins</a> to <strong>False</strong>.</li>
+</ol>
 </div>
 <div class="section" id="register-an-oauth-2-0-application">
 <h3>Register an OAuth 2.0 Application<a class="headerlink" href="#register-an-oauth-2-0-application" title="Permalink to this headline">¶</a></h3>
-<p>1 - Go to <strong>Main Menu</strong> &gt; <strong>Integrations</strong></p>
-<p>2 - Click <strong>OAuth 2.0 Applications</strong>, then click <strong>Add OAuth 2.0 Application</strong></p>
-<p>3 - Set <strong>Is Trusted</strong>: When set to <strong>Yes</strong>, your application is considered trusted by Mattermost. This means Mattermost doesn’t require users to accept authorization when signing to third-party applications. When set to <strong>No</strong>, users will be provided with the following page to accept or deny authorization when authenticating for the first time.</p>
+<ol class="arabic simple">
+<li>Go to <strong>Main Menu</strong> &gt; <strong>Integrations</strong></li>
+<li>Select <strong>OAuth 2.0 Applications</strong>, then choose <strong>Add OAuth 2.0 Application</strong></li>
+<li>Set <strong>Is Trusted</strong>: When set to <strong>Yes</strong>, your application is considered trusted by Mattermost. This means Mattermost doesn’t require users to accept authorization when signing to third-party applications. When set to <strong>No</strong>, users will be provided with the following page to accept or deny authorization when authenticating for the first time.</li>
+</ol>
 <img alt="../_images/oauth2_authorization_screen.PNG" src="../_images/oauth2_authorization_screen.PNG" />
 <p>Only System Admins can set OAuth 2.0 applications as trusted.</p>
-<p>4 - Specify the <strong>Display Name</strong>: Enter a name for your application made of up to 64 characters. This is the name users will see when granting access to the application, when viewing a list of authorized applications in <strong>Account Settings &gt; Security &gt; OAuth 2.0 Applications</strong> and when viewing a list of OAuth 2.0 applications in <strong>Main Menu</strong> &gt; <strong>Integrations</strong>.</p>
-<p>5 - Add <strong>Description</strong>: This is a short description of your application that users will see when viewing a list of authorized applications in <strong>Account Settings &gt; Security &gt; OAuth 2.0 Applications</strong>.</p>
-<p>6 - Specify the <strong>Homepage</strong>: This is the homepage of the OAuth 2.0 application and lets users visit the app page to learn more what it does. The URL must be a valid URL and start with <code class="docutils literal notranslate"><span class="pre">http://</span></code> or <code class="docutils literal notranslate"><span class="pre">https://</span></code> depending on your server configuration.</p>
-<p>7 - (Optional) Add <strong>Icon URL</strong>: The image users will see when viewing a list of authorized applications in <strong>Account Settings &gt; Security &gt; OAuth 2.0 Applications</strong> and when viewing a list of OAuth 2.0 applications in <strong>Main Menu</strong> &gt; <strong>Integrations</strong>. Must be a valid URL and start with <code class="docutils literal notranslate"><span class="pre">http://</span></code> or <code class="docutils literal notranslate"><span class="pre">https://</span></code>.</p>
-<p>8 - Add <strong>Callback URLs</strong>: These are the URL(s) to which Mattermost will redirect users after accepting or denying authorization of your application, and which will be the only URL(s) that handle authorization codes or access tokens. If more than one URL is specified, users will be redirected to the URL used for the initial authorization of the app. Each URL must be on a separate line and start with <code class="docutils literal notranslate"><span class="pre">http://</span></code> or <code class="docutils literal notranslate"><span class="pre">https://</span></code>.</p>
-<p>9 - Click <strong>Save</strong> to create the application.</p>
+<ol class="arabic simple" start="4">
+<li>Specify the <strong>Display Name</strong>: Enter a name for your application made of up to 64 characters. This is the name users will see when granting access to the application, when viewing a list of authorized applications in <strong>Account Settings &gt; Security &gt; OAuth 2.0 Applications</strong> and when viewing a list of OAuth 2.0 applications in <strong>Main Menu</strong> &gt; <strong>Integrations</strong>.</li>
+<li>Add <strong>Description</strong>: This is a short description of your application that users will see when viewing a list of authorized applications in <strong>Account Settings &gt; Security &gt; OAuth 2.0 Applications</strong>.</li>
+<li>Specify the <strong>Homepage</strong>: This is the homepage of the OAuth 2.0 application and lets users visit the app page to learn more what it does. The URL must be a valid URL and start with <code class="docutils literal notranslate"><span class="pre">http://</span></code> or <code class="docutils literal notranslate"><span class="pre">https://</span></code> depending on your server configuration.</li>
+<li>(Optional) Add <strong>Icon URL</strong>: The image users will see when viewing a list of authorized applications in <strong>Account Settings &gt; Security &gt; OAuth 2.0 Applications</strong> and when viewing a list of OAuth 2.0 applications in <strong>Main Menu</strong> &gt; <strong>Integrations</strong>. Must be a valid URL and start with <code class="docutils literal notranslate"><span class="pre">http://</span></code> or <code class="docutils literal notranslate"><span class="pre">https://</span></code>.</li>
+<li>Add <strong>Callback URLs</strong>: These are the URL(s) to which Mattermost will redirect users after accepting or denying authorization of your application, and which will be the only URL(s) that handle authorization codes or access tokens. If more than one URL is specified, users will be redirected to the URL used for the initial authorization of the app. Each URL must be on a separate line and start with <code class="docutils literal notranslate"><span class="pre">http://</span></code> or <code class="docutils literal notranslate"><span class="pre">https://</span></code>.</li>
+<li>Select <strong>Save</strong> to create the application.</li>
+</ol>
 <img alt="../_images/oauth2_app_screen.png" src="../_images/oauth2_app_screen.png" />
-<p>10 - You will be provided with a <strong>Client ID</strong>, <strong>Client Secret</strong> and the authorized redirect URLs. Save these values and use them in your application to connect it to Mattermost.</p>
+<ol class="arabic simple" start="10">
+<li>You’ll be provided with a <strong>Client ID</strong>, <strong>Client Secret</strong>, and the authorized redirect URLs. Save these values and use them in your application to connect it to Mattermost.</li>
+</ol>
 <img alt="../_images/oauth2_confirmation_screen.PNG" src="../_images/oauth2_confirmation_screen.PNG" />
-<p>Note: <strong>Client Secret</strong> can be regenerated by the application creator or System Administrator. Tokens created with the old secret will remain valid and authorization of existing users will continue to work; however, new authorizations and requests for new tokens will fail until the client secret has been updated in your app configuration.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>Client Secret</strong> can be regenerated by the application creator or System Admin. Tokens created with the old secret will remain valid and authorization of existing users will continue to work; however, new authorizations and requests for new tokens will fail until the client secret has been updated in your app configuration.</p>
+</div>
 <img alt="../_images/oauth2_regenerate_secret.PNG" src="../_images/oauth2_regenerate_secret.PNG" />
 </div>
 </div>
@@ -250,8 +259,7 @@
 </div>
 <div class="section" id="deleting-your-application">
 <h2>Deleting your application<a class="headerlink" href="#deleting-your-application" title="Permalink to this headline">¶</a></h2>
-<p>Deleting the application will revoke access from all users.</p>
-<p>Only the user who created the application or a System Administrator can delete the app.</p>
+<p>Deleting the application will revoke access from all users. Only the user who created the application or a System Admin can delete the app.</p>
 </div>
 </div>
 
