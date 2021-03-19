@@ -290,7 +290,7 @@
 <li>Added support for automatic right-to-left (RTL) detection in browsers.</li>
 <li>Updated the font size for the <strong>Add People</strong> channel modal.</li>
 <li>Online status is now shown in the channel switcher.</li>
-<li>Improved the design and layout of email notifications.</li>
+<li>Improved the design and layout of email notifications for password resets, member invites, and member welcome and verifications.</li>
 </ul>
 </div>
 <div class="section" id="administration">
@@ -298,7 +298,7 @@
 <ul class="simple">
 <li>Added mmctl commands to create, list, download and delete export files.</li>
 <li>Added schema migrations phase 0 (<code class="docutils literal notranslate"><span class="pre">Teams</span></code>, <code class="docutils literal notranslate"><span class="pre">TeamMembers</span></code>).</li>
-<li>Removed any references to <code class="docutils literal notranslate"><span class="pre">SqlLite3</span></code> from the code.</li>
+<li>Removed references to <code class="docutils literal notranslate"><span class="pre">SqlLite3</span></code> from the code.</li>
 <li>Bleve updates are now logged in the config only when there is an actual change in the <code class="docutils literal notranslate"><span class="pre">BleveSettings</span></code> instead of on every config update.</li>
 <li>Profiling the Mattermost server with pprof is now available for Team Edition.</li>
 <li>Added attributes to split.io feature flags.</li>
@@ -340,6 +340,9 @@
 </div>
 <div class="section" id="go-version">
 <h3>Go Version<a class="headerlink" href="#go-version" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>v5.34 is built with Go <code class="docutils literal notranslate"><span class="pre">1.15.5</span></code>.</li>
+</ul>
 </div>
 <div class="section" id="open-source-components">
 <h3>Open Source Components<a class="headerlink" href="#open-source-components" title="Permalink to this headline">¶</a></h3>
@@ -353,7 +356,7 @@
 <div class="section" id="api-changes">
 <h3>API Changes<a class="headerlink" href="#api-changes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Added API for files search <code class="docutils literal notranslate"><span class="pre">/teams/{team_id}/files/search</span></code>.</li>
+<li>Added API for files search <code class="docutils literal notranslate"><span class="pre">/teams/{team_id}/files/search</span></code>. <strong>XXXX ??</strong></li>
 </ul>
 </div>
 <div class="section" id="websocket-event-changes">
