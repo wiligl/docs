@@ -261,8 +261,10 @@
 <div class="section" id="release-v5-33-feature-release">
 <h2>Release v5.33 - <a class="reference external" href="https://docs.mattermost.com/administration/release-definitions.html#feature-release">Feature Release</a><a class="headerlink" href="#release-v5-33-feature-release" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><strong>v5.33.1, release day TBD</strong><ul>
-<li>Fixing an issue where WebSockets fail with TLS connections. <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-34000">MM-34000</a></li>
+<li><strong>v5.33.1, released 2021-03-22</strong><ul>
+<li>Fixed an issue where WebSockets failed with TLS connections. <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-34000">MM-34000</a></li>
+<li>Fixed a race condition which would crash the app server due to improper handling of WebSockets closing. <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-33233">MM-33233</a></li>
+<li>Fixed an issue where the <code class="docutils literal notranslate"><span class="pre">mmctl</span> <span class="pre">config</span></code> command  didn’t recognize newer settings (e.g. <code class="docutils literal notranslate"><span class="pre">ClusterSettings.EnableGossipCompression</span></code>)  that were introduced in v5.33.0. <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-34046">MM-34046</a></li>
 </ul>
 </li>
 <li><strong>v5.33.0, released 2021-03-17</strong><ul>
