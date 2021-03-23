@@ -261,8 +261,15 @@
 <div class="section" id="release-v5-33-feature-release">
 <h2>Release v5.33 - <a class="reference external" href="https://docs.mattermost.com/administration/release-definitions.html#feature-release">Feature Release</a><a class="headerlink" href="#release-v5-33-feature-release" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><strong>v5.33.1, release day TBD</strong><ul>
-<li>Fixing an issue where WebSockets fail with TLS connections. <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-34000">MM-34000</a></li>
+<li><strong>v5.33.2, release day TBD</strong><ul>
+<li>Investigating an issue with WebSocket handling where client-side pings fail WebSocket connections <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-34158">MM-34158</a></li>
+<li>Improving typing performance on busy servers with the new sidebar enabled. <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-30407">MM-30407</a></li>
+</ul>
+</li>
+<li><strong>v5.33.1, released 2021-03-22</strong><ul>
+<li>Fixed an issue where WebSockets failed with TLS connections. <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-34000">MM-34000</a></li>
+<li>Fixed a race condition which would crash the app server due to improper handling of WebSockets closing. <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-33233">MM-33233</a></li>
+<li>Fixed an issue where the <code class="docutils literal notranslate"><span class="pre">mmctl</span> <span class="pre">config</span></code> command  didn’t recognize newer settings (e.g. <code class="docutils literal notranslate"><span class="pre">ClusterSettings.EnableGossipCompression</span></code>)  that were introduced in v5.33.0. <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-34046">MM-34046</a></li>
 </ul>
 </li>
 <li><strong>v5.33.0, released 2021-03-17</strong><ul>
@@ -620,6 +627,11 @@
 <div class="section" id="release-v5-31-esr">
 <h2>Release v5.31 - <a class="reference external" href="https://docs.mattermost.com/administration/extended-support-release.html">ESR</a><a class="headerlink" href="#release-v5-31-esr" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
+<li><strong>v5.31.2, release day TBD</strong><ul>
+<li>Improving typing performance on busy servers with the new sidebar enabled. <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-30407">MM-30407</a></li>
+<li>Fixing bugs related to replication lag for Enterprise Edition instances configured to use read replicas. <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-31094">MM-31094</a></li>
+</ul>
+</li>
 <li><strong>v5.31.1, released 2021-02-05</strong><ul>
 <li>Fixed an issue where the <code class="docutils literal notranslate"><span class="pre">config.json</span></code> was sporadically getting reset upon CLI command execution. <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-32234">MM-32234</a></li>
 <li>Fixed an issue where <code class="docutils literal notranslate"><span class="pre">FeatureFlags</span></code> section was getting erroneously written to <code class="docutils literal notranslate"><span class="pre">config.json</span></code>. <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-32389">MM-32389</a></li>
