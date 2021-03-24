@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mmctl Command Line Tool (Beta) &mdash; Mattermost 5.32 documentation</title>
+  <title>mmctl Command Line Tool (Beta) &mdash; Mattermost 5.33 documentation</title>
   
 
   
@@ -70,7 +70,7 @@
             
             
               <div class="version">
-                5.32
+                5.33
               </div>
             
           
@@ -153,6 +153,7 @@
 <li class="toctree-l3"><a class="reference internal" href="health-check.html">Health Check</a></li>
 <li class="toctree-l3"><a class="reference internal" href="announcement-banner.html">Announcement Banner (E10)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bulk-export.html">Bulk Export Tool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generating-support-packet.html">Generating a Support Packet (E10/E20)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../guides/administrator.html#troubleshooting">Troubleshooting</a></li>
@@ -239,10 +240,10 @@
 <li><a class="reference internal" href="#mmctl-completion">mmctl completion</a> - Generates autocompletion scripts for bash and zsh</li>
 <li><a class="reference internal" href="#mmctl-config">mmctl config</a> - Configuration management</li>
 <li><a class="reference internal" href="#mmctl-docs">mmctl docs</a> - Generates mmctl documentation</li>
-<li><a class="reference internal" href="#mmctl-export">mmctl export</a> - Exports Management</li>
+<li><a class="reference internal" href="#mmctl-export">mmctl export</a> - Exports management</li>
 <li><a class="reference internal" href="#mmctl-group">mmctl group</a> - Group management</li>
 <li><a class="reference internal" href="#mmctl-integrity">mmctl integrity</a> - Database record integrity</li>
-<li><a class="reference internal" href="#mmctl-ldap">mmctl ldap</a> - LDAP Management</li>
+<li><a class="reference internal" href="#mmctl-ldap">mmctl ldap</a> - LDAP management</li>
 <li><a class="reference internal" href="#mmctl-license">mmctl license</a> - License Management</li>
 <li><a class="reference internal" href="#mmctl-logs">mmctl logs</a> - Log Management</li>
 <li><a class="reference internal" href="#mmctl-permissions">mmctl permissions</a> - Permissions Management</li>
@@ -303,7 +304,7 @@
 </div>
 <div class="section" id="using-local-mode">
 <h2>Using local mode<a class="headerlink" href="#using-local-mode" title="Permalink to this headline">¶</a></h2>
-<p>You need to append <code class="docutils literal notranslate"><span class="pre">--local</span></code> to the command you want to use or set the environment variable as <code class="docutils literal notranslate"><span class="pre">MMCTL_LOCAL=true</span></code>.</p>
+<p>You need to append <code class="docutils literal notranslate"><span class="pre">--local</span></code> to the command you want to use, or set the environment variable as <code class="docutils literal notranslate"><span class="pre">MMCTL_LOCAL=true</span></code>. To use a socket file other than the default, you need to set the environment variable to <code class="docutils literal notranslate"><span class="pre">MMCTL_LOCAL_SOCKET_PATH</span></code>. This file must match the <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#enable-local-mode-socket-location">server configuration setting</a>.</p>
 <p>In versions prior to 5.26, only the commands <code class="docutils literal notranslate"><span class="pre">config</span></code>, <code class="docutils literal notranslate"><span class="pre">plugin</span></code>, and <code class="docutils literal notranslate"><span class="pre">license</span></code> are available.</p>
 </div>
 <div class="section" id="running-the-tests">
@@ -1816,10 +1817,10 @@ mmctl config subpath --assets-dir /opt/mattermost/client --path /
 </pre></div>
 </div>
 <p><strong>Example</strong></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># you can indicate the name of the export and its destination path</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># You can indicate the name of the export and its destination path</span>
  $ mmctl <span class="nb">export</span> download samplename sample_export.zip
 
- <span class="c1"># or if you only indicate the name, the path would match it</span>
+ <span class="c1"># If you only indicate the name, the path will match it</span>
  $ mmctl <span class="nb">export</span> download sample_export.zip
 </pre></div>
 </div>
@@ -4119,7 +4120,7 @@ user invite user@example.com myteam1 myteam2
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015-2020 Mattermost
+        &copy; Copyright 2015-2021 Mattermost
 
     </p>
   </div>

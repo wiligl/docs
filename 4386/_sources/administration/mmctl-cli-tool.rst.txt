@@ -23,10 +23,10 @@ This feature was developed to a large extent by community contributions and we'd
    - `mmctl completion`_ - Generates autocompletion scripts for bash and zsh
    - `mmctl config`_ - Configuration management
    - `mmctl docs`_ - Generates mmctl documentation
-   - `mmctl export`_ - Exports Management
+   - `mmctl export`_ - Exports management
    - `mmctl group`_ - Group management
    - `mmctl integrity`_ - Database record integrity
-   - `mmctl ldap`_ - LDAP Management
+   - `mmctl ldap`_ - LDAP management
    - `mmctl license`_ - License Management
    - `mmctl logs`_ - Log Management
    - `mmctl permissions`_ - Permissions Management
@@ -104,7 +104,7 @@ To use local mode, the Mattermost server first needs to `have local mode enabled
 Using local mode
 ----------------
 
-You need to append ``--local`` to the command you want to use or set the environment variable as ``MMCTL_LOCAL=true``.
+You need to append ``--local`` to the command you want to use, or set the environment variable as ``MMCTL_LOCAL=true``. To use a socket file other than the default, you need to set the environment variable to ``MMCTL_LOCAL_SOCKET_PATH``. This file must match the `server configuration setting <https://docs.mattermost.com/administration/config-settings.html#enable-local-mode-socket-location>`_.
 
 In versions prior to 5.26, only the commands ``config``, ``plugin``, and ``license`` are available.
 
@@ -2055,10 +2055,10 @@ Download export files.
 
 .. code-block:: sh
 
-  # you can indicate the name of the export and its destination path
+  # You can indicate the name of the export and its destination path
    $ mmctl export download samplename sample_export.zip
 
-   # or if you only indicate the name, the path would match it
+   # If you only indicate the name, the path will match it
    $ mmctl export download sample_export.zip
 
 **Options**

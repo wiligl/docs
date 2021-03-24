@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Incoming Webhooks &mdash; Mattermost 5.32 documentation</title>
+  <title>Incoming Webhooks &mdash; Mattermost 5.33 documentation</title>
   
 
   
@@ -70,7 +70,7 @@
             
             
               <div class="version">
-                5.32
+                5.33
               </div>
             
           
@@ -117,7 +117,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#frequently-asked-questions">Frequently Asked Questions</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#how-do-i-send-a-webhook-post-to-a-direct-message-channel">How do I send a webhook post to a direct message channel?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-do-i-send-a-webhook-post-to-a-direct-message-channel">How do I send a webhook post to a Direct Message channel?</a></li>
 </ul>
 </li>
 </ul>
@@ -209,8 +209,15 @@
 <p>Let’s learn how to create a simple incoming webhook that posts the following message to Mattermost.</p>
 <a class="reference internal image-reference" href="../_images/incoming_webhooks_create_simple2.png"><img alt="../_images/incoming_webhooks_create_simple2.png" src="../_images/incoming_webhooks_create_simple2.png" style="width: 400px;" /></a>
 <ol class="arabic simple">
-<li>First, go to <strong>Main Menu &gt; Integrations &gt; Incoming Webhook</strong>. If you don’t have the <strong>Integrations</strong> option in your Main Menu, incoming webhooks may not be enabled on your Mattermost server or may be disabled for non-admins. Enable them from <strong>System Console &gt; Integrations &gt; Custom Integrations</strong> in prior versions or <strong>System Console &gt; Integrations &gt; Integration Management</strong> in versions after 5.12 or ask your System Administrator to do so.</li>
-<li>Click <strong>Add Incoming Webhook</strong> and add name and description for the webhook. The description can be up to 500 characters.</li>
+<li>First, go to <strong>Main Menu &gt; Integrations &gt; Incoming Webhook</strong>.</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>If you don’t have the <strong>Integrations</strong> option in your Main Menu, incoming webhooks may not be enabled on your Mattermost server or may be disabled for non-admins. They can be enabled by a System Admin from <strong>System Console &gt; Integrations &gt; Integration Management</strong>. Then continue with the steps below.</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>Select <strong>Add Incoming Webhook</strong> and add name and description for the webhook. The description can be up to 500 characters.</li>
 <li>Select the channel to receive webhook payloads, then click <strong>Add</strong> to create the webhook.</li>
 <li>Use a curl command from your terminal or commandline to send the following JSON payload in a HTTP POST request:</li>
 </ol>
@@ -243,8 +250,8 @@ curl -i -X POST --data-urlencode &#39;payload={&quot;text&quot;: &quot;Hello, th
 <p>Messages with advanced formatting can be created by including an <a class="reference internal" href="message-attachments.html"><span class="doc">attachment array</span></a> and <a class="reference internal" href="interactive-messages.html"><span class="doc">interactive message buttons</span></a> in the JSON payload.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p><a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames">Enable integrations to override usernames</a> must be set to <cite>true</cite> in <cite>config.json</cite> to override usernames. Enable them from <strong>System Console &gt; Integrations &gt; Custom Integrations</strong> in prior versions or <strong>System Console &gt; Integrations &gt; Integration Management</strong> in versions after 5.12 or ask your System Administrator to do so. If not enabled, the username is set to <cite>webhook</cite>.</p>
-<p class="last">Similarly, <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons">Enable integrations to override profile picture icons</a> must be set to <cite>true</cite> in <cite>config.json</cite> to override profile picture icons. Enable them from <strong>System Console &gt; Integrations &gt; Custom Integrations</strong> in prior versions or <strong>System Console &gt; Integrations &gt; Integration Management</strong> in versions after 5.12 or ask your System Administrator to do so. If not enabled, the icon of the creator of the webhook URL is used to post messages.</p>
+<p><a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames">Enable integrations to override usernames</a> must be set to <code class="docutils literal notranslate"><span class="pre">true</span></code> in <code class="docutils literal notranslate"><span class="pre">config.json</span></code> to override usernames. Enable them from <strong>System Console &gt; Integrations &gt; Integration Management</strong>, or ask your System Admin to do so. If not enabled, the username is set to <code class="docutils literal notranslate"><span class="pre">webhook</span></code>.</p>
+<p class="last">Similarly, <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons">Enable integrations to override profile picture icons</a> must be set to <code class="docutils literal notranslate"><span class="pre">true</span></code> in <code class="docutils literal notranslate"><span class="pre">config.json</span></code> to override profile picture icons. Enable them from <strong>System Console &gt; Integrations &gt; Integration Management</strong>, or ask your System Admin to do so. If not enabled, the icon of the creator of the webhook URL is used to post messages.</p>
 </div>
 </div>
 <div class="section" id="tips-and-best-practices">
@@ -255,13 +262,13 @@ curl -i -X POST --data-urlencode &#39;payload={&quot;text&quot;: &quot;Hello, th
 <li>You can restrict who can create incoming webhooks in <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins">System Console &gt; Integrations &gt; Integration Management</a>.</li>
 <li>Mattermost incoming webhooks are Slack-compatible. You can copy-and-paste code used for a Slack incoming webhook to create Mattermost integrations. Mattermost <a class="reference external" href="https://docs.mattermost.com/developer/webhooks-incoming.html?highlight=translate%20slack%20data%20format%20mattermost#translate-slack-s-data-format-to-mattermost">automatically translates the Slack’s proprietary JSON payload format</a>.</li>
 <li>The external application may be written in any programming language as long as it supports sending an HTTP POST request in the required JSON format to a specified Mattermost URL.</li>
-<li>For the HTTP request body, if <cite>Content-Type</cite> is specified as <code class="docutils literal notranslate"><span class="pre">application/json</span></code> in the header of the HTTP request, then the body can be direct JSON. For example,</li>
+<li>For the HTTP request body, if <code class="docutils literal notranslate"><span class="pre">Content-Type</span></code> is specified as <code class="docutils literal notranslate"><span class="pre">application/json</span></code> in the header of the HTTP request, then the body can be direct JSON. For example,</li>
 </ol>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>{&quot;text&quot;: &quot;Hello, this is some text.&quot;}
 </pre></div>
 </div>
 <ol class="arabic simple" start="7">
-<li>When using the <code class="docutils literal notranslate"><span class="pre">icon_emoji</span></code> parameter - the user profile image is replaced by the emoji provided. This will also override the <code class="docutils literal notranslate"><span class="pre">icon_url</span></code> parameter if both are provided.</li>
+<li>When using the <code class="docutils literal notranslate"><span class="pre">icon_emoji</span></code> parameter, the user profile image is replaced by the emoji provided. This will also override the <code class="docutils literal notranslate"><span class="pre">icon_url</span></code> parameter if both are provided.</li>
 </ol>
 </div>
 <div class="section" id="share-your-integration">
@@ -271,8 +278,7 @@ curl -i -X POST --data-urlencode &#39;payload={&quot;text&quot;: &quot;Hello, th
 </div>
 <div class="section" id="slack-compatibility">
 <h2>Slack Compatibility<a class="headerlink" href="#slack-compatibility" title="Permalink to this headline">¶</a></h2>
-<p>Mattermost makes it easy to migrate integrations written for Slack to Mattermost.</p>
-<p>Using the Slack <code class="docutils literal notranslate"><span class="pre">icon_emoji</span></code> parameter overrides the profile icon and the icon_url parameter and is supported as of v5.14.</p>
+<p>Mattermost makes it easy to migrate integrations written for Slack to Mattermost. Using the Slack <code class="docutils literal notranslate"><span class="pre">icon_emoji</span></code> parameter overrides the profile icon and the <code class="docutils literal notranslate"><span class="pre">icon_url</span></code> parameter and is supported from version 5.14.</p>
 <div class="section" id="translate-slack-s-data-format-to-mattermost">
 <h3>Translate Slack’s data format to Mattermost<a class="headerlink" href="#translate-slack-s-data-format-to-mattermost" title="Permalink to this headline">¶</a></h3>
 <p>Mattermost automatically translates the data coming from Slack:</p>
@@ -295,13 +301,13 @@ curl -i -X POST --data-urlencode &#39;payload={&quot;text&quot;: &quot;Hello, th
 <li>In GitLab, go to <strong>Settings &gt; Services</strong> and select <strong>Slack</strong>.</li>
 <li>Paste the incoming webhook URL provided by Mattermost from <strong>Main Menu &gt; Integrations &gt; Incoming Webhooks</strong>.</li>
 <li>Optionally set the <strong>Username</strong> you’d like displayed when the notification is made. Leave the <strong>Channel</strong> field blank.</li>
-<li>Click <strong>Save</strong> then test the settings to confirm messages are sent successfully to Mattermost.</li>
+<li>Select <strong>Save</strong>, then test the settings to confirm messages are sent successfully to Mattermost.</li>
 </ol>
 </div>
 <div class="section" id="known-slack-compatibility-issues">
 <h3>Known Slack compatibility issues<a class="headerlink" href="#known-slack-compatibility-issues" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>Referencing  channels using &lt;#CHANNEL_ID&gt; does not link to the channel.</li>
+<li>Referencing  channels using <code class="docutils literal notranslate"><span class="pre">&lt;#CHANNEL_ID&gt;</span></code> does not link to the channel.</li>
 <li><code class="docutils literal notranslate"><span class="pre">&lt;!everyone&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;!group&gt;</span></code> are not supported.</li>
 <li>Parameters “mrkdwn”, “parse”, and “link_names” are not supported. Mattermost converts Markdown by default and automatically links &#64;mentions.</li>
 <li>Bold formatting as <code class="docutils literal notranslate"><span class="pre">*bold*</span></code> is not supported (must be done as <code class="docutils literal notranslate"><span class="pre">**bold**</span></code>).</li>
@@ -311,7 +317,7 @@ curl -i -X POST --data-urlencode &#39;payload={&quot;text&quot;: &quot;Hello, th
 </div>
 <div class="section" id="troubleshooting">
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
-<p>To debug incoming webhooks in <strong>System Console &gt; Logs</strong>, set <strong>System Console &gt; Logging &gt; Enable Webhook Debugging</strong> to <code class="docutils literal notranslate"><span class="pre">true</span></code> and set <strong>System Console &gt; Logging &gt; Console Log Level</strong> to <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code>.</p>
+<p>To debug incoming webhooks in <strong>System Console &gt; Logs</strong>, set <strong>System Console &gt; Logging &gt; Enable Webhook Debugging</strong> to <strong>true</strong>, and set <strong>System Console &gt; Logging &gt; Console Log Level</strong> to <strong>DEBUG</strong>.</p>
 <p>Some common error messages include:</p>
 <ol class="arabic simple">
 <li><code class="docutils literal notranslate"><span class="pre">Couldn't</span> <span class="pre">find</span> <span class="pre">the</span> <span class="pre">channel</span></code>: Indicates that the channel doesn’t exist or is invalid. Please modify the <code class="docutils literal notranslate"><span class="pre">channel</span></code> parameter before sending another request.</li>
@@ -331,13 +337,13 @@ curl -i -X POST --data-urlencode &#39;payload={&quot;text&quot;: &quot;Hello, th
 <div class="section" id="frequently-asked-questions">
 <h2>Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="how-do-i-send-a-webhook-post-to-a-direct-message-channel">
-<h3>How do I send a webhook post to a direct message channel?<a class="headerlink" href="#how-do-i-send-a-webhook-post-to-a-direct-message-channel" title="Permalink to this headline">¶</a></h3>
-<p>To send a message to a direct message channel, add an “&#64;” symbol followed by the username to the channel parameter. You can add your own username to send the webhook posts to a direct message channel with yourself.</p>
+<h3>How do I send a webhook post to a Direct Message channel?<a class="headerlink" href="#how-do-i-send-a-webhook-post-to-a-direct-message-channel" title="Permalink to this headline">¶</a></h3>
+<p>To send a message to a Direct Message channel, add an “&#64;” symbol followed by the username to the channel parameter. You can add your own username to send the webhook posts to a Direct Message channel with yourself.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>payload={&quot;channel&quot;: &quot;@username&quot;, &quot;text&quot;: &quot;Hello, this is some text\nThis is more text. :tada:&quot;}
 </pre></div>
 </div>
-<p>This will send a message from the account that has set up the incoming webhook to the username after the “&#64;” symbol. For example, if you create a webhook with the user <code class="docutils literal notranslate"><span class="pre">alice</span></code> and send a direct message to <code class="docutils literal notranslate"><span class="pre">bob</span></code> using a webhook, it will show up as a direct message from <code class="docutils literal notranslate"><span class="pre">alice</span></code> to <code class="docutils literal notranslate"><span class="pre">bob</span></code> regardless of other settings such as username.</p>
-<p>To send a message to a different direct message channel between two other users, you can specify the channel with the user IDs for the users separated with two underscore (_) symbols. To find the user ID you can <cite>use the ``mattermost`</cite> command - see details <a class="reference external" href="https://docs.mattermost.com/administration/command-line-tools.html#mattermost-user-search">here</a>.</p>
+<p>This will send a message from the account that has set up the incoming webhook to the username after the “&#64;” symbol. For example, if you create a webhook with the user <code class="docutils literal notranslate"><span class="pre">alice</span></code> and send a Direct Message to <code class="docutils literal notranslate"><span class="pre">bob</span></code> using a webhook, it will show up as a direct message from <code class="docutils literal notranslate"><span class="pre">alice</span></code> to <code class="docutils literal notranslate"><span class="pre">bob</span></code> regardless of other settings such as username.</p>
+<p>To send a message to a different Direct Mssage channel between two other users, you can specify the channel with the user IDs for the users separated with two underscore (_) symbols. To find the user ID you can <cite>use the ``mattermost`</cite> command - see details <a class="reference external" href="https://docs.mattermost.com/administration/command-line-tools.html#mattermost-user-search">here</a>.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>payload={&quot;channel&quot;: &quot;6w41z1q367dujfaxr1nrykr5oc__94dzjnkd8igafdraw66syi1cde&quot;, &quot;text&quot;: &quot;Hello, this is some text\nThis is more text. :tada:&quot;}
 </pre></div>
 </div>
@@ -365,7 +371,7 @@ curl -i -X POST --data-urlencode &#39;payload={&quot;text&quot;: &quot;Hello, th
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015-2020 Mattermost
+        &copy; Copyright 2015-2021 Mattermost
 
     </p>
   </div>
