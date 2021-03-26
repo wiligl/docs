@@ -122,6 +122,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#mmctl-completion">mmctl completion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mmctl-config">mmctl config</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mmctl-docs">mmctl docs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mmctl-export">mmctl export</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mmctl-group">mmctl group</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mmctl-group-channel">mmctl group channel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mmctl-group-team">mmctl group team</a></li>
@@ -234,11 +235,12 @@
 <li><p><a class="reference internal" href="#mmctl-channel">mmctl channel</a> - Channel Management</p></li>
 <li><p><a class="reference internal" href="#mmctl-command">mmctl command</a> - Command Management</p></li>
 <li><p><a class="reference internal" href="#mmctl-completion">mmctl completion</a> - Generates autocompletion scripts for bash and zsh</p></li>
-<li><p><a class="reference internal" href="#mmctl-config">mmctl config</a> - Configuration Management</p></li>
+<li><p><a class="reference internal" href="#mmctl-config">mmctl config</a> - Configuration management</p></li>
 <li><p><a class="reference internal" href="#mmctl-docs">mmctl docs</a> - Generates mmctl documentation</p></li>
-<li><p><a class="reference internal" href="#mmctl-group">mmctl group</a> - Group Management</p></li>
+<li><p><a class="reference internal" href="#mmctl-export">mmctl export</a> - Exports management</p></li>
+<li><p><a class="reference internal" href="#mmctl-group">mmctl group</a> - Group management</p></li>
 <li><p><a class="reference internal" href="#mmctl-integrity">mmctl integrity</a> - Database record integrity</p></li>
-<li><p><a class="reference internal" href="#mmctl-ldap">mmctl ldap</a> - LDAP Management</p></li>
+<li><p><a class="reference internal" href="#mmctl-ldap">mmctl ldap</a> - LDAP management</p></li>
 <li><p><a class="reference internal" href="#mmctl-license">mmctl license</a> - License Management</p></li>
 <li><p><a class="reference internal" href="#mmctl-logs">mmctl logs</a> - Log Management</p></li>
 <li><p><a class="reference internal" href="#mmctl-permissions">mmctl permissions</a> - Permissions Management</p></li>
@@ -299,7 +301,7 @@
 </div>
 <div class="section" id="using-local-mode">
 <h2>Using local mode<a class="headerlink" href="#using-local-mode" title="Permalink to this headline">¶</a></h2>
-<p>You need to append <code class="docutils literal notranslate"><span class="pre">--local</span></code> to the command you want to use or set the environment variable as <code class="docutils literal notranslate"><span class="pre">MMCTL_LOCAL=true</span></code>.</p>
+<p>You need to append <code class="docutils literal notranslate"><span class="pre">--local</span></code> to the command you want to use, or set the environment variable as <code class="docutils literal notranslate"><span class="pre">MMCTL_LOCAL=true</span></code>. To use a socket file other than the default, you need to set the environment variable to <code class="docutils literal notranslate"><span class="pre">MMCTL_LOCAL_SOCKET_PATH</span></code>. This file must match the <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#enable-local-mode-socket-location">server configuration setting</a>.</p>
 <p>In versions prior to 5.26, only the commands <code class="docutils literal notranslate"><span class="pre">config</span></code>, <code class="docutils literal notranslate"><span class="pre">plugin</span></code>, and <code class="docutils literal notranslate"><span class="pre">license</span></code> are available.</p>
 </div>
 <div class="section" id="running-the-tests">
@@ -1777,6 +1779,201 @@ mmctl config subpath --assets-dir /opt/mattermost/client --path /
 --local                       allows communicating with the server through a unix socket
 --strict                      will only run commands <span class="k">if</span> the mmctl version matches the server one
 </pre></div>
+</div>
+</div>
+<div class="section" id="mmctl-export">
+<h2>mmctl export<a class="headerlink" href="#mmctl-export" title="Permalink to this headline">¶</a></h2>
+<p>Management of exports.</p>
+<dl class="simple">
+<dt>Child Commands</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#mmctl-export-create">mmctl export create</a> - Create an export file</p></li>
+<li><p><a class="reference internal" href="#mmctl-export-delete">mmctl export delete</a> - Delete an export file</p></li>
+<li><p><a class="reference internal" href="#mmctl-export-download">mmctl export download</a> - Download export files</p></li>
+<li><p><a class="reference internal" href="#mmctl-export-job">mmctl export job</a> - List and show export jobs</p></li>
+<li><p><a class="reference internal" href="#mmctl-export-job-list">mmctl export job list</a> - List export jobs</p></li>
+<li><p><a class="reference internal" href="#mmctl-export-job-show">mmctl export job show</a> - Show export job</p></li>
+<li><p><a class="reference internal" href="#mmctl-export-list">mmctl export list</a> - List export files</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Options</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>-h, --help   <span class="nb">help</span> <span class="k">for</span> group
+</pre></div>
+</div>
+<div class="section" id="mmctl-export-create">
+<h3>mmctl export create<a class="headerlink" href="#mmctl-export-create" title="Permalink to this headline">¶</a></h3>
+<p><strong>Description</strong></p>
+<p>Create an export file.</p>
+<p><strong>Format</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mmctl <span class="nb">export</span> create <span class="o">[</span>flags<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Options</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--attachments     Set to <span class="nb">true</span> to include file attachments in the <span class="nb">export</span> file.
+-h, --help        <span class="nb">help</span> <span class="k">for</span> create
+</pre></div>
+</div>
+<p><strong>Options inherited from parent commands</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
+</pre></div>
+</div>
+</div>
+<div class="section" id="mmctl-export-delete">
+<h3>mmctl export delete<a class="headerlink" href="#mmctl-export-delete" title="Permalink to this headline">¶</a></h3>
+<p><strong>Description</strong></p>
+<p>Delete an export file.</p>
+<p><strong>Format</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mmctl <span class="nb">export</span> delete <span class="o">[</span>exportname<span class="o">]</span> <span class="o">[</span>flags<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Example</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> delete export_file.zip
+</pre></div>
+</div>
+<p><strong>Options</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>-h, --help   <span class="nb">help</span> <span class="k">for</span> delete
+</pre></div>
+</div>
+<p><strong>Options inherited from parent commands</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
+</pre></div>
+</div>
+</div>
+<div class="section" id="mmctl-export-download">
+<h3>mmctl export download<a class="headerlink" href="#mmctl-export-download" title="Permalink to this headline">¶</a></h3>
+<p><strong>Description</strong></p>
+<p>Download export files.</p>
+<p><strong>Format</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mmctl <span class="nb">export</span> download <span class="o">[</span>exportname<span class="o">]</span> <span class="o">[</span>filepath<span class="o">]</span> <span class="o">[</span>flags<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Example</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># You can indicate the name of the export and its destination path</span>
+ $ mmctl <span class="nb">export</span> download samplename sample_export.zip
+
+ <span class="c1"># If you only indicate the name, the path will match it</span>
+ $ mmctl <span class="nb">export</span> download sample_export.zip
+</pre></div>
+</div>
+<p><strong>Options</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>-h, --help     <span class="nb">help</span> <span class="k">for</span> download
+--resume       Set to <span class="nb">true</span> to resume an <span class="nb">export</span> download.
+</pre></div>
+</div>
+<p><strong>Options inherited from parent commands</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
+</pre></div>
+</div>
+</div>
+<div class="section" id="mmctl-export-job">
+<h3>mmctl export job<a class="headerlink" href="#mmctl-export-job" title="Permalink to this headline">¶</a></h3>
+<p><strong>Description</strong></p>
+<p>List and show export jobs.</p>
+<p><strong>Options</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>-h, --help   <span class="nb">help</span> <span class="k">for</span> job
+</pre></div>
+</div>
+<p><strong>Options inherited from parent commands</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
+</pre></div>
+</div>
+</div>
+<div class="section" id="mmctl-export-job-list">
+<h3>mmctl export job list<a class="headerlink" href="#mmctl-export-job-list" title="Permalink to this headline">¶</a></h3>
+<p><strong>Description</strong></p>
+<p>List export jobs.</p>
+<p><strong>Format</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mmctl <span class="nb">export</span> job list <span class="o">[</span>flags<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Example</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> job list
+</pre></div>
+</div>
+<p><strong>Options</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--all            Fetch all <span class="nb">export</span> jobs. <span class="sb">``</span>--page<span class="sb">``</span> flag will be ignored <span class="k">if</span> provided
+-h, --help       <span class="nb">help</span> <span class="k">for</span> list
+--page int       Page number to fetch <span class="k">for</span> the list of <span class="nb">export</span> <span class="nb">jobs</span>
+--per-page int   Number of <span class="nb">export</span> <span class="nb">jobs</span> to be fetched <span class="o">(</span>default <span class="m">200</span><span class="o">)</span>
+</pre></div>
+</div>
+<p><strong>Options inherited from parent commands</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
+</pre></div>
+</div>
+</div>
+<div class="section" id="mmctl-export-job-show">
+<h3>mmctl export job show<a class="headerlink" href="#mmctl-export-job-show" title="Permalink to this headline">¶</a></h3>
+<p><strong>Description</strong></p>
+<p>Show export job.</p>
+<p><strong>Format</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mmctl <span class="nb">export</span> job show <span class="o">[</span>exportJobID<span class="o">]</span> <span class="o">[</span>flags<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Example</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> job show
+</pre></div>
+</div>
+<p><strong>Options</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>-h, --help   <span class="nb">help</span> <span class="k">for</span> show
+</pre></div>
+</div>
+<p><strong>Options inherited from parent commands</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
+</pre></div>
+</div>
+</div>
+<div class="section" id="mmctl-export-list">
+<h3>mmctl export list<a class="headerlink" href="#mmctl-export-list" title="Permalink to this headline">¶</a></h3>
+<p><strong>Description</strong></p>
+<p>List export files.</p>
+<p><strong>Format</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mmctl <span class="nb">export</span> list <span class="o">[</span>flags<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Options</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>-h, --help   <span class="nb">help</span> <span class="k">for</span> list
+</pre></div>
+</div>
+<p><strong>Options inherited from parent commands</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="mmctl-group">

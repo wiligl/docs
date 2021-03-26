@@ -259,16 +259,16 @@
 <div class="section" id="release-v5-33-feature-release">
 <h2>Release v5.33 - <a class="reference external" href="https://docs.mattermost.com/administration/release-definitions.html#feature-release">Feature Release</a><a class="headerlink" href="#release-v5-33-feature-release" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><strong>v5.33.2, release day TBD</strong></p>
+<li><p><strong>v5.33.2, released 2021-03-25</strong></p>
 <ul>
-<li><p>Investigating an issue with WebSocket handling where client-side pings fail WebSocket connections <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-34158">MM-34158</a></p></li>
-<li><p>Improving typing performance on busy servers with the new sidebar enabled. <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-30407">MM-30407</a></p></li>
+<li><p>Improved typing performance on busy servers with the new sidebar enabled. <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-30407">MM-30407</a></p></li>
+<li><p>Reverted the WebSocket improvement added in v5.33.0 where epoll was used to manually read from a WebSocket connection. It was reverted because unofficial Mattermost builds in several different platforms broke due to the WebSocket changes. <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-34158">MM-34158</a></p></li>
 </ul>
 </li>
 <li><p><strong>v5.33.1, released 2021-03-22</strong></p>
 <ul>
 <li><p>Fixed an issue where WebSockets failed with TLS connections. <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-34000">MM-34000</a></p></li>
-<li><p>Fixed a race condition which would crash the app server due to improper handling of WebSockets closing. <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-33233">MM-33233</a></p></li>
+<li><p>Fixed a race condition which would crash the app server due to improper handling of WebSocket closing. <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-33233">MM-33233</a></p></li>
 <li><p>Fixed an issue where the <code class="docutils literal notranslate"><span class="pre">mmctl</span> <span class="pre">config</span></code> command  didn’t recognize newer settings (e.g. <code class="docutils literal notranslate"><span class="pre">ClusterSettings.EnableGossipCompression</span></code>)  that were introduced in v5.33.0. <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-34046">MM-34046</a></p></li>
 </ul>
 </li>
@@ -429,7 +429,7 @@
 <div class="section" id="websocket-event-changes">
 <h3>Websocket Event Changes<a class="headerlink" href="#websocket-event-changes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Improved the websocket implementation by using epoll to manually read from a websocket connection. As a result, the number of goroutines is expected to go down by half. This implementation is only available on Linux and FreeBSD-based distributions.</p></li>
+<li><p>Improved the WebSocket implementation by using epoll to manually read from a WebSocket connection. As a result, the number of goroutines is expected to go down by half. This implementation is only available on Linux and FreeBSD-based distributions.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">UserUpdate</span></code> WebSocket Event is now broadcast by two more APIs, <code class="docutils literal notranslate"><span class="pre">plugin.UpdateUser</span></code> and <code class="docutils literal notranslate"><span class="pre">ConvertBotToUser</span></code>.</p></li>
 </ul>
 </div>

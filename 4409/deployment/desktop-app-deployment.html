@@ -272,31 +272,35 @@ helpLink: &#39;&#39;
 </ol>
 <blockquote>
 <div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>rem &quot;Step 1: Install Mattermost Desktop App silently into user&#39;s local disk&quot;
-start /wait \\SERVER\shared_folder\mattermost-setup-4.3.1-win64.exe --silent
+start \\SERVER\shared_folder\mattermost-setup-4.6.2-win.exe --silent
+
+if not exist &quot;%APPDATA%\Mattermost&quot; mkdir %APPDATA%\Mattermost
 
 rem &quot;Step 2: Generate initial config.json into user&#39;s config directory&quot;
 (
   echo {
-  echo   &quot;version&quot;: 1,
+  echo   &quot;version&quot;: 2,
   echo   &quot;teams&quot;: [
   echo     {
-  echo       &quot;name&quot;: &quot;community&quot;,
-  echo       &quot;url&quot;: &quot;https://community.mattermost.com/core&quot;
+  echo       &quot;name&quot;: &quot;core&quot;,
+  echo       &quot;url&quot;: &quot;https://community.mattermost.com&quot;,
+  echo       &quot;order&quot;: 0
   echo     }
   echo   ],
-  echo   &quot;showTrayIcon&quot;: false,
-  echo   &quot;trayIconTheme&quot;: &#39;light&#39;,
-  echo   &quot;minimizeToTray&quot;: false,
+  echo   &quot;showTrayIcon&quot;: true,
+  echo   &quot;trayIconTheme&quot;: &quot;light&quot;,
+  echo   &quot;minimizeToTray&quot;: true,
   echo   &quot;notifications&quot;: {
-  echo     &quot;flashWindow&quot;: 0,
-  echo     &quot;bounceIcon&quot;: false,
-  echo     &quot;bounceIconType&quot;: &#39;informational&#39;,
+  echo     &quot;flashWindow&quot;: 2,
+  echo     &quot;bounceIcon&quot;: true,
+  echo     &quot;bounceIconType&quot;: &quot;informational&quot;
   echo   },
   echo   &quot;showUnreadBadge&quot;: true,
   echo   &quot;useSpellChecker&quot;: true,
   echo   &quot;enableHardwareAcceleration&quot;: true,
   echo   &quot;autostart&quot;: true,
-  echo   &quot;spellCheckerLocale&quot;: &#39;en-US&#39;,
+  echo   &quot;spellCheckerLocale&quot;: &quot;en-US&quot;,
+  echo   &quot;darkMode&quot;: false
   echo }
 ) &gt; %APPDATA%\Mattermost\config.json
 </pre></div>
