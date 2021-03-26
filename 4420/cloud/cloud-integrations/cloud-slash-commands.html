@@ -182,9 +182,9 @@
 <h1>Slash Commands<a class="headerlink" href="#slash-commands" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This is the admin documentation for slash commands. If you’re a developer looking to build an integration, see <a class="reference external" href="https://developers.mattermost.com/integrate/getting-started/">our developer documentation</a>.</p>
+<p>This is the admin documentation for slash commands. If you’re a developer looking to build an integration, see <a class="reference external" href="https://developers.mattermost.com/integrate">our developer documentation</a>.</p>
 </div>
-<p>Mattermost supports slash commands to easily integrate external applications into the workspace. They function similarly to <a class="reference external" href="https://docs.mattermost.com/cloud/cloud-integrations/cloud-outgoing-webhooks.html">outgoing webhooks</a>, except they can be used in any channel - including Private channels and Direct Messages.</p>
+<p>Mattermost supports slash commands to easily integrate external applications into the workspace. They function similarly to <a class="reference external" href="https://docs.mattermost.com/cloud/cloud-integrations/cloud-outgoing-webhooks.html">outgoing webhooks</a>, except they can be used in any channel - including Private channels and direct messages.</p>
 <p>Messages that begin with <code class="docutils literal notranslate"><span class="pre">/</span></code> are interpreted as slash commands. The commands will send an HTTP POST request to a web service, and process a response back to Mattermost. Mattermost supports both <a class="reference external" href="https://docs.mattermost.com/cloud/cloud-integrations/cloud-slash-commands.html#built-in-commands">built-in</a> and <a class="reference external" href="https://docs.mattermost.com/cloud/cloud-integrations/cloud-slash-commands.html">custom slash commands</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -392,7 +392,7 @@ user_mentions_ids=[&quot;q5s3b7xzgprp5eid8h66j9epsy&quot;, &quot;czwmumrmw7dfxec
 <p>which would render in Mattermost as:</p>
 <img alt="../../_images/weatherBot.PNG" src="../../_images/weatherBot.PNG" />
 <ol class="arabic simple" start="11">
-<li><p>You’re all set! See <a class="reference external" href="https://developers.mattermost.com/integrate/slash-commands/">developer documentation</a> for details on what parameters are supported by slash commands. For instance, you can override the username and profile picture the messages post as, or specify a custom post type when sending a webhook message for use by <a class="reference external" href="https://about.mattermost.com/default-plugins">plugins</a>.</p></li>
+<li><p>You’re all set! See <a class="reference external" href="https://developers.mattermost.com/integrate/slash-commands">developer documentation</a> for details on what parameters are supported by slash commands. For instance, you can override the username and profile picture the messages post as, or specify a custom post type when sending a webhook message for use by <a class="reference external" href="https://about.mattermost.com/default-plugins">plugins</a>.</p></li>
 </ol>
 <p>Messages with advanced formatting can be created by including an <a class="reference external" href="https://docs.mattermost.com/developer/message-attachments.html">attachment array</a> and <a class="reference external" href="https://docs.mattermost.com/developer/interactive-messages.html">interactive message buttons</a> in the JSON payload.</p>
 <div class="admonition note">
@@ -407,13 +407,13 @@ user_mentions_ids=[&quot;q5s3b7xzgprp5eid8h66j9epsy&quot;, &quot;czwmumrmw7dfxec
 <li><p>Slash commands are designed to easily allow you to post messages. For other actions such as channel creation, you must also use the <a class="reference external" href="https://api.mattermost.com">Mattermost APIs</a>.</p></li>
 <li><p>You can restrict who can create slash commands in <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins">System Console &gt; Integrations &gt; Integration Management</a>.</p></li>
 <li><p>Mattermost outgoing webhooks are Slack-compatible. You can copy-and-paste code used for a Slack outgoing webhook to create Mattermost integrations. Mattermost <a class="reference external" href="https://docs.mattermost.com/cloud/cloud-integrations/cloud-slash-commands.html#translate-slack-s-data-format-to-mattermost">automatically translates Slack’s JSON format</a>.</p></li>
-<li><p>The external application may be written in any programming language. It needs to provide a URL which receives the request sent by your Mattermost server and responds with in the required JSON format.</p></li>
+<li><p>The external application may be written in any programming language. It needs to provide a URL which receives the request sent by your Mattermost workspace and responds with in the required JSON format.</p></li>
 </ol>
 </div>
 <div class="section" id="share-your-integration">
 <h2>Share Your Integration<a class="headerlink" href="#share-your-integration" title="Permalink to this headline">¶</a></h2>
-<p>If you’ve built an integration for Mattermost, please consider <a class="reference external" href="https://mattermost.org/share-your-mattermost-projects/">sharing your work</a> in our <a class="reference external" href="https://integrations.mattermost.com/">app directory</a>.</p>
-<p>The <a class="reference external" href="https://integrations.mattermost.com/">app directory</a> lists open source integrations developed by the Mattermost community and are available for download, customization and deployment to your private cloud or self-managed infrastructure.</p>
+<p>If you’ve built an integration for Mattermost, please consider <a class="reference external" href="https://mattermost.org/share-your-mattermost-projects/">sharing your work</a> in our <a class="reference external" href="https://about.mattermost.com/default-app-directory/">app directory</a>.</p>
+<p>The <a class="reference external" href="https://about.mattermost.com/default-app-directory/">app directory</a> lists open source integrations developed by the Mattermost community and are available for download, customization and deployment to your private cloud or on-prem infrastructure.</p>
 </div>
 <div class="section" id="slack-compatibility">
 <h2>Slack Compatibility<a class="headerlink" href="#slack-compatibility" title="Permalink to this headline">¶</a></h2>
@@ -447,7 +447,7 @@ user_mentions_ids=[&quot;q5s3b7xzgprp5eid8h66j9epsy&quot;, &quot;czwmumrmw7dfxec
 </div>
 <div class="section" id="troubleshooting">
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
-<p>See <a class="reference external" href="https://developers.mattermost.com/integrate/slash-commands/">developer documentation</a> for troubleshooting, or <a class="reference external" href="https://mattermost.com/pl/default-ask-mattermost-community/">join the Mattermost user community for help</a>.</p>
+<p>See <a class="reference external" href="https://developers.mattermost.com/integrate/slash-commands">developer documentation</a> for troubleshooting, or <a class="reference external" href="https://mattermost.com/pl/default-ask-mattermost-community/">join the Mattermost user community for help</a>.</p>
 </div>
 </div>
 
