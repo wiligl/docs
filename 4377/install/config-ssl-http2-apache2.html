@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Configuring Apache2 with SSL and HTTP/2 (Unofficial) &mdash; Mattermost 5.32 documentation</title>
+  <title>Configuring Apache2 with SSL and HTTP/2 (Unofficial) &mdash; Mattermost 5.33 documentation</title>
   
 
   
@@ -37,9 +37,7 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-K874RWM');</script>
 	<!-- End Google Tag Manager -->
-
 	
-    <script src="../_static/js/modernizr.min.js"></script>
 </head>
 
 <body class="wy-body-for-nav">
@@ -68,7 +66,7 @@
             
             
               <div class="version">
-                5.32
+                5.33
               </div>
             
           
@@ -146,19 +144,19 @@
   <hr/>
 </div>
           <article class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
-           <div itemprop="articleBody">
+           <div itemprop="articleBody" role="main">
             
   <div class="section" id="configuring-apache2-with-ssl-and-http-2-unofficial">
 <span id="config-ssl-http2-apache2"></span><h1>Configuring Apache2 with SSL and HTTP/2 (Unofficial)<a class="headerlink" href="#configuring-apache2-with-ssl-and-http-2-unofficial" title="Permalink to this headline">¶</a></h1>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. <a class="reference external" href="https://github.com/mattermost/docs/issues/1295">Community testing, feedback and improvements are welcome and greatly appreciated</a>. You can <a class="reference external" href="https://github.com/mattermost/docs/blob/master/source/install/config-ssl-http2-apache2.rst">edit this page on GitHub</a>.</p>
+<p class="admonition-title">Important</p>
+<p>This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. <a class="reference external" href="https://github.com/mattermost/docs/issues/1295">Community testing, feedback and improvements are welcome and greatly appreciated</a>. You can <a class="reference external" href="https://github.com/mattermost/docs/blob/master/source/install/config-ssl-http2-apache2.rst">edit this page on GitHub</a>.</p>
 </div>
 <p>In order to use Apache as a reverse proxy for the Mattermost Server, you need to install and enable the following apache modules: <code class="docutils literal notranslate"><span class="pre">mod_rewrite</span></code> , <code class="docutils literal notranslate"><span class="pre">mod_proxy</span></code>, <code class="docutils literal notranslate"><span class="pre">mod_proxy_http</span></code>, <code class="docutils literal notranslate"><span class="pre">mod_headers</span></code>, and <code class="docutils literal notranslate"><span class="pre">mod_proxy_wstunnel</span></code>. Follow the installation instructions for your Linux distribution.</p>
 <p>Once you’ve configured Apache2 as a proxy for your Mattermost Server, the easiest way to enable SSL on Apache2 is via Let’s Encrypt and <a class="reference external" href="https://certbot.eff.org/#ubuntuxenial-apache">Certbot</a>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If Let’s Encrypt is enabled, forward port 80 through a firewall, with <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443">Forward80To443</a> <code class="docutils literal notranslate"><span class="pre">config.json</span></code> setting set to <code class="docutils literal notranslate"><span class="pre">true</span></code> to complete the Let’s Encrypt certification.</p>
+<p class="admonition-title">Note</p>
+<p>If Let’s Encrypt is enabled, forward port 80 through a firewall, with <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443">Forward80To443</a> <code class="docutils literal notranslate"><span class="pre">config.json</span></code> setting set to <code class="docutils literal notranslate"><span class="pre">true</span></code> to complete the Let’s Encrypt certification.</p>
 </div>
 <p>Once installed, run <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">certbot</span> <span class="pre">--apache</span></code> and follow the guide. Afterwards you should find a new configuration file in <code class="docutils literal notranslate"><span class="pre">/etc/apache2/sites-available</span></code> which should follow the format <code class="docutils literal notranslate"><span class="pre">mysubdomain.mydomain.com-le-ssl.conf</span></code>.</p>
 <p>When opened, edit it to look something like the following:</p>
@@ -192,18 +190,16 @@
 </pre></div>
 </div>
 <ol class="arabic">
-<li><p class="first">Restart Apache2</p>
+<li><p>Restart Apache2</p>
 <blockquote>
 <div><ul class="simple">
-<li>On Ubuntu 14.04 and RHEL 6: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">apache2</span> <span class="pre">restart</span></code></li>
-<li>On Ubuntu 16.04 and RHEL 7: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">systemctl</span> <span class="pre">restart</span> <span class="pre">apache2</span></code></li>
+<li><p>On Ubuntu 14.04 and RHEL 6: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">apache2</span> <span class="pre">restart</span></code></p></li>
+<li><p>On Ubuntu 16.04 and RHEL 7: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">systemctl</span> <span class="pre">restart</span> <span class="pre">apache2</span></code></p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">Test that the site is working, that WebSockets are working, and if you enabled HTTP redirect to HTTPS during Certbot installation that the redirect is working.</p>
-</li>
-<li><p class="first">Lastly, test your SSL configuration with <a class="reference external" href="https://www.ssllabs.com/ssltest/index.html">https://www.ssllabs.com/ssltest/index.html</a>.</p>
-</li>
+<li><p>Test that the site is working, that WebSockets are working, and if you enabled HTTP redirect to HTTPS during Certbot installation that the redirect is working.</p></li>
+<li><p>Lastly, test your SSL configuration with <a class="reference external" href="https://www.ssllabs.com/ssltest/index.html">https://www.ssllabs.com/ssltest/index.html</a>.</p></li>
 </ol>
 <p>Using Certbot means that you shouldn’t have to do anything in the configuration of Mattermost.</p>
 </div>
@@ -213,20 +209,25 @@
            
           </article>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015-2020 Mattermost
+        &#169; Copyright 2015-2021 Mattermost.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -267,11 +268,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/myscript.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/myscript.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 

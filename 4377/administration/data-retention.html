@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Data Retention Policy (E20) &mdash; Mattermost 5.32 documentation</title>
+  <title>Data Retention Policy (E20) &mdash; Mattermost 5.33 documentation</title>
   
 
   
@@ -39,9 +39,7 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-K874RWM');</script>
 	<!-- End Google Tag Manager -->
-
 	
-    <script src="../_static/js/modernizr.min.js"></script>
 </head>
 
 <body class="wy-body-for-nav">
@@ -70,7 +68,7 @@
             
             
               <div class="version">
-                5.32
+                5.33
               </div>
             
           
@@ -180,7 +178,7 @@
   <hr/>
 </div>
           <article class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
-           <div itemprop="articleBody">
+           <div itemprop="articleBody" role="main">
             
   <div class="section" id="data-retention-policy-e20">
 <h1>Data Retention Policy (E20)<a class="headerlink" href="#data-retention-policy-e20" title="Permalink to this headline">¶</a></h1>
@@ -188,8 +186,8 @@
 <p>By default, Mattermost stores all message history providing an unlimited search history to admins and end users.</p>
 <p>In Enterprise Edition E20, you can set a custom policy to manage how long messages and file uploads are kept in Mattermost channels and direct messages.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Once a message or a file is deleted, the action is irreversible. Please be careful when setting up a custom data retention policy.</p>
+<p class="admonition-title">Warning</p>
+<p>Once a message or a file is deleted, the action is irreversible. Please be careful when setting up a custom data retention policy.</p>
 </div>
 <div class="toctree-wrapper compound">
 </div>
@@ -197,16 +195,16 @@
 <h2>Configuring a Data Retention Policy<a class="headerlink" href="#configuring-a-data-retention-policy" title="Permalink to this headline">¶</a></h2>
 <p>To set a custom data retention policy:</p>
 <ol class="arabic simple">
-<li>Go to <strong>System Console &gt; Compliance &gt; Data Retention Policy</strong> (or <strong>System Console &gt; Advanced &gt; Data Retention Policy</strong> in versions prior to 5.12).</li>
-<li>Select a <strong>Message Retention</strong> option. When a time is specified, messages, including file attachments, older than the duration you set will be deleted at the specified time. The minimum retention period is one day.</li>
-<li>Select a <strong>File Retention</strong> option. When a time is specified uploaded files which are older than the duration you set will be deleted from your file storage system (either from your local disk or your Amazon S3 service as specified in <strong>System Console &gt; Environment &gt; File Storage</strong> (or <strong>System Console &gt; Files &gt; Storage</strong> in versions prior to 5.12)) at the specified time. The minimum retention period is one day.</li>
-<li>Set the start time of the daily scheduled data retention job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form HH:MM.</li>
+<li><p>Go to <strong>System Console &gt; Compliance &gt; Data Retention Policy</strong> (or <strong>System Console &gt; Advanced &gt; Data Retention Policy</strong> in versions prior to 5.12).</p></li>
+<li><p>Select a <strong>Message Retention</strong> option. When a time is specified, messages, including file attachments, older than the duration you set will be deleted at the specified time. The minimum retention period is one day.</p></li>
+<li><p>Select a <strong>File Retention</strong> option. When a time is specified uploaded files which are older than the duration you set will be deleted from your file storage system (either from your local disk or your Amazon S3 service as specified in <strong>System Console &gt; Environment &gt; File Storage</strong> (or <strong>System Console &gt; Files &gt; Storage</strong> in versions prior to 5.12)) at the specified time. The minimum retention period is one day.</p></li>
+<li><p>Set the start time of the daily scheduled data retention job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form HH:MM.</p></li>
 </ol>
 <p>Save the settings and restart your server. Messages and files older than the duration you set will be deleted at the specified server time, if applicable.</p>
 <p>You can also run the deletion job manually at any time by clicking <strong>Run Deletion Job Now</strong> in <strong>System Console &gt; Compliance &gt; Data Retention Policy</strong> (or <strong>System Console &gt; Advanced &gt; Data Retention Policy</strong> in versions prior to 5.12).</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If using data retention and <a class="reference external" href="https://docs.mattermost.com/deployment/elasticsearch.html">ElasticSearch</a>, ensure the <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#aggregate-search-indexes">ElasticSearch aggregate search indexes</a> setting is set to a value that is greater than your data retention policy in days.</p>
+<p class="admonition-title">Note</p>
+<p>If using data retention and <a class="reference external" href="https://docs.mattermost.com/deployment/elasticsearch.html">ElasticSearch</a>, ensure the <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#aggregate-search-indexes">ElasticSearch aggregate search indexes</a> setting is set to a value that is greater than your data retention policy in days.</p>
 </div>
 </div>
 <div class="section" id="frequently-asked-questions-faqs">
@@ -225,8 +223,8 @@
 <p>First, check the data deletion was successful in the deletion job table in <strong>System Console &gt; Compliance &gt; Data Retention Policy</strong> (or <strong>System Console &gt; Advanced &gt; Data Retention Policy</strong> in versions prior to 5.12).</p>
 <p>If the files were uploaded prior to Mattermost v4.2, you will need to delete the files manually from your local file storage or Amazon S3 storage:</p>
 <ol class="arabic simple">
-<li>Wait until all files uploaded prior to Mattermost v4.2 are past the file retention policy duration.</li>
-<li>Delete the <code class="docutils literal notranslate"><span class="pre">teams/</span></code> folder in the root of your  Mattermost storage directory.</li>
+<li><p>Wait until all files uploaded prior to Mattermost v4.2 are past the file retention policy duration.</p></li>
+<li><p>Delete the <code class="docutils literal notranslate"><span class="pre">teams/</span></code> folder in the root of your  Mattermost storage directory.</p></li>
 </ol>
 <p>Note that these files will still be removed from the Mattermost user interface if they were uploaded in Mattermost v3.5 or later, which contain the <a class="reference external" href="https://docs.mattermost.com/administration/changelog.html#database-changes-from-v3-4-to-v3-5">FileInfo table</a>.</p>
 </div>
@@ -245,8 +243,8 @@
 <p>When messages or files are deleted, they are no longer searchable in the Mattermost mobile apps.</p>
 <p>In v1.5 and later of the iOS and Android apps, messages and files are deleted from local storage in the following cases, if they exceed the retention policy duration:</p>
 <ol class="arabic simple">
-<li>When the user opens the app.</li>
-<li>When the user puts the app into the background.</li>
+<li><p>When the user opens the app.</p></li>
+<li><p>When the user puts the app into the background.</p></li>
 </ol>
 <p>In v1.4 and earlier of the mobile apps, messages and files are not cleared from local storage when the data retention policy is enabled.</p>
 </div>
@@ -290,29 +288,29 @@
            
           </article>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="custom-terms-of-service.html" class="btn btn-neutral float-right" title="Custom Terms of Service (Beta) (E20)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="audit-log.html" class="btn btn-neutral" title="Audit Log v2 (Experimental) (E20)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="custom-terms-of-service.html" class="btn btn-neutral float-right" title="Custom Terms of Service (Beta) (E20)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="audit-log.html" class="btn btn-neutral float-left" title="Audit Log v2 (Experimental) (E20)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015-2020 Mattermost
+        &#169; Copyright 2015-2021 Mattermost.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -353,11 +351,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/myscript.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/myscript.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 

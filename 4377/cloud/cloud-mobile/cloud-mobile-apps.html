@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Mobile Applications Guide &mdash; Mattermost 5.32 documentation</title>
+  <title>Mobile Applications Guide &mdash; Mattermost 5.33 documentation</title>
   
 
   
@@ -39,9 +39,7 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-K874RWM');</script>
 	<!-- End Google Tag Manager -->
-
 	
-    <script src="../../_static/js/modernizr.min.js"></script>
 </head>
 
 <body class="wy-body-for-nav">
@@ -70,7 +68,7 @@
             
             
               <div class="version">
-                5.32
+                5.33
               </div>
             
           
@@ -171,7 +169,7 @@
   <hr/>
 </div>
           <article class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
-           <div itemprop="articleBody">
+           <div itemprop="articleBody" role="main">
             
   <div class="section" id="mobile-applications-guide">
 <h1>Mobile Applications Guide<a class="headerlink" href="#mobile-applications-guide" title="Permalink to this headline">¶</a></h1>
@@ -181,9 +179,9 @@
 <p>For quick and easy deployment, you can download the Mattermost mobile apps directly from the Apple App Store and Google Play. Please see our guide on <span class="xref std std-doc">installing from the Apple App Store and Google Play Store</span> for more details.</p>
 <p>This option is recommended for:</p>
 <ol class="arabic simple">
-<li>Testing out the mobile applications</li>
-<li>Team Edition servers using no push notifications, or push notifications from Mattermost’s <a class="reference internal" href="../../overview/faq.html#tpns"><span class="std std-ref">TPNS</span></a> (Test Push Notification Service)</li>
-<li>Enterprise Edition servers using push notifications from Mattermost’s <span class="xref std std-doc">HPNS</span> (Hosted Push Notification Service)</li>
+<li><p>Testing out the mobile applications</p></li>
+<li><p>Team Edition servers using no push notifications, or push notifications from Mattermost’s <a class="reference internal" href="../../overview/faq.html#tpns"><span class="std std-ref">TPNS</span></a> (Test Push Notification Service)</p></li>
+<li><p>Enterprise Edition servers using push notifications from Mattermost’s <span class="xref std std-doc">HPNS</span> (Hosted Push Notification Service)</p></li>
 </ol>
 </div>
 <div class="section" id="build-the-apps-yourself">
@@ -191,8 +189,8 @@
 <p>To customize the mobile apps, you can fork the open source repository and <span class="xref std std-doc">compile your own versions</span> of the Mattermost mobile applications and Mattermost push proxy server.</p>
 <p>This option is recommended for:</p>
 <ol class="arabic simple">
-<li>Organizations that want to customize the mobile apps</li>
-<li>Team Edition and Enterprise Edition servers that prefer to host their own push proxy server instead of using one of Mattermost’s hosted versions</li>
+<li><p>Organizations that want to customize the mobile apps</p></li>
+<li><p>Team Edition and Enterprise Edition servers that prefer to host their own push proxy server instead of using one of Mattermost’s hosted versions</p></li>
 </ol>
 </div>
 <div class="section" id="use-an-emm-provider-with-managed-app-configuration">
@@ -200,9 +198,9 @@
 <p>To meet other security and compliance policies, you can <span class="xref std std-doc">deploy the Mattermost apps with any EMM provider</span> that supports <a class="reference external" href="https://www.appconfig.org/members/">AppConfig</a>, such as MobileIron, Blackberry UEM, or Airwatch. You will still need to choose either the App Store/Google Play versions or apps compiled yourself to use in conjunction with the EMM provider.</p>
 <p>This option is recommended for organizations that typically use EMM solutions to deploy mobile apps to meet security and compliance policies.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>App wrapping via an EMM provider is untested, and not supported by Mattermost. Instead, we recommend using an EMM provider that supports Managed App Configuration.</p>
-<p class="last">Many app wrapping toolkits, for example <a class="reference external" href="https://docs.citrix.com/en-us/mdx-toolkit/about-mdx-toolkit.html">Citrix MDX</a>, also provide <a class="reference external" href="https://docs.citrix.com/en-us/xenmobile/server/policies/app-configuration-policy.html">Managed App Configuration options</a>. We recommend contacting your provider for more information on what deployment options are available.</p>
+<p>Many app wrapping toolkits, for example <a class="reference external" href="https://docs.citrix.com/en-us/mdx-toolkit/about-mdx-toolkit.html">Citrix MDX</a>, also provide <a class="reference external" href="https://docs.citrix.com/en-us/xenmobile/server/policies/app-configuration-policy.html">Managed App Configuration options</a>. We recommend contacting your provider for more information on what deployment options are available.</p>
 </div>
 </div>
 </div>
@@ -212,29 +210,29 @@
            
           </article>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="cloud-app-config.html" class="btn btn-neutral float-right" title="Config for EMM Solutions with Mattermost Mobile Apps" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../cloud-administration/custom-terms-of-service.html" class="btn btn-neutral" title="Custom Terms of Service (Beta)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="cloud-app-config.html" class="btn btn-neutral float-right" title="Config for EMM Solutions with Mattermost Mobile Apps" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../cloud-administration/custom-terms-of-service.html" class="btn btn-neutral float-left" title="Custom Terms of Service (Beta)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015-2020 Mattermost
+        &#169; Copyright 2015-2021 Mattermost.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -275,11 +273,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="../../_static/myscript.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/myscript.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 

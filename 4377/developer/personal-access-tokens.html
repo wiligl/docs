@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Personal Access Tokens &mdash; Mattermost 5.32 documentation</title>
+  <title>Personal Access Tokens &mdash; Mattermost 5.33 documentation</title>
   
 
   
@@ -39,9 +39,7 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-K874RWM');</script>
 	<!-- End Google Tag Manager -->
-
 	
-    <script src="../_static/js/modernizr.min.js"></script>
 </head>
 
 <body class="wy-body-for-nav">
@@ -70,7 +68,7 @@
             
             
               <div class="version">
-                5.32
+                5.33
               </div>
             
           
@@ -184,16 +182,16 @@
   <hr/>
 </div>
           <article class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
-           <div itemprop="articleBody">
+           <div itemprop="articleBody" role="main">
             
   <div class="section" id="personal-access-tokens">
 <span id="id1"></span><h1>Personal Access Tokens<a class="headerlink" href="#personal-access-tokens" title="Permalink to this headline">¶</a></h1>
 <p>Personal access tokens function similar to session tokens and can be used by integrations to <a class="reference external" href="https://about.mattermost.com/default-api-authentication">authenticate against the REST API</a>. It is the most commonly used type of token for integrations.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#creating-a-personal-access-token" id="id2">Creating a Personal Access Token</a></li>
-<li><a class="reference internal" href="#revoking-a-personal-access-token" id="id3">Revoking a Personal Access Token</a></li>
-<li><a class="reference internal" href="#frequently-asked-questions-faq" id="id4">Frequently Asked Questions (FAQ)</a></li>
+<li><p><a class="reference internal" href="#creating-a-personal-access-token" id="id2">Creating a Personal Access Token</a></p></li>
+<li><p><a class="reference internal" href="#revoking-a-personal-access-token" id="id3">Revoking a Personal Access Token</a></p></li>
+<li><p><a class="reference internal" href="#frequently-asked-questions-faq" id="id4">Frequently Asked Questions (FAQ)</a></p></li>
 </ul>
 </div>
 <div class="section" id="creating-a-personal-access-token">
@@ -210,9 +208,9 @@
 <p>6 - Go to <strong>Account Settings &gt; Security &gt; Personal Access Tokens</strong> and click <strong>Create New Token</strong>.</p>
 <p>7 - Enter a description for the token, so you remember what it’s used for. Then hit <strong>Save</strong>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>If you create a personal access token for a System Admin account, be extra careful who you share it with. The token enables a user to have full access to the account, including System Admin privileges.</p>
-<p class="last">It is recommended to create a personal access token for non-admin accounts.</p>
+<p>It is recommended to create a personal access token for non-admin accounts.</p>
 </div>
 <p>8 - Copy the access token now for your integration and store it in a secure location. You won’t be able to see it again!</p>
 <p>9 - You’re all set! You can now use the personal access token for integrations to interact with your Mattermost server and <a class="reference external" href="https://about.mattermost.com/default-api-authentication">authenticate against the Mattermost REST API</a>.</p>
@@ -238,9 +236,9 @@
 <div class="section" id="how-do-personal-access-tokens-differ-from-regular-session-tokens">
 <h3>How do personal access tokens differ from regular session tokens?<a class="headerlink" href="#how-do-personal-access-tokens-differ-from-regular-session-tokens" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Personal access tokens do not expire. As a result, you can more easily integrate with Mattermost, bypassing the <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#sessions">session length limits set in the System Console</a>.</li>
-<li>Personal access tokens can be used to authenticate against the API more easily, including with AD/LDAP and SAML accounts.</li>
-<li>You can optionally assign additional roles for the account creating personal access tokens. This lets the account post to any channel in Mattermost, including direct messages.</li>
+<li><p>Personal access tokens do not expire. As a result, you can more easily integrate with Mattermost, bypassing the <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#sessions">session length limits set in the System Console</a>.</p></li>
+<li><p>Personal access tokens can be used to authenticate against the API more easily, including with AD/LDAP and SAML accounts.</p></li>
+<li><p>You can optionally assign additional roles for the account creating personal access tokens. This lets the account post to any channel in Mattermost, including direct messages.</p></li>
 </ul>
 <p>Besides the above differences, personal access tokens are exactly the same as regular session tokens. They are cryptic random IDs and are not different from a user’s regular session token created after logging in to Mattermost.</p>
 </div>
@@ -266,29 +264,29 @@
            
           </article>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="oauth-2-0-applications.html" class="btn btn-neutral float-right" title="OAuth 2.0 Applications" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="bot-accounts.html" class="btn btn-neutral" title="Bot Accounts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="oauth-2-0-applications.html" class="btn btn-neutral float-right" title="OAuth 2.0 Applications" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="bot-accounts.html" class="btn btn-neutral float-left" title="Bot Accounts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015-2020 Mattermost
+        &#169; Copyright 2015-2021 Mattermost.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -329,11 +327,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/myscript.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/myscript.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 

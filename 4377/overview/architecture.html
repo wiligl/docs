@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Architecture Overview &mdash; Mattermost 5.32 documentation</title>
+  <title>Architecture Overview &mdash; Mattermost 5.33 documentation</title>
   
 
   
@@ -39,9 +39,7 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-K874RWM');</script>
 	<!-- End Google Tag Manager -->
-
 	
-    <script src="../_static/js/modernizr.min.js"></script>
 </head>
 
 <body class="wy-body-for-nav">
@@ -70,7 +68,7 @@
             
             
               <div class="version">
-                5.32
+                5.33
               </div>
             
           
@@ -189,7 +187,7 @@
   <hr/>
 </div>
           <article class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
-           <div itemprop="articleBody">
+           <div itemprop="articleBody" role="main">
             
   <div class="section" id="architecture-overview">
 <h1>Architecture Overview<a class="headerlink" href="#architecture-overview" title="Permalink to this headline">¶</a></h1>
@@ -201,10 +199,10 @@
 <p>At its core, Mattermost is a single-compiled Go binary that is exposed as a Restful JSON web server with Javascript and Go clients. See the Restful API docs <a class="reference external" href="https://api.mattermost.com">here</a>.</p>
 <p>It is configured using <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html">config/config.json</a> and provides the following:</p>
 <ul class="simple">
-<li><strong>Authentication client</strong>, which provides the functionality for users to log into Mattermost via email address and password in Team Edition. Enterprise E10 adds the ability for users to authenticate using Active Directory or LDAP, and Enterprise E20 adds the ability to authenticate using SAML SSO providers like ADFS, OneLogin and Okta.</li>
-<li><strong>Authentication provider</strong>, which enables the Mattermost server to authenticate to other services like GitLab and Zapier using OAuth 2.0.</li>
-<li><strong>Notification service</strong>, which sends notifications via SMTP or a Push Notification Service for mobile applications.</li>
-<li><strong>Data management service</strong>, which connects to supported databases and file storage solutions (local, network-attached storage, Amazon S3, etc), and manages the reading and writing of data to and from them.</li>
+<li><p><strong>Authentication client</strong>, which provides the functionality for users to log into Mattermost via email address and password in Team Edition. Enterprise E10 adds the ability for users to authenticate using Active Directory or LDAP, and Enterprise E20 adds the ability to authenticate using SAML SSO providers like ADFS, OneLogin and Okta.</p></li>
+<li><p><strong>Authentication provider</strong>, which enables the Mattermost server to authenticate to other services like GitLab and Zapier using OAuth 2.0.</p></li>
+<li><p><strong>Notification service</strong>, which sends notifications via SMTP or a Push Notification Service for mobile applications.</p></li>
+<li><p><strong>Data management service</strong>, which connects to supported databases and file storage solutions (local, network-attached storage, Amazon S3, etc), and manages the reading and writing of data to and from them.</p></li>
 </ul>
 <p>The binary talks to a database, typically MySQL or PostgreSQL, and a filestore.</p>
 <img alt="../_images/architecture_basics.png" src="../_images/architecture_basics.png" />
@@ -216,9 +214,9 @@
 <h3>Proxy<a class="headerlink" href="#proxy" title="Permalink to this headline">¶</a></h3>
 <p>A proxy server is a server (a computer system or an application) that acts as an intermediary for requests from clients seeking resources from other servers. Mattermost recommends using a proxy in front of Mattermost to increase security, performance and the ability to monitor and shape traffic connecting to Mattermost:</p>
 <ul class="simple">
-<li><strong>Security</strong>: A proxy server can manage Secure Socket Layer (TLS/SSL) encryption and set policy on how network traffic will be routed to the Mattermost server.</li>
-<li><strong>Performance</strong>: In a high availability configuration, the proxy server balances the network load across multiple Mattermost servers for optimized performance. A hardware proxy with dedicated devices for processing SSL encryption and decryption can also be used to increase performance.</li>
-<li><strong>Monitoring</strong>: A proxy server can monitor connection traffic and record traffic in standard audit logs that common monitoring tools like Kibana and Splunk can consume and report on. Some of the events that can be captured include file uploads and downloads, which are not tracked by the Mattermost Server logging process.</li>
+<li><p><strong>Security</strong>: A proxy server can manage Secure Socket Layer (TLS/SSL) encryption and set policy on how network traffic will be routed to the Mattermost server.</p></li>
+<li><p><strong>Performance</strong>: In a high availability configuration, the proxy server balances the network load across multiple Mattermost servers for optimized performance. A hardware proxy with dedicated devices for processing SSL encryption and decryption can also be used to increase performance.</p></li>
+<li><p><strong>Monitoring</strong>: A proxy server can monitor connection traffic and record traffic in standard audit logs that common monitoring tools like Kibana and Splunk can consume and report on. Some of the events that can be captured include file uploads and downloads, which are not tracked by the Mattermost Server logging process.</p></li>
 </ul>
 <p>Mattermost provides documentation and support for the <a class="reference external" href="https://www.nginx.com/">NGINX proxy</a>. For information on how to install and configure NGINX for your environment, see <a class="reference external" href="https://docs.mattermost.com/guides/administrator.html#installing-mattermost">our guide</a>. Mattermost also unofficially supports other proxies including <a class="reference external" href="https://docs.mattermost.com/install/config-apache2.html">Apache 2</a>.</p>
 <img alt="../_images/architecture_with_proxy.png" src="../_images/architecture_with_proxy.png" />
@@ -239,20 +237,20 @@
 <h2>High Availability and Scalability<a class="headerlink" href="#high-availability-and-scalability" title="Permalink to this headline">¶</a></h2>
 <p>Enterprise Edition E20 supports:</p>
 <ol class="arabic simple">
-<li>Clustered Mattermost servers, which minimize latency by:</li>
+<li><p>Clustered Mattermost servers, which minimize latency by:</p></li>
 </ol>
 <ul class="simple">
-<li>storing static assets over a global CDN</li>
-<li>deploying multiple Mattermost servers to host API communication closer to the location of end users</li>
+<li><p>storing static assets over a global CDN</p></li>
+<li><p>deploying multiple Mattermost servers to host API communication closer to the location of end users</p></li>
 </ul>
 <p>They can also be used to handle scale and failure handoffs in disaster recovery scenarios.</p>
 <ol class="arabic simple" start="2">
-<li>Database read replicas, where replicas can be:</li>
+<li><p>Database read replicas, where replicas can be:</p></li>
 </ol>
 <ul class="simple">
-<li>configured as a redundant backup to the active database server</li>
-<li>used to scale up the number of concurrent users</li>
-<li>deployed closer to the location of end users, reducing latency</li>
+<li><p>configured as a redundant backup to the active database server</p></li>
+<li><p>used to scale up the number of concurrent users</p></li>
+<li><p>deployed closer to the location of end users, reducing latency</p></li>
 </ul>
 <p>Moreover, search replicas are also supported to handle search queries.</p>
 <img alt="../_images/architecture_high_availability.png" src="../_images/architecture_high_availability.png" />
@@ -300,10 +298,10 @@
 <h3>Load Testing<a class="headerlink" href="#load-testing" title="Permalink to this headline">¶</a></h3>
 <p>Mattermost Enterprise Edition was <a class="reference external" href="https://github.com/mattermost/mattermost-load-test">load tested</a> with 60,000 concurrent active users with:</p>
 <ul class="simple">
-<li>6 Mattermost servers: m4.2xlarge (8 vCPU, 32 GB RAM)</li>
-<li>1 MySQL database server with 5 read replicas: db.r4.2xlarge (8 vCPU, 61 GB RAM)</li>
-<li>3 load test runners (for running the loadtest)</li>
-<li>3 NGINX proxies</li>
+<li><p>6 Mattermost servers: m4.2xlarge (8 vCPU, 32 GB RAM)</p></li>
+<li><p>1 MySQL database server with 5 read replicas: db.r4.2xlarge (8 vCPU, 61 GB RAM)</p></li>
+<li><p>3 load test runners (for running the loadtest)</p></li>
+<li><p>3 NGINX proxies</p></li>
 </ul>
 </div>
 </div>
@@ -314,29 +312,29 @@
            
           </article>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../deployment/deployment.html" class="btn btn-neutral float-right" title="Deployment Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../guides/administrator.html" class="btn btn-neutral" title="Self-Managed Administrator’s Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="../deployment/deployment.html" class="btn btn-neutral float-right" title="Deployment Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../guides/administrator.html" class="btn btn-neutral float-left" title="Self-Managed Administrator’s Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015-2020 Mattermost
+        &#169; Copyright 2015-2021 Mattermost.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -377,11 +375,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/myscript.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/myscript.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
