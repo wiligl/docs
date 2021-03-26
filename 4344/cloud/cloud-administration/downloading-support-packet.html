@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Downloading a Support Packet &mdash; Mattermost 5.32 documentation</title>
+  <title>Downloading a Support Packet &mdash; Mattermost 5.33 documentation</title>
   
 
   
@@ -39,9 +39,7 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-K874RWM');</script>
 	<!-- End Google Tag Manager -->
-
 	
-    <script src="../../_static/js/modernizr.min.js"></script>
 </head>
 
 <body class="wy-body-for-nav">
@@ -70,7 +68,7 @@
             
             
               <div class="version">
-                5.32
+                5.33
               </div>
             
           
@@ -166,33 +164,37 @@
   <hr/>
 </div>
           <article class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
-           <div itemprop="articleBody">
+           <div itemprop="articleBody" role="main">
             
   <div class="section" id="downloading-a-support-packet">
 <h1>Downloading a Support Packet<a class="headerlink" href="#downloading-a-support-packet" title="Permalink to this headline">¶</a></h1>
-<p>Use the System Console to generate a Mattermost Support Packet that includes configuration information, logs, and data on external dependencies. Confidential data, such as passwords, are automatically stripped.</p>
+<p>Use the System Console to generate a Mattermost Support Packet that includes configuration information, logs, plugin details, and data on external dependencies. Confidential data, such as passwords, are automatically stripped.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">System Admins should always remove sensitive information before sending the support packet to Mattermost by email or via a support ticket.</p>
+<p class="admonition-title">Note</p>
+<p>When present, the following information is santized during packet generation: <code class="docutils literal notranslate"><span class="pre">LdapSettings.BindPassword</span></code>, <code class="docutils literal notranslate"><span class="pre">FileSettings.PublicLinkSalt</span></code>, <code class="docutils literal notranslate"><span class="pre">FileSettings.AmazonS3SecretAccessKey</span></code>, <code class="docutils literal notranslate"><span class="pre">EmailSettings.SMTPPassword</span></code>, <code class="docutils literal notranslate"><span class="pre">GitLabSettings.Secret</span></code>, <code class="docutils literal notranslate"><span class="pre">GoogleSettings.Secret</span></code>, <code class="docutils literal notranslate"><span class="pre">Office365Settings.Secret</span></code>, <code class="docutils literal notranslate"><span class="pre">OpenIdSettings.Secret</span></code>, <code class="docutils literal notranslate"><span class="pre">SqlSettings.DataSource</span></code>, <code class="docutils literal notranslate"><span class="pre">SqlSettings.AtRestEncryptKey</span></code>, <code class="docutils literal notranslate"><span class="pre">ElasticsearchSettings.Password</span></code>, <code class="docutils literal notranslate"><span class="pre">All</span> <span class="pre">SqlSettings.DataSourceReplicas</span></code>, <code class="docutils literal notranslate"><span class="pre">All</span> <span class="pre">SqlSettings.DataSourceSearchReplicas</span></code>, <code class="docutils literal notranslate"><span class="pre">MessageExportSettings.GlobalRelaySettings.SmtpPassword</span></code>, <code class="docutils literal notranslate"><span class="pre">ServiceSettings.GfycatApiSecret</span></code>, and <code class="docutils literal notranslate"><span class="pre">ServiceSettings.SplitKey</span></code>.</p>
 </div>
-<p>To generate a support packet:</p>
+<p>To generate a Support Packet:</p>
 <ol class="arabic simple">
-<li>Go to System Console, then select <strong>Commercial Support</strong> from the <strong>Main Menu</strong>.</li>
-<li>Select <strong>Download Support Packet</strong>. A zip file is downloaded to the local machine.</li>
+<li><p>Go to System Console, then select <strong>Commercial Support</strong> from the <strong>Main Menu</strong>.</p></li>
+<li><p>Select <strong>Download Support Packet</strong>. A zip file is downloaded to the local machine.</p></li>
 </ol>
-<p>A Mattermost Support Packet contains the following five files:</p>
+<p>A Mattermost Support Packet can contain up to five files:</p>
 <ul class="simple">
-<li>mattermost.log</li>
-<li>plugins.json</li>
-<li>sanitized_config.json</li>
-<li>support_packet.yaml</li>
-<li>warning.txt</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mattermost.log</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plugins.json</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sanitized_config.json</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">support_packet.yaml</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">warning.txt</span></code> (present when issues are encountered during packet generation)</p></li>
 </ul>
-<p>You are notified if any packet files are unavailable during packet generation. See the <code class="docutils literal notranslate"><span class="pre">warning.txt</span></code> file for details.</p>
+<p>You’ll be notified if any packet files are unavailable during packet generation. See the <code class="docutils literal notranslate"><span class="pre">warning.txt</span></code> file for details.</p>
 <ol class="arabic simple" start="3">
-<li>Sanitize configuration and log files in the Support Packet files to remove usernames, passwords, and LDAP groups. Replace these details with example strings that contain the same special characters if possible, as special characters are common causes of configuration errors.</li>
+<li><p>Plugins are not sanitized during packet generation. Sanitize any confidential details in the <code class="docutils literal notranslate"><span class="pre">plugin.json</span></code> file before sending the support packet to Mattermost.</p></li>
 </ol>
-<p>The ability to generate a Mattermost Support Packet is available in Mattermost Cloud, and will be available in Mattermost Server v5.33 on March 16, 2021.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When sanitizing Support Packet data, replace details with example strings that contain the same special characters if possible, as special characters are common causes of configuration errors.</p>
+<p>LDAP groups are not included during support packet generation. Only <code class="docutils literal notranslate"><span class="pre">LDAP</span> <span class="pre">Version</span></code> and <code class="docutils literal notranslate"><span class="pre">LDAP</span> <span class="pre">Vendor</span></code> are included when present. These values are included in the <code class="docutils literal notranslate"><span class="pre">support_packet.yaml</span></code> file.</p>
+</div>
 </div>
 
 
@@ -200,29 +202,29 @@
            
           </article>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../cloud-user-management/user-management.html" class="btn btn-neutral float-right" title="Managing Members" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="cloud-changelog.html" class="btn btn-neutral" title="Mattermost Cloud Changelog" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="../cloud-user-management/user-management.html" class="btn btn-neutral float-right" title="Managing Members" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="cloud-changelog.html" class="btn btn-neutral float-left" title="Mattermost Cloud Changelog" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015-2020 Mattermost
+        &#169; Copyright 2015-2021 Mattermost.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -263,11 +265,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="../../_static/myscript.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/myscript.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 

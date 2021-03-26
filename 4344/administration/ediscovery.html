@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Electronic Discovery &mdash; Mattermost 5.32 documentation</title>
+  <title>Electronic Discovery &mdash; Mattermost 5.33 documentation</title>
   
 
   
@@ -39,9 +39,7 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-K874RWM');</script>
 	<!-- End Google Tag Manager -->
-
 	
-    <script src="../_static/js/modernizr.min.js"></script>
 </head>
 
 <body class="wy-body-for-nav">
@@ -70,7 +68,7 @@
             
             
               <div class="version">
-                5.32
+                5.33
               </div>
             
           
@@ -181,21 +179,21 @@
   <hr/>
 </div>
           <article class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
-           <div itemprop="articleBody">
+           <div itemprop="articleBody" role="main">
             
   <div class="section" id="electronic-discovery">
 <span id="ediscovery"></span><h1>Electronic Discovery<a class="headerlink" href="#electronic-discovery" title="Permalink to this headline">¶</a></h1>
 <p>Electronic discovery (also known as eDiscovery) refers to a process where where electronic data is searched with the intent to use it as evidence in a legal case.</p>
 <p>This page describes how to extract data from Mattermost for eDiscovery. There are three primary methods that can be used to accomplish the goal of extracting user post data from Mattermost:</p>
 <ul class="simple">
-<li><a class="reference external" href="https://docs.mattermost.com/administration/compliance-export.html">Mattermost Compliance Exports</a></li>
-<li>Mattermost RESTful API</li>
-<li>Mattermost database using standard SQL queries</li>
+<li><p><a class="reference external" href="https://docs.mattermost.com/administration/compliance-export.html">Mattermost Compliance Exports</a></p></li>
+<li><p>Mattermost RESTful API</p></li>
+<li><p>Mattermost database using standard SQL queries</p></li>
 </ul>
 <p>Each of the options is discussed in detail below.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Litigation hold (also known as legal hold) is an extension of eDiscovery where in addition to searching for records, no electronically stored information nor paper documents may be discarded if they may be deemed relevant for a present or future legal case.</p>
+<p class="admonition-title">Note</p>
+<p>Litigation hold (also known as legal hold) is an extension of eDiscovery where in addition to searching for records, no electronically stored information nor paper documents may be discarded if they may be deemed relevant for a present or future legal case.</p>
 </div>
 <div class="section" id="mattermost-compliance-exports">
 <h2>Mattermost Compliance Exports<a class="headerlink" href="#mattermost-compliance-exports" title="Permalink to this headline">¶</a></h2>
@@ -229,8 +227,8 @@ x-version-id: 5.0.0.5.0.1.18c0fbd759664a85fe95132bb7fc04cf.true
 </div>
 <p>Once you are authenticated in to Mattermost you can use the <a class="reference external" href="https://api.mattermost.com/#tag/compliance%2Fpaths%2F~1compliance~1reports%2Fpost">Compliance API to create a new compliance report</a>. The curl based example below demonstrates how to send a request that bases the authentication token and asks Mattermost to create a report that spans posts from Dec 31, 2017 - 8:15 PM to Dec 31, 2018 - 8:15 PM for a user with the email address <a class="reference external" href="mailto:craig&#37;&#52;&#48;mattermost&#46;com">craig<span>&#64;</span>mattermost<span>&#46;</span>com</a></p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The data in the JSON payload must be formatted as Unix Epoch. A tool like <a class="reference external" href="https://www.epochconverter.com/">https://www.epochconverter.com/</a> can be useful when converting to and from the required format.</p>
+<p class="admonition-title">Note</p>
+<p>The data in the JSON payload must be formatted as Unix Epoch. A tool like <a class="reference external" href="https://www.epochconverter.com/">https://www.epochconverter.com/</a> can be useful when converting to and from the required format.</p>
 </div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>curl --header &quot;Content-Type: application/json&quot; \
 --request POST \
@@ -264,8 +262,8 @@ https://yourmattermosturl/api/v4/compliance/reports/du6kektczifqxexeroywpz3nbc/d
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The Mattermost database stores date/time stamps in the Unix Epoch (<a class="reference external" href="https://en.wikipedia.org/wiki/Unix_time">https://en.wikipedia.org/wiki/Unix_time</a>) format and a tool like <a class="reference external" href="https://www.epochconverter.com/">https://www.epochconverter.com/</a> can be useful in converting to and from the required format.</p>
+<p class="admonition-title">Note</p>
+<p>The Mattermost database stores date/time stamps in the Unix Epoch (<a class="reference external" href="https://en.wikipedia.org/wiki/Unix_time">https://en.wikipedia.org/wiki/Unix_time</a>) format and a tool like <a class="reference external" href="https://www.epochconverter.com/">https://www.epochconverter.com/</a> can be useful in converting to and from the required format.</p>
 </div>
 </div>
 </div>
@@ -275,29 +273,29 @@ https://yourmattermosturl/api/v4/compliance/reports/du6kektczifqxexeroywpz3nbc/d
            
           </article>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="compliance.html" class="btn btn-neutral float-right" title="Compliance Reporting and Oversight (E20)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../deployment/productivity-tools.html" class="btn btn-neutral" title="Productivity Tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="compliance.html" class="btn btn-neutral float-right" title="Compliance Reporting and Oversight (E20)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../deployment/productivity-tools.html" class="btn btn-neutral float-left" title="Productivity Tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015-2020 Mattermost
+        &#169; Copyright 2015-2021 Mattermost.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -338,11 +336,10 @@ https://yourmattermosturl/api/v4/compliance/reports/du6kektczifqxexeroywpz3nbc/d
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/myscript.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/myscript.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 

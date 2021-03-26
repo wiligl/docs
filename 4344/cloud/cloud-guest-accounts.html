@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Guest Accounts (Beta) &mdash; Mattermost 5.32 documentation</title>
+  <title>Guest Accounts (Beta) &mdash; Mattermost 5.33 documentation</title>
   
 
   
@@ -39,9 +39,7 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-K874RWM');</script>
 	<!-- End Google Tag Manager -->
-
 	
-    <script src="../_static/js/modernizr.min.js"></script>
 </head>
 
 <body class="wy-body-for-nav">
@@ -70,7 +68,7 @@
             
             
               <div class="version">
-                5.32
+                5.33
               </div>
             
           
@@ -106,7 +104,7 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Guest Accounts (Beta)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#enabling-guest-accounts">Enabling Guest Accounts</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#guest-authentication">Guest Authentication</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inviting-guests-to-the-mattermost-server-via-email">Inviting Guests to the Mattermost Server via Email</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inviting-guests-to-the-mattermost-workspace-via-email">Inviting Guests to the Mattermost Workspace via Email</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#configuring-ad-ldap-authentication">Configuring AD/LDAP Authentication</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#configuring-saml-2-0-authentication">Configuring SAML 2.0 Authentication</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#guest-permission-settings">Guest Permission Settings</a></li>
@@ -181,90 +179,90 @@
   <hr/>
 </div>
           <article class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
-           <div itemprop="articleBody">
+           <div itemprop="articleBody" role="main">
             
   <div class="section" id="guest-accounts-beta">
 <h1>Guest Accounts (Beta)<a class="headerlink" href="#guest-accounts-beta" title="Permalink to this headline">¶</a></h1>
 <p>Guest Accounts are a way to collaborate with individuals (such as vendors and contractors) outside of your organization by controlling their access to channels and team members. For example, Guest Accounts can be used to collaborate with customers on a support issue or work on a website project with resources from an external design firm.</p>
 <p>Guests can:</p>
 <ul class="simple">
-<li>Pin messages to channels</li>
-<li>Use slash commands (excluding restricted commands such as invite members, rename channels, change headers, etc)</li>
-<li>Favorite channels</li>
-<li>Mute channels</li>
-<li>Update their account settings</li>
+<li><p>Pin messages to channels</p></li>
+<li><p>Use slash commands (excluding restricted commands such as invite members, rename channels, change headers, etc)</p></li>
+<li><p>Favorite channels</p></li>
+<li><p>Mute channels</p></li>
+<li><p>Update their account settings</p></li>
 </ul>
 <p>Guests cannot:</p>
 <ul class="simple">
-<li>Discover public channels</li>
-<li>Join open teams</li>
-<li>Create direct messages or group messages with members who aren’t within the same channel</li>
-<li>Invite people</li>
+<li><p>Discover public channels</p></li>
+<li><p>Join open teams</p></li>
+<li><p>Create direct messages or group messages with members who aren’t within the same channel</p></li>
+<li><p>Invite people</p></li>
 </ul>
 <p>Additionally, guests are not automatically added to the default <code class="docutils literal notranslate"><span class="pre">Town-square</span></code> and <code class="docutils literal notranslate"><span class="pre">Off-topic</span></code> channels upon logging in and need to be invited/added to them manually.</p>
 <div class="section" id="enabling-guest-accounts">
 <h2>Enabling Guest Accounts<a class="headerlink" href="#enabling-guest-accounts" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Navigate to <strong>System Console &gt; Authentication &gt; Guest Access</strong>.</li>
-<li>Set <strong>Enable Guest Access</strong> to <strong>true</strong>.</li>
-<li>(Optional) <strong>Whitelist domains that are acceptable for Guest Access</strong>.</li>
+<li><p>Navigate to <strong>System Console &gt; Authentication &gt; Guest Access</strong>.</p></li>
+<li><p>Set <strong>Enable Guest Access</strong> to <strong>true</strong>.</p></li>
+<li><p>(Optional) <strong>Whitelist domains that are acceptable for Guest Access</strong>.</p></li>
 </ol>
 <blockquote>
 <div><ul class="simple">
-<li>This allows the System Administrators to set a list of approved guest domains. If you have team domain restrictions, you will also need to add your guest domain to <strong>Team Settings &gt; Allow only users with a specific email domain to join this team</strong>.</li>
+<li><p>This allows the System Administrators to set a list of approved guest domains. If you have team domain restrictions, you will also need to add your guest domain to <strong>Team Settings &gt; Allow only users with a specific email domain to join this team</strong>.</p></li>
 </ul>
 </div></blockquote>
 <ol class="arabic simple" start="4">
-<li>(Optional) <strong>Enforce Multi-Factor Authentication (MFA) for your Guests</strong>.</li>
+<li><p>(Optional) <strong>Enforce Multi-Factor Authentication (MFA) for your Guests</strong>.</p></li>
 </ol>
 <blockquote>
 <div><ul class="simple">
-<li>If you are enforcing MFA for your users, you can optionally choose to enforce MFA for your guest users.</li>
+<li><p>If you are enforcing MFA for your users, you can optionally choose to enforce MFA for your guest users.</p></li>
 </ul>
 </div></blockquote>
 </div>
 <div class="section" id="guest-authentication">
 <h2>Guest Authentication<a class="headerlink" href="#guest-authentication" title="Permalink to this headline">¶</a></h2>
-<p>Guests can access the Mattermost server via email invitation, and be authenticated using AD/LDAP or SAML 2.0.</p>
-<p>Before you proceed, ensure that the authentication method you wish to use is correctly configured on your server and enabled in Mattermost. For configuration steps and technical documentation, see <a class="reference external" href="https://docs.mattermost.com/deployment/sso-ldap.html">Active Directory/LDAP Setup</a> and <a class="reference external" href="https://docs.mattermost.com/deployment/sso-saml.html">SAML Single-Sign-On</a>.</p>
+<p>Guests can access the Mattermost workspace via email invitation, and be authenticated using AD/LDAP or SAML 2.0.</p>
+<p>Before you proceed, ensure that the authentication method you wish to use is correctly configured on your workspace and enabled in Mattermost. For configuration steps and technical documentation, see <a class="reference external" href="https://docs.mattermost.com/deployment/sso-ldap.html">Active Directory/LDAP Setup</a> and <a class="reference external" href="https://docs.mattermost.com/deployment/sso-saml.html">SAML Single-Sign-On</a>.</p>
 <p>Converting a member user to a guest will not change the channels they are in. However, they will be restricted from discovering additional channels and are unable to Direct Message/Group Message users outside of the channels they are in. They can be added to channels by System Admins and other roles that have the correct permissions to invite guests.</p>
 </div>
-<div class="section" id="inviting-guests-to-the-mattermost-server-via-email">
-<h2>Inviting Guests to the Mattermost Server via Email<a class="headerlink" href="#inviting-guests-to-the-mattermost-server-via-email" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="inviting-guests-to-the-mattermost-workspace-via-email">
+<h2>Inviting Guests to the Mattermost Workspace via Email<a class="headerlink" href="#inviting-guests-to-the-mattermost-workspace-via-email" title="Permalink to this headline">¶</a></h2>
 <p>Guests can be invited into one or more Mattermost channels within a team by System Admins and other roles that have the correct permission to invite guests. A guest can be invited into channels on multiple teams.</p>
 <p><strong>Note:</strong> Guest invitations are revoked after 48 hours per the member email invitation process. If your guest has not accepted the invitation within that period, please follow the steps below to resend an invitation to the guest.</p>
 <p>To invite guests into one or more Mattermost channels:</p>
 <ol class="arabic simple">
-<li>Enable email invites from <strong>System Console &gt; Signup &gt; Enable Email Invitations</strong>.</li>
-<li>Navigate to <strong>Main Menu &gt; Invite People</strong>. This is a new invitation option that combines inviting guests and members and consolidates <strong>Send Email</strong>, <strong>Get Team Invite Link</strong>, and <strong>Add Members to the Team</strong>.</li>
-<li>Select <strong>Invite Guests</strong>.</li>
-<li>Enter the guest’s email address.</li>
-<li>Select the channels the guest can join (excluding managed teams).</li>
-<li>(Optional) Enter a custom message.</li>
+<li><p>Enable email invites from <strong>System Console &gt; Signup &gt; Enable Email Invitations</strong>.</p></li>
+<li><p>Navigate to <strong>Main Menu &gt; Invite People</strong>. This is a new invitation option that combines inviting guests and members and consolidates <strong>Send Email</strong>, <strong>Get Team Invite Link</strong>, and <strong>Add Members to the Team</strong>.</p></li>
+<li><p>Select <strong>Invite Guests</strong>.</p></li>
+<li><p>Enter the guest’s email address.</p></li>
+<li><p>Select the channels the guest can join (excluding managed teams).</p></li>
+<li><p>(Optional) Enter a custom message.</p></li>
 </ol>
 <img alt="../_images/Guest_Invite_Screen.png" src="../_images/Guest_Invite_Screen.png" />
 </div>
 <div class="section" id="configuring-ad-ldap-authentication">
 <h2>Configuring AD/LDAP Authentication<a class="headerlink" href="#configuring-ad-ldap-authentication" title="Permalink to this headline">¶</a></h2>
-<p>When enabled, the <strong>Guest Filter</strong> in Mattermost identifies external users whose AD/LDAP role is <code class="docutils literal notranslate"><span class="pre">guest</span></code> and who are invited to join your Mattermost server. These users will have the <code class="docutils literal notranslate"><span class="pre">guest</span></code> role applied immediately upon first sign-in instead of the default member user role. This eliminates having to manually assign the role in the System Console.</p>
+<p>When enabled, the <strong>Guest Filter</strong> in Mattermost identifies external users whose AD/LDAP role is <code class="docutils literal notranslate"><span class="pre">guest</span></code> and who are invited to join your Mattermost workspace. These users will have the <code class="docutils literal notranslate"><span class="pre">guest</span></code> role applied immediately upon first sign-in instead of the default member user role. This eliminates having to manually assign the role in the System Console.</p>
 <ol class="arabic simple">
-<li>Enable Guest Access via <strong>System Console &gt; Authentication &gt; Guest Access (Beta)</strong>.</li>
-<li>Navigate to <strong>System Console &gt; Authentication &gt; AD/LDAP</strong>.</li>
-<li>Complete the <strong>Guest Filter</strong> field.</li>
-<li>Select <strong>Save</strong>.</li>
+<li><p>Enable Guest Access via <strong>System Console &gt; Authentication &gt; Guest Access (Beta)</strong>.</p></li>
+<li><p>Go to <strong>System Console &gt; Authentication &gt; AD/LDAP</strong>.</p></li>
+<li><p>Complete the <strong>Guest Filter</strong> field.</p></li>
+<li><p>Select <strong>Save</strong>.</p></li>
 </ol>
 <p>If a Mattermost guest user has the <code class="docutils literal notranslate"><span class="pre">guest</span></code> role removed in the AD/LDAP system, the synchronization process will not automatically promote them to a member user role. This is done manually via <strong>System Console &gt; User Management</strong>. If a member user has the <strong>Guest Attribute</strong> added, the synchronization processes will automatically demote the member user to the guest role.</p>
 <p>When a guest logs in without having any channels assigned to their account, they’re advised to contact an administrator.</p>
 </div>
 <div class="section" id="configuring-saml-2-0-authentication">
 <h2>Configuring SAML 2.0 Authentication<a class="headerlink" href="#configuring-saml-2-0-authentication" title="Permalink to this headline">¶</a></h2>
-<p>When enabled, the <strong>Guest Attribute</strong> in Mattermost identifies external users whose SAML assertion is guest and who are invited to join your Mattermost server. These users will have the <code class="docutils literal notranslate"><span class="pre">guest</span></code> role applied immediately upon first sign-in instead of the default member user role. This eliminates having to manually assign the role in the System Console.</p>
+<p>When enabled, the <strong>Guest Attribute</strong> in Mattermost identifies external users whose SAML assertion is guest and who are invited to join your Mattermost workspace. These users will have the <code class="docutils literal notranslate"><span class="pre">guest</span></code> role applied immediately upon first sign-in instead of the default member user role. This eliminates having to manually assign the role in the System Console.</p>
 <p>If a Mattermost guest user has the guest role removed in the SAML system, the synchronization processes will not automatically promote them to a member user role. This is done manually via <strong>System Console &gt; User Management</strong>. If a member user has the <strong>Guest Attribute</strong> added, the synchronization processes will automatically demote the member user to the guest role.</p>
 <ol class="arabic simple">
-<li>Enable Guest Access via <strong>System Console &gt; Guest Access (Beta)</strong>.</li>
-<li>Navigate to <strong>System Console &gt; Authentication &gt; SAML 2.0</strong>.</li>
-<li>Complete the <strong>Guest Attribute</strong> field.</li>
-<li>Select <strong>Save</strong>.</li>
+<li><p>Enable Guest Access via <strong>System Console &gt; Guest Access (Beta)</strong>.</p></li>
+<li><p>Go to <strong>System Console &gt; Authentication &gt; SAML 2.0</strong>.</p></li>
+<li><p>Complete the <strong>Guest Attribute</strong> field.</p></li>
+<li><p>Select <strong>Save</strong>.</p></li>
 </ol>
 <p>When a guest logs in without having any channels assigned to their account, they’re advised to contact an administrator.</p>
 </div>
@@ -273,10 +271,10 @@
 <p>By default, only the System Admins can invite guests. There are <a class="reference external" href="https://docs.mattermost.com/cloud/cloud-user-management/advanced-permissions.html">additional permissions</a> that can be adjusted under <strong>System Console &gt; Advanced Permissions &gt; System Scheme</strong> to control a guest’s ability to:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Edit posts</li>
-<li>Delete posts</li>
-<li>Post reactions</li>
-<li>Create private channels with members they are allowed to collaborate with</li>
+<li><p>Edit posts</p></li>
+<li><p>Delete posts</p></li>
+<li><p>Post reactions</p></li>
+<li><p>Create private channels with members they are allowed to collaborate with</p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -352,7 +350,7 @@
 </div>
 <div class="section" id="can-i-restrict-guests-ability-to-upload-content">
 <h3>Can I restrict guests’ ability to upload content?<a class="headerlink" href="#can-i-restrict-guests-ability-to-upload-content" title="Permalink to this headline">¶</a></h3>
-<p>It is not currently possible to selectively disable upload/download functionality as it is a server-wide configuration.</p>
+<p>It is not currently possible to selectively disable upload/download functionality as it is a system-wide configuration.</p>
 </div>
 </div>
 </div>
@@ -362,29 +360,29 @@
            
           </article>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="cloud-user-management/advanced-permissions.html" class="btn btn-neutral float-right" title="Advanced Permissions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="cloud-user-management/cloud-team-and-channel.html" class="btn btn-neutral" title="Managing Team and Channel Members" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="cloud-user-management/advanced-permissions.html" class="btn btn-neutral float-right" title="Advanced Permissions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="cloud-user-management/cloud-team-and-channel.html" class="btn btn-neutral float-left" title="Managing Team and Channel Members" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015-2020 Mattermost
+        &#169; Copyright 2015-2021 Mattermost.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -425,11 +423,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/myscript.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/myscript.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 

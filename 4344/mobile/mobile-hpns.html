@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Hosted Push Notification Service &mdash; Mattermost 5.32 documentation</title>
+  <title>Hosted Push Notification Service &mdash; Mattermost 5.33 documentation</title>
   
 
   
@@ -39,9 +39,7 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-K874RWM');</script>
 	<!-- End Google Tag Manager -->
-
 	
-    <script src="../_static/js/modernizr.min.js"></script>
 </head>
 
 <body class="wy-body-for-nav">
@@ -70,7 +68,7 @@
             
             
               <div class="version">
-                5.32
+                5.33
               </div>
             
           
@@ -111,7 +109,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mobile-appconfig.html">AppConfig for EMM Solutions with Mattermost Mobile Apps</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Hosted Push Notification Service</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#securing-your-mattermost-push-notification-service">Securing your Mattermost Push Notification Service</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#setting-up-hpns-push-notifications-in-enterprise-edition">Setting up HPNS push notifications in Enterprise Edition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setting-up-hpns-push-notifications-in-enterprise-edition">Setting up HPNS Push Notifications in Enterprise Edition</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="mobile-faq.html">Mobile Apps FAQ</a></li>
@@ -179,7 +177,7 @@
   <hr/>
 </div>
           <article class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
-           <div itemprop="articleBody">
+           <div itemprop="articleBody" role="main">
             
   <div class="section" id="hosted-push-notification-service">
 <h1>Hosted Push Notification Service<a class="headerlink" href="#hosted-push-notification-service" title="Permalink to this headline">¶</a></h1>
@@ -187,39 +185,41 @@
 <h2>Securing your Mattermost Push Notification Service<a class="headerlink" href="#securing-your-mattermost-push-notification-service" title="Permalink to this headline">¶</a></h2>
 <p>When using Mattermost mobile apps in the Apple App Store and Google Play, purchase an annual subscription to <a class="reference external" href="https://mattermost.com/pricing-self-managed/">Mattermost Enterprise Edition E10</a> or higher to receive access to our Hosted Push Notification Service (HPNS).</p>
 <p>Our Hosted Push Notification Service offers:</p>
-<blockquote>
-<div><ul class="simple">
-<li>Access to a publicly-hosted Mattermost Push Notification Service (MPNS) offering an explicit <a class="reference external" href="https://mattermost.com/data-processing-addendum/">privacy policy</a> where the contents of unencrypted messages are not examined or stored</li>
-<li>Encrypted TLS connections between HPNS and Apple Push Notification Services, HPNS and Google’s Firebase Cloud Messaging service, and HPNS and your Mattermost server</li>
-<li>Production-level uptime expectation</li>
+<ul class="simple">
+<li><p>Access to a publicly-hosted Mattermost Push Notification Service (MPNS) offering an explicit <a class="reference external" href="https://mattermost.com/data-processing-addendum/">privacy policy</a> where the contents of unencrypted messages are not examined or stored.</p></li>
+<li><p>Encrypted TLS connections between HPNS and Apple Push Notification Services, HPNS and Google’s Firebase Cloud Messaging service, and HPNS and your Mattermost server.</p></li>
+<li><p>Production-level uptime expectation.</p></li>
 </ul>
-</div></blockquote>
-<p>After purchasing a subscription to Mattermost E10 or higher from Mattermost, Inc. follow the instructions below to set up and test your system.</p>
+<p>After purchasing a subscription to Mattermost Enterprise Edition E10 or higher from Mattermost, Inc. follow the instructions below to set up and test your system.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Both TPNS and HPNS only work with the Mattermost Apple App Store and Google Play apps. If you have compiled the apps yourselves, you must also host your own Mattermost push proxy server. See our FAQ on <a class="reference internal" href="mobile-faq.html#push-faq"><span class="std std-ref">how push notifications work</span></a> for more details. Our push proxy server is <a class="reference external" href="https://github.com/mattermost/mattermost-push-proxy">available on Github.</a></p>
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Both TPNS and HPNS only work with the Mattermost Apple App Store and Google Play apps. If you have compiled the apps yourself, you must also host your own Mattermost push proxy server. See our FAQ on <a class="reference internal" href="mobile-faq.html#push-faq"><span class="std std-ref">how push notifications work</span></a> for more details. Our push proxy server is <a class="reference external" href="https://github.com/mattermost/mattermost-push-proxy">available on GitHub.</a></p></li>
+</ul>
 </div>
-<p>If you use HPNS you need to ensure that the push proxy can be reached on port 443 from the Mattermost server, for TPNS it is port 80. If you host your own proxy server the default port is 8086.</p>
-<p>Mattermost, Inc. also offers a free basic hosted service for testing setups called the Test Push Notification Service (TPNS). It does not offer a production-level uptime service level agreements (SLAs).</p>
+<ul class="simple">
+<li><p>You must ensure that the push proxy can be reached on the correct port. For HPNS, it’s port 443 from the Mattermost server, and for TPNS, it’s port 80. If you host your own proxy server, the default port is 8086.</p></li>
+<li><p>Mattermost, Inc. also offers a free basic hosted service for testing called the Test Push Notification Service (TPNS). It does not offer production-level uptime service level agreements (SLAs).</p></li>
+</ul>
 </div>
 <div class="section" id="setting-up-hpns-push-notifications-in-enterprise-edition">
-<h2>Setting up HPNS push notifications in Enterprise Edition<a class="headerlink" href="#setting-up-hpns-push-notifications-in-enterprise-edition" title="Permalink to this headline">¶</a></h2>
+<h2>Setting up HPNS Push Notifications in Enterprise Edition<a class="headerlink" href="#setting-up-hpns-push-notifications-in-enterprise-edition" title="Permalink to this headline">¶</a></h2>
 <p>Follow these steps to set up HPNS:</p>
 <ol class="arabic simple">
-<li>Follow the instructions to <a class="reference external" href="https://docs.mattermost.com/install/ee-install.html">install or upgrade to Enterprise Edition</a></li>
-<li>Go to <strong>System Console</strong> &gt; <strong>Notifications</strong> &gt; <strong>Mobile Push</strong> &gt; <strong>Send Push Notifications</strong> in prior versions or <strong>System Console &gt; Environment &gt; Push Notification Server</strong> in versions after 5.12</li>
-<li>Select “Use encrypted, production-quality HPNS connection to iOS and Android apps” (this option appears only in Enterprise Edition)</li>
+<li><p>Follow the instructions to <a class="reference external" href="https://docs.mattermost.com/install/ee-install.html">install or upgrade to Enterprise Edition</a>.</p></li>
+<li><p>Go to <strong>System Console &gt; Environment &gt; Push Notification Server</strong>.</p></li>
+<li><p>Set <strong>Enable Push Notifications</strong> to <strong>Use HPNS connection with uptime SLA to send notifications to iOS and Android apps</strong>. Note that this option is only available in Enterprise Edition.</p></li>
 </ol>
 <img alt="../_images/mobile_hpns.png" src="../_images/mobile_hpns.png" />
 <ol class="arabic simple" start="4">
-<li>Check the box “I understand and accept the Mattermost Hosted Push Notification Service Terms of Service and Privacy Policy” after reading the documents referenced</li>
+<li><p>Review the Mattermost Terms of Service and the Mattermost Privacy Policy, then select the box “I understand and accept the Mattermost Hosted Push Notification Service Terms of Service and Privacy Policy” to acknowledge that you understand the terms of use.</p></li>
 </ol>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The default <strong>Push Notification Server</strong> address is <a class="reference external" href="https://push.mattermost.com">https://push.mattermost.com</a> and the server is hosted inside the United States. Mattermost also offers a push notification server hosted in Germany. If you wish to use that server, please update the <strong>Push Notification Server</strong> address to <a class="reference external" href="https://hpns-de.mattermost.com/">https://hpns-de.mattermost.com/</a>.</p>
+<p class="admonition-title">Note</p>
+<p>The default <strong>Push Notification Server</strong> address is <code class="docutils literal notranslate"><span class="pre">https://push.mattermost.com</span></code> and the server is hosted inside the United States. Mattermost also offers a push notification server hosted in Germany. If you wish to use that server, please update the <strong>Push Notification Server</strong> address to <code class="docutils literal notranslate"><span class="pre">https://hpns-de.mattermost.com/</span></code>.</p>
 </div>
 <ol class="arabic simple" start="5">
-<li>Click <strong>Save</strong></li>
+<li><p>Select <strong>Save</strong></p></li>
 </ol>
 <p>After setup, <a class="reference internal" href="mobile-testing-notifications.html"><span class="doc">test push notifications</span></a> to confirm they are working.</p>
 </div>
@@ -230,29 +230,29 @@
            
           </article>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="mobile-faq.html" class="btn btn-neutral float-right" title="Mobile Apps FAQ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="mobile-overview.html" class="btn btn-neutral" title="Mobile Applications Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="mobile-faq.html" class="btn btn-neutral float-right" title="Mobile Apps FAQ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="mobile-overview.html" class="btn btn-neutral float-left" title="Mobile Applications Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015-2020 Mattermost
+        &#169; Copyright 2015-2021 Mattermost.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -293,11 +293,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/myscript.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/myscript.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
