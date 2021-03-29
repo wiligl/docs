@@ -39,9 +39,7 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-K874RWM');</script>
 	<!-- End Google Tag Manager -->
-
 	
-    <script src="../_static/js/modernizr.min.js"></script>
 </head>
 
 <body class="wy-body-for-nav">
@@ -181,13 +179,13 @@
   <hr/>
 </div>
           <article class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
-           <div itemprop="articleBody">
+           <div itemprop="articleBody" role="main">
             
   <div class="section" id="deploy-mattermost-on-docker">
 <span id="docker-local-machine"></span><h1>Deploy Mattermost on Docker<a class="headerlink" href="#deploy-mattermost-on-docker" title="Permalink to this headline">¶</a></h1>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. Community testing, feedback and improvements are welcome and greatly appreciated. You can <a class="reference external" href="https://github.com/mattermost/docs/blob/master/source/install/prod-docker.rst">edit this page on GitHub</a>.</p>
+<p class="admonition-title">Important</p>
+<p>This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. Community testing, feedback and improvements are welcome and greatly appreciated. You can <a class="reference external" href="https://github.com/mattermost/docs/blob/master/source/install/prod-docker.rst">edit this page on GitHub</a>.</p>
 </div>
 <p>Deploy Mattermost using a multi-node configuration with <a class="reference external" href="https://docs.docker.com/compose/">Docker Compose</a>. Experience with Docker Compose is recommended.</p>
 <p>For a single-node preview of Mattermost (without email) see <a class="reference external" href="https://docs.mattermost.com/install/docker-local-machine.html">Local Machine Setup using Docker</a>.</p>
@@ -195,67 +193,66 @@
 <div class="section" id="docker-setup-on-ubuntu">
 <h2>Docker Setup on Ubuntu<a class="headerlink" href="#docker-setup-on-ubuntu" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first"><strong>Install Docker</strong> using <a class="reference external" href="https://docs.docker.com/installation/ubuntulinux/">the Ubuntu online guide</a> or these instructions:</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">wget</span>
-<span class="n">wget</span> <span class="o">-</span><span class="n">qO</span><span class="o">-</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">get</span><span class="o">.</span><span class="n">docker</span><span class="o">.</span><span class="n">com</span><span class="o">/</span> <span class="o">|</span> <span class="n">sh</span>
-<span class="n">sudo</span> <span class="n">usermod</span> <span class="o">-</span><span class="n">aG</span> <span class="n">docker</span> <span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;</span>
-<span class="n">sudo</span> <span class="n">service</span> <span class="n">docker</span> <span class="n">start</span>
-<span class="n">newgrp</span> <span class="n">docker</span>
+<li><p><strong>Install Docker</strong> using <a class="reference external" href="https://docs.docker.com/installation/ubuntulinux/">the Ubuntu online guide</a> or these instructions:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get update
+sudo apt-get install wget
+wget -qO- https://get.docker.com/ <span class="p">|</span> sh
+sudo usermod -aG docker &lt;username&gt;
+sudo service docker start
+newgrp docker
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>Install Docker Compose</strong> using <a class="reference external" href="https://docs.docker.com/compose/install/">the online guide</a>. You have to download the latest release from the <a class="reference external" href="https://github.com/docker/compose/releases/">Docker Compose Github page</a> and put the binary on your <code class="code docutils literal notranslate"><span class="pre">/usr/local/bin</span></code> folder. Usually, you can use the following command, replacing <code class="code docutils literal notranslate"><span class="pre">$dockerComposeVersion</span></code> with the Docker Compose version to install:</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="s2">&quot;https://github.com/docker/compose/releases/download/$dockerComposeVersion/docker-compose-$(uname -s)-$(uname -m)&quot;</span> <span class="o">-</span><span class="n">o</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">docker</span><span class="o">-</span><span class="n">compose</span>
-<span class="n">sudo</span> <span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">docker</span><span class="o">-</span><span class="n">compose</span>
+<li><p><strong>Install Docker Compose</strong> using <a class="reference external" href="https://docs.docker.com/compose/install/">the online guide</a>. You have to download the latest release from the <a class="reference external" href="https://github.com/docker/compose/releases/">Docker Compose Github page</a> and put the binary on your <code class="code docutils literal notranslate"><span class="pre">/usr/local/bin</span></code> folder. Usually, you can use the following command, replacing <code class="code docutils literal notranslate"><span class="pre">$dockerComposeVersion</span></code> with the Docker Compose version to install:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo curl -L <span class="s2">&quot;https://github.com/docker/compose/releases/download/</span><span class="nv">$dockerComposeVersion</span><span class="s2">/docker-compose-</span><span class="k">$(</span>uname -s<span class="k">)</span><span class="s2">-</span><span class="k">$(</span>uname -m<span class="k">)</span><span class="s2">&quot;</span> -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>Deploy the Mattermost Docker</strong></p>
-</li>
+<li><p><strong>Deploy the Mattermost Docker</strong></p></li>
 </ol>
 <p>You can get the <code class="code docutils literal notranslate"><span class="pre">uid</span></code> (user ID) and <code class="code docutils literal notranslate"><span class="pre">gid</span></code> (group ID) of the Docker user by running:</p>
 <blockquote>
-<div><div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span> <span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>id &lt;username&gt;
 </pre></div>
 </div>
 </div></blockquote>
 <p>Replace <code class="code docutils literal notranslate"><span class="pre">&lt;username&gt;</span></code> with the actual username. The following setup assumes the result above is <code class="code docutils literal notranslate"><span class="pre">uid=1000</span></code> and <code class="code docutils literal notranslate"><span class="pre">gid=1000</span></code>.</p>
 <p>Set up using:</p>
 <blockquote>
-<div><div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">git</span>
-<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">mattermost</span><span class="o">/</span><span class="n">mattermost</span><span class="o">-</span><span class="n">docker</span><span class="o">.</span><span class="n">git</span>
-<span class="n">cd</span> <span class="n">mattermost</span><span class="o">-</span><span class="n">docker</span>
-<span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="n">build</span>
-<span class="n">mkdir</span> <span class="o">-</span><span class="n">pv</span> <span class="o">./</span><span class="n">volumes</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">mattermost</span><span class="o">/</span><span class="p">{</span><span class="n">data</span><span class="p">,</span><span class="n">logs</span><span class="p">,</span><span class="n">config</span><span class="p">,</span><span class="n">plugins</span><span class="p">,</span><span class="n">client</span><span class="o">-</span><span class="n">plugins</span><span class="p">}</span>
-<span class="n">sudo</span> <span class="n">chown</span> <span class="o">-</span><span class="n">R</span> <span class="mi">1000</span><span class="p">:</span><span class="mi">1000</span> <span class="o">./</span><span class="n">volumes</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">mattermost</span><span class="o">/</span>
-<span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="n">up</span> <span class="o">-</span><span class="n">d</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install git
+git clone https://github.com/mattermost/mattermost-docker.git
+<span class="nb">cd</span> mattermost-docker
+docker-compose build
+mkdir -pv ./volumes/app/mattermost/<span class="o">{</span>data,logs,config,plugins,client-plugins<span class="o">}</span>
+sudo chown -R <span class="m">1000</span>:1000 ./volumes/app/mattermost/
+docker-compose up -d
 </pre></div>
 </div>
 </div></blockquote>
 <p>The <code class="docutils literal notranslate"><span class="pre">docker-compose</span></code> network that is created defaults to 172.18.0.0/16.  If you need to change the default network this <a class="reference external" href="https://success.docker.com/article/how-do-i-configure-the-default-bridge-docker0-network-for-docker-engine-to-a-different-subnet">link</a> provides guidelines on how to do that. If the network is already set up with the default, you need to run the following command to remove it. Then, run the command again to regenerate the default network to include the new network setting.</p>
 <blockquote>
-<div><div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">network</span> <span class="n">rm</span> <span class="n">mattermost</span><span class="o">-</span><span class="n">server_mm</span><span class="o">-</span><span class="n">test</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker network rm mattermost-server_mm-test
 </pre></div>
 </div>
 </div></blockquote>
 <p>To verify the current Docker network use the following command to list it (you can access information about the options <a class="reference external" href="https://docs.docker.com/engine/reference/commandline/network_ls/">here</a>):</p>
 <blockquote>
-<div><div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">network</span> <span class="n">ls</span> <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker network ls <span class="o">[</span>OPTIONS<span class="o">]</span>
 </pre></div>
 </div>
 </div></blockquote>
 <ol class="arabic simple" start="4">
-<li><strong>Configure TLS</strong> by following <a class="reference external" href="https://github.com/mattermost/mattermost-docker#install-with-ssl-certificate">the instructions</a>.</li>
-<li><strong>Configure Email</strong> by following the <a class="reference external" href="https://docs.mattermost.com/install/smtp-email-setup.html">SMTP email setup guide</a>.</li>
-<li>(Optional) To enable enterprise features, go to <strong>System Console &gt; Edition and License</strong> and select <strong>Start trial</strong>.</li>
-<li><strong>Configure your Server</strong> based on the <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html">configuration settings documentation</a>.</li>
+<li><p><strong>Configure TLS</strong> by following <a class="reference external" href="https://github.com/mattermost/mattermost-docker#install-with-ssl-certificate">the instructions</a>.</p></li>
+<li><p><strong>Configure Email</strong> by following the <a class="reference external" href="https://docs.mattermost.com/install/smtp-email-setup.html">SMTP email setup guide</a>.</p></li>
+<li><p>(Optional) To enable enterprise features, go to <strong>System Console &gt; Edition and License</strong> and select <strong>Start trial</strong>.</p></li>
+<li><p><strong>Configure your Server</strong> based on the <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html">configuration settings documentation</a>.</p></li>
 </ol>
 <p>Once you’ve saved your configurations, start an Enterprise E20 trial via <strong>Main Menu &gt; System Console &gt; Edition and License &gt; Start trial</strong>.</p>
 <p>Additional guides:</p>
 <ul class="simple">
-<li><strong>Start, Stop, and Remove Containers</strong> using <a class="reference external" href="https://github.com/mattermost/mattermost-docker/#startingstopping-docker">management instructions.</a></li>
-<li><strong>Setup Database Backup</strong> following the <a class="reference external" href="https://github.com/mattermost/mattermost-docker#aws">database backup instructions.</a></li>
+<li><p><strong>Start, Stop, and Remove Containers</strong> using <a class="reference external" href="https://github.com/mattermost/mattermost-docker/#startingstopping-docker">management instructions.</a></p></li>
+<li><p><strong>Setup Database Backup</strong> following the <a class="reference external" href="https://github.com/mattermost/mattermost-docker#aws">database backup instructions.</a></p></li>
 </ul>
 </div>
 <div class="section" id="docker-setup-on-arch-linux">
@@ -283,29 +280,29 @@
            
           </article>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="deploy-cloudron.html" class="btn btn-neutral float-right" title="Deploy Mattermost on Cloudron (Unofficial)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="prod-windows-2012.html" class="btn btn-neutral" title="Production Install on Windows Server (Unofficial)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="deploy-cloudron.html" class="btn btn-neutral float-right" title="Deploy Mattermost on Cloudron (Unofficial)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="prod-windows-2012.html" class="btn btn-neutral float-left" title="Production Install on Windows Server (Unofficial)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015-2021 Mattermost
+        &#169; Copyright 2015-2021 Mattermost.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -346,11 +343,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/myscript.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/myscript.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 

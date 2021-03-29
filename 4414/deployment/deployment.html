@@ -39,9 +39,7 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-K874RWM');</script>
 	<!-- End Google Tag Manager -->
-
 	
-    <script src="../_static/js/modernizr.min.js"></script>
 </head>
 
 <body class="wy-body-for-nav">
@@ -236,7 +234,7 @@
   <hr/>
 </div>
           <article class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
-           <div itemprop="articleBody">
+           <div itemprop="articleBody" role="main">
             
   <div class="section" id="deployment-overview">
 <h1>Deployment Overview<a class="headerlink" href="#deployment-overview" title="Permalink to this headline">¶</a></h1>
@@ -245,7 +243,7 @@
 <p><a class="reference external" href="https://docs.mattermost.com/_images/network.PNG">View Mattermost Network Diagram</a></p>
 <p>Notes:</p>
 <ul class="simple">
-<li>GitLab Mattermost deployment is <a class="reference external" href="https://doc.gitlab.com/omnibus/gitlab-mattermost/">documented separately</a> and not included below.</li>
+<li><p>GitLab Mattermost deployment is <a class="reference external" href="https://doc.gitlab.com/omnibus/gitlab-mattermost/">documented separately</a> and not included below.</p></li>
 </ul>
 <div class="section" id="requirements-and-installation-guides">
 <h2>Requirements and Installation Guides<a class="headerlink" href="#requirements-and-installation-guides" title="Permalink to this headline">¶</a></h2>
@@ -295,8 +293,8 @@
 <h3>Non-VPN Setup<a class="headerlink" href="#non-vpn-setup" title="Permalink to this headline">¶</a></h3>
 <p>If Mattermost is accessible from the open internet, the following is recommended:</p>
 <ol class="simple">
-<li>An IT admin should be assigned to set up appropriate network security, subscribe to <a class="reference external" href="https://mattermost.com/security-updates/#sign-up">the Mattermost security bulletin</a> and <a class="reference external" href="https://docs.mattermost.com/administration/upgrade.html">apply new security updates</a>.</li>
-<li>The organization upgrades to <a class="reference external" href="https://mattermost.com/pricing-self-managed/">Mattermost Enterprise Edition</a> to enable SAML single sign-on or enable MFA using Google Authenticator. For non-enterprise deployments, VPN is recommended.</li>
+<li><p>An IT admin should be assigned to set up appropriate network security, subscribe to <a class="reference external" href="https://mattermost.com/security-updates/#sign-up">the Mattermost security bulletin</a> and <a class="reference external" href="https://docs.mattermost.com/administration/upgrade.html">apply new security updates</a>.</p></li>
+<li><p>The organization upgrades to <a class="reference external" href="https://mattermost.com/pricing-self-managed/">Mattermost Enterprise Edition</a> to enable SAML single sign-on or enable MFA using Google Authenticator. For non-enterprise deployments, VPN is recommended.</p></li>
 </ol>
 <p>If Mattermost is accessible from the open internet with no VPN or MFA set up, we recommended using it only for non-confidential, unimportant conversations where impact of a compromised system is not essential.</p>
 <p><strong>Note:</strong> Not-for-profit and academic institutions are eligible for special <a class="reference external" href="https://mattermost.com/nonprofit/">not-for-profit</a> and <a class="reference external" href="https://mattermost.com/education/">academic pricing</a> for Mattermost Enterprise Edition.</p>
@@ -308,8 +306,8 @@
 <h3>Push Notification Service<a class="headerlink" href="#push-notification-service" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference external" href="https://docs.mattermost.com/deployment/push.html">Mattermost Push Notification Service (MPNS)</a> routes push notifications to:</p>
 <ol class="simple">
-<li>Apple Push Notification Service to send notifications to the Mattermost iOS app.</li>
-<li>Google Push Notification Service to send notifications to the Mattermost Android app.</li>
+<li><p>Apple Push Notification Service to send notifications to the Mattermost iOS app.</p></li>
+<li><p>Google Push Notification Service to send notifications to the Mattermost Android app.</p></li>
 </ol>
 <p>If you’re deploying mobile applications to an Enterprise App Store, your MPNS should be behind your firewall on your private network. If you’re using mobile apps in the App Store and Google Play, you can relay notifications to mobile apps using the <a class="reference external" href="https://docs.mattermost.com/deployment/push.html#hosted-push-notifications-service-hpns">Hosted Push Notification Service (HPNS)</a> included with Mattermost Enterprise Edition.</p>
 <p>HPNS does not connect to your mobile apps directly. It sends messages over an encrypted channel to Apple or Google which are relayed to the app users downloaded from the App Store or Google Play.</p>
@@ -381,9 +379,9 @@
 <h4>Global Deployments (Enterprise Edition)<a class="headerlink" href="#global-deployments-enterprise-edition" title="Permalink to this headline">¶</a></h4>
 <p>Enterprise customers with deployments spanning many time zones can contact the <a class="reference external" href="https://mattermost.com/contact-us/">Enterprise Team</a> for advanced configurations to minimize latency by:</p>
 <ol class="simple">
-<li>Storing static assets over a global CDN.</li>
-<li>Deploying multiple Mattermost servers to host API communication closer to the location of end users.</li>
-<li>Deploying multiple database read replicas closer to the location of end users.</li>
+<li><p>Storing static assets over a global CDN.</p></li>
+<li><p>Deploying multiple Mattermost servers to host API communication closer to the location of end users.</p></li>
+<li><p>Deploying multiple database read replicas closer to the location of end users.</p></li>
 </ol>
 </div>
 </div>
@@ -391,9 +389,9 @@
 <h3>File Store<a class="headerlink" href="#file-store" title="Permalink to this headline">¶</a></h3>
 <p>Images and files shared by users are stored and retrieved in one of three options.</p>
 <ol class="simple">
-<li>For teams sharing only modest amounts of file data, local storage on the same physical machine as the Mattermost server may be sufficient.</li>
-<li>For enterprises sharing very large amounts of data, a Network-Attached Storage server may be used, which can scale to peta-bytes if necessary.</li>
-<li>Alternatively, for both ease-of-use and scale, a third option is to use Amazon’s S3 file storage service.</li>
+<li><p>For teams sharing only modest amounts of file data, local storage on the same physical machine as the Mattermost server may be sufficient.</p></li>
+<li><p>For enterprises sharing very large amounts of data, a Network-Attached Storage server may be used, which can scale to peta-bytes if necessary.</p></li>
+<li><p>Alternatively, for both ease-of-use and scale, a third option is to use Amazon’s S3 file storage service.</p></li>
 </ol>
 </div>
 </div>
@@ -423,29 +421,29 @@
            
           </article>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../help/getting-started/light-install.html" class="btn btn-neutral float-right" title="Light Install Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../overview/architecture.html" class="btn btn-neutral" title="Architecture Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="../help/getting-started/light-install.html" class="btn btn-neutral float-right" title="Light Install Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../overview/architecture.html" class="btn btn-neutral float-left" title="Architecture Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015-2021 Mattermost
+        &#169; Copyright 2015-2021 Mattermost.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -486,11 +484,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/myscript.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/myscript.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
