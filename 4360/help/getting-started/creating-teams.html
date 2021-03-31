@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Creating Teams &mdash; Mattermost 5.32 documentation</title>
+  <title>Creating Teams &mdash; Mattermost 5.33 documentation</title>
   
 
   
@@ -39,9 +39,7 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-K874RWM');</script>
 	<!-- End Google Tag Manager -->
-
 	
-    <script src="../../_static/js/modernizr.min.js"></script>
 </head>
 
 <body class="wy-body-for-nav">
@@ -70,7 +68,7 @@
             
             
               <div class="version">
-                5.32
+                5.33
               </div>
             
           
@@ -103,6 +101,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../../guides/user.html#getting-started">Getting Started</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="welcome-to-mattermost.html">Welcome to Mattermost!</a></li>
 <li class="toctree-l3"><a class="reference internal" href="signing-in.html">Signing In</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setting-your-status-availability.html">Setting Your Status and Availability</a></li>
 <li class="toctree-l3"><a class="reference internal" href="messaging-basics.html">Messaging Basics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-notifications.html">Configuring Notifications</a></li>
 <li class="toctree-l3"><a class="reference internal" href="organizing-conversations.html">Managing Channels</a></li>
@@ -174,7 +173,7 @@
   <hr/>
 </div>
           <article class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
-           <div itemprop="articleBody">
+           <div itemprop="articleBody" role="main">
             
   <div class="section" id="creating-teams">
 <h1>Creating Teams<a class="headerlink" href="#creating-teams" title="Permalink to this headline">¶</a></h1>
@@ -202,9 +201,9 @@
 <h3>Team Name<a class="headerlink" href="#team-name" title="Permalink to this headline">¶</a></h3>
 <p>This is the display name of your team that appears in menus and headings.</p>
 <ul class="simple">
-<li>It can contain any letters, numbers or symbols.</li>
-<li>It is case sensitive.</li>
-<li>It must be 2–15 characters in length.</li>
+<li><p>It can contain any letters, numbers or symbols.</p></li>
+<li><p>It is case sensitive.</p></li>
+<li><p>It must be 2–15 characters in length.</p></li>
 </ul>
 </div>
 <div class="section" id="team-url">
@@ -212,10 +211,10 @@
 <p>The team URL is part of the web address that navigates to your team on
 the system domain, <code class="docutils literal notranslate"><span class="pre">https://domain.com/teamurl/</span></code>.</p>
 <ul class="simple">
-<li>Teams may contain only lowercase letters, numbers and dashes.</li>
-<li>Teams must start with a letter and cannot end in a dash.</li>
-<li>Teams must be 2–15 characters in length.</li>
-<li>Team names cannot start with the following restricted words: <code class="docutils literal notranslate"><span class="pre">admin</span></code>, <code class="docutils literal notranslate"><span class="pre">api</span></code>, <code class="docutils literal notranslate"><span class="pre">channel</span></code>, <code class="docutils literal notranslate"><span class="pre">claim</span></code>, <code class="docutils literal notranslate"><span class="pre">error</span></code>, <code class="docutils literal notranslate"><span class="pre">files</span></code>, <code class="docutils literal notranslate"><span class="pre">help</span></code>, <code class="docutils literal notranslate"><span class="pre">landing</span></code>, <code class="docutils literal notranslate"><span class="pre">login</span></code>, <code class="docutils literal notranslate"><span class="pre">mfa</span></code>, <code class="docutils literal notranslate"><span class="pre">oauth</span></code>, <code class="docutils literal notranslate"><span class="pre">plug</span></code>, <code class="docutils literal notranslate"><span class="pre">plugins</span></code>, <code class="docutils literal notranslate"><span class="pre">post</span></code>, or <code class="docutils literal notranslate"><span class="pre">signup</span></code>.</li>
+<li><p>Teams may contain only lowercase letters, numbers and dashes.</p></li>
+<li><p>Teams must start with a letter and cannot end in a dash.</p></li>
+<li><p>Teams must be 2–15 characters in length.</p></li>
+<li><p>Team names cannot start with the following restricted words: <code class="docutils literal notranslate"><span class="pre">admin</span></code>, <code class="docutils literal notranslate"><span class="pre">api</span></code>, <code class="docutils literal notranslate"><span class="pre">channel</span></code>, <code class="docutils literal notranslate"><span class="pre">claim</span></code>, <code class="docutils literal notranslate"><span class="pre">error</span></code>, <code class="docutils literal notranslate"><span class="pre">files</span></code>, <code class="docutils literal notranslate"><span class="pre">help</span></code>, <code class="docutils literal notranslate"><span class="pre">landing</span></code>, <code class="docutils literal notranslate"><span class="pre">login</span></code>, <code class="docutils literal notranslate"><span class="pre">mfa</span></code>, <code class="docutils literal notranslate"><span class="pre">oauth</span></code>, <code class="docutils literal notranslate"><span class="pre">plug</span></code>, <code class="docutils literal notranslate"><span class="pre">plugins</span></code>, <code class="docutils literal notranslate"><span class="pre">post</span></code>, or <code class="docutils literal notranslate"><span class="pre">signup</span></code>.</p></li>
 </ul>
 </div>
 </div>
@@ -224,15 +223,15 @@ the system domain, <code class="docutils literal notranslate"><span class="pre">
 <p>Mattermost can be deployed both to a single team and to multiple teams.</p>
 <p>Currently, we recommend deploying to a single team for the following reasons:</p>
 <ul class="simple">
-<li>Single team deployments promote communication across the organization. When you add multiple teams, groups can become isolated.</li>
-<li>We don’t yet support search or channels across teams, which can impact the cross-team user experience. This includes general searches, saved posts, and recent mentions.</li>
-<li>Integrations (e.g., webhooks and slash commands) are only persistent across single team deployments.</li>
+<li><p>Single team deployments promote communication across the organization. When you add multiple teams, groups can become isolated.</p></li>
+<li><p>We don’t yet support search or channels across teams, which can impact the cross-team user experience. This includes general searches, saved posts, and recent mentions.</p></li>
+<li><p>Integrations (e.g., webhooks and slash commands) are only persistent across single team deployments.</p></li>
 </ul>
 <p>However, some Mattermost customers prefer multiple team deployments for the following reasons:</p>
 <ul class="simple">
-<li>Teams are useful when there is a purpose for each of them. For example, one team is used for staff members and another team for external users.</li>
-<li>Performance is better when users are scattered across multiple teams instead of all in the same one. With multiple teams, there is less content to load per team or channel switch and database queries are faster.</li>
-<li>Creating a shared team for all users, and using <a class="reference external" href="https://docs.mattermost.com/deployment/advanced-permissions.html#recipes">advanced permissions</a> to control who can create channels and add members to the shared team, improves cross-team collaboration when using multiple teams. Additionally, an <a class="reference external" href="https://docs.mattermost.com/administration/announcement-banner.html">annoucement banner</a> can be used to provide system wide announcements.</li>
+<li><p>Teams are useful when there is a purpose for each of them. For example, one team is used for staff members and another team for external users.</p></li>
+<li><p>Performance is better when users are scattered across multiple teams instead of all in the same one. With multiple teams, there is less content to load per team or channel switch and database queries are faster.</p></li>
+<li><p>Creating a shared team for all users, and using <a class="reference external" href="https://docs.mattermost.com/deployment/advanced-permissions.html#recipes">advanced permissions</a> to control who can create channels and add members to the shared team, improves cross-team collaboration when using multiple teams. Additionally, an <a class="reference external" href="https://docs.mattermost.com/administration/announcement-banner.html">annoucement banner</a> can be used to provide system wide announcements.</p></li>
 </ul>
 </div>
 </div>
@@ -242,29 +241,29 @@ the system domain, <code class="docutils literal notranslate"><span class="pre">
            
           </article>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="managing-members.html" class="btn btn-neutral float-right" title="Managing Members" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="searching.html" class="btn btn-neutral" title="Searching" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="managing-members.html" class="btn btn-neutral float-right" title="Managing Members" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="searching.html" class="btn btn-neutral float-left" title="Searching" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015-2020 Mattermost
+        &#169; Copyright 2015-2021 Mattermost.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -305,11 +304,10 @@ the system domain, <code class="docutils literal notranslate"><span class="pre">
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="../../_static/myscript.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/myscript.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 

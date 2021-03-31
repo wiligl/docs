@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Mattermost Developer Toolkit &mdash; Mattermost 5.32 documentation</title>
+  <title>Mattermost Developer Toolkit &mdash; Mattermost 5.33 documentation</title>
   
 
   
@@ -39,9 +39,7 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-K874RWM');</script>
 	<!-- End Google Tag Manager -->
-
 	
-    <script src="../_static/js/modernizr.min.js"></script>
 </head>
 
 <body class="wy-body-for-nav">
@@ -70,7 +68,7 @@
             
             
               <div class="version">
-                5.32
+                5.33
               </div>
             
           
@@ -184,7 +182,7 @@
   <hr/>
 </div>
           <article class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
-           <div itemprop="articleBody">
+           <div itemprop="articleBody" role="main">
             
   <div class="section" id="mattermost-developer-toolkit">
 <h1>Mattermost Developer Toolkit<a class="headerlink" href="#mattermost-developer-toolkit" title="Permalink to this headline">¶</a></h1>
@@ -203,27 +201,27 @@
 <h2>Features of the Developer Toolkit<a class="headerlink" href="#features-of-the-developer-toolkit" title="Permalink to this headline">¶</a></h2>
 <p>Below is a list of planned features of the developer toolkit with estimated time of delivery.</p>
 <ol class="arabic simple">
-<li>Completed:</li>
+<li><p>Completed:</p></li>
 </ol>
 <blockquote>
 <div><ul class="simple">
-<li>Webhooks and slash commands to allow easy, low-effort extension and integration.</li>
-<li>Mattermost HTTP REST APIv4 allowing for much more powerful server interaction.</li>
-<li>Mattermost webapp moved over to Redux infrustructure.</li>
-<li>API developer token to provide a simple method to authenticate to the Mattermost REST API.</li>
-<li>The ability to build webapp client plugins to override existing UI components (replace posts with your custom components, use your own video services etc.), modify/extend client drivers to interact with custom server API endpoints, and add whole new UI views in predetermined places.</li>
-<li>The ability to build server plugins to hook directly into server events (e.g., new post events, user update events, etc.), have some form of database access (possibly access to certain tables, and the ability to create new tables) and to add custom endpoints to extend the Mattermost REST API.</li>
+<li><p>Webhooks and slash commands to allow easy, low-effort extension and integration.</p></li>
+<li><p>Mattermost HTTP REST APIv4 allowing for much more powerful server interaction.</p></li>
+<li><p>Mattermost webapp moved over to Redux infrustructure.</p></li>
+<li><p>API developer token to provide a simple method to authenticate to the Mattermost REST API.</p></li>
+<li><p>The ability to build webapp client plugins to override existing UI components (replace posts with your custom components, use your own video services etc.), modify/extend client drivers to interact with custom server API endpoints, and add whole new UI views in predetermined places.</p></li>
+<li><p>The ability to build server plugins to hook directly into server events (e.g., new post events, user update events, etc.), have some form of database access (possibly access to certain tables, and the ability to create new tables) and to add custom endpoints to extend the Mattermost REST API.</p></li>
 </ul>
 </div></blockquote>
 <ol class="arabic simple" start="2">
-<li>Upcoming:</li>
+<li><p>Upcoming:</p></li>
 </ol>
 <blockquote>
 <div><ul class="simple">
-<li>The ability to build plugins similar to the webapp but for React Native apps for iOS and Android.</li>
-<li>A system or architecture to combine the above plugins into one easy-to-share and easy-to-install package.</li>
-<li>A market or directory to find official and/or certified by Mattermost plugins and a process to get your plugin certified.</li>
-<li>A guide or system to enable the embedding of Mattermost into other apps as a chat service.</li>
+<li><p>The ability to build plugins similar to the webapp but for React Native apps for iOS and Android.</p></li>
+<li><p>A system or architecture to combine the above plugins into one easy-to-share and easy-to-install package.</p></li>
+<li><p>A market or directory to find official and/or certified by Mattermost plugins and a process to get your plugin certified.</p></li>
+<li><p>A guide or system to enable the embedding of Mattermost into other apps as a chat service.</p></li>
 </ul>
 </div></blockquote>
 <p>All of the documentation required to support the use and building of the toolkit will be done as we work through the above systems.</p>
@@ -232,19 +230,18 @@
 <h2>Example Uses<a class="headerlink" href="#example-uses" title="Permalink to this headline">¶</a></h2>
 <p>Examples of uses for the plugin architecture include:</p>
 <ol class="arabic">
-<li><p class="first">Building common integrations such as Jira and GitHub, and including them as default integrations for Mattermost.</p>
+<li><p>Building common integrations such as Jira and GitHub, and including them as default integrations for Mattermost.</p>
 <blockquote>
 <div><img alt="../_images/developer-toolkit-jira.png" src="../_images/developer-toolkit-jira.png" />
 </div></blockquote>
 </li>
-<li><p class="first">Providing tools to interact with user posts.</p>
+<li><p>Providing tools to interact with user posts.</p>
 <blockquote>
 <div><img alt="../_images/developer-toolkit-map.png" src="../_images/developer-toolkit-map.png" />
 </div></blockquote>
 </li>
-<li><p class="first">Redesigning the current video and audio calling to use the plugin architecture, and offering it as one of many video and audio calling solutions.</p>
-</li>
-<li><p class="first">Incorporating other third-party applications such as annual performance reviews right from the Mattermost interface.</p>
+<li><p>Redesigning the current video and audio calling to use the plugin architecture, and offering it as one of many video and audio calling solutions.</p></li>
+<li><p>Incorporating other third-party applications such as annual performance reviews right from the Mattermost interface.</p>
 <blockquote>
 <div><img alt="../_images/developer-toolkit-appcenter.png" src="../_images/developer-toolkit-appcenter.png" />
 </div></blockquote>
@@ -258,29 +255,29 @@
            
           </article>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../deployment/atlassian-integrations.html" class="btn btn-neutral float-right" title="Atlassian Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../administration/release-definitions.html" class="btn btn-neutral" title="Release Definitions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="../deployment/atlassian-integrations.html" class="btn btn-neutral float-right" title="Atlassian Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../administration/release-definitions.html" class="btn btn-neutral float-left" title="Release Definitions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015-2020 Mattermost
+        &#169; Copyright 2015-2021 Mattermost.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -321,11 +318,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/myscript.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/myscript.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 

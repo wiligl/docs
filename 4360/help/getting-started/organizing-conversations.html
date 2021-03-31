@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Managing Channels &mdash; Mattermost 5.32 documentation</title>
+  <title>Managing Channels &mdash; Mattermost 5.33 documentation</title>
   
 
   
@@ -39,9 +39,7 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-K874RWM');</script>
 	<!-- End Google Tag Manager -->
-
 	
-    <script src="../../_static/js/modernizr.min.js"></script>
 </head>
 
 <body class="wy-body-for-nav">
@@ -70,7 +68,7 @@
             
             
               <div class="version">
-                5.32
+                5.33
               </div>
             
           
@@ -103,6 +101,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../../guides/user.html#getting-started">Getting Started</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="welcome-to-mattermost.html">Welcome to Mattermost!</a></li>
 <li class="toctree-l3"><a class="reference internal" href="signing-in.html">Signing In</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setting-your-status-availability.html">Setting Your Status and Availability</a></li>
 <li class="toctree-l3"><a class="reference internal" href="messaging-basics.html">Messaging Basics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-notifications.html">Configuring Notifications</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Managing Channels</a><ul>
@@ -183,7 +182,7 @@
   <hr/>
 </div>
           <article class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
-           <div itemprop="articleBody">
+           <div itemprop="articleBody" role="main">
             
   <div class="section" id="managing-channels">
 <h1>Managing Channels<a class="headerlink" href="#managing-channels" title="Permalink to this headline">¶</a></h1>
@@ -195,10 +194,7 @@
 <div><img alt="../../_images/create-new-channel.png" src="../../_images/create-new-channel.png" />
 </div></blockquote>
 <p>Anyone can create Public channels or Private channels, unless the System Admin has <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-creation-for">restricted the permissions</a>.</p>
-<p>There are two ways to start a Direct or Group Message:</p>
-<p>Select the <strong>+</strong> symbol at the top of the sidebar, then select <strong>Open a Direct Message</strong>.</p>
-<p>or</p>
-<p>Select the <strong>+</strong> symbol next to the <strong>Direct Messages</strong> category in the sidebar.</p>
+<p>You can start a Direct or Group Message by selecting the <strong>+</strong> symbol at the top of the sidebar, then selecting <strong>Open a Direct Message</strong>. Or you can select the <strong>+</strong> symbol next to the <strong>Direct Messages</strong> category in the sidebar.</p>
 <blockquote>
 <div><img alt="../../_images/write-dm.png" src="../../_images/write-dm.png" />
 </div></blockquote>
@@ -230,13 +226,13 @@
 <h2>Naming a channel<a class="headerlink" href="#naming-a-channel" title="Permalink to this headline">¶</a></h2>
 <p>Channels can be identified in two ways:</p>
 <ol class="arabic simple">
-<li><strong>Channel display name:</strong> This appears in the Mattermost user interface. On Desktop, select the channel name at the top of the center pane to access the drop-down menu, then choose <strong>Rename Channel</strong>. Anyone can rename the channels they belong to, unless the System Admin has <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for">restricted the permissions</a>.</li>
-<li><strong>Channel handle:</strong> This is part of the channel URL. You can also change the channel handle when renaming a channel, but changing channel handles may break existing links.</li>
+<li><p><strong>Channel display name:</strong> This appears in the Mattermost user interface. On Desktop, select the channel name at the top of the center pane to access the drop-down menu, then choose <strong>Rename Channel</strong>. Anyone can rename the channels they belong to, unless the System Admin has <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for">restricted the permissions</a>.</p></li>
+<li><p><strong>Channel handle:</strong> This is part of the channel URL. You can also change the channel handle when renaming a channel, but changing channel handles may break existing links.</p></li>
 </ol>
 <p>For example, for the following channel, <a class="reference external" href="https://community.mattermost.com/core/channels/ux-design">https://community.mattermost.com/core/channels/ux-design</a>:</p>
 <ul class="simple">
-<li>Channel display name: <code class="docutils literal notranslate"><span class="pre">UX</span> <span class="pre">Design</span></code></li>
-<li>Channel handle: <code class="docutils literal notranslate"><span class="pre">ux-design</span></code></li>
+<li><p>Channel display name: <code class="docutils literal notranslate"><span class="pre">UX</span> <span class="pre">Design</span></code></p></li>
+<li><p>Channel handle: <code class="docutils literal notranslate"><span class="pre">ux-design</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="leaving-a-channel">
@@ -249,8 +245,8 @@
 <p>When a channel is archived, it is removed from the user interface, but a copy exists on the server in case it is needed for audit reasons at a later stage. Because of this, the URL of a newly created channel cannot be the same URL name as an archived channel.</p>
 <p>In addition to this, when a channel is archived, by default the contents cannot be viewed, shared, or searched. If you want to be able to view or search the channel later, either:</p>
 <ol class="arabic simple">
-<li>Ask your System Admin to set <code class="docutils literal notranslate"><span class="pre">ExperimentalViewArchivedChannels</span></code> to <code class="docutils literal notranslate"><span class="pre">true</span></code> in <code class="docutils literal notranslate"><span class="pre">config.json</span></code> to allow users to view, share, and search for content of channels that have been archived; or</li>
-<li>Leave the channel open, but post a message in the channel saying it’s considered archived: such as <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">This</span> <span class="pre">channel</span> <span class="pre">is</span> <span class="pre">archived.</span></code></li>
+<li><p>Ask your System Admin to set <code class="docutils literal notranslate"><span class="pre">ExperimentalViewArchivedChannels</span></code> to <code class="docutils literal notranslate"><span class="pre">true</span></code> in <code class="docutils literal notranslate"><span class="pre">config.json</span></code> to allow users to view, share, and search for content of channels that have been archived; or</p></li>
+<li><p>Leave the channel open, but post a message in the channel saying it’s considered archived: such as <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">This</span> <span class="pre">channel</span> <span class="pre">is</span> <span class="pre">archived.</span></code></p></li>
 </ol>
 <p>System Admins <a class="reference external" href="https://docs.mattermost.com/deployment/team-channel-management.html#profile">can archive channels in the System Console</a> without needing to be a channel member.</p>
 </div>
@@ -268,8 +264,8 @@
 <p>Select the Public channel name at the top of the center pane to access the drop-down menu, then select <strong>Convert to Private Channel</strong>. Team and System Admins can convert Public channels to Private channels. Please note that default channels such as <code class="docutils literal notranslate"><span class="pre">Town</span> <span class="pre">Square</span></code> and <code class="docutils literal notranslate"><span class="pre">Off-Topic</span></code> cannot be converted to Private channels.</p>
 <p>When a channel is converted, its history and membership are preserved. Membership in a Private channel is by invitation only. Publicly-shared files remain accessible to anyone with the link.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Due to security concerns with sharing Private channel history, only System Admins can convert Private channels to Public channels via <strong>System Console &gt; Channels &gt; Edit (Channel Configuration)</strong>. Alternatively, perform this action using the <a class="reference external" href="https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-channel-modify">mmctl channel modify command</a>.</p>
+<p class="admonition-title">Note</p>
+<p>Due to security concerns with sharing Private channel history, only System Admins can convert Private channels to Public channels via <strong>System Console &gt; Channels &gt; Edit (Channel Configuration)</strong>. Alternatively, perform this action using the <a class="reference external" href="https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-channel-modify">mmctl channel modify command</a>.</p>
 </div>
 </div>
 <div class="section" id="favoriting-a-channel">
@@ -288,12 +284,12 @@
 </div>
 <div class="section" id="muting-and-unmuting-a-channel">
 <h2>Muting and unmuting a channel<a class="headerlink" href="#muting-and-unmuting-a-channel" title="Permalink to this headline">¶</a></h2>
-<p>Select the channel name at the top of the center pane to access the drop-down menu, then select&nbsp;<strong>Mute Channel</strong>.</p>
+<p>Select the channel name at the top of the center pane to access the drop-down menu, then select <strong>Mute Channel</strong>.</p>
 <p>Once a channel is muted:</p>
 <ul class="simple">
-<li>Email, desktop, and push notifications are disabled.</li>
-<li>A mute icon displays next to the channel name.</li>
-<li>The channel appears at reduced opacity in the left-hand sidebar, and the channel isn’t marked as unread unless you’re mentioned directly.</li>
+<li><p>Email, desktop, and push notifications are disabled.</p></li>
+<li><p>A mute icon displays next to the channel name.</p></li>
+<li><p>The channel appears at reduced opacity in the left-hand sidebar, and the channel isn’t marked as unread unless you’re mentioned directly.</p></li>
 </ul>
 <p>To unmute the channel, select the channel name again to access the drop-down menu, then select <strong>Unmute Channel</strong>.</p>
 </div>
@@ -301,8 +297,8 @@
 <h2>Navigating recently viewed channels<a class="headerlink" href="#navigating-recently-viewed-channels" title="Permalink to this headline">¶</a></h2>
 <p>Use the <strong>History</strong> arrows at the top of the sidebar to move back and forth through your channel history.</p>
 <ul class="simple">
-<li>Select the left arrow to go back one page.</li>
-<li>Select the right arrow to go forward one page.</li>
+<li><p>Select the left arrow to go back one page.</p></li>
+<li><p>Select the right arrow to go forward one page.</p></li>
 </ul>
 </div>
 </div>
@@ -312,29 +308,29 @@
            
           </article>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="organizing-your-sidebar.html" class="btn btn-neutral float-right" title="Organizing Your Sidebar" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="configuring-notifications.html" class="btn btn-neutral" title="Configuring Notifications" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="organizing-your-sidebar.html" class="btn btn-neutral float-right" title="Organizing Your Sidebar" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="configuring-notifications.html" class="btn btn-neutral float-left" title="Configuring Notifications" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015-2020 Mattermost
+        &#169; Copyright 2015-2021 Mattermost.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -375,11 +371,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="../../_static/myscript.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/myscript.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 

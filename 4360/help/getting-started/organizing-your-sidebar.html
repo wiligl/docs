@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Organizing Your Sidebar &mdash; Mattermost 5.32 documentation</title>
+  <title>Organizing Your Sidebar &mdash; Mattermost 5.33 documentation</title>
   
 
   
@@ -39,9 +39,7 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-K874RWM');</script>
 	<!-- End Google Tag Manager -->
-
 	
-    <script src="../../_static/js/modernizr.min.js"></script>
 </head>
 
 <body class="wy-body-for-nav">
@@ -70,7 +68,7 @@
             
             
               <div class="version">
-                5.32
+                5.33
               </div>
             
           
@@ -103,6 +101,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../../guides/user.html#getting-started">Getting Started</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="welcome-to-mattermost.html">Welcome to Mattermost!</a></li>
 <li class="toctree-l3"><a class="reference internal" href="signing-in.html">Signing In</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setting-your-status-availability.html">Setting Your Status and Availability</a></li>
 <li class="toctree-l3"><a class="reference internal" href="messaging-basics.html">Messaging Basics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-notifications.html">Configuring Notifications</a></li>
 <li class="toctree-l3"><a class="reference internal" href="organizing-conversations.html">Managing Channels</a></li>
@@ -179,7 +178,7 @@
   <hr/>
 </div>
           <article class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
-           <div itemprop="articleBody">
+           <div itemprop="articleBody" role="main">
             
   <div class="section" id="organizing-your-sidebar">
 <h1>Organizing Your Sidebar<a class="headerlink" href="#organizing-your-sidebar" title="Permalink to this headline">¶</a></h1>
@@ -205,22 +204,18 @@
 <p>You can organize the sidebar based on how you use Mattermost. Customizations you make are only visible to you and won’t affect what your teammates see in their sidebars.</p>
 <p>Here’s how your sidebar is set up by default:</p>
 <ul class="simple">
-<li>All Public and Private Channels you’ve joined are listed in the <strong>Channels</strong> category, sorted alphabetically.</li>
-<li>All your Direct Messages and Group Messages are listed in the <strong>Direct Messages</strong> category, sorted by recent activity.</li>
+<li><p>All Public and Private Channels you’ve joined are listed in the <strong>Channels</strong> category, sorted alphabetically.</p></li>
+<li><p>All your Direct Messages and Group Messages are listed in the <strong>Direct Messages</strong> category, sorted by recent activity.</p></li>
 </ul>
 <div class="section" id="what-can-you-customize">
 <h3>What can you customize?<a class="headerlink" href="#what-can-you-customize" title="Permalink to this headline">¶</a></h3>
 <p>You can customize your sidebar in the following ways:</p>
 <ul>
-<li><p class="first">Group and order channels into collapsible categories you create.</p>
-</li>
-<li><p class="first">Sort channels in each category manually, alphabetically, or by recent activity.</p>
-</li>
-<li><p class="first">Mute and unmute entire categories.</p>
-</li>
-<li><p class="first">Filter your sidebar to view unread channels only, or choose to group unread messages into an <strong>Unreads</strong> category.</p>
-</li>
-<li><p class="first">Sort Direct Messages alphabetically or by recent activity, and choose how many are displayed in your sidebar.</p>
+<li><p>Group and order channels into collapsible categories you create.</p></li>
+<li><p>Sort channels in each category manually, alphabetically, or by recent activity.</p></li>
+<li><p>Mute and unmute entire categories.</p></li>
+<li><p>Filter your sidebar to view unread channels only, or choose to group unread messages into an <strong>Unreads</strong> category.</p></li>
+<li><p>Sort Direct Messages alphabetically or by recent activity, and choose how many are displayed in your sidebar.</p>
 <img alt="../../_images/channel_sidebar_updates.gif" src="../../_images/channel_sidebar_updates.gif" />
 </li>
 </ul>
@@ -235,29 +230,29 @@
 <h3>Making categories work for you<a class="headerlink" href="#making-categories-work-for-you" title="Permalink to this headline">¶</a></h3>
 <p><strong>Categories are collapsible</strong></p>
 <ul class="simple">
-<li>When collapsed, only unread channels display to reduce unnecessary scrolling.</li>
-<li>When expanded, all channels in the category display, including channels with unread messages.</li>
+<li><p>When collapsed, only unread channels display to reduce unnecessary scrolling.</p></li>
+<li><p>When expanded, all channels in the category display, including channels with unread messages.</p></li>
 </ul>
 <p><strong>You can reorder categories</strong></p>
 <ul class="simple">
-<li>Drag to reorder entire categories to prioritize important conversations.</li>
+<li><p>Drag to reorder entire categories to prioritize important conversations.</p></li>
 </ul>
 <p><strong>Categories can contain Direct Message conversations</strong></p>
 <ul class="simple">
-<li>Select and drag Direct Messages into any category. You can also multi-select Direct Messages to drag them together as a group.</li>
+<li><p>Select and drag Direct Messages into any category. You can also multi-select Direct Messages to drag them together as a group.</p></li>
 </ul>
 <div class="section" id="renaming-categories">
 <h4>Renaming categories<a class="headerlink" href="#renaming-categories" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic simple">
-<li>Select the <strong>Category options</strong> icon in the sidebar, then select <strong>Rename Category</strong>.</li>
-<li>Type a new category name, then select <strong>Rename</strong>.</li>
+<li><p>Select the <strong>Category options</strong> icon in the sidebar, then select <strong>Rename Category</strong>.</p></li>
+<li><p>Type a new category name, then select <strong>Rename</strong>.</p></li>
 </ol>
 </div>
 <div class="section" id="deleting-categories">
 <h4>Deleting categories<a class="headerlink" href="#deleting-categories" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic simple">
-<li>Select the <strong>Category options</strong> icon in the sidebar, then select <strong>Delete Category</strong>.</li>
-<li>Select <strong>Delete</strong> to confirm or select <strong>X</strong> to cancel.</li>
+<li><p>Select the <strong>Category options</strong> icon in the sidebar, then select <strong>Delete Category</strong>.</p></li>
+<li><p>Select <strong>Delete</strong> to confirm or select <strong>X</strong> to cancel.</p></li>
 </ol>
 <p>All channels and Direct Message conversations in the deleted category move back to their default <strong>Channels</strong> and <strong>Direct Messages</strong> categories. Deleting a category never removes you from channels you have joined.</p>
 </div>
@@ -270,14 +265,14 @@
 <h3>Dragging and dropping selections<a class="headerlink" href="#dragging-and-dropping-selections" title="Permalink to this headline">¶</a></h3>
 <p>To select multiple channels:</p>
 <ul class="simple">
-<li>Select sequential channels and/or Direct Messages by pressing and holding SHIFT+Select.</li>
-<li>Select non-sequential channels and/or Direct Messages by pressing and holding CMD+Select (for Mac) or CTRL+Select (for Windows/Linux).</li>
-<li>Press ESC to clear channel or Direct Message selections.</li>
+<li><p>Select sequential channels and/or Direct Messages by pressing and holding SHIFT+Select.</p></li>
+<li><p>Select non-sequential channels and/or Direct Messages by pressing and holding CMD+Select (for Mac) or CTRL+Select (for Windows/Linux).</p></li>
+<li><p>Press ESC to clear channel or Direct Message selections.</p></li>
 </ul>
 <p>Using the Mattermost Web or Desktop App, drag selected channels and/or Direct Messages between or within categories.</p>
 <div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<p class="last">Multi-selected channels and Direct Messages move together as a group in the order they originally appeared.</p>
+<p class="admonition-title">Tip</p>
+<p>Multi-selected channels and Direct Messages move together as a group in the order they originally appeared.</p>
 </div>
 <img alt="../../_images/multi-select-drag.gif" src="../../_images/multi-select-drag.gif" />
 </div>
@@ -295,9 +290,9 @@
 <p>Select the <strong>Category options</strong> icon in the sidebar, then select <strong>Mute Category</strong>.</p>
 <p>Once a category is muted:</p>
 <ul class="simple">
-<li>Email, desktop, and push notifications are disabled for all channels in the category.</li>
-<li>A mute icon displays next to each channel name in the category.</li>
-<li>The category and all of its channels appear at reduced opacity in the left-hand sidebar. Channels in the category aren’t marked as unread unless you’re mentioned directly.</li>
+<li><p>Email, desktop, and push notifications are disabled for all channels in the category.</p></li>
+<li><p>A mute icon displays next to each channel name in the category.</p></li>
+<li><p>The category and all of its channels appear at reduced opacity in the left-hand sidebar. Channels in the category aren’t marked as unread unless you’re mentioned directly.</p></li>
 </ul>
 <p>To unmute the category, select the <strong>Category options</strong> icon in the sidebar, then select <strong>Unmute Category</strong>.</p>
 <blockquote>
@@ -316,16 +311,16 @@
 <p>By default, Mattermost provides a one-click <strong>Unreads</strong> filter to only show channels with unread activity. Alternatively, you may choose to automatically group unread channels in their own category at the top of your sidebar.</p>
 <p>Go to <strong>Main Menu &gt; Account Settings &gt; Sidebar</strong>, set <strong>Group unread channels separately</strong> to <strong>On</strong>, then select <strong>Save</strong>.</p>
 <ul class="simple">
-<li>When this setting is enabled, all unread messages appear only in the <strong>Unreads</strong> category, sorted with mentions first.</li>
-<li>When this setting is disabled, all unread messages appear within their respective categories and channels. You can use the <strong>Unread filter</strong> to focus on only unread channels in the sidebar.</li>
+<li><p>When this setting is enabled, all unread messages appear only in the <strong>Unreads</strong> category, sorted with mentions first.</p></li>
+<li><p>When this setting is disabled, all unread messages appear within their respective categories and channels. You can use the <strong>Unread filter</strong> to focus on only unread channels in the sidebar.</p></li>
 </ul>
 <p>When enabled, unread channels with mentions will sort to the top of the category.</p>
 <blockquote>
 <div><img alt="../../_images/unreads.gif" src="../../_images/unreads.gif" />
 </div></blockquote>
 <div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<p class="last">If you prefer to see only unread channels in their respective categories, we recommend collapsing your custom categories and disabling <strong>Group unread channels separately</strong> under <strong>Account Settings &gt; Sidebar</strong>.</p>
+<p class="admonition-title">Tip</p>
+<p>If you prefer to see only unread channels in their respective categories, we recommend collapsing your custom categories and disabling <strong>Group unread channels separately</strong> under <strong>Account Settings &gt; Sidebar</strong>.</p>
 </div>
 </div>
 <div class="section" id="managing-direct-messages">
@@ -340,8 +335,8 @@
 <div><img alt="../../_images/dm-display.gif" src="../../_images/dm-display.gif" />
 </div></blockquote>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Direct Message conversations that you add to custom categories don’t count against the maximum number of conversations shown in the <strong>Direct Messages</strong> category.</p>
+<p class="admonition-title">Note</p>
+<p>Direct Message conversations that you add to custom categories don’t count against the maximum number of conversations shown in the <strong>Direct Messages</strong> category.</p>
 </div>
 <p>Mobile support for this feature will be available in a future release.</p>
 </div>
@@ -353,29 +348,29 @@
            
           </article>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="searching.html" class="btn btn-neutral float-right" title="Searching" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="organizing-conversations.html" class="btn btn-neutral" title="Managing Channels" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="searching.html" class="btn btn-neutral float-right" title="Searching" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="organizing-conversations.html" class="btn btn-neutral float-left" title="Managing Channels" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015-2020 Mattermost
+        &#169; Copyright 2015-2021 Mattermost.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -416,11 +411,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="../../_static/myscript.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/myscript.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
