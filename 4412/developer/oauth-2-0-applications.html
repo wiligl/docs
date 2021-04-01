@@ -39,9 +39,7 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-K874RWM');</script>
 	<!-- End Google Tag Manager -->
-
 	
-    <script src="../_static/js/modernizr.min.js"></script>
 </head>
 
 <body class="wy-body-for-nav">
@@ -179,20 +177,20 @@
   <hr/>
 </div>
           <article class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
-           <div itemprop="articleBody">
+           <div itemprop="articleBody" role="main">
             
   <div class="section" id="oauth-2-0-applications">
 <h1>OAuth 2.0 Applications<a class="headerlink" href="#oauth-2-0-applications" title="Permalink to this headline">¶</a></h1>
 <p>OAuth 2.0 is a protocol that allows Mattermost to authorize API requests from external applications. The authorization allows:</p>
 <ul class="simple">
-<li>Users with an account on a Mattermost server to sign in to third-party applications. You can find a <a class="reference external" href="https://github.com/enahum/mattermost-oauth2-client-sample">sample OAuth2 Client Application for Mattermost here</a> to test the functionality.</li>
-<li>A Mattermost server to authenticate requests to a third-party API. One popular application is Zapier integration which allows you to integrate more than 700 applications with Mattermost through OAuth 2.0. See our <a class="reference external" href="https://docs.mattermost.com/integrations/zapier.html">Zapier documentation</a> to learn more.</li>
+<li><p>Users with an account on a Mattermost server to sign in to third-party applications. You can find a <a class="reference external" href="https://github.com/enahum/mattermost-oauth2-client-sample">sample OAuth2 Client Application for Mattermost here</a> to test the functionality.</p></li>
+<li><p>A Mattermost server to authenticate requests to a third-party API. One popular application is Zapier integration which allows you to integrate more than 700 applications with Mattermost through OAuth 2.0. See our <a class="reference external" href="https://docs.mattermost.com/integrations/zapier.html">Zapier documentation</a> to learn more.</p></li>
 </ul>
 <p>This documentation includes the following details:</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference external" href="https://docs.mattermost.com/developer/oauth-2-0-applications.html#id1">Register your application in Mattermost</a></li>
-<li><a class="reference external" href="https://docs.mattermost.com/developer/oauth-2-0-applications.html#id3">Granting permissions to your application</a></li>
+<li><p><a class="reference external" href="https://docs.mattermost.com/developer/oauth-2-0-applications.html#id1">Register your application in Mattermost</a></p></li>
+<li><p><a class="reference external" href="https://docs.mattermost.com/developer/oauth-2-0-applications.html#id3">Granting permissions to your application</a></p></li>
 </ul>
 </div></blockquote>
 <div class="section" id="register-your-application-in-mattermost">
@@ -203,38 +201,38 @@
 <h3>Enable OAuth 2.0 Applications<a class="headerlink" href="#enable-oauth-2-0-applications" title="Permalink to this headline">¶</a></h3>
 <p>OAuth 2.0 applications are off by default and can be enabled by the System Admin as follows:</p>
 <ol class="arabic simple">
-<li>Log in to your Mattermost server as the System Administrator.</li>
-<li>Go to <strong>System Console &gt; Integrations &gt; Integration Management</strong>.</li>
-<li>Set <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#enable-oauth-2-0-service-provider">Enable OAuth 2.0 Service Provider</a> to <strong>True</strong>.</li>
-<li>(Optional) If you’d like to allow external applications to post with customizable usernames and profile pictures, then set <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#enable-webhooks-and-slash-commands-to-override-usernames">Enable integrations to override usernames</a> and <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#enable-webhooks-and-slash-commands-to-override-profile-picture-iconss">Enable integrations to override profile picture icons</a> to <strong>True</strong>.</li>
-<li>(Optional) If you’d like to allow users on your system who are not System Admins to create OAuth 2.0 applications, then set <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins">Restrict managing integrations to Admins</a> to <strong>False</strong>.</li>
+<li><p>Log in to your Mattermost server as the System Administrator.</p></li>
+<li><p>Go to <strong>System Console &gt; Integrations &gt; Integration Management</strong>.</p></li>
+<li><p>Set <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#enable-oauth-2-0-service-provider">Enable OAuth 2.0 Service Provider</a> to <strong>True</strong>.</p></li>
+<li><p>(Optional) If you’d like to allow external applications to post with customizable usernames and profile pictures, then set <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#enable-webhooks-and-slash-commands-to-override-usernames">Enable integrations to override usernames</a> and <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#enable-webhooks-and-slash-commands-to-override-profile-picture-iconss">Enable integrations to override profile picture icons</a> to <strong>True</strong>.</p></li>
+<li><p>(Optional) If you’d like to allow users on your system who are not System Admins to create OAuth 2.0 applications, then set <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins">Restrict managing integrations to Admins</a> to <strong>False</strong>.</p></li>
 </ol>
 </div>
 <div class="section" id="register-an-oauth-2-0-application">
 <h3>Register an OAuth 2.0 Application<a class="headerlink" href="#register-an-oauth-2-0-application" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>Go to <strong>Main Menu</strong> &gt; <strong>Integrations</strong></li>
-<li>Select <strong>OAuth 2.0 Applications</strong>, then choose <strong>Add OAuth 2.0 Application</strong></li>
-<li>Set <strong>Is Trusted</strong>: When set to <strong>Yes</strong>, your application is considered trusted by Mattermost. This means Mattermost doesn’t require users to accept authorization when signing to third-party applications. When set to <strong>No</strong>, users will be provided with the following page to accept or deny authorization when authenticating for the first time.</li>
+<li><p>Go to <strong>Main Menu</strong> &gt; <strong>Integrations</strong></p></li>
+<li><p>Select <strong>OAuth 2.0 Applications</strong>, then choose <strong>Add OAuth 2.0 Application</strong></p></li>
+<li><p>Set <strong>Is Trusted</strong>: When set to <strong>Yes</strong>, your application is considered trusted by Mattermost. This means Mattermost doesn’t require users to accept authorization when signing to third-party applications. When set to <strong>No</strong>, users will be provided with the following page to accept or deny authorization when authenticating for the first time.</p></li>
 </ol>
 <img alt="../_images/oauth2_authorization_screen.PNG" src="../_images/oauth2_authorization_screen.PNG" />
 <p>Only System Admins can set OAuth 2.0 applications as trusted.</p>
 <ol class="arabic simple" start="4">
-<li>Specify the <strong>Display Name</strong>: Enter a name for your application made of up to 64 characters. This is the name users will see when granting access to the application, when viewing a list of authorized applications in <strong>Account Settings &gt; Security &gt; OAuth 2.0 Applications</strong> and when viewing a list of OAuth 2.0 applications in <strong>Main Menu</strong> &gt; <strong>Integrations</strong>.</li>
-<li>Add <strong>Description</strong>: This is a short description of your application that users will see when viewing a list of authorized applications in <strong>Account Settings &gt; Security &gt; OAuth 2.0 Applications</strong>.</li>
-<li>Specify the <strong>Homepage</strong>: This is the homepage of the OAuth 2.0 application and lets users visit the app page to learn more what it does. The URL must be a valid URL and start with <code class="docutils literal notranslate"><span class="pre">http://</span></code> or <code class="docutils literal notranslate"><span class="pre">https://</span></code> depending on your server configuration.</li>
-<li>(Optional) Add <strong>Icon URL</strong>: The image users will see when viewing a list of authorized applications in <strong>Account Settings &gt; Security &gt; OAuth 2.0 Applications</strong> and when viewing a list of OAuth 2.0 applications in <strong>Main Menu</strong> &gt; <strong>Integrations</strong>. Must be a valid URL and start with <code class="docutils literal notranslate"><span class="pre">http://</span></code> or <code class="docutils literal notranslate"><span class="pre">https://</span></code>.</li>
-<li>Add <strong>Callback URLs</strong>: These are the URL(s) to which Mattermost will redirect users after accepting or denying authorization of your application, and which will be the only URL(s) that handle authorization codes or access tokens. If more than one URL is specified, users will be redirected to the URL used for the initial authorization of the app. Each URL must be on a separate line and start with <code class="docutils literal notranslate"><span class="pre">http://</span></code> or <code class="docutils literal notranslate"><span class="pre">https://</span></code>.</li>
-<li>Select <strong>Save</strong> to create the application.</li>
+<li><p>Specify the <strong>Display Name</strong>: Enter a name for your application made of up to 64 characters. This is the name users will see when granting access to the application, when viewing a list of authorized applications in <strong>Account Settings &gt; Security &gt; OAuth 2.0 Applications</strong> and when viewing a list of OAuth 2.0 applications in <strong>Main Menu</strong> &gt; <strong>Integrations</strong>.</p></li>
+<li><p>Add <strong>Description</strong>: This is a short description of your application that users will see when viewing a list of authorized applications in <strong>Account Settings &gt; Security &gt; OAuth 2.0 Applications</strong>.</p></li>
+<li><p>Specify the <strong>Homepage</strong>: This is the homepage of the OAuth 2.0 application and lets users visit the app page to learn more what it does. The URL must be a valid URL and start with <code class="docutils literal notranslate"><span class="pre">http://</span></code> or <code class="docutils literal notranslate"><span class="pre">https://</span></code> depending on your server configuration.</p></li>
+<li><p>(Optional) Add <strong>Icon URL</strong>: The image users will see when viewing a list of authorized applications in <strong>Account Settings &gt; Security &gt; OAuth 2.0 Applications</strong> and when viewing a list of OAuth 2.0 applications in <strong>Main Menu</strong> &gt; <strong>Integrations</strong>. Must be a valid URL and start with <code class="docutils literal notranslate"><span class="pre">http://</span></code> or <code class="docutils literal notranslate"><span class="pre">https://</span></code>.</p></li>
+<li><p>Add <strong>Callback URLs</strong>: These are the URL(s) to which Mattermost will redirect users after accepting or denying authorization of your application, and which will be the only URL(s) that handle authorization codes or access tokens. If more than one URL is specified, users will be redirected to the URL used for the initial authorization of the app. Each URL must be on a separate line and start with <code class="docutils literal notranslate"><span class="pre">http://</span></code> or <code class="docutils literal notranslate"><span class="pre">https://</span></code>.</p></li>
+<li><p>Select <strong>Save</strong> to create the application.</p></li>
 </ol>
 <img alt="../_images/oauth2_app_screen.png" src="../_images/oauth2_app_screen.png" />
 <ol class="arabic simple" start="10">
-<li>You’ll be provided with a <strong>Client ID</strong>, <strong>Client Secret</strong>, and the authorized redirect URLs. Save these values and use them in your application to connect it to Mattermost.</li>
+<li><p>You’ll be provided with a <strong>Client ID</strong>, <strong>Client Secret</strong>, and the authorized redirect URLs. Save these values and use them in your application to connect it to Mattermost.</p></li>
 </ol>
 <img alt="../_images/oauth2_confirmation_screen.PNG" src="../_images/oauth2_confirmation_screen.PNG" />
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><strong>Client Secret</strong> can be regenerated by the application creator or System Admin. Tokens created with the old secret will remain valid and authorization of existing users will continue to work; however, new authorizations and requests for new tokens will fail until the client secret has been updated in your app configuration.</p>
+<p class="admonition-title">Note</p>
+<p><strong>Client Secret</strong> can be regenerated by the application creator or System Admin. Tokens created with the old secret will remain valid and authorization of existing users will continue to work; however, new authorizations and requests for new tokens will fail until the client secret has been updated in your app configuration.</p>
 </div>
 <img alt="../_images/oauth2_regenerate_secret.PNG" src="../_images/oauth2_regenerate_secret.PNG" />
 </div>
@@ -252,9 +250,9 @@
 <div class="section" id="oauth-login-endpoints">
 <h2>OAuth login endpoints<a class="headerlink" href="#oauth-login-endpoints" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Authorize URI <code class="docutils literal notranslate"><span class="pre">/oauth/authorize</span></code></li>
-<li>Token URI <code class="docutils literal notranslate"><span class="pre">/oauth/access_token</span></code></li>
-<li>User info URI <code class="docutils literal notranslate"><span class="pre">/api/v4/users/me</span></code></li>
+<li><p>Authorize URI <code class="docutils literal notranslate"><span class="pre">/oauth/authorize</span></code></p></li>
+<li><p>Token URI <code class="docutils literal notranslate"><span class="pre">/oauth/access_token</span></code></p></li>
+<li><p>User info URI <code class="docutils literal notranslate"><span class="pre">/api/v4/users/me</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="deleting-your-application">
@@ -268,29 +266,29 @@
            
           </article>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="integration-faq.html" class="btn btn-neutral float-right" title="Integrations FAQ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="personal-access-tokens.html" class="btn btn-neutral" title="Personal Access Tokens" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="integration-faq.html" class="btn btn-neutral float-right" title="Integrations FAQ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="personal-access-tokens.html" class="btn btn-neutral float-left" title="Personal Access Tokens" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015-2021 Mattermost
+        &#169; Copyright 2015-2021 Mattermost.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -331,11 +329,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/myscript.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/myscript.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
