@@ -37,9 +37,7 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-K874RWM');</script>
 	<!-- End Google Tag Manager -->
-
 	
-    <script src="../_static/js/modernizr.min.js"></script>
 </head>
 
 <body class="wy-body-for-nav">
@@ -146,7 +144,7 @@
   <hr/>
 </div>
           <article class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
-           <div itemprop="articleBody">
+           <div itemprop="articleBody" role="main">
             
   <div class="section" id="using-mattermost-operator-functionality">
 <span id="use-kubernetes-mattermost"></span><h1>Using Mattermost Operator Functionality<a class="headerlink" href="#using-mattermost-operator-functionality" title="Permalink to this headline">¶</a></h1>
@@ -159,10 +157,10 @@ Replicas are created when a user count is selected and exceeds 100.</p>
 <p>New Mattermost releases are announced via our community server, as well as social media and email.</p>
 <p><strong>Performing rolling upgrades</strong></p>
 <ol class="arabic simple">
-<li>Log in to your Kubernetes instance.</li>
-<li>Open the <code class="docutils literal notranslate"><span class="pre">mattermost-installation.yaml</span></code> manifest (the one created during installation).</li>
-<li>Update the <code class="docutils literal notranslate"><span class="pre">spec.version</span></code> value to the new version.</li>
-<li>Save the changes.</li>
+<li><p>Log in to your Kubernetes instance.</p></li>
+<li><p>Open the <code class="docutils literal notranslate"><span class="pre">mattermost-installation.yaml</span></code> manifest (the one created during installation).</p></li>
+<li><p>Update the <code class="docutils literal notranslate"><span class="pre">spec.version</span></code> value to the new version.</p></li>
+<li><p>Save the changes.</p></li>
 </ol>
 <p>Apply the changes with <code class="docutils literal notranslate"><span class="pre">kubectl</span></code>:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ kubectl apply -n mattermost -f <span class="o">[</span>PATH_TO_MATTERMOST_MANIFEST<span class="o">]</span>
@@ -188,20 +186,25 @@ a database migration is also performed.</p>
            
           </article>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015-2021 Mattermost
+        &#169; Copyright 2015-2021 Mattermost.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -242,11 +245,10 @@ a database migration is also performed.</p>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/myscript.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/myscript.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 

@@ -37,9 +37,7 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-K874RWM');</script>
 	<!-- End Google Tag Manager -->
-
 	
-    <script src="../_static/js/modernizr.min.js"></script>
 </head>
 
 <body class="wy-body-for-nav">
@@ -146,7 +144,7 @@
   <hr/>
 </div>
           <article class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
-           <div itemprop="articleBody">
+           <div itemprop="articleBody" role="main">
             
   <div class="section" id="support-handbook">
 <h1>Support Handbook<a class="headerlink" href="#support-handbook" title="Permalink to this headline">¶</a></h1>
@@ -332,18 +330,19 @@ plenty of RAM for the load they are experiencing, this may indicate a bug in the
 <div class="section" id="general-questions">
 <h3>General Questions<a class="headerlink" href="#general-questions" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
-<li>Have they set up Mattermost on its own, or are they using GitLab Omnibus?</li>
-<li>If using GitLab Omnibus, what version of it do they have?</li>
-<li>If using GitLab Omnibus, Can they send us the Mattermost section of their gitlab.rb (found in <code class="docutils literal notranslate"><span class="pre">/etc/gitlab/gitlab.rb</span></code>) and their config.json (found in <code class="docutils literal notranslate"><span class="pre">/var/opt/gitlab/mattermost/config.json</span></code>)?</li>
+<li><p>Have they set up Mattermost on its own, or are they using GitLab Omnibus?</p></li>
+<li><p>If using GitLab Omnibus, what version of it do they have?</p></li>
+<li><p>If using GitLab Omnibus, Can they send us the Mattermost section of their gitlab.rb (found in <code class="docutils literal notranslate"><span class="pre">/etc/gitlab/gitlab.rb</span></code>) and their config.json (found in <code class="docutils literal notranslate"><span class="pre">/var/opt/gitlab/mattermost/config.json</span></code>)?</p></li>
 </ol>
 </div>
 <div class="section" id="connection-issues">
 <h3>Connection issues<a class="headerlink" href="#connection-issues" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
-<li>If they try to access Mattermost and receive a “took too long to respond” error page, they should check to confirm that their <code class="docutils literal notranslate"><span class="pre">mattermost_external_url</span></code> is set correctly in their gitlab.rb. Then, they should run <code class="docutils literal notranslate"><span class="pre">gitlab-ctl</span> <span class="pre">reconfigure</span></code>.</li>
-<li>If they try to access Mattermost and receive a 502 error, their <code class="docutils literal notranslate"><span class="pre">mattermost_external_url</span></code> is set correctly, but their Mattermost instance does not appear to be running. They should then:<ol>
-<li>Run <code class="docutils literal notranslate"><span class="pre">gitlab-ctl</span> <span class="pre">status</span> <span class="pre">mattermost</span></code> to see if Mattermost is running.</li>
-<li>Check the logs to see if something is preventing Mattermost from starting. They can do this by running <code class="docutils literal notranslate"><span class="pre">gitlab-ctl</span> <span class="pre">tail</span> <span class="pre">mattermost</span></code> and using <code class="docutils literal notranslate"><span class="pre">gitlab-ctl</span> <span class="pre">restart</span> <span class="pre">mattermost</span></code> to attempt to start Mattermost.</li>
+<li><p>If they try to access Mattermost and receive a “took too long to respond” error page, they should check to confirm that their <code class="docutils literal notranslate"><span class="pre">mattermost_external_url</span></code> is set correctly in their gitlab.rb. Then, they should run <code class="docutils literal notranslate"><span class="pre">gitlab-ctl</span> <span class="pre">reconfigure</span></code>.</p></li>
+<li><p>If they try to access Mattermost and receive a 502 error, their <code class="docutils literal notranslate"><span class="pre">mattermost_external_url</span></code> is set correctly, but their Mattermost instance does not appear to be running. They should then:</p>
+<ol class="simple">
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">gitlab-ctl</span> <span class="pre">status</span> <span class="pre">mattermost</span></code> to see if Mattermost is running.</p></li>
+<li><p>Check the logs to see if something is preventing Mattermost from starting. They can do this by running <code class="docutils literal notranslate"><span class="pre">gitlab-ctl</span> <span class="pre">tail</span> <span class="pre">mattermost</span></code> and using <code class="docutils literal notranslate"><span class="pre">gitlab-ctl</span> <span class="pre">restart</span> <span class="pre">mattermost</span></code> to attempt to start Mattermost.</p></li>
 </ol>
 </li>
 </ol>
@@ -351,31 +350,24 @@ plenty of RAM for the load they are experiencing, this may indicate a bug in the
 <div class="section" id="login-issues">
 <h3>Login issues<a class="headerlink" href="#login-issues" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
-<li>Are they seeing any error messages when they try to log in? If so, what error messages are they seeing, and can they send us a screenshot?</li>
-<li>Does anything appear in the Mattermost logs when they try to log in? They can see these by running <code class="docutils literal notranslate"><span class="pre">gitlab-ctl</span> <span class="pre">tail</span> <span class="pre">mattermost</span></code>.</li>
+<li><p>Are they seeing any error messages when they try to log in? If so, what error messages are they seeing, and can they send us a screenshot?</p></li>
+<li><p>Does anything appear in the Mattermost logs when they try to log in? They can see these by running <code class="docutils literal notranslate"><span class="pre">gitlab-ctl</span> <span class="pre">tail</span> <span class="pre">mattermost</span></code>.</p></li>
 </ol>
 </div>
 <div class="section" id="other-debugging-information">
 <h3>Other debugging information<a class="headerlink" href="#other-debugging-information" title="Permalink to this headline">¶</a></h3>
 <p>Useful commands:</p>
 <ul>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">gitlab-ctl</span> <span class="pre">reconfigure</span></code> - Update <code class="docutils literal notranslate"><span class="pre">config.json</span></code> and other configuration files, then restart all services (including Mattermost).</p>
-</li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">gitlab-ctl</span> <span class="pre">&lt;stop/start/restart&gt;</span> <span class="pre">mattermost</span></code> - Stop/start/restart Mattermost.</p>
-</li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">gitlab-ctl</span> <span class="pre">status</span> <span class="pre">mattermost</span></code> - Check if Mattermost is running. The printed output will start with <code class="docutils literal notranslate"><span class="pre">run</span></code> if it’s running or <code class="docutils literal notranslate"><span class="pre">down</span></code> if it’s not.</p>
-</li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">gitlab-ctl</span> <span class="pre">tail</span> <span class="pre">mattermost</span></code> - Watch all Mattermost log files. Press CTRL+C to exit.</p>
-</li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">gitlab-ctl</span> <span class="pre">&lt;stop/start/restart/status/tail&gt;</span> <span class="pre">&lt;nginx/postgresql/redis/etc&gt;</span></code> - Control, view status, or view logs of a different service.</p>
-</li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">less</span> <span class="pre">/var/opt/gitlab/mattermost/config.json</span></code> - View the Mattermost <code class="docutils literal notranslate"><span class="pre">config.json</span></code> directly (use the arrow keys to scroll, press Q to exit).</p>
-</li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">gitlab-psql</span> <span class="pre">-d</span> <span class="pre">mattermost_production</span></code> - Access the embedded Mattermost database.</p>
-</li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">gitlab-rails</span> <span class="pre">console</span> <span class="pre">production</span></code> - Access the GitLab admin console (press CTRL+D to exit).</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">gitlab-ctl</span> <span class="pre">reconfigure</span></code> - Update <code class="docutils literal notranslate"><span class="pre">config.json</span></code> and other configuration files, then restart all services (including Mattermost).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">gitlab-ctl</span> <span class="pre">&lt;stop/start/restart&gt;</span> <span class="pre">mattermost</span></code> - Stop/start/restart Mattermost.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">gitlab-ctl</span> <span class="pre">status</span> <span class="pre">mattermost</span></code> - Check if Mattermost is running. The printed output will start with <code class="docutils literal notranslate"><span class="pre">run</span></code> if it’s running or <code class="docutils literal notranslate"><span class="pre">down</span></code> if it’s not.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">gitlab-ctl</span> <span class="pre">tail</span> <span class="pre">mattermost</span></code> - Watch all Mattermost log files. Press CTRL+C to exit.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">gitlab-ctl</span> <span class="pre">&lt;stop/start/restart/status/tail&gt;</span> <span class="pre">&lt;nginx/postgresql/redis/etc&gt;</span></code> - Control, view status, or view logs of a different service.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">less</span> <span class="pre">/var/opt/gitlab/mattermost/config.json</span></code> - View the Mattermost <code class="docutils literal notranslate"><span class="pre">config.json</span></code> directly (use the arrow keys to scroll, press Q to exit).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">gitlab-psql</span> <span class="pre">-d</span> <span class="pre">mattermost_production</span></code> - Access the embedded Mattermost database.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">gitlab-rails</span> <span class="pre">console</span> <span class="pre">production</span></code> - Access the GitLab admin console (press CTRL+D to exit).</p>
 <ul>
-<li><p class="first">You can then carry out commands such as updating a user’s password:</p>
+<li><p>You can then carry out commands such as updating a user’s password:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>user = User.find_by(email: &#39;admin@local.host&#39;)
 user.password = &#39;secret_pass&#39;
 user.password_confirmation = &#39;secret_pass&#39;
@@ -388,10 +380,10 @@ user.save!
 </ul>
 <p>File locations:</p>
 <ul class="simple">
-<li>Configuration files are located at <code class="docutils literal notranslate"><span class="pre">/etc/gitlab/gitlab.rb</span></code> and <code class="docutils literal notranslate"><span class="pre">/var/opt/gitlab/mattermost/config.json</span></code>.</li>
-<li>Log files are located in <code class="docutils literal notranslate"><span class="pre">/var/log/gitlab</span></code>. Mattermost’s current logs in particular are in <code class="docutils literal notranslate"><span class="pre">/var/log/gitlab/mattermost</span></code>. The current log is named <code class="docutils literal notranslate"><span class="pre">current</span></code> with older ones being named <code class="docutils literal notranslate"><span class="pre">mattermost.log</span></code> or <code class="docutils literal notranslate"><span class="pre">mattermost.logmattermost.log</span></code>.</li>
-<li>The default data directory is <code class="docutils literal notranslate"><span class="pre">/var/opt/gitlab/mattermost/data</span></code>.</li>
-<li>Other Mattermost resources (i18n, email templates, webapp code, etc) are located in <code class="docutils literal notranslate"><span class="pre">/opt/gitlab/embedded/service/mattermost</span></code>.</li>
+<li><p>Configuration files are located at <code class="docutils literal notranslate"><span class="pre">/etc/gitlab/gitlab.rb</span></code> and <code class="docutils literal notranslate"><span class="pre">/var/opt/gitlab/mattermost/config.json</span></code>.</p></li>
+<li><p>Log files are located in <code class="docutils literal notranslate"><span class="pre">/var/log/gitlab</span></code>. Mattermost’s current logs in particular are in <code class="docutils literal notranslate"><span class="pre">/var/log/gitlab/mattermost</span></code>. The current log is named <code class="docutils literal notranslate"><span class="pre">current</span></code> with older ones being named <code class="docutils literal notranslate"><span class="pre">mattermost.log</span></code> or <code class="docutils literal notranslate"><span class="pre">mattermost.logmattermost.log</span></code>.</p></li>
+<li><p>The default data directory is <code class="docutils literal notranslate"><span class="pre">/var/opt/gitlab/mattermost/data</span></code>.</p></li>
+<li><p>Other Mattermost resources (i18n, email templates, webapp code, etc) are located in <code class="docutils literal notranslate"><span class="pre">/opt/gitlab/embedded/service/mattermost</span></code>.</p></li>
 </ul>
 </div>
 </div>
@@ -402,20 +394,25 @@ user.save!
            
           </article>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015-2021 Mattermost
+        &#169; Copyright 2015-2021 Mattermost.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -456,11 +453,10 @@ user.save!
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/myscript.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/myscript.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
