@@ -233,10 +233,7 @@
 <div class="section" id="installing-prometheus">
 <h2><a class="toc-backref" href="#contents">Installing Prometheus</a><a class="headerlink" href="#installing-prometheus" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><a class="reference external" href="https://prometheus.io/download/">Download a precompiled binary for Prometheus</a>. Binaries are provided for many popular distributions, including Darwin, Linux and Windows.</li>
-</ol>
-<p>For install instructions, see <a class="reference external" href="https://prometheus.io/docs/introduction/getting_started/">Prometheus install guides</a>.</p>
-<ol class="arabic simple" start="2">
+<li><a class="reference external" href="https://prometheus.io/download/">Download a precompiled binary for Prometheus</a>. Binaries are provided for many popular distributions, including Darwin, Linux and Windows. For install instructions, see <a class="reference external" href="https://prometheus.io/docs/introduction/getting_started/">Prometheus install guides</a>.</li>
 <li>The following settings are recommended in the Prometheus configuration file named <code class="docutils literal notranslate"><span class="pre">prometheus.yml</span></code>:</li>
 </ol>
 <div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># my global config</span>
@@ -271,13 +268,19 @@
       <span class="o">-</span> <span class="n">targets</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;&lt;hostname1&gt;:&lt;port&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;hostname2&gt;:&lt;port&gt;&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">&lt;hostname1&gt;:&lt;port&gt;</span></code> parameter has to be replaced with your Mattermost host ip address and port to scrape the data. It connects to <code class="docutils literal notranslate"><span class="pre">/metrics</span></code> using http.</p>
+<p>Replace the <code class="docutils literal notranslate"><span class="pre">&lt;hostname1&gt;:&lt;port&gt;</span></code> parameter with your Mattermost host IP address and port to scrape the data. It connects to <code class="docutils literal notranslate"><span class="pre">/metrics</span></code> using http.</p>
 <ol class="arabic simple" start="3">
-<li>Enable performance monitoring in the Mattermost System Console and specify the listen address. See more detail in our <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#performance-monitoring-beta">configuration settings documentation</a>. After enabling performance monitoring, make sure to reboot Mattermost.</li>
+<li>In the Mattermost System Console, go to <strong>Environment &gt; Performance Monitoring</strong> to set <strong>Enable Performance Monitoring</strong> to <strong>true</strong>, then specify the <strong>Listen Address</strong> and select <strong>Save</strong>. See our <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#performance-monitoring">configuration settings documentation</a> for details. After enabling performance monitoring, restart the Mattermost Server.</li>
 </ol>
 <a class="reference internal image-reference" href="../_images/perf_monitoring_system_console.png"><img alt="../_images/perf_monitoring_system_console.png" src="../_images/perf_monitoring_system_console.png" style="width: 627.9px; height: 283.5px;" /></a>
 <ol class="arabic simple" start="4">
 <li>To test the server is running, go to <code class="docutils literal notranslate"><span class="pre">&lt;ip&gt;:&lt;port&gt;/metrics</span></code>.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">A Mattermost Enterprise Edition installation with an E20 license is required to connect to <code class="docutils literal notranslate"><span class="pre">/metrics</span></code> using http.</p>
+</div>
+<ol class="arabic simple" start="5">
 <li>Finally, run <code class="docutils literal notranslate"><span class="pre">vi</span> <span class="pre">prometheus.yml</span></code> to finish configuring Prometheus.</li>
 </ol>
 <p>For starting the Prometheus service, read the <a class="reference external" href="https://prometheus.io/docs/introduction/getting_started/#starting-prometheus">comprehensive guides provided by Prometheus</a>.</p>
@@ -455,6 +458,10 @@
 <p class="last">Profile reports are available without a Mattermost Enterprise Edition license.</p>
 </div>
 <p>To learn how to set up runtime profiling, see the <a class="reference external" href="https://golang.org/pkg/net/http/pprof/">pprof package GO documentation</a>.  You can also visit the <code class="docutils literal notranslate"><span class="pre">ip:port/metrics</span></code> page for a complete list of metrics with descriptions.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">A Mattermost Enterprise Edition installation with an E20 license is required to connect to <code class="docutils literal notranslate"><span class="pre">/metrics</span></code> using http.</p>
+</div>
 <p>If enabled, you can run the profiler by</p>
 <p><code class="docutils literal notranslate"><span class="pre">go</span> <span class="pre">tool</span> <span class="pre">pprof</span> <span class="pre">channel</span> <span class="pre">http://localhost:&lt;port&gt;/debug/pprof/profile</span></code></p>
 <p>where you can replace <code class="docutils literal notranslate"><span class="pre">localhost</span></code> with the server name. The profiling reports are available at <code class="docutils literal notranslate"><span class="pre">&lt;ip&gt;:&lt;port&gt;</span></code>, which include:</p>
