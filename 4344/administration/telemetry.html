@@ -179,7 +179,7 @@
 </ul>
 </dd>
 </dl>
-<p>To opt out, disable the feature in <strong>System Console &gt; Environment &gt; SMTP</strong> (or <strong>System Console &gt; Notifications &gt; Email &gt; Enable Security Alerts</strong> in versions prior to 5.12). When the feature is disabled, you will not receive any security alerts.</p>
+<p>To opt out, disable the feature in <strong>System Console &gt; Environment &gt; SMTP</strong>. When the feature is disabled, you will not receive any security alerts.</p>
 </div>
 <div class="section" id="error-and-diagnostics-reporting-feature">
 <h2>Error and Diagnostics Reporting Feature<a class="headerlink" href="#error-and-diagnostics-reporting-feature" title="Permalink to this headline">¶</a></h2>
@@ -233,7 +233,7 @@
 </dd>
 <dt>Plugin Configuration Information</dt><dd><p>Basic information including number of active and inactive plugins, which are using webapp or backend portions, and which <a class="reference external" href="https://github.com/mattermost/mattermost-server/blob/master/app/diagnostics.go#L668">Mattermost plugins</a> are enabled along with their versions. Some plugins may send summary data such as number of authenticated users of the plugin. From version 5.26, the list of plugins is obtained from the Marketplace. If the Marketplace can’t be reached, the list of known plugins is used instead.</p>
 </dd>
-<dt>Permissions Configuration Information (Enterprise Edition Only)</dt><dd><p>Permissions configured for each role for the System Scheme and each Team Override Scheme created in the system. Scheme ID; Team Admin Permissions; Team User Permissions; Channel Admin Permissions; Channel User Permissions; Number of teams the scheme is associated with; Number of users assigned to each admin role; Number of admin roles not using default privileges; Changes to default privileges of each admin role.</p>
+<dt>Permissions Configuration Information (Enterprise Edition Only)</dt><dd><p>Permissions configured for each role for the System Scheme and each Team Override Scheme created in the system. Scheme ID; Team Admin permissions; team user permissions; Channel Admin permissions; channel user permissions; number of teams the scheme is associated with; number of users assigned to each admin role; Number of admin roles not using default privileges; Changes to default privileges of each admin role.</p>
 </dd>
 <dt>Aggregated Usage Statistics</dt><dd><p>Non-personally identifiable summations of basic usage statistics: Number of enabled and disabled accounts, number of user logins in the last 24 hours and the last 30 days, number of users active in the last day/month, whether APIv3 endpoints were used in the last 24 hours, number of posts, channels, teams, guest accounts, and bots.</p>
 </dd>
@@ -247,7 +247,10 @@
 </ul>
 </dd>
 </dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>The majority of these events have been disabled since Mattermost v5.8. Refer to the source file for the <a class="reference external" href="https://github.com/mattermost/mattermost-redux/blob/master/src/client/client4.ts#L3069">current list of events sent via telemetry</a>.</p>
+</div>
 <dl>
 <dt>Non-personally Identifiable Error Information, distinguished by end users and System Admins</dt><dd><p>Boolean when the following events occur:</p>
 <ul class="simple">
@@ -260,17 +263,17 @@
 </dd>
 <dt>Non-personally Identifiable Diagnostic Information, distinguished by end users and System Admins</dt><dd><p>Boolean when the following events occur:</p>
 <ul class="simple">
-<li><p><em>Team and Account Setup Diagnostics:</em> Account creation via email, invite or UI, account creation page view, account creation completion; tutorial step and tip completion or opt out, team creation page view, team name and URL entry, team creation completion, clicks on all form elements, buttons, textboxes and links on sign up page, team selection page and team creation pages</p></li>
+<li><p><em>Team and Account Setup Diagnostics:</em> Account creation via email, invite or UI, account creation page view, account creation completion; tutorial step and tip completion or opt out, team creation page view, team name and URL entry, team creation completion, clicks on all form elements, buttons, textboxes and links on sign up page, team selection page, and team creation pages</p></li>
 <li><p><em>Sign-in Diagnostics:</em> Login succeeded or failed for email, LDAP, or SAML/SSO; logout succeeded; switched authentication method from email to LDAP or SAML/SSO or vice versa; reset password; updated password</p></li>
 <li><p><em>Navigation Discovery Diagnostics:</em> Joined a channel from the “More” list, through an invite or by clicking a public link; created a channel, direct, or group direct message conversation; renamed, joined, left or deleted an existing channel; updated header or purpose; added or removed members; updated channel notification preferences; loaded more messages in a channel; switched a channel or a team; opened the “More” modal for channels or direct message conversations; updated team name; invited members; updated account settings</p></li>
 <li><p><em>Core Feature Discovery Diagnostics:</em> Created, edited or deleted a message; posted a message containing a hashtag, link, mention or file attachment; searched for a term; searched for saved posts or recent mentions</p></li>
 <li><p><em>Advanced Feature Discovery Diagnostics:</em> Reacted to a message; favorited or unfavorited a channel; saved or unsaved a message; pinned or unpinned a message; replied to a message; expanded the right-hand sidebar; started or finished a WebRTC video call (only in v5.5 and earlier); created or deleted a personal access token; added or removed post:all or post:channels permission; created a category in the sidebar</p></li>
 <li><p><em>Integration Discovery Diagnostics:</em> Created or triggered a webhook or slash command; created, authroized or deleted an OAuth 2.0 app; created, posted, or deleted a custom emoji</p></li>
 <li><p><em>Plugin Discovery Diagnostics:</em> Number of installed plugins containing either server or webapp portions, or both; number of those plugins being activated</p></li>
-<li><p><em>Plugin Marketplace Diagnostics:</em> Plugin id, current version, and target version for all install and update events. Only sent when the default Marketplace is configured</p></li>
+<li><p><em>Plugin Marketplace Diagnostics:</em> Plugin ID, current version, and target version for all install and update events. Only sent when the default Marketplace is configured</p></li>
 <li><p><em>Commercial License Diagnostics (Enterprise Edition Only):</em> Uploaded an Enterprise license key to the server</p></li>
 <li><p><em>Mobile Performance Diagnostics:</em> Load times for starting the app, switching channels, and switching teams</p></li>
-<li><p><em>Permissions Discovery Diagnostics (Enterprise Edition Only):</em> Provides all the permissions configured for each role for the System Scheme and each Team Override Scheme created in the system. Scheme ID; Team Admin Permissions; Team User Permissions; Channel Admin Permissions; Channel User Permissions; Number of teams the scheme is associated with</p></li>
+<li><p><em>Permissions Discovery Diagnostics (Enterprise Edition Only):</em> Provides all the permissions configured for each role for the System Scheme and each Team Override Scheme created in the system. Scheme ID; Team Admin permissions; Team user permissions; Channel Admin permissions; Channel user permissions; Number of teams the scheme is associated with</p></li>
 <li><p><em>Group Discovery Diagnostics (Enterprise Edition Only):</em> Provides information related to AD/LDAP groups, including number of groups synced to Mattermost, teams and channels associated to groups, teams and channels synced with groups, and number of group members</p></li>
 <li><p><em>System Console Menu Discovery Diagnostics:</em> Clicks on the hamburger menu items of the System Console, including Administrator’s Guide, Troubleshooting Forum, Commercial Support, About Mattermost, and clicks on the left-hand side navigation menu items</p></li>
 <li><p><em>In Product Notices Diagnostics:</em> Notices viewed, and the notices on which an action button was clicked.</p></li>
@@ -279,9 +282,9 @@
 </dl>
 </div>
 </div>
-<div class="section" id="incident-management-telemetry">
-<h2>Incident Management Telemetry<a class="headerlink" href="#incident-management-telemetry" title="Permalink to this headline">¶</a></h2>
-<p>The following list details the types of Incident Management metadata we collect:</p>
+<div class="section" id="incident-collaboration-telemetry">
+<h2>Incident Collaboration Telemetry<a class="headerlink" href="#incident-collaboration-telemetry" title="Permalink to this headline">¶</a></h2>
+<p>The following list details the types of Incident Collaboration metadata we collect:</p>
 <p><strong>Data collected for all event types</strong></p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">PluginVersion</span></code>: Version of the plugin.</p></li>
@@ -328,7 +331,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">UsesReminderMessageTemplate</span></code>: <code class="docutils literal notranslate"><span class="pre">true</span></code> if the playbook has a template for the reminder message, <code class="docutils literal notranslate"><span class="pre">false</span></code> otherwise.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Action</span></code>: The type of action performed against this playbook: <code class="docutils literal notranslate"><span class="pre">create</span></code>, <code class="docutils literal notranslate"><span class="pre">update</span></code>, <code class="docutils literal notranslate"><span class="pre">delete</span></code>.</p></li>
 </ul>
-<p>Error and diagnostic reporting is sent by the client to the endpoint <code class="docutils literal notranslate"><span class="pre">api.segment.io</span></code>. To opt out, disable the feature in <strong>System Console &gt; Environment &gt; Logging</strong> (or <strong>System Console &gt; General &gt; Logging &gt; Enable Error and Diagnostics Reporting</strong> in versions prior to 5.12).</p>
+<p>Error and diagnostic reporting is sent by the client to the endpoint <code class="docutils literal notranslate"><span class="pre">api.segment.io</span></code>. To opt out, disable the feature in <strong>System Console &gt; Environment &gt; Logging</strong>.</p>
 </div>
 <div class="section" id="android-mobile-app-performance-monitoring">
 <h2>Android Mobile App Performance Monitoring<a class="headerlink" href="#android-mobile-app-performance-monitoring" title="Permalink to this headline">¶</a></h2>
