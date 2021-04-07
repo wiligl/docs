@@ -233,7 +233,7 @@
 <div class="section" id="installing-prometheus">
 <h2><a class="toc-backref" href="#contents">Installing Prometheus</a><a class="headerlink" href="#installing-prometheus" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><a class="reference external" href="https://prometheus.io/download/">Download a precompiled binary for Prometheus</a>. Binaries are provided for many popular distributions, including Darwin, Linux and Windows. For install instructions, see <a class="reference external" href="https://prometheus.io/docs/introduction/getting_started/">Prometheus install guides</a>.</li>
+<li><a class="reference external" href="https://prometheus.io/download/">Download a precompiled binary for Prometheus</a>. Binaries are provided for many popular distributions, including Darwin, Linux, and Windows. For install instructions, see <a class="reference external" href="https://prometheus.io/docs/introduction/getting_started/">Prometheus install guides</a>.</li>
 <li>The following settings are recommended in the Prometheus configuration file named <code class="docutils literal notranslate"><span class="pre">prometheus.yml</span></code>:</li>
 </ol>
 <div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># my global config</span>
@@ -268,7 +268,7 @@
       <span class="o">-</span> <span class="n">targets</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;&lt;hostname1&gt;:&lt;port&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;hostname2&gt;:&lt;port&gt;&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Replace the <code class="docutils literal notranslate"><span class="pre">&lt;hostname1&gt;:&lt;port&gt;</span></code> parameter with your Mattermost host IP address and port to scrape the data. It connects to <code class="docutils literal notranslate"><span class="pre">/metrics</span></code> using http.</p>
+<p>Replace the <code class="docutils literal notranslate"><span class="pre">&lt;hostname1&gt;:&lt;port&gt;</span></code> parameter with your Mattermost host IP address and port to scrape the data. It connects to <code class="docutils literal notranslate"><span class="pre">/metrics</span></code> using HTTP.</p>
 <ol class="arabic simple" start="3">
 <li>In the Mattermost System Console, go to <strong>Environment &gt; Performance Monitoring</strong> to set <strong>Enable Performance Monitoring</strong> to <strong>true</strong>, then specify the <strong>Listen Address</strong> and select <strong>Save</strong>. See our <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#performance-monitoring">configuration settings documentation</a> for details.</li>
 </ol>
@@ -278,7 +278,7 @@
 </ol>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">A Mattermost Enterprise Edition installation with an E20 license is required to connect to <code class="docutils literal notranslate"><span class="pre">/metrics</span></code> using http.</p>
+<p class="last">A Mattermost Enterprise Edition E20 license is required to connect to <code class="docutils literal notranslate"><span class="pre">/metrics</span></code> using HTTP.</p>
 </div>
 <ol class="arabic simple" start="5">
 <li>Finally, run <code class="docutils literal notranslate"><span class="pre">vi</span> <span class="pre">prometheus.yml</span></code> to finish configuring Prometheus.</li>
@@ -455,9 +455,9 @@
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Profile reports are available without a Mattermost Enterprise Edition license.</p>
+<p class="last">Profile reports are available to Team Edition and Enterprise Edition users.</p>
 </div>
-<p>To learn how to set up runtime profiling, see the <a class="reference external" href="https://golang.org/pkg/net/http/pprof/">pprof package Go documentation</a>.  You can also visit the <code class="docutils literal notranslate"><span class="pre">ip:port</span></code> page for a complete list of metrics with descriptions.</p>
+<p>To learn how to set up runtime profiling, see the <a class="reference external" href="https://golang.org/pkg/net/http/pprof/">pprof package Go documentation</a>. You can also visit the <code class="docutils literal notranslate"><span class="pre">ip:port</span></code> page for a complete list of metrics with descriptions.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">A Mattermost Enterprise Edition installation with an E20 license is required to connect to <code class="docutils literal notranslate"><span class="pre">/metrics</span></code> using http.</p>
