@@ -235,13 +235,13 @@ Use annotations to streamline analysis when a job is long running, such as an LD
 
   Jobs where the runtime is less than the Prometheus polling interval are unlikely to be visible because Grafana is performing range queries over the raw Prometheus timeseries data, and rendering an event each time the value changes.
 
-Standard GO Metrics
+Standard Go Metrics
 ~~~~~~~~~~~~~~~~~~~
 
-The Prometheus integration provides standard GO metrics for HTTP server runtime profiling data and system monitoring, such as:
+The performance monitoring feature provides standard Go metrics for HTTP server runtime profiling data and system monitoring, such as:
 
 - ``go_memstats_alloc_bytes`` for memory usage
-- ``go_goroutines`` for GO routines
+- ``go_goroutines`` for number of goroutines
 - ``go_gc_duration_seconds`` for garbage collection duration
 - ``go_memstats_heap_objects`` for object tracking on the heap
 
@@ -249,7 +249,7 @@ The Prometheus integration provides standard GO metrics for HTTP server runtime 
 
   Profile reports are available without a Mattermost Enterprise Edition license.
 
-To learn how to set up runtime profiling, see the `pprof package GO documentation <https://golang.org/pkg/net/http/pprof/>`__.  You can also visit the ``ip:port/metrics`` page for a complete list of metrics with descriptions.
+To learn how to set up runtime profiling, see the `pprof package Go documentation <https://golang.org/pkg/net/http/pprof/>`__.  You can also visit the ``ip:port`` page for a complete list of metrics with descriptions.
 
 .. note::
 

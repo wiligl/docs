@@ -215,7 +215,7 @@
 <li><a class="reference internal" href="#debugging-metrics" id="id19">Debugging Metrics</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#standard-go-metrics" id="id20">Standard GO Metrics</a></li>
+<li><a class="reference internal" href="#standard-go-metrics" id="id20">Standard Go Metrics</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#frequently-asked-questions" id="id21">Frequently Asked Questions</a><ul>
@@ -445,11 +445,11 @@
 </div>
 </div>
 <div class="section" id="standard-go-metrics">
-<h3><a class="toc-backref" href="#contents">Standard GO Metrics</a><a class="headerlink" href="#standard-go-metrics" title="Permalink to this headline">¶</a></h3>
-<p>The Prometheus integration provides standard GO metrics for HTTP server runtime profiling data and system monitoring, such as:</p>
+<h3><a class="toc-backref" href="#contents">Standard Go Metrics</a><a class="headerlink" href="#standard-go-metrics" title="Permalink to this headline">¶</a></h3>
+<p>The performance monitoring feature provides standard Go metrics for HTTP server runtime profiling data and system monitoring, such as:</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">go_memstats_alloc_bytes</span></code> for memory usage</li>
-<li><code class="docutils literal notranslate"><span class="pre">go_goroutines</span></code> for GO routines</li>
+<li><code class="docutils literal notranslate"><span class="pre">go_goroutines</span></code> for number of goroutines</li>
 <li><code class="docutils literal notranslate"><span class="pre">go_gc_duration_seconds</span></code> for garbage collection duration</li>
 <li><code class="docutils literal notranslate"><span class="pre">go_memstats_heap_objects</span></code> for object tracking on the heap</li>
 </ul>
@@ -457,7 +457,7 @@
 <p class="first admonition-title">Note</p>
 <p class="last">Profile reports are available without a Mattermost Enterprise Edition license.</p>
 </div>
-<p>To learn how to set up runtime profiling, see the <a class="reference external" href="https://golang.org/pkg/net/http/pprof/">pprof package GO documentation</a>.  You can also visit the <code class="docutils literal notranslate"><span class="pre">ip:port/metrics</span></code> page for a complete list of metrics with descriptions.</p>
+<p>To learn how to set up runtime profiling, see the <a class="reference external" href="https://golang.org/pkg/net/http/pprof/">pprof package Go documentation</a>.  You can also visit the <code class="docutils literal notranslate"><span class="pre">ip:port</span></code> page for a complete list of metrics with descriptions.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">A Mattermost Enterprise Edition installation with an E20 license is required to connect to <code class="docutils literal notranslate"><span class="pre">/metrics</span></code> using http.</p>
