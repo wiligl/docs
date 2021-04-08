@@ -233,7 +233,7 @@
 <div class="section" id="installing-prometheus">
 <h2><a class="toc-backref" href="#contents">Installing Prometheus</a><a class="headerlink" href="#installing-prometheus" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><a class="reference external" href="https://prometheus.io/download/">Download a precompiled binary for Prometheus</a>. Binaries are provided for many popular distributions, including Darwin, Linux, and Windows. For install instructions, see <a class="reference external" href="https://prometheus.io/docs/introduction/getting_started/">Prometheus install guides</a>.</li>
+<li><a class="reference external" href="https://prometheus.io/download/">Download a precompiled binary for Prometheus</a>. Binaries are provided for many popular distributions, including Darwin, Linux, and Windows. For installation instructions, see the <a class="reference external" href="https://prometheus.io/docs/introduction/getting_started/">Prometheus install guides</a>.</li>
 <li>The following settings are recommended in the Prometheus configuration file named <code class="docutils literal notranslate"><span class="pre">prometheus.yml</span></code>:</li>
 </ol>
 <div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># my global config</span>
@@ -460,7 +460,7 @@
 <p>To learn how to set up runtime profiling, see the <a class="reference external" href="https://golang.org/pkg/net/http/pprof/">pprof package Go documentation</a>. You can also visit the <code class="docutils literal notranslate"><span class="pre">ip:port</span></code> page for a complete list of metrics with descriptions.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">A Mattermost Enterprise Edition installation with an E20 license is required to connect to <code class="docutils literal notranslate"><span class="pre">/metrics</span></code> using http.</p>
+<p class="last">A Mattermost Enterprise Edition E20 license is required to connect to <code class="docutils literal notranslate"><span class="pre">/metrics</span></code> using HTTP.</p>
 </div>
 <p>If enabled, you can run the profiler by</p>
 <p><code class="docutils literal notranslate"><span class="pre">go</span> <span class="pre">tool</span> <span class="pre">pprof</span> <span class="pre">channel</span> <span class="pre">http://localhost:&lt;port&gt;/debug/pprof/profile</span></code></p>
