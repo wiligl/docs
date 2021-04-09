@@ -291,13 +291,13 @@
 <li>Added support for automatic right-to-left (RTL) detection in browsers.</li>
 <li>Updated the font size for the <strong>Add People</strong> channel modal.</li>
 <li>Online status is now shown in the channel switcher.</li>
-<li>Improved the design and layout of email notifications for password resets, member invites, and member welcome and verifications.</li>
+<li>Improved the design and layout of email notifications for password resets, member invites, member welcomes, and verifications.</li>
 </ul>
 </div>
 <div class="section" id="administration">
 <h4>Administration<a class="headerlink" href="#administration" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li>Added mmctl commands to create, list, download and delete export files.</li>
+<li>Added mmctl commands to create, list, download, and delete export files.</li>
 <li>Added schema migrations phase 0 (<code class="docutils literal notranslate"><span class="pre">Teams</span></code>, <code class="docutils literal notranslate"><span class="pre">TeamMembers</span></code>).</li>
 <li>Removed references to <code class="docutils literal notranslate"><span class="pre">SqlLite3</span></code> from the code.</li>
 <li>Bleve updates are now logged in the config only when there is an actual change in the <code class="docutils literal notranslate"><span class="pre">BleveSettings</span></code> instead of on every config update.</li>
@@ -311,19 +311,19 @@
 <ul class="simple">
 <li>Fixed unsafe access of properties of the plugin environment during <code class="docutils literal notranslate"><span class="pre">ServePluginPublicRequest</span></code>.</li>
 <li>Fixed an issue where the Admin Console &gt; Server Logs did not focus to the sidebar filter upon reload.</li>
-<li>Fixed an issue where the Gif picker appeared empty instead of showing a “No results” modal when no results were displayed.</li>
+<li>Fixed an issue where the GIF picker appeared empty instead of showing a “No results” modal when no results were displayed.</li>
 <li>Fixed an issue where the keyboard accessibility controller was not allowed to resume left-hand side scroll after drag and drop.</li>
 <li>Fixed an issue where markdown links rendered incorrectly.</li>
-<li>Fixed an issue where the slack theme import failed due to changes in formatting of Slack export color schemes.</li>
+<li>Fixed an issue where the Slack theme import failed due to changes in formatting of Slack export color schemes.</li>
 <li>Fixed an issue where tooltips were missing for channels with a long name.</li>
-<li>Fixed a race condition which would crash the app server due to improper handling of websocket closing.</li>
+<li>Fixed a race condition which would crash the app server due to improper handling of WebSocket closing.</li>
 <li>Fixed an issue where the PDF zoom failed to respond to zoom in/out/reset actions until the user scrolled.</li>
-<li>Fixed an issue where in a reply thread with the right-hand side expanded, attachments in a post draft got hidden behind the center channel text box.</li>
+<li>Fixed an issue where, in a reply thread with the right-hand side expanded, attachments in a post draft were hidden behind the center channel text box.</li>
 <li>Fixed bugs related to replication lag for Enterprise Edition instances configured to use read replicas.</li>
 <li>Fixed an issue where Compliance Report field headers were not correctly aligned.</li>
 <li>Fixed an issue where the <code class="docutils literal notranslate"><span class="pre">/join</span></code> command was case-sensitive.</li>
 <li>Fixed an issue where one-character sidebar category names were not displayed.</li>
-<li>Fixed an issue with a theme discrepancy on close buttons on some modals in the System Console (when using a custom team theme).</li>
+<li>Fixed an issue with a theme discrepancy on Close buttons on some modals in the System Console (when using a custom team theme).</li>
 <li>Fixed an issue where long text input in the right-hand pane was jumpy when selected.</li>
 <li>Fixed an issue where the Zoom level persisted across multi-attachment PDF previews.</li>
 <li>Fixed an issue where long image names pushed the show/hide control off the right side of the window.</li>
@@ -363,7 +363,7 @@
 <ul class="simple">
 <li>Deactivated users are not marked as “Deactivated” in the channel switcher <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-33910">MM-33910</a>.</li>
 <li>User nickname is not shown on channel switch <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-33897">MM-33897</a>.</li>
-<li>Config.json can reset when running the command <code class="docutils literal notranslate"><span class="pre">systemctl</span> <span class="pre">restart</span> <span class="pre">mattermost</span></code> and when running any commands that write to the config (e.g. <code class="docutils literal notranslate"><span class="pre">config</span></code> or <code class="docutils literal notranslate"><span class="pre">plugin</span></code>) <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-33752">MM-33752</a>, <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-32390">MM-32390</a>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">Config.json</span></code> can reset when running the command <code class="docutils literal notranslate"><span class="pre">systemctl</span> <span class="pre">restart</span> <span class="pre">mattermost</span></code>, and when running any commands that write to the config (e.g. <code class="docutils literal notranslate"><span class="pre">config</span></code> or <code class="docutils literal notranslate"><span class="pre">plugin</span></code>) <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-33752">MM-33752</a>, <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-32390">MM-32390</a>.</li>
 <li>The server tries to install E20-required plugins on non-E20 installations <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-32387">MM-32387</a>.</li>
 <li>Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-33823">MM-33823</a>.</li>
 <li>Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-30980">MM-30980</a>.</li>
