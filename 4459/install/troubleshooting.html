@@ -335,14 +335,14 @@
 <div class="section" id="switching-system-administrator-account-to-single-sign-on-sso">
 <h2>Switching System Administrator Account to Single Sign-on (SSO)<a class="headerlink" href="#switching-system-administrator-account-to-single-sign-on-sso" title="Permalink to this headline">¶</a></h2>
 <p>When Mattermost is initially set up, the first account created becomes the System Admin account. This account will typically use email authentication to sign in, since it is usually created before other sign in methods are configured.</p>
-<p>After setting up SSO authentication, it is common for the System Admin to want to turn off email sign in so users will only have SSO as a sign in option.</p>
-<p>Before doing this, the System Admin needs to change their sign in method to SSO by doing the following:</p>
+<p>After setting up SSO authentication, it’s common for the System Admin to want to turn off email sign-in so users will only have SSO as a sign-in option.</p>
+<p>Before doing this, the System Admin needs to change their sign-in method to SSO by doing the following:</p>
 <ol class="arabic simple">
 <li><p>Sign in to Mattermost using an email and password.</p></li>
 <li><p>Go to <strong>Account Settings &gt; Security &gt; Sign-in Method</strong>.</p></li>
 <li><p>Select <strong>Switch</strong> to select a sign-in method and complete the process provided.</p></li>
 </ol>
-<p>The System Admin can now turn off email sign in and still access their account. To avoid locking other existing users out of their accounts, it is recommended the System Admin ask them to switch authentication methods as well.</p>
+<p>The System Admin can now turn off email sign in and still access their account. To avoid locking other existing users out of their accounts, it’s recommended that the System Admin ask them to switch authentication methods as well.</p>
 </div>
 <div class="section" id="locked-out-of-system-administrator-account">
 <h2>Locked Out of System Administrator Account<a class="headerlink" href="#locked-out-of-system-administrator-account" title="Permalink to this headline">¶</a></h2>
@@ -700,12 +700,12 @@
 <h2>I’m Not Receiving Push Notifications on my Device<a class="headerlink" href="#im-not-receiving-push-notifications-on-my-device" title="Permalink to this headline">¶</a></h2>
 <p>If you didn’t receive a push notification when <span class="xref std std-doc">testing push notifications</span>, use the following procedure to troubleshoot:</p>
 <ol class="arabic simple">
-<li><p>Under <strong>System Console &gt; Environment &gt; Logging &gt; File Log Level</strong> (or <strong>System Console &gt; General &gt; Logging &gt; File Log Level</strong> in versions prior to 5.12) select <strong>DEBUG</strong> in order to watch for push notifications in the server log.</p></li>
+<li><p>Under <strong>System Console &gt; Environment &gt; Logging &gt; File Log Level</strong> , then select <strong>DEBUG</strong> in order to watch for push notifications in the server log.</p></li>
 <li><p>Delete and reinstall your mobile application.</p></li>
 <li><p>Sign in with “Account A” and <strong>confirm you want to receive push notifications</strong> when prompted by the mobile app.</p></li>
 <li><p>On desktop, go to <strong>Account Settings &gt; Security &gt; View and Logout of Active Sessions</strong> and check that there is a session for the native mobile app matching your login time.</p></li>
 <li><p>Repeat the procedure for <span class="xref std std-doc">testing push notifications</span>.</p></li>
-<li><p>If no push notification appears go to <strong>System Console &gt; Logs</strong> and click <strong>Reload</strong>. Look at the bottom of the logs for a message similar to:</p></li>
+<li><p>If no push notification appears go to <strong>System Console &gt; Logs</strong>, then select <strong>Reload</strong>. Look at the bottom of the logs for a message similar to:</p></li>
 </ol>
 <p><code class="docutils literal notranslate"><span class="pre">[2016/04/21</span> <span class="pre">03:16:44</span> <span class="pre">UTC]</span> <span class="pre">[DEBG]</span> <span class="pre">Sending</span> <span class="pre">push</span> <span class="pre">notification</span> <span class="pre">to</span> <span class="pre">608xyz0...</span> <span class="pre">wi</span> <span class="pre">msg</span> <span class="pre">of</span> <span class="pre">'&#64;accountb:</span> <span class="pre">Hello'</span></code></p>
 <blockquote>
@@ -715,7 +715,7 @@
 </ul>
 </div></blockquote>
 <ol class="arabic simple" start="7">
-<li><p><strong>IMPORTANT:</strong> After your issue is resolved, go to <strong>System Console &gt; Environment &gt; Logging &gt; File Log Level</strong> (or <strong>System Console &gt; General &gt; Logging &gt; File Log Level</strong> in versions prior to 5.12) and select <strong>ERROR</strong> to switch your logging detail level to Errors Only, instead of <strong>DEBUG</strong>, in order to conserve disk space.</p></li>
+<li><p><strong>IMPORTANT:</strong> After your issue is resolved, to conserve disk space, go to <strong>System Console &gt; Environment &gt; Logging &gt; File Log Level</strong>, then select <strong>ERROR</strong> to switch your logging detail level to Errors Only, instead of <strong>DEBUG</strong>.</p></li>
 </ol>
 </div>
 <div class="section" id="all-outbound-connections-go-through-a-proxy-how-can-i-connect-to-the-mattermost-hosted-push-notification-service">
@@ -724,7 +724,7 @@
 <ol class="arabic simple">
 <li><p>Make sure your proxy server is properly configured to support SSL. Confirm it works by checking the URL at <a class="reference external" href="https://www.digicert.com/help/">https://www.digicert.com/help/</a>.</p></li>
 <li><p>Set up a proxy to forward requests to <code class="docutils literal notranslate"><span class="pre">https://push.mattermost.com</span></code>.</p></li>
-<li><p>In Mattermost set <strong>System Console &gt; Environment &gt; Push Notification Server &gt; Enable Push Notifications</strong> (or <strong>System Console &gt; Notification Settings &gt; Mobile Push &gt; Enable Push Notifications</strong> in versions prior to 5.12) to <strong>Manually enter Push Notification Service location</strong>.</p></li>
+<li><p>In Mattermost, go to <strong>System Console &gt; Environment &gt; Push Notification Server</strong>, and set <strong>Enable Push Notifications</strong> to <strong>Manually enter Push Notification Service location</strong>.</p></li>
 <li><p>Enter the URL of your proxy in the <strong>Push Notification Server</strong> field.</p></li>
 </ol>
 <p><strong>Note:</strong> Depending on how your proxy is configured you may need to add a port number and create a URL like <code class="docutils literal notranslate"><span class="pre">https://push.internalproxy.com:8000</span></code> mapped to <code class="docutils literal notranslate"><span class="pre">https://push.mattermost.com</span></code>.</p>
@@ -755,8 +755,8 @@
 <h3>YouTube Videos Show a “Video not found” Preview<a class="headerlink" href="#youtube-videos-show-a-video-not-found-preview" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><p>First, make sure the YouTube video exists by pasting a link to the video into your browser’s address bar.</p></li>
-<li><p>If you are using the Mattermost Desktop App, please ensure you have installed version 3.5.0 or later.</p></li>
-<li><p>If you have specified <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#google-api-key">a Google API key</a> to enable the display of titles for embedded YouTube video previews, regenerate the key.</p></li>
+<li><p>If you’re using the Mattermost Desktop App, please ensure you have installed version 3.5.0 or later.</p></li>
+<li><p>If you’ve specified <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#google-api-key">a Google API key</a> to enable the display of titles for embedded YouTube video previews, regenerate the key.</p></li>
 </ol>
 </div>
 <div class="section" id="hitting-an-error-command-with-a-trigger-of-failed-when-configuring-giphy-integration">
@@ -859,11 +859,11 @@
 <p><strong>LDAP configuration</strong></p>
 <p>The LDAP administrator should confirm the correct values for the following Mattermost LDAP settings:</p>
 <ul class="simple">
-<li><p>LDAP server hostname</p></li>
-<li><p>LDAP connection port, security, and certificates</p></li>
-<li><p>BaseDN, bind username, and bind password</p></li>
-<li><p>User, Group, Guest, and Admin filters</p></li>
-<li><p>Display attributes</p></li>
+<li><p>LDAP server hostname.</p></li>
+<li><p>LDAP connection port, security, and certificates.</p></li>
+<li><p>BaseDN, bind username, and bind password.</p></li>
+<li><p>User, Group, Guest, and Admin filters.</p></li>
+<li><p>Display attributes.</p></li>
 </ul>
 <p>These can be provided as a text file or as screenshots from the LDAP server.</p>
 <p><strong>Other configurations</strong></p>
@@ -933,11 +933,11 @@ tar czf - /opt/mattermost/logs/mattermost.log | split -b 20m - mattermost.log.tg
 <h3>What information to include<a class="headerlink" href="#what-information-to-include" title="Permalink to this headline">¶</a></h3>
 <p>This should be a detailed explanation of anything the end users who are reporting the unexpected behavior have in common. This includes (but is not limited to):</p>
 <ul class="simple">
-<li><p>Team and Channel memberships, including Direct and Group Messages</p></li>
-<li><p>Authentication methods</p></li>
-<li><p>Client operating system and app versions</p></li>
-<li><p>How users connect to the Mattermost server</p></li>
-<li><p>Any other things these users have in common such as when they joined, whether their login information recently changed, or if they are being synchronized via LDAP</p></li>
+<li><p>Team and Channel memberships, including Direct and Group Messages.</p></li>
+<li><p>Authentication methods.</p></li>
+<li><p>Client operating system and app versions.</p></li>
+<li><p>How users connect to the Mattermost server.</p></li>
+<li><p>Any other things these users have in common such as when they joined, whether their login information recently changed, or if they are being synchronized via LDAP.</p></li>
 </ul>
 <p>Note for Agents: This information is also required:</p>
 <ul class="simple">
