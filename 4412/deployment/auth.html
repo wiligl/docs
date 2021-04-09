@@ -30,7 +30,7 @@
     <link rel="canonical" href="https://docs.mattermost.com/deployment/auth.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="AD/LDAP Groups (E20)" href="ldap-group-sync.html" />
-    <link rel="prev" title="Additional System Admin Roles (E20)" href="admin-roles.html" />
+    <link rel="prev" title="Active Directory/LDAP Setup" href="sso-ldap.html" />
   
   	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -112,6 +112,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../administration/migration-announcement-email-template.html">Migration Announcement Email</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../administration/user-provisioning.html">Provisioning Workflows</a></li>
 <li class="toctree-l3"><a class="reference internal" href="admin-roles.html">Additional System Admin Roles (E20)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sso-ldap.html">Active Directory/LDAP Setup</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Multi-factor Authentication</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#enabling-mfa">Enabling MFA</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#enforcing-mfa-e10">Enforcing MFA (E10)</a></li>
@@ -208,12 +209,17 @@
 </div>
 <div class="section" id="enabling-mfa">
 <h2>Enabling MFA<a class="headerlink" href="#enabling-mfa" title="Permalink to this headline">¶</a></h2>
-<p>This option is enabled by the System Admin in the <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#mfa">System Console</a> under <strong>Authentication &gt; MFA &gt; Enable Multi-factor Authentication</strong>.</p>
+<p>This option is enabled by the System Admin by going to <strong>System Console &gt; Authentication &gt; MFA</strong>, then setting <strong>Enable Multi-factor Authentication</strong> to <strong>true</strong>.</p>
 <p>Once enabled, users can opt to use MFA on their account in the <a class="reference external" href="https://docs.mattermost.com/help/settings/account-settings.html#multi-factor-authentication">Account Settings</a> menu under <strong>Security &gt; Multi-factor Authentication</strong>.</p>
+<div class="section" id="disabling-mfa">
+<h3>Disabling MFA<a class="headerlink" href="#disabling-mfa" title="Permalink to this headline">¶</a></h3>
+<p>System Admins can disable this option by going to <strong>System Console &gt; Authentication &gt; MFA</strong>. When <strong>Enable Multi-factor Authentication</strong> is set to <strong>false</strong>, users can’t opt to use or disable MFA on their account in  <strong>Account Settings &gt; Security &gt; Multi-factor Authentication</strong>.</p>
+<p>MFA can be disabled for user accounts using the API. See the <a class="reference external" href="https://api.mattermost.com/#tag/users/paths/~1users~1{user_id}~1mfa/put">Mattermost API Reference</a> for details.</p>
+</div>
 </div>
 <div class="section" id="enforcing-mfa-e10">
 <h2>Enforcing MFA (E10)<a class="headerlink" href="#enforcing-mfa-e10" title="Permalink to this headline">¶</a></h2>
-<p>This option can be enabled by the System Admin in the <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#mfa">System Console</a> under <strong>Authentication &gt; MFA &gt; Enforce Multi-factor Authentication</strong>.</p>
+<p>This option can be enabled by the System Admin by going to <strong>System Console &gt; Authentication &gt; MFA</strong>, then setting <strong>Enforce Multi-factor Authentication</strong> to <strong>true</strong>.</p>
 <p>When MFA enforcement is set to <strong>true</strong>, users with email or LDAP authentication who don’t have MFA set up will be directed to the MFA setup page when they log in to Mattermost. They will not be able to access the site until MFA setup is complete. Any new users will be required to set up MFA during the sign up process.</p>
 <p>Users will not be able to remove MFA from their account while enforcement is on.</p>
 <div class="admonition note">
@@ -230,7 +236,7 @@
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="ldap-group-sync.html" class="btn btn-neutral float-right" title="AD/LDAP Groups (E20)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="admin-roles.html" class="btn btn-neutral float-left" title="Additional System Admin Roles (E20)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sso-ldap.html" class="btn btn-neutral float-left" title="Active Directory/LDAP Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
