@@ -3628,7 +3628,7 @@ user activate username
 --firstname string   Optional. The first name <span class="k">for</span> the new user account
 -h, --help           <span class="nb">help</span> <span class="k">for</span> create
 --lastname string    Optional. The last name <span class="k">for</span> the new user account
---guest              Optional. If supplied, the new user will be a guest. Defaults to false.
+--guest              Optional. If supplied, the new user will be a guest. <span class="o">(</span>default <span class="s2">&quot;false&quot;</span><span class="o">)</span>
 --locale string      Optional. The locale <span class="o">(</span>ex: en, fr<span class="o">)</span> <span class="k">for</span> the new user account
 --nickname string    Optional. The nickname <span class="k">for</span> the new user account
 --password string    Required. The password <span class="k">for</span> the new user account
@@ -3730,7 +3730,7 @@ user deactivate username
 <div class="section" id="mmctl-user-demote">
 <h3>mmctl user demote<a class="headerlink" href="#mmctl-user-demote" title="Permalink to this headline">¶</a></h3>
 <p><strong>Description</strong></p>
-<p>Demote a user to a guest.</p>
+<p>Demote a user to guest.</p>
 <p><strong>Format</strong></p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mmctl user demote <span class="o">[</span>users<span class="o">]</span> <span class="o">[</span>flags<span class="o">]</span>
 </pre></div>
@@ -3839,7 +3839,7 @@ user invite user@example.com myteam1 myteam2
 <div class="section" id="mmctl-user-promote">
 <h3>mmctl user promote<a class="headerlink" href="#mmctl-user-promote" title="Permalink to this headline">¶</a></h3>
 <p><strong>Description</strong></p>
-<p>Promote a guest to a user.</p>
+<p>Promote a guest to user.</p>
 <p><strong>Format</strong></p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mmctl user promote <span class="o">[</span>guests<span class="o">]</span> <span class="o">[</span>flags<span class="o">]</span>
 </pre></div>
@@ -3959,10 +3959,10 @@ user invite user@example.com myteam1 myteam2
 </pre></div>
 </div>
 <p><strong>Options inherited from parent commands</strong></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>   --config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>   --config-path string       path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
 --format string               the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
 --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
---insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--insecure-tls-version        allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
 --local                       allows communicating with the server through a unix socket
 --strict                      will only run commands <span class="k">if</span> the mmctl version matches the server one
 </pre></div>

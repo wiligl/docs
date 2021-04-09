@@ -4280,7 +4280,7 @@ mmctl user create
    --firstname string   Optional. The first name for the new user account
    -h, --help           help for create
    --lastname string    Optional. The last name for the new user account
-   --guest              Optional. If supplied, the new user will be a guest. Defaults to false.
+   --guest              Optional. If supplied, the new user will be a guest. (default "false")
    --locale string      Optional. The locale (ex: en, fr) for the new user account
    --nickname string    Optional. The nickname for the new user account
    --password string    Required. The password for the new user account
@@ -4410,7 +4410,7 @@ mmctl user demote
 
 **Description**
 
-Demote a user to a guest.
+Demote a user to guest.
 
 **Format**
 
@@ -4553,7 +4553,7 @@ mmctl user promote
 
 **Description**
 
-Promote a guest to a user.
+Promote a guest to user.
 
 **Format**
 
@@ -4715,10 +4715,10 @@ mmctl user verify
 
 .. code-block:: sh
 
-      --config-path string           path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
+      --config-path string       path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
    --format string               the format of the command output [plain, json] (default "plain")
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
-   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --insecure-tls-version        allows to use TLS versions 1.0 and 1.1
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
 
