@@ -112,6 +112,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../administration/migration-announcement-email-template.html">Migration Announcement Email</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../administration/user-provisioning.html">Provisioning Workflows</a></li>
 <li class="toctree-l3"><a class="reference internal" href="admin-roles.html">Additional System Admin Roles (E20)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sso-ldap.html">Active Directory/LDAP Setup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auth.html">Multi-factor Authentication</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ldap-group-sync.html">AD/LDAP Groups (E20)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ldap-group-constrained-team-channel.html">Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership</a></li>
@@ -273,8 +274,8 @@
 </div></blockquote>
 <img alt="../_images/onelogin_3_configuration_1.png" src="../_images/onelogin_3_configuration_1.png" />
 <ol class="loweralpha simple" start="2">
-<li><p>In System Console,  <a class="reference external" href="https://docs.mattermost.com/administration/prev-config-settings.html#enable-encryption">enable encryption</a>, save your changes, then return to the Configuration tab in access the <strong>SAML Encryption</strong> field.</p></li>
-<li><p>Paste the Public Key that you generated earlier into the <strong>SAML Encryption</strong> field.</p></li>
+<li><p>In System Console,  <a class="reference external" href="https://docs.mattermost.com/administration/prev-config-settings.html#enable-encryption">enable encryption</a>, then click <strong>Save</strong>. You’re redirected to the <strong>Info</strong> tab. From there, select the <strong>Configuration</strong> tab to access the <strong>SAML Encryption</strong> field.</p></li>
+<li><p>Paste the Public Key that you generated earlier into the <strong>SAML Encryption</strong> field at the bottom of the page. This field displays in OneLogin only when encryption is enabled in Mattermost.</p></li>
 </ol>
 <img alt="../_images/onelogin_4_configuration_2.png" src="../_images/onelogin_4_configuration_2.png" />
 <ol class="loweralpha simple" start="4">
@@ -309,6 +310,9 @@
 </tr>
 <tr class="row-even"><td><p>Name ID value</p></td>
 <td><p>Email</p></td>
+</tr>
+<tr class="row-odd"><td><p>Username</p></td>
+<td><p>Username</p></td>
 </tr>
 </tbody>
 </table>
