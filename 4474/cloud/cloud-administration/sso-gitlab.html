@@ -228,6 +228,10 @@ https://{mattermost-site-name}/signup/gitlab/complete
 <li><p>Paste the <strong>Application Secret Key</strong> from GitLab as the <strong>Client Secret</strong> in Mattermost.</p></li>
 <li><p>Select <strong>Save</strong>.</p></li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When Mattermost is configured to use OpenID Connect or OAuth 2.0 for user authentication, the following user attribute changes can’t be made through the Mattermost API: first name, last name, or username. OpenID Connect or OAuth 2.0 must be the authoritative source for these user attributes.</p>
+</div>
 </div>
 <div class="section" id="optional-step-3-force-users-to-sign-up-using-sso-only">
 <h3>(Optional) Step 3: Force users to sign up using SSO only<a class="headerlink" href="#optional-step-3-force-users-to-sign-up-using-sso-only" title="Permalink to this headline">¶</a></h3>
