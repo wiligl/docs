@@ -2259,13 +2259,13 @@
 </table>
 </div>
 <div class="section" id="allow-team-administrators-to-edit-others-posts">
-<h4>Allow Team Administrators to edit others posts<a class="headerlink" href="#allow-team-administrators-to-edit-others-posts" title="Permalink to this headline">¶</a></h4>
+<h4>Allow Team Administrators to edit others’ posts<a class="headerlink" href="#allow-team-administrators-to-edit-others-posts" title="Permalink to this headline">¶</a></h4>
 <p><em>This permission is stored in the database and can be modified using the System Console user interface.</em></p>
 <p><strong>True</strong>: Team Admins and System Admins can edit other users’ posts.</p>
 <p><strong>False</strong>: Only System Admins can edit other users’ posts.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This setting is only available for Team Edition servers. Enterprise Edition servers can use <a class="reference external" href="https://docs.mattermost.com/deployment/advanced-permissions.html">Advanced Permissions</a> to configure this permission.</p>
+<p>System Admins and Team Admins can always delete other users’ posts. This setting is only available for Team Edition servers. Enterprise Edition servers can use <a class="reference external" href="https://docs.mattermost.com/deployment/advanced-permissions.html">Advanced Permissions</a> to configure this permission.</p>
 </div>
 </div>
 <div class="section" id="enable-team-directory">
@@ -6222,7 +6222,7 @@
 </tr>
 </tbody>
 </table>
-<p>String array input can consist of:</p>
+<p>String array input consists of:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">DataSource</span></code> - The DB credentials to connect to the replica instance.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">QueryAbsoluteLag</span></code> - A plain SQL query that must return a single row. The first column must be the node value of the Prometheus metric, and the second <a href="#id56"><span class="problematic" id="id57">|</span></a>column must be the value of the lag used to measure absolute lag.</p></li>

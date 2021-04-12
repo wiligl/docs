@@ -333,14 +333,14 @@
 <div><p><code class="docutils literal notranslate"><span class="pre">postgres=#</span> <span class="pre">CREATE</span> <span class="pre">DATABASE</span> <span class="pre">mattermost;</span></code></p>
 </div></blockquote>
 <ol class="arabic simple" start="5">
-<li><p>Create the Mattermost user ‘mmuser’.</p></li>
+<li><p>Create the Mattermost user <em>mmuser</em>.</p></li>
 </ol>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">postgres=#</span> <span class="pre">CREATE</span> <span class="pre">USER</span> <span class="pre">mmuser</span> <span class="pre">WITH</span> <span class="pre">PASSWORD</span> <span class="pre">'mmuser-password';</span></code></p>
 </div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Use a password that is more secure than ‘mmuser-password’.</p>
+<p>Use a password that’s more secure than <em>mmuser-password</em>.</p>
 </div>
 <ol class="arabic simple" start="6">
 <li><p>Grant the user access to the Mattermost database.</p></li>
@@ -361,7 +361,7 @@
 <div><p><code class="docutils literal notranslate"><span class="pre">exit</span></code></p>
 </div></blockquote>
 <ol class="arabic simple" start="9">
-<li><p>(Optional) If you use a different server for your database and the Mattermost server, you may allow PostgreSQL to listen on all assigned IP addresses. To do so, open <code class="docutils literal notranslate"><span class="pre">/etc/postgresql/10/main/postgresql.conf</span></code> in a text editor as <em>root</em> user. As a best practice, ensure that only the Mattermost server is able to connect to the PostgreSQL port using a firewall.</p></li>
+<li><p>(Optional) If you use a different server for your database and the Mattermost server, you may allow PostgreSQL to listen on all assigned IP addresses. To do so, open <code class="docutils literal notranslate"><span class="pre">/etc/postgresql/{version}/main/postgresql.conf</span></code> in a text editor as <em>root</em> user. Replace <code class="docutils literal notranslate"><span class="pre">{version}</span></code> with the version of PostgreSQL that’s currently running. As a best practice, ensure that only the Mattermost server is able to connect to the PostgreSQL port using a firewall.</p></li>
 </ol>
 <blockquote>
 <div><ol class="loweralpha simple">
@@ -387,10 +387,10 @@
 <li><p>Modify the file <code class="docutils literal notranslate"><span class="pre">pg_hba.conf</span></code> to allow the Mattermost server to communicate with the database.</p></li>
 </ol>
 <blockquote>
-<div><p><strong>If the Mattermost server and the database are on the same machine</strong>:</p>
+<div><p><strong>If the Mattermost server and the database are on the same machine:</strong></p>
 <blockquote>
 <div><ol class="loweralpha simple">
-<li><p>Open <code class="docutils literal notranslate"><span class="pre">/etc/postgresql/10/main/pg_hba.conf</span></code> as <em>root</em> in a text editor.</p></li>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">/etc/postgresql/{version}/main/pg_hba.conf</span></code> as <em>root</em> in a text editor.</p></li>
 <li><p>Find the following lines:</p></li>
 </ol>
 <blockquote>
@@ -408,7 +408,7 @@
 <p><strong>If the Mattermost server and the database are on different machines:</strong></p>
 <blockquote>
 <div><ol class="loweralpha simple">
-<li><p>Open <code class="docutils literal notranslate"><span class="pre">/etc/postgresql/10/main/pg_hba.conf</span></code> in a text editor as <em>root</em> user.</p></li>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">/etc/postgresql/{version}/main/pg_hba.conf</span></code> in a text editor as <em>root</em> user.</p></li>
 <li><p>Add the following line to the end of the file, where <code class="docutils literal notranslate"><span class="pre">{mattermost-server-IP}</span></code> is the IP address of the Mattermost server.</p></li>
 </ol>
 <blockquote>
@@ -437,13 +437,13 @@
 </ol>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">psql</span> <span class="pre">--host={postgres-server-IP}</span> <span class="pre">--dbname=mattermost</span> <span class="pre">--username=mmuser</span> <span class="pre">--password</span></code></p>
+</div></blockquote>
+</div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You might have to install the PostgreSQL client software to use the command.</p>
-</div>
-</div></blockquote>
 <p>The PostgreSQL interactive terminal starts. To exit the PostgreSQL interactive terminal, type <code class="docutils literal notranslate"><span class="pre">\q</span></code> and press ENTER.</p>
-</div></blockquote>
+</div>
 <p>With the database installed and the initial setup complete, you can now install the Mattermost server.</p>
 </div>
 <div class="section" id="installing-mattermost-server">
