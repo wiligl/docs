@@ -126,6 +126,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#mmctl-group">mmctl group</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mmctl-group-channel">mmctl group channel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mmctl-group-team">mmctl group team</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mmctl-import">mmctl import</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mmctl-integrity">mmctl integrity</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mmctl-ldap">mmctl ldap</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mmctl-license">mmctl license</a></li>
@@ -239,6 +240,7 @@
 <li><p><a class="reference internal" href="#mmctl-docs">mmctl docs</a> - Generates mmctl documentation</p></li>
 <li><p><a class="reference internal" href="#mmctl-export">mmctl export</a> - Exports management</p></li>
 <li><p><a class="reference internal" href="#mmctl-group">mmctl group</a> - Group management</p></li>
+<li><p><a class="reference internal" href="#mmctl-import">mmctl import</a> - Import Management</p></li>
 <li><p><a class="reference internal" href="#mmctl-integrity">mmctl integrity</a> - Database record integrity</p></li>
 <li><p><a class="reference internal" href="#mmctl-ldap">mmctl ldap</a> - LDAP management</p></li>
 <li><p><a class="reference internal" href="#mmctl-license">mmctl license</a> - License Management</p></li>
@@ -1556,10 +1558,12 @@ To configure your zsh shell to load completions <span class="k">for</span> each 
 </pre></div>
 </div>
 <p><strong>Options inherited from parent commands</strong></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--format string               the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
---insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
---local                       allows communicating with the server through a unix socket
---strict                      will only run commands <span class="k">if</span> the mmctl version matches the server one
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
 </pre></div>
 </div>
 </div>
@@ -1582,10 +1586,12 @@ To configure your zsh shell to load completions <span class="k">for</span> each 
 </pre></div>
 </div>
 <p><strong>Options inherited from parent commands</strong></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--format string               the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
---insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
---local                       allows communicating with the server through a unix socket
---strict                      will only run commands <span class="k">if</span> the mmctl version matches the server one
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
 </pre></div>
 </div>
 </div>
@@ -1613,6 +1619,7 @@ To configure your zsh shell to load completions <span class="k">for</span> each 
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
 --format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
 --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
 --local                        allows communicating with the server through a unix socket
 --strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
 </pre></div>
@@ -1638,6 +1645,7 @@ To configure your zsh shell to load completions <span class="k">for</span> each 
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
 --format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
 --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
 --local                        allows communicating with the server through a unix socket
 --strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
 </pre></div>
@@ -1663,10 +1671,12 @@ To configure your zsh shell to load completions <span class="k">for</span> each 
 </pre></div>
 </div>
 <p><strong>Options inherited from parent commands</strong></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--format string               the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
---insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
---local                       allows communicating with the server through a unix socket
---strict                      will only run commands <span class="k">if</span> the mmctl version matches the server one
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
 </pre></div>
 </div>
 </div>
@@ -1682,6 +1692,7 @@ To configure your zsh shell to load completions <span class="k">for</span> each 
 </div>
 <p><strong>Examples</strong></p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>config <span class="nb">set</span> SqlSettings.DriverName mysql
+config <span class="nb">set</span> SqlSettings.DataSourceReplicas <span class="s2">&quot;replica1&quot;</span> <span class="s2">&quot;replica2&quot;</span>
 </pre></div>
 </div>
 <p><strong>Options</strong></p>
@@ -1689,10 +1700,12 @@ To configure your zsh shell to load completions <span class="k">for</span> each 
 </pre></div>
 </div>
 <p><strong>Options inherited from parent commands</strong></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--format string               the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
---insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
---local                       allows communicating with the server through a unix socket
---strict                      will only run commands <span class="k">if</span> the mmctl version matches the server one
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
 </pre></div>
 </div>
 </div>
@@ -1715,10 +1728,12 @@ To configure your zsh shell to load completions <span class="k">for</span> each 
 </pre></div>
 </div>
 <p><strong>Options inherited from parent commands</strong></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--format string               the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
---insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
---local                       allows communicating with the server through a unix socket
---strict                      will only run commands <span class="k">if</span> the mmctl version matches the server one
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
 </pre></div>
 </div>
 </div>
@@ -1750,10 +1765,12 @@ mmctl config subpath --assets-dir /opt/mattermost/client --path /
 </pre></div>
 </div>
 <p><strong>Options inherited from parent commands</strong></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--format string               the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
---insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
---local                       allows communicating with the server through a unix socket
---strict                      will only run commands <span class="k">if</span> the mmctl version matches the server one
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
 </pre></div>
 </div>
 </div>
@@ -1774,10 +1791,12 @@ mmctl config subpath --assets-dir /opt/mattermost/client --path /
 </pre></div>
 </div>
 <p><strong>Options inherited from parent commands</strong></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--format string               the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
---insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
---local                       allows communicating with the server through a unix socket
---strict                      will only run commands <span class="k">if</span> the mmctl version matches the server one
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
 </pre></div>
 </div>
 </div>
@@ -2023,10 +2042,12 @@ mmctl config subpath --assets-dir /opt/mattermost/client --path /
 </pre></div>
 </div>
 <p><strong>Options inherited from parent commands</strong></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--format string               the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
---insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
---local                       allows communicating with the server through a unix socket
---strict                      will only run commands <span class="k">if</span> the mmctl version matches the server one
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
 </pre></div>
 </div>
 </div>
@@ -2049,10 +2070,12 @@ mmctl config subpath --assets-dir /opt/mattermost/client --path /
 </pre></div>
 </div>
 <p><strong>Options inherited from parent commands</strong></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--format string               the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
---insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
---local                       allows communicating with the server through a unix socket
---strict                      will only run commands <span class="k">if</span> the mmctl version matches the server one
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
 </pre></div>
 </div>
 </div>
@@ -2075,10 +2098,12 @@ mmctl config subpath --assets-dir /opt/mattermost/client --path /
 </pre></div>
 </div>
 <p><strong>Options inherited from parent commands</strong></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--format string               the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
---insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
---local                       allows communicating with the server through a unix socket
---strict                      will only run commands <span class="k">if</span> the mmctl version matches the server one
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
 </pre></div>
 </div>
 </div>
@@ -2101,10 +2126,12 @@ mmctl config subpath --assets-dir /opt/mattermost/client --path /
 </pre></div>
 </div>
 <p><strong>Options inherited from parent commands</strong></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--format string               the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
---insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
---local                       allows communicating with the server through a unix socket
---strict                      will only run commands <span class="k">if</span> the mmctl version matches the server one
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
 </pre></div>
 </div>
 </div>
@@ -2127,10 +2154,12 @@ mmctl config subpath --assets-dir /opt/mattermost/client --path /
 </pre></div>
 </div>
 <p><strong>Options inherited from parent commands</strong></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--format string               the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
---insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
---local                       allows communicating with the server through a unix socket
---strict                      will only run commands <span class="k">if</span> the mmctl version matches the server one
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
 </pre></div>
 </div>
 </div>
@@ -2170,10 +2199,12 @@ mmctl config subpath --assets-dir /opt/mattermost/client --path /
 </pre></div>
 </div>
 <p><strong>Options inherited from parent commands</strong></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--format string               the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
---insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
---local                       allows communicating with the server through a unix socket
---strict                      will only run commands <span class="k">if</span> the mmctl version matches the server one
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
 </pre></div>
 </div>
 </div>
@@ -2196,10 +2227,12 @@ mmctl config subpath --assets-dir /opt/mattermost/client --path /
 </pre></div>
 </div>
 <p><strong>Options inherited from parent commands</strong></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--format string               the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
---insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
---local                       allows communicating with the server through a unix socket
---strict                      will only run commands <span class="k">if</span> the mmctl version matches the server one
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
 </pre></div>
 </div>
 </div>
@@ -2222,10 +2255,12 @@ mmctl config subpath --assets-dir /opt/mattermost/client --path /
 </pre></div>
 </div>
 <p><strong>Options inherited from parent commands</strong></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--format string               the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
---insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
---local                       allows communicating with the server through a unix socket
---strict                      will only run commands <span class="k">if</span> the mmctl version matches the server one
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
 </pre></div>
 </div>
 </div>
@@ -2248,10 +2283,251 @@ mmctl config subpath --assets-dir /opt/mattermost/client --path /
 </pre></div>
 </div>
 <p><strong>Options inherited from parent commands</strong></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--format string               the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
---insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
---local                       allows communicating with the server through a unix socket
---strict                      will only run commands <span class="k">if</span> the mmctl version matches the server one
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="mmctl-import">
+<h2>mmctl import<a class="headerlink" href="#mmctl-import" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description</strong></p>
+<p>Manage imports.</p>
+<dl class="simple">
+<dt>Child Commands</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#mmctl-import-job">mmctl import job</a> - List and show import jobs</p></li>
+<li><p><a class="reference internal" href="#mmctl-import-job-list">mmctl import job list</a> - List import jobs</p></li>
+<li><p><a class="reference internal" href="#mmctl-import-job-show">mmctl import job show</a> - Show import job</p></li>
+<li><p><a class="reference internal" href="#mmctl-import-list">mmctl import list</a> - List all import files</p></li>
+<li><p><a class="reference internal" href="#mmctl-import-list-available">mmctl import list available</a> - List available import files</p></li>
+<li><p><a class="reference internal" href="#mmctl-import-list-incomplete">mmctl import list incomplete</a> - List incomplete import files uploads</p></li>
+<li><p><a class="reference internal" href="#mmctl-import-process">mmctl import process</a> - Start an import job</p></li>
+<li><p><a class="reference internal" href="#mmctl-import-upload">mmctl import upload</a> - Upload import files</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Options</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>-h, --help   <span class="nb">help</span> <span class="k">for</span> import
+</pre></div>
+</div>
+<div class="section" id="mmctl-import-job">
+<h3>mmctl import job<a class="headerlink" href="#mmctl-import-job" title="Permalink to this headline">¶</a></h3>
+<p><strong>Description</strong></p>
+<blockquote>
+<div><p>List and show import jobs.</p>
+</div></blockquote>
+<p><strong>Options</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>-h, --help   <span class="nb">help</span> <span class="k">for</span> status
+</pre></div>
+</div>
+<p><strong>Options inherited from parent commands</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
+</pre></div>
+</div>
+</div>
+<div class="section" id="mmctl-import-job-list">
+<h3>mmctl import job list<a class="headerlink" href="#mmctl-import-job-list" title="Permalink to this headline">¶</a></h3>
+<p><strong>Description</strong></p>
+<blockquote>
+<div><p>List import jobs</p>
+</div></blockquote>
+<p><strong>Format</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mmctl import job list <span class="o">[</span>flags<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Examples</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>import job list
+</pre></div>
+</div>
+<p><strong>Options</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--all            Fetch all import jobs. --page flag will be ignore <span class="k">if</span> provided
+-h, --help       <span class="nb">help</span> <span class="k">for</span> list
+--page int       Page number to fetch <span class="k">for</span> the list of import <span class="nb">jobs</span>
+--per-page int   Number of import <span class="nb">jobs</span> to be fetched <span class="o">(</span>default <span class="m">200</span><span class="o">)</span>
+</pre></div>
+</div>
+<p><strong>Options inherited from parent commands</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
+</pre></div>
+</div>
+</div>
+<div class="section" id="mmctl-import-job-show">
+<h3>mmctl import job show<a class="headerlink" href="#mmctl-import-job-show" title="Permalink to this headline">¶</a></h3>
+<p><strong>Description</strong></p>
+<blockquote>
+<div><p>Show import job.</p>
+</div></blockquote>
+<p><strong>Format</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mmctl import job show <span class="o">[</span>importJobID<span class="o">]</span> <span class="o">[</span>flags<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Examples</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>import job show f3d68qkkm7n8xgsfxwuo498rah
+</pre></div>
+</div>
+<p><strong>Options</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>-h, --help   <span class="nb">help</span> <span class="k">for</span> status
+</pre></div>
+</div>
+<p><strong>Options inherited from parent commands</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
+</pre></div>
+</div>
+</div>
+<div class="section" id="mmctl-import-list">
+<h3>mmctl import list<a class="headerlink" href="#mmctl-import-list" title="Permalink to this headline">¶</a></h3>
+<p><strong>Description</strong></p>
+<blockquote>
+<div><p>List all import files.</p>
+</div></blockquote>
+<p><strong>Examples</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>import list
+</pre></div>
+</div>
+<p><strong>Options</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>-h, --help   <span class="nb">help</span> <span class="k">for</span> status
+</pre></div>
+</div>
+<p><strong>Options inherited from parent commands</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
+</pre></div>
+</div>
+</div>
+<div class="section" id="mmctl-import-list-available">
+<h3>mmctl import list available<a class="headerlink" href="#mmctl-import-list-available" title="Permalink to this headline">¶</a></h3>
+<p><strong>Description</strong></p>
+<blockquote>
+<div><p>List available import files.</p>
+</div></blockquote>
+<p><strong>Format</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mmctl import list available <span class="o">[</span>flags<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Examples</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>import list available
+</pre></div>
+</div>
+<p><strong>Options</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>-h, --help   <span class="nb">help</span> <span class="k">for</span> status
+</pre></div>
+</div>
+<p><strong>Options inherited from parent commands</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
+</pre></div>
+</div>
+</div>
+<div class="section" id="mmctl-import-list-incomplete">
+<h3>mmctl import list incomplete<a class="headerlink" href="#mmctl-import-list-incomplete" title="Permalink to this headline">¶</a></h3>
+<p><strong>Description</strong></p>
+<blockquote>
+<div><p>List incomplete import files uploads.</p>
+</div></blockquote>
+<p><strong>Format</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mmctl import list incomplete <span class="o">[</span>flags<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Examples</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>import list incomplete
+</pre></div>
+</div>
+<p><strong>Options</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>-h, --help   <span class="nb">help</span> <span class="k">for</span> status
+</pre></div>
+</div>
+<p><strong>Options inherited from parent commands</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
+</pre></div>
+</div>
+</div>
+<div class="section" id="mmctl-import-process">
+<h3>mmctl import process<a class="headerlink" href="#mmctl-import-process" title="Permalink to this headline">¶</a></h3>
+<p><strong>Description</strong></p>
+<blockquote>
+<div><p>Start an import job.</p>
+</div></blockquote>
+<p><strong>Format</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mmctl import process <span class="o">[</span>importname<span class="o">]</span> <span class="o">[</span>flags<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Examples</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>import process 35uy6cwrqfnhdx3genrhqqznxc_import.zip
+</pre></div>
+</div>
+<p><strong>Options</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>-h, --help   <span class="nb">help</span> <span class="k">for</span> status
+</pre></div>
+</div>
+<p><strong>Options inherited from parent commands</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
+</pre></div>
+</div>
+</div>
+<div class="section" id="mmctl-import-upload">
+<h3>mmctl import upload<a class="headerlink" href="#mmctl-import-upload" title="Permalink to this headline">¶</a></h3>
+<p><strong>Description</strong></p>
+<blockquote>
+<div><p>Upload import files.</p>
+</div></blockquote>
+<p><strong>Format</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mmctl import upload <span class="o">[</span>filepath<span class="o">]</span> <span class="o">[</span>flags<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Examples</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>import upload import_file.zip
+</pre></div>
+</div>
+<p><strong>Options</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>-h, --help        <span class="nb">help</span> <span class="k">for</span> upload
+--resume          Set to <span class="nb">true</span> to resume an incomplete import upload.
+--upload string   The ID of the import upload to resume.
+</pre></div>
+</div>
+<p><strong>Options inherited from parent commands</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+ --format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+ --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+ --insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+ --local                        allows communicating with the server through a unix socket
+ --strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
 </pre></div>
 </div>
 </div>
@@ -2275,10 +2551,12 @@ mmctl config subpath --assets-dir /opt/mattermost/client --path /
 </pre></div>
 </div>
 <p><strong>Options inherited from parent commands</strong></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--format string               the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
---insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
---local                       allows communicating with the server through a unix socket
---strict                      will only run commands <span class="k">if</span> the mmctl version matches the server one
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
 </pre></div>
 </div>
 </div>
@@ -2314,10 +2592,12 @@ mmctl config subpath --assets-dir /opt/mattermost/client --path /
 </pre></div>
 </div>
 <p><strong>Options inherited from parent commands</strong></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--format string               the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
---insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
---local                       allows communicating with the server through a unix socket
---strict                      will only run commands <span class="k">if</span> the mmctl version matches the server one
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
 </pre></div>
 </div>
 </div>
@@ -2355,10 +2635,12 @@ mmctl config subpath --assets-dir /opt/mattermost/client --path /
 </pre></div>
 </div>
 <p><strong>Options inherited from parent commands</strong></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--format string               the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
---insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
---local                       allows communicating with the server through a unix socket
---strict                      will only run commands <span class="k">if</span> the mmctl version matches the server one
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
 </pre></div>
 </div>
 </div>
@@ -2381,10 +2663,12 @@ mmctl config subpath --assets-dir /opt/mattermost/client --path /
 </pre></div>
 </div>
 <p><strong>Options inherited from parent commands</strong></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--format string               the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
---insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
---local                       allows communicating with the server through a unix socket
---strict                      will only run commands <span class="k">if</span> the mmctl version matches the server one
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
 </pre></div>
 </div>
 </div>
