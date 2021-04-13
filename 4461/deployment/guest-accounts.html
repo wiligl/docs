@@ -112,6 +112,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../administration/migration-announcement-email-template.html">Migration Announcement Email</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../administration/user-provisioning.html">Provisioning Workflows</a></li>
 <li class="toctree-l3"><a class="reference internal" href="admin-roles.html">Additional System Admin Roles (E20)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sso-ldap.html">Active Directory/LDAP Setup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auth.html">Multi-factor Authentication</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ldap-group-sync.html">AD/LDAP Groups (E20)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ldap-group-constrained-team-channel.html">Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership</a></li>
@@ -224,7 +225,7 @@
 <li><p>Create direct messages or group messages with members who aren’t within the same channel</p></li>
 <li><p>Invite people</p></li>
 </ul>
-<p>Additionally, guests are not automatically added to the default <code class="docutils literal notranslate"><span class="pre">Town-square</span></code> and <code class="docutils literal notranslate"><span class="pre">Off-topic</span></code> channels upon logging in and need to be invited/added to them manually.</p>
+<p>Additionally, guests are not automatically added to the default <strong>Town-square</strong> and <strong>Off-topic</strong> channels upon logging in and need to be invited/added to them manually.</p>
 <div class="section" id="enabling-guest-accounts">
 <h2>Enabling Guest Accounts<a class="headerlink" href="#enabling-guest-accounts" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
@@ -253,8 +254,8 @@
 </div>
 <p>To invite guests into one or more Mattermost channels:</p>
 <ol class="arabic simple">
-<li><p>Enable email invites from <strong>System Console &gt; Signup &gt; Enable Email Invitations</strong>.</p></li>
-<li><p>Navigate to <strong>Main Menu &gt; Invite People</strong>. This is a new invitation option that combines inviting guests and members and consolidates <strong>Send Email</strong>, <strong>Get Team Invite Link</strong>, and <strong>Add Members to the Team</strong>.</p></li>
+<li><p>Go to <strong>System Console &gt; Signup &gt; Enable Email Invitations</strong> to enable email invites.</p></li>
+<li><p>Go to <strong>Main Menu &gt; Invite People</strong>. This is a new invitation option that combines inviting guests and members and consolidates <strong>Send Email</strong>, <strong>Get Team Invite Link</strong>, and <strong>Add Members to the Team</strong>.</p></li>
 <li><p>Select <strong>Invite Guests</strong>.</p></li>
 <li><p>Enter the guest’s email address.</p></li>
 <li><p>Choose the channels the guest can join (excluding managed teams).</p></li>
@@ -266,25 +267,25 @@
 <h2>Configuring AD/LDAP Authentication<a class="headerlink" href="#configuring-ad-ldap-authentication" title="Permalink to this headline">¶</a></h2>
 <p>When enabled, the <strong>Guest Filter</strong> in Mattermost identifies external users whose AD/LDAP role is <code class="docutils literal notranslate"><span class="pre">guest</span></code> and who are invited to join your Mattermost server. These users will have the <code class="docutils literal notranslate"><span class="pre">guest</span></code> role applied immediately upon first sign-in instead of the default member user role. This eliminates having to manually assign the role in the System Console.</p>
 <ol class="arabic simple">
-<li><p>Enable Guest Access via <strong>System Console &gt; Authentication &gt; Guest Access (Beta)</strong>.</p></li>
+<li><p>Go to <strong>System Console &gt; Authentication &gt; Guest Access (Beta)</strong> to enable guest access.</p></li>
 <li><p>Go to <strong>System Console &gt; Authentication &gt; AD/LDAP</strong>.</p></li>
 <li><p>Complete the <strong>Guest Filter</strong> field.</p></li>
 <li><p>Select <strong>Save</strong>.</p></li>
 </ol>
 <p>If a Mattermost guest user has the <code class="docutils literal notranslate"><span class="pre">guest</span></code> role removed in the AD/LDAP system, the synchronization process will not automatically promote them to a member user role. This is done manually via <strong>System Console &gt; User Management</strong>. If a member user has the <strong>Guest Attribute</strong> added, the synchronization processes will automatically demote the member user to the guest role.</p>
-<p>When a guest logs in without having any channels assigned to their account, they’re advised to contact an administrator.</p>
+<p>When a guest logs in without having any channels assigned to their account, they’re advised to contact a Mattermost System Admin.</p>
 </div>
 <div class="section" id="configuring-saml-2-0-authentication">
 <h2>Configuring SAML 2.0 Authentication<a class="headerlink" href="#configuring-saml-2-0-authentication" title="Permalink to this headline">¶</a></h2>
 <p>When enabled, the <strong>Guest Attribute</strong> in Mattermost identifies external users whose SAML assertion is guest and who are invited to join your Mattermost server. These users will have the <code class="docutils literal notranslate"><span class="pre">guest</span></code> role applied immediately upon first sign-in instead of the default member user role. This eliminates having to manually assign the role in the System Console.</p>
 <p>If a Mattermost guest user has the guest role removed in the SAML system, the synchronization processes will not automatically promote them to a member user role. This is done manually via <strong>System Console &gt; User Management</strong>. If a member user has the <strong>Guest Attribute</strong> added, the synchronization processes will automatically demote the member user to the guest role.</p>
 <ol class="arabic simple">
-<li><p>Enable Guest Access via <strong>System Console &gt; Guest Access (Beta)</strong>.</p></li>
-<li><p>Navigate to <strong>System Console &gt; Authentication &gt; SAML 2.0</strong>.</p></li>
+<li><p>Go to <strong>System Console &gt; Guest Access (Beta)</strong> to enable guest access.</p></li>
+<li><p>Go to <strong>System Console &gt; Authentication &gt; SAML 2.0</strong>.</p></li>
 <li><p>Complete the <strong>Guest Attribute</strong> field.</p></li>
 <li><p>Select <strong>Save</strong>.</p></li>
 </ol>
-<p>When a guest logs in without having any channels assigned to their account, they’re advised to contact an administrator.</p>
+<p>When a guest logs in without having any channels assigned to their account, they’re advised to contact a Mattermost System Admin.</p>
 </div>
 <div class="section" id="guest-permission-settings">
 <h2>Guest Permission Settings<a class="headerlink" href="#guest-permission-settings" title="Permalink to this headline">¶</a></h2>
@@ -312,7 +313,7 @@
 </div>
 <div class="section" id="removing-guests-from-channels-and-teams">
 <h3>Removing Guests from Channels and Teams<a class="headerlink" href="#removing-guests-from-channels-and-teams" title="Permalink to this headline">¶</a></h3>
-<p>Guests can be removed from a channel through <strong>Manage members</strong>, or by using the <code class="docutils literal notranslate"><span class="pre">/kick</span></code> or <code class="docutils literal notranslate"><span class="pre">/remove</span></code> commands.</p>
+<p>Guests can be removed from a channel through <strong>Manage members</strong>, or by using the <code class="docutils literal notranslate"><span class="pre">/kick</span></code> or <code class="docutils literal notranslate"><span class="pre">/remove</span></code> slash commands.</p>
 <p>When a guest has been removed from all channels within a team, and if they belong to other teams, they will default into the last channel on the last team they have accessed. If they are removed from all channels on all teams, they’ll be taken to a screen letting them know they have no channels assigned.</p>
 </div>
 <div class="section" id="promoting-and-demoting-user-roles">
@@ -361,7 +362,7 @@
 </div>
 <div class="section" id="why-is-the-guest-account-feature-in-beta">
 <h3>Why is the Guest Account feature in Beta?<a class="headerlink" href="#why-is-the-guest-account-feature-in-beta" title="Permalink to this headline">¶</a></h3>
-<p>The Guest Account feature is in beta while we address feedback from our customers on the feature.</p>
+<p>The Guest Account feature is in Beta while we address feedback from our customers on the feature.</p>
 </div>
 <div class="section" id="has-the-guest-accounts-feature-been-reviewed-by-an-external-security-firm">
 <h3>Has the Guest Accounts feature been reviewed by an external security firm?<a class="headerlink" href="#has-the-guest-accounts-feature-been-reviewed-by-an-external-security-firm" title="Permalink to this headline">¶</a></h3>
