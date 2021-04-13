@@ -39,9 +39,7 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-K874RWM');</script>
 	<!-- End Google Tag Manager -->
-
 	
-    <script src="../_static/js/modernizr.min.js"></script>
 </head>
 
 <body class="wy-body-for-nav">
@@ -184,7 +182,7 @@
   <hr/>
 </div>
           <article class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
-           <div itemprop="articleBody">
+           <div itemprop="articleBody" role="main">
             
   <div class="section" id="bulk-export-tool">
 <span id="bulk-export"></span><h1>Bulk Export Tool<a class="headerlink" href="#bulk-export-tool" title="Permalink to this headline">¶</a></h1>
@@ -193,35 +191,35 @@
 created another server for production use, and now want to retain the history from the proof of concept instance.</p>
 <p>You can export the following data types:</p>
 <ul class="simple">
-<li>Teams</li>
-<li>Channels (Public and Private)</li>
-<li>Users</li>
-<li>Users’ Team memberships</li>
-<li>Users’ Channel memberships</li>
-<li>Posts (Posts in the Public/Private channels and also replies to those posts)</li>
+<li><p>Teams</p></li>
+<li><p>Channels (Public and Private)</p></li>
+<li><p>Users</p></li>
+<li><p>Users’ Team memberships</p></li>
+<li><p>Users’ Channel memberships</p></li>
+<li><p>Posts (Posts in the Public/Private channels and also replies to those posts)</p></li>
 </ul>
 <div class="section" id="bulk-export-data">
 <h2>Bulk export data<a class="headerlink" href="#bulk-export-data" title="Permalink to this headline">¶</a></h2>
 <p>At this time, the export supports attributes of the objects listed below. All Mattermost Bulk Export data files will begin with a <cite>Version</cite> object as the first line of the file. This indicates the version of the Mattermost Bulk Import file format with which the exported data is compatible.</p>
 <p>You can export the following data types:</p>
 <ul class="simple">
-<li>Teams</li>
-<li>Channels (Public and Private)</li>
-<li>Users</li>
-<li>Users’ Team memberships</li>
-<li>Users’ Channel memberships</li>
-<li>Users’ notification preferences</li>
-<li>Posts (regular, non-reply posts)</li>
-<li>Posts’ Replies</li>
-<li>Posts’ Reactions</li>
-<li>Custom Emoji</li>
-<li>Direct Message Channels</li>
-<li>Direct Message Posts</li>
+<li><p>Teams</p></li>
+<li><p>Channels (Public and Private)</p></li>
+<li><p>Users</p></li>
+<li><p>Users’ Team memberships</p></li>
+<li><p>Users’ Channel memberships</p></li>
+<li><p>Users’ notification preferences</p></li>
+<li><p>Posts (regular, non-reply posts)</p></li>
+<li><p>Posts’ Replies</p></li>
+<li><p>Posts’ Reactions</p></li>
+<li><p>Custom Emoji</p></li>
+<li><p>Direct Message Channels</p></li>
+<li><p>Direct Message Posts</p></li>
 </ul>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>Configuration for data types such as exporting specific areas of the server, exporting additional types of posts, permissions schemes, file attachments, webhooks, and bot messages is not yet supported. Deleted objects are also not yet supported.</p>
-<p class="last">For requests to add additional attributes or objects to our exporter, please add a feature request on our <a class="reference external" href="https://mattermost.uservoice.com/forums/306457-general">feature idea forum</a>.</p>
+<p>For requests to add additional attributes or objects to our exporter, please add a feature request on our <a class="reference external" href="https://mattermost.uservoice.com/forums/306457-general">feature idea forum</a>.</p>
 </div>
 <div class="section" id="version-object">
 <h3>Version object<a class="headerlink" href="#version-object" title="Permalink to this headline">¶</a></h3>
@@ -789,15 +787,15 @@ created another server for production use, and now want to retain the history fr
 <p>The export command runs in the <a class="reference external" href="https://docs.mattermost.com/administration/command-line-tools.html">CLI</a>.  It has permissions to access all information in the Mattermost database.</p>
 <p>To run the export command:</p>
 <ol class="arabic simple">
-<li>Navigate to the directory where the Mattermost server is installed. On a default install of Mattermost, the directory is <code class="docutils literal notranslate"><span class="pre">/opt/mattermost</span></code>.</li>
-<li>Run the following command to extract data from all teams on the server. Note that you can change the file name and specify an absolute or relative path to dictate where the file is exported:</li>
+<li><p>Navigate to the directory where the Mattermost server is installed. On a default install of Mattermost, the directory is <code class="docutils literal notranslate"><span class="pre">/opt/mattermost</span></code>.</p></li>
+<li><p>Run the following command to extract data from all teams on the server. Note that you can change the file name and specify an absolute or relative path to dictate where the file is exported:</p></li>
 </ol>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">-u</span> <span class="pre">mattermost</span> <span class="pre">bin/mattermost</span> <span class="pre">export</span> <span class="pre">bulk</span> <span class="pre">file.json</span> <span class="pre">--all-teams</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">-u</span> <span class="pre">mattermost</span> <span class="pre">bin/mattermost</span> <span class="pre">export</span> <span class="pre">bulk</span> <span class="pre">/home/user/bulk_data.json</span> <span class="pre">--all-teams</span></code></p>
 </div></blockquote>
 <ol class="arabic simple" start="3">
-<li>Retrieve your file from the location you specified.</li>
+<li><p>Retrieve your file from the location you specified.</p></li>
 </ol>
 </div>
 </div>
@@ -807,29 +805,29 @@ created another server for production use, and now want to retain the history fr
            
           </article>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="generating-support-packet.html" class="btn btn-neutral float-right" title="Generating a Support Packet (E10/E20)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="announcement-banner.html" class="btn btn-neutral" title="Announcement Banner (E10)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="generating-support-packet.html" class="btn btn-neutral float-right" title="Generating a Support Packet (E10/E20)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="announcement-banner.html" class="btn btn-neutral float-left" title="Announcement Banner (E10)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015-2021 Mattermost
+        &#169; Copyright 2015-2021 Mattermost.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -870,11 +868,10 @@ created another server for production use, and now want to retain the history fr
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/myscript.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/myscript.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 

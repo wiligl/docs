@@ -30,7 +30,7 @@
     <link rel="canonical" href="https://docs.mattermost.com/deployment/auth.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="AD/LDAP Groups (E20)" href="ldap-group-sync.html" />
-    <link rel="prev" title="Active Directory/LDAP Setup (E10/E20)" href="sso-ldap.html" />
+    <link rel="prev" title="Active Directory/LDAP Setup" href="sso-ldap.html" />
   
   	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -39,9 +39,7 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-K874RWM');</script>
 	<!-- End Google Tag Manager -->
-
 	
-    <script src="../_static/js/modernizr.min.js"></script>
 </head>
 
 <body class="wy-body-for-nav">
@@ -114,7 +112,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../administration/migration-announcement-email-template.html">Migration Announcement Email</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../administration/user-provisioning.html">Provisioning Workflows</a></li>
 <li class="toctree-l3"><a class="reference internal" href="admin-roles.html">Additional System Admin Roles (E20)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sso-ldap.html">Active Directory/LDAP Setup (E10/E20)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sso-ldap.html">Active Directory/LDAP Setup</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Multi-factor Authentication</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#enabling-mfa">Enabling MFA</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#enforcing-mfa-e10">Enforcing MFA (E10)</a></li>
@@ -197,7 +195,7 @@
   <hr/>
 </div>
           <article class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
-           <div itemprop="articleBody">
+           <div itemprop="articleBody" role="main">
             
   <div class="section" id="multi-factor-authentication">
 <span id="auth-mfa"></span><h1>Multi-factor Authentication<a class="headerlink" href="#multi-factor-authentication" title="Permalink to this headline">¶</a></h1>
@@ -206,22 +204,27 @@
 <p>Mattermost offers a smartphone-based MFA check in addition to email-password or Active Directory/LDAP authentication to sign in to the Mattermost server.</p>
 <p>Supported smartphones include iOS, Android, Blackberry, and Windows Phone devices that are able to install <a class="reference external" href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a>. Other than requiring internet access to download and install Google Authenticator, the phone used for Mattermost MFA does not require internet access.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">As the MFA implementation relies on Time-based One-time passwords (TOTP) ensure that your server system time is accurate. If there is a discrepancy, users may not be able to log in successfully.</p>
+<p class="admonition-title">Note</p>
+<p>As the MFA implementation relies on Time-based One-time passwords (TOTP) ensure that your server system time is accurate. If there is a discrepancy, users may not be able to log in successfully.</p>
 </div>
 <div class="section" id="enabling-mfa">
 <h2>Enabling MFA<a class="headerlink" href="#enabling-mfa" title="Permalink to this headline">¶</a></h2>
-<p>This option is enabled by the System Admin in the <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#mfa">System Console</a> under <strong>Authentication &gt; MFA &gt; Enable Multi-factor Authentication</strong>.</p>
+<p>This option is enabled by the System Admin by going to <strong>System Console &gt; Authentication &gt; MFA</strong>, then setting <strong>Enable Multi-factor Authentication</strong> to <strong>true</strong>.</p>
 <p>Once enabled, users can opt to use MFA on their account in the <a class="reference external" href="https://docs.mattermost.com/help/settings/account-settings.html#multi-factor-authentication">Account Settings</a> menu under <strong>Security &gt; Multi-factor Authentication</strong>.</p>
+<div class="section" id="disabling-mfa">
+<h3>Disabling MFA<a class="headerlink" href="#disabling-mfa" title="Permalink to this headline">¶</a></h3>
+<p>System Admins can disable this option by going to <strong>System Console &gt; Authentication &gt; MFA</strong>. When <strong>Enable Multi-factor Authentication</strong> is set to <strong>false</strong>, users can’t opt to use or disable MFA on their account in  <strong>Account Settings &gt; Security &gt; Multi-factor Authentication</strong>.</p>
+<p>MFA can be disabled for user accounts using the API. See the <a class="reference external" href="https://api.mattermost.com/#tag/users/paths/~1users~1{user_id}~1mfa/put">Mattermost API Reference</a> for details.</p>
+</div>
 </div>
 <div class="section" id="enforcing-mfa-e10">
 <h2>Enforcing MFA (E10)<a class="headerlink" href="#enforcing-mfa-e10" title="Permalink to this headline">¶</a></h2>
-<p>This option can be enabled by the System Admin in the <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#mfa">System Console</a> under <strong>Authentication &gt; MFA &gt; Enforce Multi-factor Authentication</strong>.</p>
+<p>This option can be enabled by the System Admin by going to <strong>System Console &gt; Authentication &gt; MFA</strong>, then setting <strong>Enforce Multi-factor Authentication</strong> to <strong>true</strong>.</p>
 <p>When MFA enforcement is set to <strong>true</strong>, users with email or LDAP authentication who don’t have MFA set up will be directed to the MFA setup page when they log in to Mattermost. They will not be able to access the site until MFA setup is complete. Any new users will be required to set up MFA during the sign up process.</p>
 <p>Users will not be able to remove MFA from their account while enforcement is on.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Turning on MFA enforcement prevents users from accessing the site until set up is complete. It is recommended that you turn on enforcement during non-peak hours when people are less likely to be using Mattermost.</p>
+<p class="admonition-title">Note</p>
+<p>Turning on MFA enforcement prevents users from accessing the site until set up is complete. It is recommended that you turn on enforcement during non-peak hours when people are less likely to be using Mattermost.</p>
 </div>
 </div>
 </div>
@@ -231,29 +234,29 @@
            
           </article>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="ldap-group-sync.html" class="btn btn-neutral float-right" title="AD/LDAP Groups (E20)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="sso-ldap.html" class="btn btn-neutral" title="Active Directory/LDAP Setup (E10/E20)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="ldap-group-sync.html" class="btn btn-neutral float-right" title="AD/LDAP Groups (E20)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="sso-ldap.html" class="btn btn-neutral float-left" title="Active Directory/LDAP Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015-2021 Mattermost
+        &#169; Copyright 2015-2021 Mattermost.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -294,11 +297,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/myscript.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/myscript.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 

@@ -37,9 +37,7 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-K874RWM');</script>
 	<!-- End Google Tag Manager -->
-
 	
-    <script src="../_static/js/modernizr.min.js"></script>
 </head>
 
 <body class="wy-body-for-nav">
@@ -146,54 +144,54 @@
   <hr/>
 </div>
           <article class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
-           <div itemprop="articleBody">
+           <div itemprop="articleBody" role="main">
             
   <div class="section" id="set-up-mattermost-with-blackberry-emm">
 <h1>Set Up Mattermost with BlackBerry EMM<a class="headerlink" href="#set-up-mattermost-with-blackberry-emm" title="Permalink to this headline">¶</a></h1>
 <ol class="arabic simple">
-<li>Log in to your BlackBerry UEM environment.</li>
-<li>Click on <strong>Apps</strong>.</li>
+<li><p>Log in to your BlackBerry UEM environment.</p></li>
+<li><p>Click on <strong>Apps</strong>.</p></li>
 </ol>
 <img alt="../_images/blackberry_step2.png" src="../_images/blackberry_step2.png" />
 <ol class="arabic simple" start="3">
-<li>Select the already published Mattermost app, or choose to add a new one.  When adding a new app, select <strong>App Store</strong> or <strong>Google Play</strong> to use the published apps by Mattermost. If you are building the apps yourself, use the option for <strong>Internal apps</strong> and then browse to select the .apk or .ipa file.</li>
+<li><p>Select the already published Mattermost app, or choose to add a new one.  When adding a new app, select <strong>App Store</strong> or <strong>Google Play</strong> to use the published apps by Mattermost. If you are building the apps yourself, use the option for <strong>Internal apps</strong> and then browse to select the .apk or .ipa file.</p></li>
 </ol>
 <img alt="../_images/blackberry_step3.png" src="../_images/blackberry_step3.png" />
 <ol class="arabic simple" start="4">
-<li>Next fill in the app name, description, and any other information needed for deployment in the screen below. See BlackBerry documentation for more details on the settings for <a class="reference external" href="https://help.blackberry.com/en/blackberry-uem/12.6/administration/adr1393870066674.html">internal apps</a>, <a class="reference external" href="https://help.blackberry.com/en/blackberry-uem/12.6/administration/ios-apps.html">public iOS apps</a>, and <a class="reference external" href="https://help.blackberry.com/en/blackberry-uem/12.6/administration/adr1427221741509.html">Android for Work apps</a>.</li>
+<li><p>Next fill in the app name, description, and any other information needed for deployment in the screen below. See BlackBerry documentation for more details on the settings for <a class="reference external" href="https://help.blackberry.com/en/blackberry-uem/12.6/administration/adr1393870066674.html">internal apps</a>, <a class="reference external" href="https://help.blackberry.com/en/blackberry-uem/12.6/administration/ios-apps.html">public iOS apps</a>, and <a class="reference external" href="https://help.blackberry.com/en/blackberry-uem/12.6/administration/adr1427221741509.html">Android for Work apps</a>.</p></li>
 </ol>
 <img alt="../_images/blackberry_step4.png" src="../_images/blackberry_step4.png" />
 <ol class="arabic simple" start="5">
-<li>In the same screen look for <strong>App configuration</strong>. You can either upload this <a class="reference download internal" download="" href="../_downloads/cf12d3b4c268ee5b7e752da869e5ffa3/mattermost-specfile.xml"><code class="xref download docutils literal notranslate"><span class="pre">xml</span> <span class="pre">file</span></code></a> as the template, or add the configuration manually with the keys and values described in the <a class="reference internal" href="mobile-appconfig.html#appconfig-table"><span class="std std-ref">Mattermost AppConfig Values</span></a>.</li>
+<li><p>In the same screen look for <strong>App configuration</strong>. You can either upload this <a class="reference download internal" download="" href="../_downloads/24d96c4603136addd1eaeea7d4cedf26/mattermost-specfile.xml"><code class="xref download docutils literal notranslate"><span class="pre">xml</span> <span class="pre">file</span></code></a> as the template, or add the configuration manually with the keys and values described in the <a class="reference internal" href="mobile-appconfig.html#appconfig-table"><span class="std std-ref">Mattermost AppConfig Values</span></a>.</p></li>
 </ol>
 <blockquote>
 <div><ol class="upperalpha simple">
-<li>Using the template:</li>
+<li><p>Using the template:</p></li>
 </ol>
 <blockquote>
 <div><ul class="simple">
-<li>Browse for the xml template file (Note: If you build the app yourself, make sure to edit the template to use your bundle or package ID)</li>
+<li><p>Browse for the xml template file (Note: If you build the app yourself, make sure to edit the template to use your bundle or package ID)</p></li>
 </ul>
 <img alt="../_images/blackberry_step5a1.png" src="../_images/blackberry_step5a1.png" />
 <ul class="simple">
-<li>Set the name of the app configuration and edit the settings that appear on screen, then click <strong>Save</strong></li>
+<li><p>Set the name of the app configuration and edit the settings that appear on screen, then click <strong>Save</strong></p></li>
 </ul>
 <img alt="../_images/blackberry_step5a2.png" src="../_images/blackberry_step5a2.png" />
 </div></blockquote>
 <ol class="upperalpha simple" start="2">
-<li>Manual configuration:</li>
+<li><p>Manual configuration:</p></li>
 </ol>
 <blockquote>
 <div><ul class="simple">
-<li>Click on the “<strong>+</strong>” at the far right of the App configuration table and select <strong>Configure Manually</strong></li>
+<li><p>Click on the “<strong>+</strong>” at the far right of the App configuration table and select <strong>Configure Manually</strong></p></li>
 </ul>
 <img alt="../_images/blackberry_step5b1.png" src="../_images/blackberry_step5b1.png" />
 <ul class="simple">
-<li>Enter a name for the app configuration, and then add the key value pairs found in the <a class="reference internal" href="mobile-appconfig.html#appconfig-table"><span class="std std-ref">Mattermost AppConfig Values</span></a>.</li>
+<li><p>Enter a name for the app configuration, and then add the key value pairs found in the <a class="reference internal" href="mobile-appconfig.html#appconfig-table"><span class="std std-ref">Mattermost AppConfig Values</span></a>.</p></li>
 </ul>
 <img alt="../_images/blackberry_step5b2.png" src="../_images/blackberry_step5b2.png" />
 <ul class="simple">
-<li>Save your configuration</li>
+<li><p>Save your configuration</p></li>
 </ul>
 </div></blockquote>
 </div></blockquote>
@@ -204,20 +202,25 @@
            
           </article>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015-2021 Mattermost
+        &#169; Copyright 2015-2021 Mattermost.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -258,11 +261,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/myscript.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/myscript.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 

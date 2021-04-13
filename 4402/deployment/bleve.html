@@ -39,9 +39,7 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-K874RWM');</script>
 	<!-- End Google Tag Manager -->
-
 	
-    <script src="../_static/js/modernizr.min.js"></script>
 </head>
 
 <body class="wy-body-for-nav">
@@ -182,7 +180,7 @@
   <hr/>
 </div>
           <article class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
-           <div itemprop="articleBody">
+           <div itemprop="articleBody" role="main">
             
   <div class="section" id="bleve-search-experimental">
 <h1>Bleve Search (Experimental)<a class="headerlink" href="#bleve-search-experimental" title="Permalink to this headline">¶</a></h1>
@@ -193,21 +191,21 @@
 <p>Follow these steps to configure the Mattermost server to use Bleve and generate required indexes. Once the configuration is saved, new posts made to the database will be automatically indexed with Bleve.</p>
 <p><strong>Note:</strong> During indexing, search results may be incomplete until the indexing job is complete.</p>
 <ol class="arabic simple">
-<li>Open <strong>System Console &gt; Experimental &gt; Bleve</strong>.</li>
-<li>Set <strong>Enable Bleve Indexing</strong> to <strong>true</strong> to enable the other settings on the page.</li>
-<li>Set the directory path to use for storing bleve indexes (e.g.: <code class="docutils literal notranslate"><span class="pre">/var/opt/mattermost/bleveindexes</span></code>). The user running Mattermost should have permissions to access the directory.</li>
-<li>Save the configuration.</li>
-<li>Click the <strong>Index Now</strong> button. All users, channels, and posts in the database will be indexed oldest to newest.</li>
-<li>Set <strong>Enable Bleve for search queries</strong> to <strong>true</strong>.</li>
-<li>Set <strong>Enable Bleve for autocomplete queries</strong> to <strong>true</strong>.</li>
+<li><p>Open <strong>System Console &gt; Experimental &gt; Bleve</strong>.</p></li>
+<li><p>Set <strong>Enable Bleve Indexing</strong> to <strong>true</strong> to enable the other settings on the page.</p></li>
+<li><p>Set the directory path to use for storing bleve indexes (e.g.: <code class="docutils literal notranslate"><span class="pre">/var/opt/mattermost/bleveindexes</span></code>). The user running Mattermost should have permissions to access the directory.</p></li>
+<li><p>Save the configuration.</p></li>
+<li><p>Click the <strong>Index Now</strong> button. All users, channels, and posts in the database will be indexed oldest to newest.</p></li>
+<li><p>Set <strong>Enable Bleve for search queries</strong> to <strong>true</strong>.</p></li>
+<li><p>Set <strong>Enable Bleve for autocomplete queries</strong> to <strong>true</strong>.</p></li>
 </ol>
 </div>
 <div class="section" id="using-bleve-search">
 <h2>Using Bleve Search<a class="headerlink" href="#using-bleve-search" title="Permalink to this headline">¶</a></h2>
 <p>The following conditions are applied when using Bleve search:</p>
 <ul class="simple">
-<li><strong>Unquoted terms:</strong> Search terms that contain non-alphanumeric characters/special characters outside of quotation marks are removed. For example, using <code class="docutils literal notranslate"><span class="pre">abcd</span> <span class="pre">&quot;**&quot;</span> <span class="pre">&amp;&amp;</span> <span class="pre">abc</span></code> as a search term will return results for a search for <code class="docutils literal notranslate"><span class="pre">abcd</span> <span class="pre">&quot;**&quot;</span> <span class="pre">abc</span></code> as the <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> characters weren’t within the quotation marks.</li>
-<li><strong>Wildcard search:</strong> Wildcard search (e.g., <code class="docutils literal notranslate"><span class="pre">abc*</span></code>) is supported.</li>
+<li><p><strong>Unquoted terms:</strong> Search terms that contain non-alphanumeric characters/special characters outside of quotation marks are removed. For example, using <code class="docutils literal notranslate"><span class="pre">abcd</span> <span class="pre">&quot;**&quot;</span> <span class="pre">&amp;&amp;</span> <span class="pre">abc</span></code> as a search term will return results for a search for <code class="docutils literal notranslate"><span class="pre">abcd</span> <span class="pre">&quot;**&quot;</span> <span class="pre">abc</span></code> as the <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> characters weren’t within the quotation marks.</p></li>
+<li><p><strong>Wildcard search:</strong> Wildcard search (e.g., <code class="docutils literal notranslate"><span class="pre">abc*</span></code>) is supported.</p></li>
 </ul>
 </div>
 </div>
@@ -217,29 +215,29 @@
            
           </article>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../administration/config-settings.html" class="btn btn-neutral float-right" title="Configuration Settings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../administration/backup.html" class="btn btn-neutral" title="Backup and Disaster Recovery" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="../administration/config-settings.html" class="btn btn-neutral float-right" title="Configuration Settings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../administration/backup.html" class="btn btn-neutral float-left" title="Backup and Disaster Recovery" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015-2021 Mattermost
+        &#169; Copyright 2015-2021 Mattermost.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -280,11 +278,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/myscript.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/myscript.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 

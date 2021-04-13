@@ -39,9 +39,7 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-K874RWM');</script>
 	<!-- End Google Tag Manager -->
-
 	
-    <script src="../../_static/js/modernizr.min.js"></script>
 </head>
 
 <body class="wy-body-for-nav">
@@ -174,7 +172,7 @@
   <hr/>
 </div>
           <article class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
-           <div itemprop="articleBody">
+           <div itemprop="articleBody" role="main">
             
   <div class="section" id="embedding-mattermost-in-other-applications">
 <h1>Embedding Mattermost in Other Applications<a class="headerlink" href="#embedding-mattermost-in-other-applications" title="Permalink to this headline">¶</a></h1>
@@ -190,33 +188,32 @@
 <div><p>&lt;script&gt;</p>
 <blockquote>
 <div><p>var myWindow = null;</p>
-<dl class="docutils">
-<dt>function openMMWindow() {</dt>
-<dd>myWindow = window.open(“<a class="reference external" href="https://community.mattermost.com/core/channels/developer">https://community.mattermost.com/core/channels/developer</a>”, “Mattermost”, “top=0,left=0,width=400,height=600,status=no,toolbar=no,location=no,menubar=no,titlebar=no”);</dd>
+<dl class="simple">
+<dt>function openMMWindow() {</dt><dd><p>myWindow = window.open(“<a class="reference external" href="https://community.mattermost.com/core/channels/developer">https://community.mattermost.com/core/channels/developer</a>”, “Mattermost”, “top=0,left=0,width=400,height=600,status=no,toolbar=no,location=no,menubar=no,titlebar=no”);</p>
+</dd>
 </dl>
 <p>}</p>
-<dl class="docutils">
-<dt>function closeMMWindow() {</dt>
-<dd><dl class="first docutils">
-<dt>if (myWindow) {</dt>
-<dd>myWindow.close();</dd>
+<dl>
+<dt>function closeMMWindow() {</dt><dd><dl class="simple">
+<dt>if (myWindow) {</dt><dd><p>myWindow.close();</p>
+</dd>
 </dl>
-<p class="last">}</p>
+<p>}</p>
 </dd>
 </dl>
 <p>}</p>
 </div></blockquote>
 <p>&lt;/script&gt;</p>
-<dl class="docutils">
-<dt>&lt;html&gt;</dt>
-<dd>&lt;br/&gt;
+<dl class="simple">
+<dt>&lt;html&gt;</dt><dd><p>&lt;br/&gt;
 &lt;br/&gt;
 &lt;button onclick=”openMMWindow()”&gt;Open Developer Channel&lt;/button&gt;
 &lt;br/&gt;
 &lt;br/&gt;
 &lt;button onclick=”closeMMWindow()”&gt;Close Developer Channel&lt;/button&gt;
 &lt;br/&gt;
-&lt;br/&gt;</dd>
+&lt;br/&gt;</p>
+</dd>
 </dl>
 <p>&lt;/html&gt;</p>
 </div></blockquote>
@@ -234,29 +231,29 @@
            
           </article>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="webhook.html" class="btn btn-neutral float-right" title="Using Mattermost with Webhook" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="integrations-faq.html" class="btn btn-neutral" title="Integrations FAQ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="webhook.html" class="btn btn-neutral float-right" title="Using Mattermost with Webhook" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="integrations-faq.html" class="btn btn-neutral float-left" title="Integrations FAQ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015-2021 Mattermost
+        &#169; Copyright 2015-2021 Mattermost.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -297,11 +294,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="../../_static/myscript.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/myscript.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
