@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Theme Colors &mdash; Mattermost 5.33 documentation</title>
+  <title>Theme Colors &mdash; Mattermost 5.34 documentation</title>
   
 
   
@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                5.33
+                5.34
               </div>
             
           
@@ -103,9 +103,9 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../../guides/user.html#settings">Settings</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="account-settings.html">Account Settings</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Theme Colors</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#standard-themes">Standard Themes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#import-theme-from-slack">Import Theme from Slack</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#custom-themes">Custom Themes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#standard-themes">Standard Themes</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="channel-settings.html">Channel Settings</a></li>
@@ -171,18 +171,20 @@
   <div class="section" id="theme-colors">
 <span id="id1"></span><h1>Theme Colors<a class="headerlink" href="#theme-colors" title="Permalink to this headline">¶</a></h1>
 <p>The colors of the Mattermost user interface are customizable in <strong>Account Settings &gt; Display &gt; Theme</strong>. You can import your theme colors from Slack, customize the colors yourself, or choose from four standard themes designed by the Mattermost team.</p>
-<p>Any changes you make are applied to all teams that you belong to. In Enterprise Edition, you can choose to apply the theme to the current team only, allowing you to have a different theme for each team.</p>
-<div class="section" id="standard-themes">
-<h2>Standard Themes<a class="headerlink" href="#standard-themes" title="Permalink to this headline">¶</a></h2>
-<p>Select <strong>Theme Colors</strong> to choose from four standard themes designed by the Mattermost team. To make custom adjustments on the four standard theme colors, click a standard theme and then select <strong>Custom Theme</strong> to load the standard theme into the custom theme color selectors.</p>
-</div>
+<p>Any color changes you make are applied to all teams that you belong to. In Enterprise Edition, you can choose to apply the theme to the current team only, allowing you to have a different theme for each team.</p>
 <div class="section" id="import-theme-from-slack">
 <h2>Import Theme from Slack<a class="headerlink" href="#import-theme-from-slack" title="Permalink to this headline">¶</a></h2>
-<p>To import a theme, go to <strong>Preferences &gt; Sidebar Theme</strong> from within Slack, open the custom theme option, copy the theme color vector and then paste it into the <em>Input Slack Theme</em> input box in Mattermost. Any theme settings that are not customizable in Slack will default to the “Mattermost” standard theme settings.</p>
+<p>To import a theme, in Slack, go to <strong>Preferences &gt; Themes</strong>, select <strong>Create a custom theme</strong>, then copy the theme color values.</p>
+<p>In Mattermost, select <strong>Import theme colors from Slack</strong>, then paste the color values into the input box and select <strong>Submit</strong>. Any theme settings that are not customizable in Slack will default to the “Mattermost” standard theme settings. Select <strong>Save</strong> to confirm your theme changes.</p>
 </div>
 <div class="section" id="custom-themes">
 <h2>Custom Themes<a class="headerlink" href="#custom-themes" title="Permalink to this headline">¶</a></h2>
-<p>Observe a live preview as you customize theme colors and then click <strong>Save</strong> to confirm your changes. Discard your changes by exiting the settings window and clicking <strong>Yes, Discard</strong>.</p>
+<p>Select <strong>Custom Theme</strong>, then expand the <a class="reference external" href="https://docs.mattermost.com/help/settings/theme-colors.html#sidebar-styles">Sidebar Styles</a>, <a class="reference external" href="https://docs.mattermost.com/help/settings/theme-colors.html#center-channel-styles">Center Channel Styles</a>, and <a class="reference external" href="https://docs.mattermost.com/help/settings/theme-colors.html#link-and-button-styles">Link and Button Styles</a> options to customize individual interface colors, such as backgrounds, links, text, and borders.</p>
+<p>Your custom theme changes are applied in Mattermost as you make them. Select <strong>Save</strong> to confirm your theme changes. Discard your changes by exiting the <strong>Display Settings</strong> window and selecting <strong>Yes, Discard</strong>.</p>
+</div>
+<div class="section" id="standard-themes">
+<h2>Standard Themes<a class="headerlink" href="#standard-themes" title="Permalink to this headline">¶</a></h2>
+<p>Select <strong>Theme Colors</strong> to choose from four standard themes designed by the Mattermost team. To make custom adjustments on the four standard theme colors, select a standard theme, then select <strong>Custom Theme</strong> to further customize that standard theme based on your preferences. Select <strong>Save</strong> to confirm your theme changes.</p>
 <div class="section" id="sidebar-styles">
 <h3>Sidebar Styles<a class="headerlink" href="#sidebar-styles" title="Permalink to this headline">¶</a></h3>
 <dl class="simple">
@@ -221,7 +223,9 @@
 </dd>
 <dt>Center Channel Text</dt><dd><p>Color of all the text - with the exception of mentions, links, hashtags and code blocks - in the center pane, right-hand sidebar, and dialogs.</p>
 </dd>
-<dt>New Message Separator</dt><dd><p>The new massage separator appears below the last read message when you click into a channel with unread messages.</p>
+<dt>New Message Separator</dt><dd><p>The new message separator appears below the last read message when you switch to a channel with unread messages.</p>
+</dd>
+<dt>Error Text Color</dt><dd><p>Color of all error text.</p>
 </dd>
 <dt>Mention Highlight BG</dt><dd><p>Highlight color behind your words that trigger mentions in the center pane and right-hand sidebar.</p>
 </dd>
@@ -244,17 +248,17 @@
 </div>
 <div class="section" id="exporting-a-custom-theme">
 <h3>Exporting a Custom Theme<a class="headerlink" href="#exporting-a-custom-theme" title="Permalink to this headline">¶</a></h3>
-<p>You can export a theme by copying the “Theme Code” from the Custom Theme menu.</p>
-<p>Go to <strong>Account Settings &gt; Display &gt; Custom Theme &gt; Copy and paste to share theme colors</strong> and copy the theme code to export it.</p>
+<p>You can export a theme from Mattermost by copying the theme values from the Custom Theme menu.</p>
+<p>Go to <strong>Account Settings &gt; Display &gt; Custom Theme</strong>, then select <strong>Copy Theme Colors</strong> to export the theme’s color values.</p>
 </div>
 <div class="section" id="importing-a-custom-theme">
 <h3>Importing a Custom Theme<a class="headerlink" href="#importing-a-custom-theme" title="Permalink to this headline">¶</a></h3>
-<p>You can import a theme by pasting a “Theme Code” into the Custom Theme menu.</p>
-<p>Go to <strong>Account Settings &gt; Display &gt; Custom Theme &gt; Copy and paste to share theme colors</strong> and paste a theme code to import it, then click <strong>Save</strong>.</p>
+<p>You can import a theme into Mattermost by pasting the theme values into the Custom Theme menu.</p>
+<p>Copy existing theme values, then go to <strong>Account Settings &gt; Display &gt; Custom Theme</strong> to paste the theme values into the <strong>Copy and paste to share theme colors</strong> field. Select <strong>Save</strong> to confirm your theme changes.</p>
 </div>
 <div class="section" id="custom-theme-examples">
 <h3>Custom Theme Examples<a class="headerlink" href="#custom-theme-examples" title="Permalink to this headline">¶</a></h3>
-<p>Customize your theme colors and share them with others by copying and pasting theme vectors into the input box. Below are some example themes with their corresponding theme vectors.</p>
+<p>Customize your theme colors and share them with others by copying and pasting theme values into the input box. Below are some example themes with their corresponding theme values.</p>
 <div class="section" id="github-theme">
 <h4>GitHub theme<a class="headerlink" href="#github-theme" title="Permalink to this headline">¶</a></h4>
 <img alt="theme2" src="../../_images/theme2.PNG" />

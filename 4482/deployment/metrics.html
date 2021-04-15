@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Performance Monitoring (E20) &mdash; Mattermost 5.33 documentation</title>
+  <title>Performance Monitoring (E20) &mdash; Mattermost 5.34 documentation</title>
   
 
   
@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                5.33
+                5.34
               </div>
             
           
@@ -216,7 +216,7 @@
 <li><p><a class="reference internal" href="#debugging-metrics" id="id19">Debugging Metrics</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#standard-go-metrics" id="id20">Standard GO Metrics</a></p></li>
+<li><p><a class="reference internal" href="#standard-go-metrics" id="id20">Standard Go Metrics</a></p></li>
 </ul>
 </li>
 <li><p><a class="reference internal" href="#frequently-asked-questions" id="id21">Frequently Asked Questions</a></p>
@@ -235,10 +235,7 @@
 <div class="section" id="installing-prometheus">
 <h2><a class="toc-backref" href="#contents">Installing Prometheus</a><a class="headerlink" href="#installing-prometheus" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="https://prometheus.io/download/">Download a precompiled binary for Prometheus</a>. Binaries are provided for many popular distributions, including Darwin, Linux and Windows.</p></li>
-</ol>
-<p>For install instructions, see <a class="reference external" href="https://prometheus.io/docs/introduction/getting_started/">Prometheus install guides</a>.</p>
-<ol class="arabic simple" start="2">
+<li><p><a class="reference external" href="https://prometheus.io/download/">Download a precompiled binary for Prometheus</a>. Binaries are provided for many popular distributions, including Darwin, Linux, and Windows. For installation instructions, see the <a class="reference external" href="https://prometheus.io/docs/introduction/getting_started/">Prometheus install guides</a>.</p></li>
 <li><p>The following settings are recommended in the Prometheus configuration file named <code class="docutils literal notranslate"><span class="pre">prometheus.yml</span></code>:</p></li>
 </ol>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># my global config</span>
@@ -273,13 +270,19 @@
       <span class="p p-Indicator">-</span> <span class="nt">targets</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;&lt;hostname1&gt;:&lt;port&gt;&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;&lt;hostname2&gt;:&lt;port&gt;&quot;</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">&lt;hostname1&gt;:&lt;port&gt;</span></code> parameter has to be replaced with your Mattermost host ip address and port to scrape the data. It connects to <code class="docutils literal notranslate"><span class="pre">/metrics</span></code> using http.</p>
+<p>Replace the <code class="docutils literal notranslate"><span class="pre">&lt;hostname1&gt;:&lt;port&gt;</span></code> parameter with your Mattermost host IP address and port to scrape the data. It connects to <code class="docutils literal notranslate"><span class="pre">/metrics</span></code> using HTTP.</p>
 <ol class="arabic simple" start="3">
-<li><p>Enable performance monitoring in the Mattermost System Console and specify the listen address. See more detail in our <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#performance-monitoring-beta">configuration settings documentation</a>. After enabling performance monitoring, make sure to reboot Mattermost.</p></li>
+<li><p>In the Mattermost System Console, go to <strong>Environment &gt; Performance Monitoring</strong> to set <strong>Enable Performance Monitoring</strong> to <strong>true</strong>, then specify the <strong>Listen Address</strong> and select <strong>Save</strong>. See our <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#performance-monitoring">configuration settings documentation</a> for details.</p></li>
 </ol>
 <a class="reference internal image-reference" href="../_images/perf_monitoring_system_console.png"><img alt="../_images/perf_monitoring_system_console.png" src="../_images/perf_monitoring_system_console.png" style="width: 627.9px; height: 283.5px;" /></a>
 <ol class="arabic simple" start="4">
-<li><p>To test the server is running, go to <code class="docutils literal notranslate"><span class="pre">&lt;ip&gt;:&lt;port&gt;/metrics</span></code>.</p></li>
+<li><p>To test that the server is running, go to <code class="docutils literal notranslate"><span class="pre">&lt;ip&gt;:&lt;port&gt;/metrics</span></code>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A Mattermost Enterprise Edition E20 license is required to connect to <code class="docutils literal notranslate"><span class="pre">/metrics</span></code> using HTTP.</p>
+</div>
+<ol class="arabic simple" start="5">
 <li><p>Finally, run <code class="docutils literal notranslate"><span class="pre">vi</span> <span class="pre">prometheus.yml</span></code> to finish configuring Prometheus.</p></li>
 </ol>
 <p>For starting the Prometheus service, read the <a class="reference external" href="https://prometheus.io/docs/introduction/getting_started/#starting-prometheus">comprehensive guides provided by Prometheus</a>.</p>
@@ -446,15 +449,23 @@
 </div>
 </div>
 <div class="section" id="standard-go-metrics">
-<h3><a class="toc-backref" href="#contents">Standard GO Metrics</a><a class="headerlink" href="#standard-go-metrics" title="Permalink to this headline">¶</a></h3>
-<p>The Prometheus integration also provides standard GO metrics for HTTP server runtime profiling data and system monitoring, such as:</p>
+<h3><a class="toc-backref" href="#contents">Standard Go Metrics</a><a class="headerlink" href="#standard-go-metrics" title="Permalink to this headline">¶</a></h3>
+<p>The performance monitoring feature provides standard Go metrics for HTTP server runtime profiling data and system monitoring, such as:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">go_memstats_alloc_bytes</span></code> for memory usage</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">go_goroutines</span></code> for GO routines</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">go_goroutines</span></code> for number of goroutines</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">go_gc_duration_seconds</span></code> for garbage collection duration</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">go_memstats_heap_objects</span></code> for object tracking on the heap</p></li>
 </ul>
-<p>To learn how to set up runtime profiling, see the <a class="reference external" href="https://golang.org/pkg/net/http/pprof/">pprof package GO documentation</a>.  You can also visit the <code class="docutils literal notranslate"><span class="pre">ip:port/metrics</span></code> page for a complete list of metrics with descriptions.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Profile reports are available to Team Edition and Enterprise Edition users.</p>
+</div>
+<p>To learn how to set up runtime profiling, see the <a class="reference external" href="https://golang.org/pkg/net/http/pprof/">pprof package Go documentation</a>. You can also visit the <code class="docutils literal notranslate"><span class="pre">ip:port</span></code> page for a complete list of metrics with descriptions.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A Mattermost Enterprise Edition E20 license is required to connect to <code class="docutils literal notranslate"><span class="pre">/metrics</span></code> using HTTP.</p>
+</div>
 <p>If enabled, you can run the profiler by</p>
 <p><code class="docutils literal notranslate"><span class="pre">go</span> <span class="pre">tool</span> <span class="pre">pprof</span> <span class="pre">channel</span> <span class="pre">http://localhost:&lt;port&gt;/debug/pprof/profile</span></code></p>
 <p>where you can replace <code class="docutils literal notranslate"><span class="pre">localhost</span></code> with the server name. The profiling reports are available at <code class="docutils literal notranslate"><span class="pre">&lt;ip&gt;:&lt;port&gt;</span></code>, which include:</p>

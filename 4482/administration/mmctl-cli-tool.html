@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mmctl Command Line Tool (Beta) &mdash; Mattermost 5.33 documentation</title>
+  <title>mmctl Command Line Tool (Beta) &mdash; Mattermost 5.34 documentation</title>
   
 
   
@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                5.33
+                5.34
               </div>
             
           
@@ -4038,28 +4038,14 @@ user deactivate username
 </pre></div>
 </div>
 <p><strong>Options inherited from parent commands</strong></p>
-<blockquote>
-<div><dl class="option-list">
-<dt><kbd><span class="option">--config-path <var>string</var></span></kbd></dt>
-<dd><p>path to the configuration directory. If “$HOME/.mmctl” exists it will take precedence over the default value (default “$XDG_CONFIG_HOME”)</p>
-</dd>
-<dt><kbd><span class="option">--format <var>string</var></span></kbd></dt>
-<dd><p>the format of the command output [plain, json] (default “plain”)</p>
-</dd>
-<dt><kbd><span class="option">--insecure-sha1-intermediate</span></kbd></dt>
-<dd><p>allows to use insecure TLS protocols, such as SHA-1</p>
-</dd>
-<dt><kbd><span class="option">--insecure-tls-version</span></kbd></dt>
-<dd><p>allows to use TLS versions 1.0 and 1.1</p>
-</dd>
-<dt><kbd><span class="option">--local</span></kbd></dt>
-<dd><p>allows communicating with the server through a unix socket</p>
-</dd>
-<dt><kbd><span class="option">--strict</span></kbd></dt>
-<dd><p>will only run commands if the mmctl version matches the server one</p>
-</dd>
-</dl>
-</div></blockquote>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--config-path string           path to the configuration directory. If <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.mmctl&quot;</span> exists it will take precedence over the default value <span class="o">(</span>default <span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">&quot;</span><span class="o">)</span>
+--format string                the format of the <span class="nb">command</span> output <span class="o">[</span>plain, json<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;plain&quot;</span><span class="o">)</span>
+--insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+--insecure-tls-version         allows to use TLS versions <span class="m">1</span>.0 and <span class="m">1</span>.1
+--local                        allows communicating with the server through a unix socket
+--strict                       will only run commands <span class="k">if</span> the mmctl version matches the server one
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="mmctl-user-email">
@@ -4401,13 +4387,14 @@ user invite user@example.com myteam1 myteam2
 </pre></div>
 </div>
 <p><strong>Options</strong></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--channel string        Channel ID <span class="o">(</span>required<span class="o">)</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--channel string        Channel name or ID of the new webhook
 --description string    Incoming webhook description
 --display-name string   Incoming webhook display name
 -h, --help              <span class="nb">help</span> <span class="k">for</span> create-incoming
 --icon string           Icon URL
 --lock-to-channel       Lock to channel
---user string           User ID <span class="o">(</span>required<span class="o">)</span>
+--owner string          The username, email, or ID of the owner of the webhook
+--user string           The username, email, or ID of the user that the webhook should post as
 </pre></div>
 </div>
 <p><strong>Options inherited from parent commands</strong></p>
@@ -4437,10 +4424,11 @@ user invite user@example.com myteam1 myteam2
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>--channel string             Channel name or ID
 --content-type string        Content-type
 --description string         Outgoing webhook description
---display-name string        Outgoing webhook display name <span class="o">(</span>required<span class="o">)</span>
+--display-name string        Outgoing webhook display name
 -h, --help                   <span class="nb">help</span> <span class="k">for</span> create-outgoing
 --icon string                Icon URL
---team string                Team name or ID <span class="o">(</span>required<span class="o">)</span>
+--owner string               The username, email, or ID of the owner of the webhook
+--team string                Team name or ID
 --trigger-when string        When to trigger webhook <span class="o">(</span>exact: <span class="k">for</span> first word matches a trigger word exactly, start: <span class="k">for</span> first word starts with a trigger word<span class="o">)</span> <span class="o">(</span>default <span class="s2">&quot;exact&quot;</span><span class="o">)</span>
 --trigger-word stringArray   Word to trigger webhook <span class="o">(</span>required<span class="o">)</span>
 --url stringArray            Callback URL <span class="o">(</span>required<span class="o">)</span>
