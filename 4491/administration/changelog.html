@@ -262,7 +262,15 @@
 <ul class="simple">
 <li><p><strong>v5.34.1, release day TBD</strong></p>
 <ul>
-<li><p>Fixing an issue where upgrading to 5.34.0 runs a migration that can cause timeouts on MySQL installations. <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-34888">MM-34888</a></p></li>
+<li><p>Fixing an issue where upgrading to 5.34.0 runs a migration that can cause timeouts on MySQL installations. Upgrading to v5.34.1 may also execute missing migrations that were scheduled for 5.32.0. These addition can be lengthy on very big MySQL (version 5.x) installations.</p>
+<ul>
+<li><p>Altering of <code class="docutils literal notranslate"><span class="pre">Posts.FileIds</span></code> type (PostgreSQL only)</p></li>
+<li><p>Added new column <code class="docutils literal notranslate"><span class="pre">ThreadMemberships.UnreadMentions</span></code></p></li>
+<li><p>Added new column <code class="docutils literal notranslate"><span class="pre">Channels.Shared</span></code></p></li>
+<li><p>Added new column <code class="docutils literal notranslate"><span class="pre">Reactions.UpdateAt</span></code></p></li>
+<li><p>Added new column <code class="docutils literal notranslate"><span class="pre">Reactions.DeleteAt</span></code></p></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p><strong>v5.34.0, released 2021-04-16</strong></p>
