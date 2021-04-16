@@ -260,6 +260,11 @@
 <div class="section" id="release-v5-34-feature-release">
 <h2>Release v5.34 - <a class="reference external" href="https://docs.mattermost.com/administration/release-definitions.html#feature-release">Feature Release</a><a class="headerlink" href="#release-v5-34-feature-release" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
+<li><p><strong>v5.34.2, release day TBD</strong></p>
+<ul>
+<li><p>Fixing an issue where installs with some special characters in the MySQL password will break and fail to start.</p></li>
+</ul>
+</li>
 <li><p><strong>v5.34.1, released 2021-04-15</strong></p>
 <ul>
 <li><p>Fixed an issue where upgrading to v5.34.0 runs a migration that could cause timeouts on MySQL installations. Upgrading to v5.34.1 may also execute missing migrations that were scheduled for v5.32.0. These additions can be lengthy on very big MySQL (version 5.x) installations.</p>
