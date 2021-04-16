@@ -177,10 +177,14 @@
 <h1>Site Configuration<a class="headerlink" href="#site-configuration" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="announcement-banner">
 <h2>Announcement Banner<a class="headerlink" href="#announcement-banner" title="Permalink to this headline">¶</a></h2>
-<p>An announcement banner is available that allows System Admins to display a notice that’s visible to all users on the system.</p>
+<p>You can display an announcement banner notification that’s visible to all users on the system.</p>
 <a class="reference internal image-reference" href="../../_images/announcement-banner-1106x2721.png"><img alt="Shows the announcement banner at the top of the user's screen." src="../../_images/announcement-banner-1106x2721.png" style="width: 1106px; height: 272px;" /></a>
-<p>By default, users can dismiss the banner until they log in again or until you update the banner. You can update the banner by either changing the text of the banner or by re-enabling the banner after it has been disabled. You can also control the text color and the background color. A setting in the System Console allows you to prevent users from dismissing the banner.</p>
-<p><strong>To enable the banner</strong>:</p>
+<p>By default, users can dismiss the banner until they log in again or until you update the banner.</p>
+<ul class="simple">
+<li><p>Update the banner by either changing the text of the banner, or by re-enabling the banner after it has been disabled.</p></li>
+<li><p>You can also control the text color, the background color, and allow or prevent users from dismissing the banner.</p></li>
+</ul>
+<p>To enable the banner:</p>
 <ol class="arabic simple">
 <li><p>Go to <strong>System Console &gt; Site Configuration &gt; Announcement Banner</strong>.</p></li>
 <li><p>Set <strong>Enable Announcement Banner</strong> to <strong>true</strong>.</p></li>
@@ -192,13 +196,19 @@
 </div>
 <div class="section" id="emoji">
 <h2>Emoji<a class="headerlink" href="#emoji" title="Permalink to this headline">¶</a></h2>
-<p>There are three different settings that allow you to control emoji.</p>
-<ol class="arabic simple">
-<li><p><strong>Enable Emoji Picker:</strong> An emoji picker that allows users to select emojis to add as reactions or use in messages. Enabling the emoji picker with a large number of Custom Emojis may slow down performance.</p></li>
-<li><p><strong>Enable Custom Emoji:</strong> You can control whether or not the Custom Emoji option in the Main Menu, where users can go to create customized emoji, is accessible.</p></li>
-<li><p><strong>Restrict Custom Emoji Creation:</strong> You can set which role is able to create Custom Emoji from <strong>Main Menu &gt; Custom Emoji</strong> (all users, System and Team Admins, or System Admins only).</p></li>
-<li><p>Select <strong>Save</strong>.</p></li>
-</ol>
+<p>Control custom emoji usage through the following three settings:</p>
+<p>Under <strong>System Console &gt; Site Configuration &gt; Emoji</strong>:</p>
+<ul class="simple">
+<li><p><strong>Enable Emoji Picker:</strong> An emoji picker allows users to select emojis to use with messages and as reactions. Enabling the emoji picker with a large number of custom emojis may slow down performance.</p></li>
+<li><p><strong>Enable Custom Emoji:</strong> Control whether the <strong>Custom Emoji</strong> option is available from the <strong>Main Menu</strong> to manage customized emoji.</p></li>
+</ul>
+<p>Select <strong>Save</strong> to apply your changes.</p>
+<p>Under <strong>System Console &gt; Permissions &gt; Edit Scheme</strong>:</p>
+<ul class="simple">
+<li><p>Restrict management of custom emoji to specific roles, such as System Admins, System Admins, or Team Admins, or allow all users to create and/or delete their own custom emoji.</p></li>
+<li><p>The <strong>Create Custom Emoji</strong> and <strong>Delete Own Custom Emoji</strong> permissions are grouped under <strong>Integrations &amp; Customizations</strong>, and can be set for all members or specific roles.</p></li>
+</ul>
+<p>Select <strong>Save</strong> to apply your changes.</p>
 </div>
 <div class="section" id="in-product-notices">
 <h2>In-Product Notices<a class="headerlink" href="#in-product-notices" title="Permalink to this headline">¶</a></h2>
@@ -207,101 +217,109 @@
 <img alt="../../_images/notices1.png" src="../../_images/notices1.png" />
 <div class="section" id="administrator-notices">
 <h3>Administrator Notices<a class="headerlink" href="#administrator-notices" title="Permalink to this headline">¶</a></h3>
-<p>System Admins may receive notices about recommended configuration options to optimize the user experience of their workspace.</p>
-<p>Administrator notices can be disabled in the <strong>System Console &gt; Site Configuration &gt; Notices</strong> page by setting <strong>Enable Admin Notices</strong> to <strong>false</strong>, then selecting <strong>Save</strong>.</p>
+<p>System Admins may receive notices about recommended configuration options to optimize the user experience of their workspace. Disable admin notices by going to  <strong>System Console &gt; Site Configuration &gt; Notices</strong>, setting <strong>Enable Admin Notices</strong> to <strong>false</strong>, then selecting <strong>Save</strong>.</p>
 </div>
 <div class="section" id="end-user-notices">
 <h3>End User Notices<a class="headerlink" href="#end-user-notices" title="Permalink to this headline">¶</a></h3>
-<p>End user notices are used to inform users and System Admins of new feature enhancements and when new desktop versions are available. They can be disabled in <strong>System Console &gt; Site Configuration &gt; Notices</strong> by setting <strong>Enable End User Notices</strong> to <strong>false</strong>, then selecting <strong>Save</strong>.</p>
+<p>End user notices are used to inform users and System Admins of new feature enhancements and when new desktop versions are available. Disable end user notices by going to <strong>System Console &gt; Site Configuration &gt; Notices</strong>, setting <strong>Enable End User Notices</strong> to <strong>false</strong>, then selecting <strong>Save</strong>.</p>
 <div class="section" id="are-notices-enabled-by-default">
 <h4>Are notices enabled by default?<a class="headerlink" href="#are-notices-enabled-by-default" title="Permalink to this headline">¶</a></h4>
-<p>Notices are enabled by default for all Mattermost users. System Admins may choose to disable administrator or end user notices in <strong>System Console &gt; Site Configuration &gt; Notices</strong>.</p>
+<p>Notices are enabled by default for all Mattermost users. System Admins may choose to disable administrator or end user notices.</p>
 </div>
 <div class="section" id="how-often-will-users-receive-notices">
 <h4>How often will users receive notices?<a class="headerlink" href="#how-often-will-users-receive-notices" title="Permalink to this headline">¶</a></h4>
-<p>Notices will be used to raise awareness of new features as part of our monthly release cadence. Users will only receive notices that specifically apply to them. For example, if a user is already running the latest Desktop App version, they will not receive an upgrade notice.</p>
+<p>Notices are used to raise awareness of new features as part of Mattermost’s release cadence. Users will only receive notices that specifically apply to them. For example, if a user is already running the latest Desktop App version, they will not receive an upgrade notice.</p>
 </div>
 </div>
 </div>
 <div class="section" id="file-sharing-and-downloads">
 <h2>File Sharing and Downloads<a class="headerlink" href="#file-sharing-and-downloads" title="Permalink to this headline">¶</a></h2>
-<p>There are three settings that allow you to control file sharing and file downloading on your workspace and on mobile devices.</p>
-<ol class="arabic simple">
+<p>Control file sharing and downloads in your workspace and on mobile devices using the following three settings under <strong>System Console &gt; Site Configuration &gt; File Sharing and Downloads</strong>:</p>
+<ul class="simple">
 <li><p><strong>Allow File Sharing:</strong> When configuration is set to <strong>false</strong>, file sharing is disabled. All file and image uploads on messages are forbidden across clients and devices, including mobile.</p></li>
 <li><p><strong>Allow File Uploads on Mobile:</strong> When configuration is set to <strong>false</strong>, disables file uploads on mobile apps. All file and image uploads on messages are forbidden across clients and devices, including mobile.</p></li>
 <li><p><strong>Allow File Downloads on Mobile:</strong> When configuration is set to <strong>false</strong>, disables file downloads on mobile apps. Users can still download files from a mobile web browser.</p></li>
-<li><p>Select <strong>Save</strong>.</p></li>
-</ol>
+</ul>
+<p>Select <strong>Save</strong> to apply your changes.</p>
 </div>
 <div class="section" id="localization">
 <h2>Localization<a class="headerlink" href="#localization" title="Permalink to this headline">¶</a></h2>
-<p>Mattermost can be localized into 18 languages. You can set the default language for newly-created users and pages where the user hasn’t logged in and which languages are available for users in <strong>Account Settings &gt; Display &gt; Languages</strong>.</p>
-<p>New languages are added automatically by default. You can add new languages using the dropdown menu manually as they become available. If you’re manually adding new languages, the Default Client Language must be added before saving the setting.</p>
+<p>Mattermost is translated into 18 languages. Users can set their default language by going to <strong>Account Settings &gt; Display &gt; Language</strong>, then selecting <strong>Save</strong>.</p>
+<p>New languages are added automatically by default. Users can add new languages using the dropdown menu manually as they become available. When manually adding new languages, the Default Client Language must be added before saving the setting.</p>
 </div>
 <div class="section" id="notifications">
 <h2>Notifications<a class="headerlink" href="#notifications" title="Permalink to this headline">¶</a></h2>
-<p>There are six settings that allow you to control notifications.</p>
-<ol class="arabic simple">
-<li><p><strong>Show &#64;channel and &#64;all confirmation dialog:</strong> Users will be prompted to confirm when posting &#64;channel and &#64;all in channels with over five members.</p></li>
-<li><p><strong>Email Notification Contents:</strong> You can specify the content shown in email notifications.</p></li>
-</ol>
-<blockquote>
-<div><ul class="simple">
+<p>Control notifications using the following six settings under <strong>System Console &gt; Site Configuration &gt; Notifications</strong>:</p>
+<ul class="simple">
+<li><p><strong>Show &#64;channel and &#64;all and group mention confirmation dialog:</strong> Users will be prompted to confirm when posting &#64;channel, &#64;all, and group mentions in channels with over five members.</p></li>
+<li><p><strong>Email Notification Contents:</strong> You can specify the content shown in email notifications.</p>
+<ul>
 <li><p><strong>Send full message contents</strong> will include Sender name and channel in email notifications.</p></li>
 <li><p><strong>Send generic description with only sender name</strong> will include the team name and name of the person who sent the message. No information about channel name or message contents, is included in email notifications. This is typically used for compliance reasons if Mattermost contains confidential information and policy dictates it cannot be stored in email.</p></li>
 </ul>
-</div></blockquote>
-<ol class="arabic simple" start="3">
+</li>
 <li><p><strong>Notification Display Name:</strong> Set the name displayed on the email account used when sending notification emails from Mattermost system.</p></li>
 <li><p><strong>Notification Reply-To Address:</strong> Set the email address used in the Reply-To header when sending notification emails from Mattermost.</p></li>
 <li><p><strong>Notification Footer Mailing Address:</strong> Set the name and mailing address displayed in the footer of email notifications from Mattermost, such as <em>ABC Corporation, 565 Knight Way, Palo Alto, California, 94305, USA</em>. If the field is left empty, the organization name and mailing address will not be displayed.</p></li>
-<li><p><strong>Push Notification Contents:</strong> You can configure what information is provided in push notifications.</p></li>
-</ol>
-<blockquote>
-<div><ul class="simple">
+<li><p><strong>Push Notification Contents:</strong> You can configure what information is provided in push notifications.</p>
+<ul>
 <li><p><strong>Generic description with only sender name</strong> will include only the name of the person who sent the message but no information about channel name or message text.</p></li>
 <li><p><strong>Generic description with sender and channel names</strong> will include names of users and channels but no specific details from the message text.</p></li>
 <li><p><strong>Full message content sent in the notification payload</strong> will nclude the message contents in the push notification payload that is relayed through Apple’s Push Notification Service (APNS) or Google’s Firebase Cloud Messaging (FCM). It is highly recommended this option only be used with an “https” protocol to encrypt the connection and protect confidential information sent in messages.</p></li>
 <li><p><strong>Full message content fetched from the server on receipt</strong> means the notification payload relayed through APNS or FCM contains no message content. Instead it contains a unique message ID used to fetch message content from the server when a push notification is received by a device. If the server cannot be reached, a generic notification will be displayed.</p></li>
 </ul>
-</div></blockquote>
-<ol class="arabic simple" start="7">
-<li><p>Select <strong>Save</strong>.</p></li>
-</ol>
+</li>
+</ul>
+<p>Select <strong>Save</strong> to apply your changes.</p>
 </div>
 <div class="section" id="posts">
 <h2>Posts<a class="headerlink" href="#posts" title="Permalink to this headline">¶</a></h2>
-<p>There are four settings that allow you to control content in posts.</p>
-<ol class="arabic simple">
-<li><p><strong>Enable Link Previews:</strong> Link previews are previews of linked website content, image links, and YouTube videos that are displayed below posts when available.Users can enable or disable website previews for themselves from <strong>Account Settings &gt; Display &gt; Website Link Previews</strong>. You can also disable all website link previews, image link previews, and YouTube previews by changing this setting to false.</p></li>
+<p>Control content in posts using the following four settings under <strong>System Console &gt; Site Configuration &gt; Posts</strong>:</p>
+<ul class="simple">
+<li><p><strong>Enable Link Previews:</strong> Link previews are previews of linked website content, image links, and YouTube videos that are displayed below posts when available.</p>
+<ul>
+<li><p>System Admins can disable all website link previews, image link previews, and YouTube previews by changing this setting to <strong>false</strong>. System Admins can also disable link previews from specific domains.</p></li>
+<li><p>When link previews are enabled, users can choose to show or hide website link previews from <strong>Account Settings &gt; Display &gt; Website Link Previews</strong>.</p></li>
+</ul>
+</li>
 <li><p><strong>Enable SVGs:</strong> Controls whether users have the ability to see previews of SVG file attachments and SVG image links.</p></li>
 <li><p><strong>Enable LaTeX Rendering:</strong> Controls users’ ability to render LaTeX code.</p></li>
 <li><p><strong>Custom URL Schemes:</strong> A list of URL schemes that are used for autolinking in message text. HTTP, HTTPS, FTP, tel, and mailto always create links.</p></li>
-<li><p>Select <strong>Save</strong>.</p></li>
-</ol>
+</ul>
+<p>From Mattermost Server v5.35, you can also control whether all <a class="reference external" href="https://docs.mattermost.com/help/messaging/formatting-text.html#in-line-images">in-line images</a> over 100px in height are automatically collapsed or expanded in messages by setting a <a class="reference external" href="https://docs.mattermost.com/help/settings/account-settings.html#link-previews">user preference</a>, or by using the <code class="docutils literal notranslate"><span class="pre">/collapse</span></code> and <code class="docutils literal notranslate"><span class="pre">/expand</span></code> <a class="reference external" href="https://docs.mattermost.com/cloud/cloud-integrations/cloud-slash-commands.html">slash commands</a>.</p>
+<p>Select <strong>Save</strong> to apply your changes.</p>
 </div>
 <div class="section" id="users-and-teams">
 <h2>Users and Teams<a class="headerlink" href="#users-and-teams" title="Permalink to this headline">¶</a></h2>
-<p>There are seven different settings that allow you to control users and teams.</p>
-<ol class="arabic simple">
-<li><p><strong>Max Users Per Team:</strong> The Max Users Per Team refers to the size of the <em>team site</em> which is a workspace a <em>team of people</em> inhabits. A team of people is considered a small organization where people work closely together towards a specific shared goal and share the same etiquette. In the physical world, a team of people could typically be seated around a single table to have a meal and discuss their project. The default maximum of 1000 people is at the extreme high end of a single team of people. At this point organizations are more often ‘multiple teams of people’ and investments in explicitly defining etiquette, such as channel organization or turning on policy features in Enterprise Edition, are often used to scale the high levels of productivity found in a team of people using Mattermost to multiple teams of people.</p></li>
+<p>Control the following users and teams ettings under <strong>System Console &gt; Site Configuration &gt; Users and Teams</strong>:</p>
+<ul class="simple">
+<li><p><strong>Max Users Per Team:</strong> Specify the size of the <em>team site</em> which is a workspace a <em>team of people</em> inhabits.</p>
+<ul>
+<li><p>A team of people is considered a small organization where people work closely together towards a specific shared goal and share the same etiquette.</p></li>
+<li><p>In the physical world, a team of people could typically be seated around a single table to have a meal and discuss their project.</p></li>
+<li><p>The default maximum of 1000 people is at the extreme high end of a single team of people where organizations are more often ‘multiple teams of people’. Investments in explicitly defining etiquette, such as channel organization or turning on policy features in Enterprise Edition, are often used to scale the high levels of productivity found in a team of people using Mattermost to multiple teams of people.</p></li>
+</ul>
+</li>
 <li><p><strong>Max Channels Per Team:</strong> Set the maximum number of channels per team, including both active and deleted channels.</p></li>
-<li><p><strong>Enable users to open Direct Message channels with:</strong> You can configure whether users can message any user on the Mattermost workspace or only users in the same team as them. This setting adjusts the users returned in the Direct Messages <strong>More</strong> menu and CTRL/CMD+K channel switcher only lists users on the current team. This setting only affects the UI, not permissions on the server. For instance, a Direct Message channel can be created with anyone on the server regardless of this setting.</p></li>
-<li><p><strong>Teammate Name Display:</strong> Specifies how names are displayed in the user interface by default. Please note that users can override this setting in <strong>Account Settings &gt; Display &gt; Teammate Name Display</strong>.</p></li>
-</ol>
-<blockquote>
-<div><ul class="simple">
+<li><p><strong>Enable users to open Direct Message channels with:</strong> Configure whether users can message any user on the Mattermost workspace or only users in the same team as them.</p>
+<ul>
+<li><p>This setting adjusts the users returned in the Direct Messages <strong>More</strong> menu. The CTRL/CMD+K channel switcher only lists users on the current team.</p></li>
+<li><p>This setting only affects the UI, not permissions on the server. For instance, a Direct Message channel can be created with anyone on the server regardless of this setting.</p></li>
+</ul>
+</li>
+<li><p><strong>Teammate Name Display:</strong> Specify how names are displayed in the user interface by default. Please note that users can override this setting in <strong>Account Settings &gt; Display &gt; Teammate Name Display</strong>.</p>
+<ul>
 <li><p><strong>Show username</strong> displays the user’s username.</p></li>
 <li><p><strong>Show nickname</strong> if one exists displays the user’s nickname. If the user does not have a nickname, their full name is displayed. If the user does not have a full name, their username is displayed.</p></li>
 <li><p><strong>Show first and last name</strong> displays the user’s full name. If the user does not have a full name, their username is displayed. Recommended when using SAML or LDAP if first name and last name attributes are configured.</p></li>
 </ul>
-</div></blockquote>
-<ol class="arabic simple" start="5">
-<li><p><strong>Lock Teammate Name Display for all users::</strong> Specifies whether users can change settings under <strong>Main Menu &gt; Account Settings &gt; Display &gt; Teammate Name Display</strong>.</p></li>
+</li>
+<li><p><strong>Lock Teammate Name Display for all users:</strong> Specifies whether users can change settings under <strong>Main Menu &gt; Account Settings &gt; Display &gt; Teammate Name Display</strong>.</p></li>
 <li><p><strong>Show Email Address:</strong> When set to <strong>false</strong>, this setting hides email address of users from other users in the user interface, including Team Admins. This is designed for managing teams where users choose to keep their contact information private. System Admins will still be able to see email addresses in the UI.</p></li>
-<li><p><strong>Show Full Name:</strong> WHen set to false, this setting hides full name of users from other users including Team Admins. This is designed for managing teams where users choose to keep their contact information private. System Admins will still be able to see full names in the UI.</p></li>
-<li><p>Select <strong>Save</strong>.</p></li>
-</ol>
+<li><p><strong>Show Full Name:</strong> When set to false, this setting hides full name of users from other users including Team Admins. This is designed for managing teams where users choose to keep their contact information private. System Admins will still be able to see full names in the UI.</p></li>
+<li><p><strong>Enable Custom Statuses:</strong> Sets whether users can set descriptive status messages and emoji visible to all users.</p></li>
+</ul>
+<p>Select <strong>Save</strong> to apply your changes.</p>
 </div>
 </div>
 
