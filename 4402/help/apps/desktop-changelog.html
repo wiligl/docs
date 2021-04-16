@@ -287,6 +287,7 @@
 <div class="section" id="known-issues">
 <h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
+<li><p>An error may occur when installing the MSI Installer on any Windows version.</p></li>
 <li><p>Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the <code class="docutils literal notranslate"><span class="pre">libnotifyapp</span></code> library and a recommended workaround is to disable the system tray icon in the Desktop settings.</p></li>
 <li><p>On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see <a class="reference external" href="https://github.com/electron/electron/issues/17972#issuecomment-486927073">https://github.com/electron/electron/issues/17972#issuecomment-486927073</a>). While this is fixed for most installers, it is not on the tgz. In this case manual intervention is required via <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">chmod</span> <span class="pre">4755</span> <span class="pre">&lt;installpath&gt;/chrome-sandbox</span></code>.</p></li>
 <li><p>Pressing Enter multiple times during Basic Authentication causes a crash.</p></li>
