@@ -4428,11 +4428,11 @@ user invite user@example.com myteam1 myteam2
 -h, --help                   <span class="nb">help</span> <span class="k">for</span> create-outgoing
 --icon string                Icon URL
 --owner string               The username, email, or ID of the owner of the webhook
---team string                Team name or ID
+--team string                Team name or ID <span class="o">(</span>required<span class="o">)</span>
 --trigger-when string        When to trigger webhook <span class="o">(</span>exact: <span class="k">for</span> first word matches a trigger word exactly, start: <span class="k">for</span> first word starts with a trigger word<span class="o">)</span> <span class="o">(</span>default <span class="s2">&quot;exact&quot;</span><span class="o">)</span>
---trigger-word stringArray   Word to trigger webhook
---url stringArray            Callback URL
---user string                The username, email, or ID of the user that the webhook should post as
+--trigger-word stringArray   Word to trigger webhook <span class="o">(</span>required<span class="o">)</span>
+--url stringArray            Callback URL <span class="o">(</span>required<span class="o">)</span>
+--user string                The username, email, or ID of the user that the webhook should post as <span class="o">(</span>required<span class="o">)</span>
 </pre></div>
 </div>
 <p><strong>Options inherited from parent commands</strong></p>
