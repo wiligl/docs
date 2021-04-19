@@ -340,7 +340,7 @@ func main() {
 <p>In-line images are images added within lines of text. From Mattermost Server v5.35 and in Mattermost Cloud, you can control whether all in-line images over 100px in height are automatically collapsed or expanded in messages by setting a <a class="reference external" href="https://docs.mattermost.com/help/settings/account-settings.html#link-previews">user preference</a>, or by using the <code class="docutils literal notranslate"><span class="pre">/collapse</span></code> and <code class="docutils literal notranslate"><span class="pre">/expand</span></code> slash commands.</p>
 <p>To add in-line images to text, use an exclamation mark <code class="docutils literal notranslate"><span class="pre">!</span></code> followed by the <code class="docutils literal notranslate"><span class="pre">alt</span> <span class="pre">text</span></code> in square brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>, then the <code class="docutils literal notranslate"><span class="pre">image</span> <span class="pre">URL</span></code> in round brackets <code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">)</span></code>. You can add hover text after the link by placing the text in quotes <code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">&quot;</span></code>.</p>
 <p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>![{alt text}]({URL of image} &quot;{Hover text}&quot;)
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>![alt text](URL of image &quot;Hover text&quot;)
 </pre></div>
 </div>
 <p>If the height of the original image is more than 500 pixels, Mattermost sets the image height at 500 pixels and adjusts the width to maintain the original aspect ratio.</p>
@@ -350,7 +350,7 @@ func main() {
 .. |mattermost-icon-50x76| image:: ../../images/icon-50x76.png
 </pre></div>
 </div>
-<p>Inline image with hover text</p>
+<p>In-line image with hover text</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>![Mattermost](../../images/icon-76x76.png &quot;Mattermost Icon&quot;)
 
 Renders as:
@@ -360,7 +360,7 @@ Renders as:
   :name: Mattermost Icon
 </pre></div>
 </div>
-<p>Inline image with link</p>
+<p>In-line image with link</p>
 <p>An extra set of square brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> is required around the alt text and the image URL.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[![Mattermost](../../images/icon-76x76.png)](https://github.com/mattermost/mattermost-server)
 
@@ -370,7 +370,7 @@ Renders as:
   :target: https://github.com/mattermost/mattermost-server
 </pre></div>
 </div>
-<p>Inline image displayed at 50 pixels wide and 76 pixels high</p>
+<p>In-line image displayed at 50 pixels wide and 76 pixels high</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>![Mattermost](../../images/icon-76x76.png =50x76 &quot;Mattermost Icon&quot;)
 
 Renders as:
@@ -380,7 +380,7 @@ Renders as:
   :name: Mattermost Icon
 </pre></div>
 </div>
-<p>Inline image displayed at 50 pixels wide and the height adjusted to suit</p>
+<p>In-line image displayed at 50 pixels wide and the height adjusted to suit</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>![Mattermost](../../images/icon-76x76.png =50 &quot;Mattermost Icon&quot;)
 
 Renders as:
