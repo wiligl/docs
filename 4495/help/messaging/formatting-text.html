@@ -353,14 +353,12 @@ func main() {
 <div class="section" id="in-line-image-with-hover-text">
 <h3>In-line image with hover text<a class="headerlink" href="#in-line-image-with-hover-text" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>![Mattermost](../../images/icon-76x76.png &quot;Mattermost Icon&quot;)
-
-Renders as:
-
-.. image:: ../../images/icon-76x76.png
-  :alt: Mattermost
-  :name: Mattermost Icon
 </pre></div>
 </div>
+<p>Renders as:</p>
+<blockquote>
+<div><img alt="Mattermost" id="mattermost-icon" src="../../_images/icon-76x76.png" />
+</div></blockquote>
 </div>
 <div class="section" id="in-line-image-with-link">
 <h3>In-line image with link<a class="headerlink" href="#in-line-image-with-link" title="Permalink to this headline">¶</a></h3>
@@ -369,13 +367,17 @@ Renders as:
 <p>An extra set of square brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> is required around the alt text, and round brackets <code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">)</span></code> are required around the image link.</p>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[![Mattermost](../../images/icon-76x76.png)](https://github.com/mattermost/mattermost-server)
-
-Renders as:
-
-.. image:: ../../images/icon-76x76.png
-:target: https://github.com/mattermost/mattermost-server
 </pre></div>
 </div>
+<p>Renders as:</p>
+<blockquote>
+<div><img alt="../../_images/icon-76x76.png" src="../../_images/icon-76x76.png" />
+<dl class="field-list simple">
+<dt class="field-odd">target</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/mattermost/mattermost-server">https://github.com/mattermost/mattermost-server</a></p>
+</dd>
+</dl>
+</div></blockquote>
 </div>
 <div class="section" id="in-line-image-displayed-wtih-fixed-width-and-height">
 <h3>In-line image displayed wtih fixed width and height<a class="headerlink" href="#in-line-image-displayed-wtih-fixed-width-and-height" title="Permalink to this headline">¶</a></h3>
@@ -385,8 +387,10 @@ Renders as:
 </pre></div>
 </div>
 <p>![Mattermost](../../images/icon-76x76.png =50x76 “Mattermost Icon”)</p>
+</div></blockquote>
 <p>Renders as:</p>
-<img alt="../../_images/icon-50x76.png" src="../../_images/icon-50x76.png" />
+<blockquote>
+<div><img alt="../../_images/icon-50x76.png" src="../../_images/icon-50x76.png" />
 <dl class="field-list simple">
 <dt class="field-odd">alt</dt>
 <dd class="field-odd"><p>Mattermost
@@ -403,8 +407,10 @@ Renders as:
 </pre></div>
 </div>
 <p>![Mattermost](../../images/icon-76x76.png =50 “Mattermost Icon”)</p>
+</div></blockquote>
 <p>Renders as:</p>
-<a class="reference internal image-reference" href="../../_images/icon-76x76.png"><img alt="Mattermost" src="../../_images/icon-76x76.png" style="width: 50px;" /></a>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/icon-76x76.png"><img alt="Mattermost" src="../../_images/icon-76x76.png" style="width: 50px;" /></a>
 </div></blockquote>
 </div>
 </div>
