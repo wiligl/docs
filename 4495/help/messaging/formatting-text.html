@@ -348,46 +348,56 @@ func main() {
 <p>Examples:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>.. |mattermost-icon-76x76| image:: ../../images/icon-76x76.png
 .. |mattermost-icon-50x76| image:: ../../images/icon-50x76.png
-</pre></div>
-</div>
-<p>In-line image with hover text</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>![Mattermost](../../images/icon-76x76.png &quot;Mattermost Icon&quot;)
 
-Renders as:
+In-line image with hover text
 
-.. image:: ../../images/icon-76x76.png
-  :alt: Mattermost
-  :name: Mattermost Icon
-</pre></div>
-</div>
-<p>In-line image with link</p>
-<p>An extra set of square brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> is required around the alt text and the image URL.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[![Mattermost](../../images/icon-76x76.png)](https://github.com/mattermost/mattermost-server)
+.. code-block:: none
 
-Renders as:
+  ![Mattermost](../../images/icon-76x76.png &quot;Mattermost Icon&quot;)
 
-.. image:: ../../images/icon-76x76.png
-  :target: https://github.com/mattermost/mattermost-server
-</pre></div>
-</div>
-<p>In-line image displayed at 50 pixels wide and 76 pixels high</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>![Mattermost](../../images/icon-76x76.png =50x76 &quot;Mattermost Icon&quot;)
+  Renders as:
 
-Renders as:
+  .. image:: ../../images/icon-76x76.png
+    :alt: Mattermost
+    :name: Mattermost Icon
 
-.. image:: ../../images/icon-50x76.png
-  :alt: Mattermost
-  :name: Mattermost Icon
-</pre></div>
-</div>
-<p>In-line image displayed at 50 pixels wide and the height adjusted to suit</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>![Mattermost](../../images/icon-76x76.png =50 &quot;Mattermost Icon&quot;)
+In-line image with link
 
-Renders as:
+.. note::
+  An extra set of square brackets ``[ ]`` is required around the alt text, and round brackets ``( )`` are required around the image link.
 
-.. image:: ../../images/icon-76x76.png
-  :alt: Mattermost
-  :width: 50
+.. code-block:: none
+
+  [![Mattermost](../../images/icon-76x76.png)](https://github.com/mattermost/mattermost-server)
+
+  Renders as:
+
+  .. image:: ../../images/icon-76x76.png
+    :target: https://github.com/mattermost/mattermost-server
+
+In-line image displayed at 50 pixels wide and 76 pixels high
+
+.. code-block:: none
+
+  ![Mattermost](../../images/icon-76x76.png =50x76 &quot;Mattermost Icon&quot;)
+
+  Renders as:
+
+  .. image:: ../../images/icon-50x76.png
+    :alt: Mattermost
+    :name: Mattermost Icon
+
+In-line image displayed at 50 pixels wide and the height adjusted to suit
+
+.. code-block:: none
+
+  ![Mattermost](../../images/icon-76x76.png =50 &quot;Mattermost Icon&quot;)
+
+  Renders as:
+
+  .. image:: ../../images/icon-76x76.png
+    :alt: Mattermost
+    :width: 50
 </pre></div>
 </div>
 </div>
