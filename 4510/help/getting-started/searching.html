@@ -198,21 +198,25 @@
 </div>
 <div class="section" id="message-searches">
 <h2>Message Searches<a class="headerlink" href="#message-searches" title="Permalink to this headline">¶</a></h2>
-<p>Select the search option, then select <strong>Messages</strong> as the search type. Message results are returned first by default when no search type is selected.</p>
+<p>Select the search option, then select <strong>Messages</strong> as the search type, followed by your search criteria.</p>
 <img alt="../../_images/search-messages.png" src="../../_images/search-messages.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When no search type is selected, message results are returned first by default.</p>
+</div>
 <p>When message results display in the <strong>Search Results</strong> pane, select <strong>Jump</strong> to view the full message in context.</p>
 <img alt="../../_images/jump-to-message.png" src="../../_images/jump-to-message.png" />
 </div>
 <div class="section" id="file-searches">
 <h2>File Searches<a class="headerlink" href="#file-searches" title="Permalink to this headline">¶</a></h2>
-<p>Select the search option, then select <strong>Files</strong> as the search type to return attachments that match on file name or contain matching text content within supported document types.</p>
+<p>Select the search option, then select <strong>Files</strong> as the search type, followed by your search criteria. Search returns file attachments that match on file name or contain matching text content within supported document types. Each search result includes the file name, extension, size, as well as when and where the file was originally attached.</p>
 <img alt="../../_images/search-files.png" src="../../_images/search-files.png" />
 <ul class="simple">
-<li><p>For Mattermost Cloud workspaces, supported document types include .pdf, .docx, .pptx, .odt, .html, and plain text documents.</p></li>
-<li><p>For Mattermost Self-Managed workspaces, supported document types include .pdf, .pptx, .odt, .html, and plain text documents. Your System Admin can also enable you to perform content searches for .docx, .rtf, and .pages files. See XXX for details.</p></li>
+<li><p>For Mattermost Cloud workspaces, supported document types include PDF, DOCX, PPTX, ODT, HTML, and plain text documents.</p></li>
+<li><p>For Mattermost Self-Managed workspaces, supported document types include PDF, PPTX, ODT, HTML, and plain text documents. Your System Admin can also enable the ability to perform content searches for DOCX, RTF, and PAGES files. See XXX for details.</p></li>
 <li><p>The abiliy to search for documents within ZIP files can be enabled by a System Admin. See XXX for details.</p></li>
 </ul>
-<p>In the <strong>Search Results</strong> pane, select the filter option to return results by file type, such as documents, spreadsheets, code, images, videos, and more.</p>
+<p>To narrow your search results further in the <strong>Search Results</strong> pane, select the filter option, then select the file types to filter by, such as documents, spreadsheets, code, images, videos, and more.</p>
 <img alt="../../_images/file-search-filter.png" src="../../_images/file-search-filter.png" />
 </div>
 <div class="section" id="search-modifiers">
@@ -221,15 +225,17 @@
 <img alt="../../_images/search-modifiers.png" src="../../_images/search-modifiers.png" />
 <div class="section" id="from-and-in">
 <h3><code class="docutils literal notranslate"><span class="pre">from:</span></code> and <code class="docutils literal notranslate"><span class="pre">in:</span></code><a class="headerlink" href="#from-and-in" title="Permalink to this headline">¶</a></h3>
-<p>Use <code class="docutils literal notranslate"><span class="pre">from:</span></code> to find posts from specific users. For example, searching <code class="docutils literal notranslate"><span class="pre">from:john.smith</span></code> only returns messages from your Direct Message history with John Smith.</p>
-<p>Use <code class="docutils literal notranslate"><span class="pre">in:</span></code> to find messages and replies in specific Public channels, Private channels, Direct Messages, or Group Messages. You can specify channels by display name or channel ID. For example, searching <code class="docutils literal notranslate"><span class="pre">Mattermost</span> <span class="pre">in:town-square</span></code> only returns messages in the Town Square Public channel that contain the term <code class="docutils literal notranslate"><span class="pre">Mattermost</span></code>, while searching <code class="docutils literal notranslate"><span class="pre">Mattermost</span> <span class="pre">in:john.doe</span></code> only returns messages that contain the term <code class="docutils literal notranslate"><span class="pre">Mattermost</span></code> in your Direct Message history with John Smith.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">from:</span></code> to find posts from specific users.
+- For example, searching <code class="docutils literal notranslate"><span class="pre">from:john.smith</span></code> only returns messages from your Direct Message history with John Smith.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">in:</span></code> to find messages and replies in specific Public channels, Private channels, Direct Messages, or Group Messages. You can specify channels by display name or channel ID.
+- For example, searching <code class="docutils literal notranslate"><span class="pre">Mattermost</span> <span class="pre">in:town-square</span></code> only returns messages in the Town Square Public channel that contain the term <code class="docutils literal notranslate"><span class="pre">Mattermost</span></code>, while searching <code class="docutils literal notranslate"><span class="pre">Mattermost</span> <span class="pre">in:john.doe</span></code> only returns messages that contain the term <code class="docutils literal notranslate"><span class="pre">Mattermost</span></code> in your Direct Message history with John Smith.</p>
 </div>
 <div class="section" id="before-after-and-on">
 <h3><code class="docutils literal notranslate"><span class="pre">before:</span></code>, <code class="docutils literal notranslate"><span class="pre">after:</span></code>, and <code class="docutils literal notranslate"><span class="pre">on:</span></code><a class="headerlink" href="#before-after-and-on" title="Permalink to this headline">¶</a></h3>
-<p>Use <code class="docutils literal notranslate"><span class="pre">before:</span></code> to find posts before a specified date.
-Use <code class="docutils literal notranslate"><span class="pre">after:</span></code> to find posts after a specified date.
-Use both <code class="docutils literal notranslate"><span class="pre">before:</span></code> and <code class="docutils literal notranslate"><span class="pre">after:</span></code> together to search in a specified date range.
-Use <code class="docutils literal notranslate"><span class="pre">on:</span></code> to find posts from a specific date. Use the date picker to select a date, or type it in YYYY-MM-DD format.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">before:</span></code> to find posts before a specified date.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">after:</span></code> to find posts after a specified date.</p>
+<p>Use both <code class="docutils literal notranslate"><span class="pre">before:</span></code> and <code class="docutils literal notranslate"><span class="pre">after:</span></code> together to search in a specified date range.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">on:</span></code> to find posts from a specific date. Use the date picker to select a date, or type it in YYYY-MM-DD format.</p>
 <a class="reference internal image-reference" href="../../_images/calendar2.png"><img alt="../../_images/calendar2.png" src="../../_images/calendar2.png" style="width: 300px;" /></a>
 <p>Examples:</p>
 <ul class="simple">
