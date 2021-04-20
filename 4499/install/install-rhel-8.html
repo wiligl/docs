@@ -566,6 +566,10 @@
 </ol>
 <p>2.  Set <code class="docutils literal notranslate"><span class="pre">&quot;DataSource&quot;</span></code> to the following value, replacing <code class="docutils literal notranslate"><span class="pre">&lt;mmuser-password&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;host-name-or-IP&gt;</span></code> with the appropriate values. Also make sure that the database name is <code class="docutils literal notranslate"><span class="pre">mattermost</span></code> instead of <code class="docutils literal notranslate"><span class="pre">mattermost_test</span></code>:
 <code class="docutils literal notranslate"><span class="pre">&quot;mmuser:&lt;mmuser-password&gt;&#64;tcp(&lt;host-name-or-IP&gt;:3306)/mattermost?charset=utf8mb4,utf8&amp;readTimeout=30s&amp;writeTimeout=30s&quot;</span></code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For a same-machine installation, replace <code class="docutils literal notranslate"><span class="pre">&lt;host-name-or-IP&gt;</span></code> above with <code class="docutils literal notranslate"><span class="pre">localhost</span></code> or <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code>.</p>
+</div>
 </div></blockquote>
 </div></blockquote>
 <ol class="arabic" start="8">
@@ -1227,7 +1231,7 @@ server {
 <li><p>Run the Let’s Encrypt installer dry-run to ensure your DNS is configured properly.</p></li>
 </ol>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">certbot</span> <span class="pre">certbot</span> <span class="pre">--dry-run</span></code></p>
+<div><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">certbot</span> <span class="pre">certonly</span> <span class="pre">--dry-run</span></code></p>
 <p>This will prompt you to enter your email, accept the TOS, share your email, and select the domain you’re activating certbot for. This will validate that your DNS points to this server properly and you are able to successfully generate a certificate. If this finishes successfully, proceed to step 12.</p>
 </div></blockquote>
 <ol class="arabic simple" start="12">
