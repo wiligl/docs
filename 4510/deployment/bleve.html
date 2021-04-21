@@ -199,6 +199,10 @@
 <li><p>Set <strong>Enable Bleve for search queries</strong> to <strong>true</strong>.</p></li>
 <li><p>Set <strong>Enable Bleve for autocomplete queries</strong> to <strong>true</strong>.</p></li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>File search results will be imcomplete for file attachments shared before the file search was made available until a <a class="reference external" href="https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content">database migration command</a> is executed and the search index is rebuilt. After executing the database migration command, go to <strong>System Console &gt; Experimental &gt; Bleve &gt; Bulk Indexing</strong>, then select <strong>Index Now</strong> to rebuild the search index to include older file attachments.</p>
+</div>
 </div>
 <div class="section" id="using-bleve-search">
 <h2>Using Bleve Search<a class="headerlink" href="#using-bleve-search" title="Permalink to this headline">¶</a></h2>
