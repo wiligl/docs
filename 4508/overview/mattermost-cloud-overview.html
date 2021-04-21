@@ -108,6 +108,9 @@
 <li class="toctree-l4"><a class="reference internal" href="#when-will-support-for-other-regions-be-available">When will support for other regions be available?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#how-is-mattermost-cloud-secured">How is Mattermost Cloud secured?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#what-are-the-alternatives-and-why-should-customers-choose-mattermost-cloud">What are the alternatives, and why should customers choose Mattermost Cloud?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#is-mattermost-cloud-enterprise-a-dedicated-instance-run-on-aws-systems">Is Mattermost Cloud Enterprise a dedicated instance run on AWS systems?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-is-customer-data-in-mattermost-cloud-enterprise-encrypted">How is customer data in Mattermost Cloud Enterprise encrypted?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#are-s3-managed-keys-used-for-server-side-encryption">Are S3-managed keys used for server-side encryption?</a></li>
 </ul>
 </li>
 </ul>
@@ -221,6 +224,19 @@
 <h3>What are the alternatives, and why should customers choose Mattermost Cloud?<a class="headerlink" href="#what-are-the-alternatives-and-why-should-customers-choose-mattermost-cloud" title="Permalink to this headline">¶</a></h3>
 <p>Other SaaS offerings are closed-source and focus on a very broad usecase. Mattermost Cloud is built on our open source core offering, allowing customers to view our source code and have a high degree of transparency into Mattermost development processes. Mattermost provides a DevOps-centric offering and has deep integrations and workflows that help builders and operators be more effective.</p>
 <p>Mattermost Cloud Enterprise is deployed in a private environment within an AWS VPC dedicated to a single customer. Other SaaS offerings are multi-tenant, meaning customers share resources.</p>
+</div>
+<div class="section" id="is-mattermost-cloud-enterprise-a-dedicated-instance-run-on-aws-systems">
+<h3>Is Mattermost Cloud Enterprise a dedicated instance run on AWS systems?<a class="headerlink" href="#is-mattermost-cloud-enterprise-a-dedicated-instance-run-on-aws-systems" title="Permalink to this headline">¶</a></h3>
+<p>Yes, Mattermost Cloud Enterprise is a dedicated Mattermost environment running in a dedicated AWS account with separate infrastructure for that customer specifically, i.e. separate database, separate VMs, separate Kubernetes cluster.</p>
+</div>
+<div class="section" id="how-is-customer-data-in-mattermost-cloud-enterprise-encrypted">
+<h3>How is customer data in Mattermost Cloud Enterprise encrypted?<a class="headerlink" href="#how-is-customer-data-in-mattermost-cloud-enterprise-encrypted" title="Permalink to this headline">¶</a></h3>
+<p>Mattermost uses AWS-provided functionality to enable encryption-at-rest for both databases and file stores. See <a class="reference external" href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html">Encrypting Amazon RDS resources - Amazon Relational Database Service</a> and <a class="reference external" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/serv-side-encryption.html">Protecting data using server-side encryption - Amazon Simple Storage Service</a> for details.</p>
+<p>Whether customer data should be stored in Mattermost Cloud depends heavily on the nature of the data and compliance requirements. We recommend that customers set up their own internal policies or controls around what can and cannot be put into Mattermost.</p>
+</div>
+<div class="section" id="are-s3-managed-keys-used-for-server-side-encryption">
+<h3>Are S3-managed keys used for server-side encryption?<a class="headerlink" href="#are-s3-managed-keys-used-for-server-side-encryption" title="Permalink to this headline">¶</a></h3>
+<p>Yes. Customer-provided keys may be considered for a future release.</p>
 </div>
 </div>
 </div>

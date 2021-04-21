@@ -222,6 +222,10 @@
 <li><p>Paste the <strong>client secret</strong> value from the Azure Portal as the <strong>Client Secret</strong> in Mattermost.</p></li>
 <li><p>Select <strong>Save</strong>.</p></li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When Mattermost is configured to use OpenID Connect or OAuth 2.0 for user authentication, the following user attribute changes can’t be made through the Mattermost API: first name, last name, or username. OpenID Connect or OAuth 2.0 must be the authoritative source for these user attributes.</p>
+</div>
 </div>
 <div class="section" id="note-about-microsoft-active-directory-tenants">
 <h3>Note about Microsoft Active Directory Tenants<a class="headerlink" href="#note-about-microsoft-active-directory-tenants" title="Permalink to this headline">¶</a></h3>
