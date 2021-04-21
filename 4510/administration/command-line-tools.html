@@ -1318,7 +1318,7 @@ bin/mattermost command move newteam o8soyabwthjnf9qibfztje5a36h
 <blockquote>
 <div><dl>
 <dt>Description</dt><dd><p>Extracts document content and stores it in the database for file searches available in Mattermost Cloud, and in Mattermost Self-Managed from v5.35. This database migration is strongly recommended so that <a class="reference external" href="https://docs.mattermost.com/help/getting-started/searching.html#searching-for-files">users can search for file attachments</a> shared in Mattermost prior to v5.35. Otherwise, search results for files shared in the past may be incomplete. The database migration command extracts and indexes the content of past file attachments.</p>
-<p>Running this migration adds load to your server. For large deployments or teams that share many large text heavy documents, it is recommended to review our <a class="reference external" href="https://docs.mattermost.com/install/requirements.html#hardware-requirements">hardware requirements</a>, and test this feature in a staging environment before enabling document content search in production.</p>
+<p>Running this migration adds load to your server. For large deployments or teams that share many large text heavy documents, we recommended you review our <a class="reference external" href="https://docs.mattermost.com/install/requirements.html#hardware-requirements">hardware requirements</a>, and test this feature in a staging environment before enabling file search in production.</p>
 </dd>
 <dt>Format</dt><dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>mattermost extract-documents-content
 </pre></div>
