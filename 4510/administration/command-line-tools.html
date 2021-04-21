@@ -1316,15 +1316,10 @@ bin/mattermost command move newteam o8soyabwthjnf9qibfztje5a36h
 <div class="section" id="mattermost-extract-documents-content">
 <h3><a class="toc-backref" href="#contents">mattermost extract-documents-content</a><a class="headerlink" href="#mattermost-extract-documents-content" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><dl class="simple">
+<div><dl>
 <dt>Description</dt><dd><p>Extracts document content and stores it in the database for document searches. This database migration is strongly recommended so that <a class="reference external" href="https://docs.mattermost.com/help/getting-started/searching.html#searching-for-files">users can search for file attachments</a> shared in Mattermost prior to v5.35. Otherwise, search results for files shared in the past may be incomplete. The database migration command extracts and indexes the content of past file attachments.</p>
-</dd>
-</dl>
-</div></blockquote>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
 <p>Running this migration adds load to your server. For large deployments or teams that share many large text heavy documents, it is recommended to review our <a class="reference external" href="https://docs.mattermost.com/install/requirements.html#hardware-requirements">hardware requirements</a>, and test this feature in a staging environment before enabling document content search in production.</p>
-<dl>
+</dd>
 <dt>Format</dt><dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>mattermost extract-documents-content
 </pre></div>
 </div>
@@ -1339,7 +1334,7 @@ bin/mattermost command move newteam o8soyabwthjnf9qibfztje5a36h
 </div>
 </dd>
 </dl>
-</div>
+</div></blockquote>
 </div>
 <div class="section" id="mattermost-group">
 <h3><a class="toc-backref" href="#contents">mattermost group</a><a class="headerlink" href="#mattermost-group" title="Permalink to this headline">¶</a></h3>
