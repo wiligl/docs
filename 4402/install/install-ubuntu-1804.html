@@ -95,7 +95,6 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../overview/index.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/cloud-admin-guide.html">Cloud Administrator's Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../guides/administrator.html">Self-Managed Administrator's Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../overview/architecture.html">Architecture Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../deployment/deployment.html">Deployment Overview</a></li>
@@ -147,6 +146,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../guides/administrator.html#community-managed-documentation">Community-Managed Documentation</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/cloud-admin-guide.html">Cloud Administrator's Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/user.html">User's Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/integration.html">Integration Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://developers.mattermost.com/">Developer's Guide</a></li>
@@ -448,7 +448,10 @@
 <div><p><code class="docutils literal notranslate"><span class="pre">psql</span> <span class="pre">--host={postgres-server-IP}</span> <span class="pre">--dbname=mattermost</span> <span class="pre">--username=mmuser</span> <span class="pre">--password</span></code></p>
 </div></blockquote>
 </div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>You might have to install the PostgreSQL client software to use the command.</p>
+</div>
 <p>The PostgreSQL interactive terminal starts. To exit the PostgreSQL interactive terminal, type <code class="docutils literal notranslate"><span class="pre">\q</span></code> and press ENTER.</p>
 <p>With the database installed and the initial setup complete, you can now install the Mattermost server.</p>
 </div>

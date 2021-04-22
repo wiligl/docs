@@ -95,7 +95,6 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../overview/index.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/cloud-admin-guide.html">Cloud Administrator's Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../guides/administrator.html">Self-Managed Administrator's Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../overview/architecture.html">Architecture Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../deployment/deployment.html">Deployment Overview</a></li>
@@ -128,6 +127,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../guides/administrator.html#community-managed-documentation">Community-Managed Documentation</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/cloud-admin-guide.html">Cloud Administrator's Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/user.html">User's Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/integration.html">Integration Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://developers.mattermost.com/">Developer's Guide</a></li>
@@ -185,19 +185,12 @@
 <h1>Important Upgrade Notes<a class="headerlink" href="#important-upgrade-notes" title="Permalink to this headline">¶</a></h1>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Support for Mattermost Server v5.25 <a class="reference external" href="https://docs.mattermost.com/administration/extended-support-release.html">Extended Support Release</a> has come to the end of its life cycle as of April 15, 2021. Upgrading to Mattermost Server v5.31 <a class="reference external" href="https://docs.mattermost.com/administration/extended-support-release.html">Extended Support Release</a> or later is required.</p>
-</div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>PostgreSQL ended long-term support for <a class="reference external" href="https://www.postgresql.org/support/versioning">version 9.4 in February 2020</a>. From v5.26 Mattermost officially supports PostgreSQL version 10 as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL 9.4. PostgreSQL 9.4 and all 9.x versions are now fully deprecated in our v5.30 release (December 16, 2020). Please follow the instructions under the Upgrading Section within <a class="reference external" href="https://www.postgresql.org/support/versioning/">the PostgreSQL documentation</a>.</p>
-</div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>TLS versions 1.0 and 1.1 have been deprecated by browser vendors. Starting in Mattermost Server v5.32 (February 16), mmctl returns an error when connected to Mattermost servers deployed with these TLS versions and System Admins will need to explicitly add a flag in their commands to continue to use them. We recommend upgrading to TLS version 1.2 or higher.</p>
-</div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">platform</span></code> binary and “–platform” flag will be deprecated in a future release. If you are using the “–platform” flag or are using the <code class="docutils literal notranslate"><span class="pre">platform</span></code> binary directly to run the Mattermost server application via a systemd file or custom script, you will be required to use only the <code class="docutils literal notranslate"><span class="pre">mattermost</span></code> binary.</p>
+<ul class="simple">
+<li><p>Support for Mattermost Server v5.25 <a class="reference external" href="https://docs.mattermost.com/administration/extended-support-release.html">Extended Support Release</a> has come to the end of its life cycle as of April 15, 2021. Upgrading to Mattermost Server v5.31 <a class="reference external" href="https://docs.mattermost.com/administration/extended-support-release.html">Extended Support Release</a> or later is required.</p></li>
+<li><p>Due to the introduction of backend database architecture required for upcoming new features, Shared Channels and Collapsed Reply Threads, the performance of the migration process for the v5.35 release (May 16, 2021) has been noticeably affected. Depending on the size, type, and version of the database, longer than usual upgrade times should be expected. This can vary from a couple of minutes (average case) to hours (worst case, MySQL 5.x only). A moderate to significant spike in database CPU usage should also be expected during this process. <a class="reference external" href="https://gist.github.com/streamer45/9aee4906639a49ebde68b2f3c0f924c1">More details on the performance impact of the migration and possible mitigation strategies are provided here</a>.</p></li>
+<li><p>In the v5.38 release (August 16, 2021), we will deprecate “config watcher” (the mechanism that automatically reloads the <code class="docutils literal notranslate"><span class="pre">config.json</span> <span class="pre">file</span></code>), in favor of an mmctl command that will need to be run to apply configuration changes after they are made. This change will improve configuration performance and robustness.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">platform</span></code> binary and “–platform” flag will be deprecated in a future release. If you are using the “–platform” flag or are using the <code class="docutils literal notranslate"><span class="pre">platform</span></code> binary directly to run the Mattermost server application via a systemd file or custom script, you will be required to use only the <code class="docutils literal notranslate"><span class="pre">mattermost</span></code> binary.</p></li>
+</ul>
 </div>
 <table class="docutils align-default">
 <colgroup>
@@ -232,7 +225,7 @@ migrations that were scheduled for v5.32.0. These additions can be lengthy on ve
 the WebSocket RFC. This is done to work around incorrect Nginx (and other proxy) configs that do not set the <code class="docutils literal notranslate"><span class="pre">proxy_http_version</span></code> directive to 1.1. This
 facility will be removed in a future Mattermost version and it is strongly recommended to fix the proxy configuration to correctly use the WebSocket protocol.</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="3"><p>v5.32.0</p></td>
+<tr class="row-odd"><td rowspan="4"><p>v5.32.0</p></td>
 <td colspan="2"><p><code class="docutils literal notranslate"><span class="pre">ExperimentalChannelOrganization</span></code>, <code class="docutils literal notranslate"><span class="pre">EnableXToLeaveChannelsFromLHS</span></code>, <code class="docutils literal notranslate"><span class="pre">CloseUnusedDirectMessages</span></code>, and <code class="docutils literal notranslate"><span class="pre">ExperimentalHideTownSquareinLHS</span></code> settings are only
 functional if the Legacy Sidebar (<code class="docutils literal notranslate"><span class="pre">EnableLegacySidebar</span></code>) is enabled since they are not compatible with the new sidebar experience.
 <code class="docutils literal notranslate"><span class="pre">ExperimentalChannelSidebarOrganization</span></code> has been deprecated, since the
@@ -246,32 +239,36 @@ them when upgrading its dependencies.</p></td>
 when the certificate of the LDAP Server has no Subject Alternative Name (SAN) in it. Creating a new certificate on the AD/LDAP Server with the SAN inside fixes
 this.</p></td>
 </tr>
-<tr class="row-even"><td rowspan="2"><p>v5.29.0</p></td>
+<tr class="row-even"><td colspan="2"><p>TLS versions 1.0 and 1.1 have been deprecated by browser vendors. Starting in Mattermost Server v5.32 (February 16), mmctl returns an error when connected to
+Mattermost servers deployed with these TLS versions. System Admins will need to explicitly add a flag in their commands to continue to use them. We recommend
+upgrading to TLS version 1.2 or higher.</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><p>v5.29.0</p></td>
 <td colspan="2"><p>A new configuration setting <code class="docutils literal notranslate"><span class="pre">ThreadAutoFollow</span></code> has been added to support <a class="reference external" href="https://docs.google.com/presentation/d/1QSrPws3N8AMSjVyOKp15FKT7O0fGMSx8YidjSDS4Wng/edit#slide=id.g2f0aecc189_0_245">Collapsed Reply Threads</a> releasing in beta in Q1 2021. This
 setting is enabled by default and may affect server performance. It is recommended to review our <a class="reference external" href="https://docs.mattermost.com/install/requirements.html#hardware-requirements">documentation on hardware requirements</a> to ensure your servers are appropriately scaled for the size of your user base.</p></td>
 </tr>
-<tr class="row-odd"><td colspan="2"><p>Disabled the xmlsec1-based SAML library in favor of the re-enabled and improved SAML library.</p></td>
+<tr class="row-even"><td colspan="2"><p>Disabled the xmlsec1-based SAML library in favor of the re-enabled and improved SAML library.</p></td>
 </tr>
-<tr class="row-even"><td rowspan="3"><p>v5.28.0</p></td>
+<tr class="row-odd"><td rowspan="3"><p>v5.28.0</p></td>
 <td colspan="2"><p>Now when the service crashes, it will generate a coredump instead of just dumping the stack trace to the console. This allows us to preserve the full
 information of the crash to help with debugging it.</p>
 <p>For more information about coredumps, please see: <a class="reference external" href="https://man7.org/linux/man-pages/man5/core.5.html">https://man7.org/linux/man-pages/man5/core.5.html</a>.</p>
 </td>
 </tr>
-<tr class="row-odd"><td colspan="2"><p>In-product notices have been introduced to keep System Admins and end users informed of the latest product enhancements available in new server and desktop
+<tr class="row-even"><td colspan="2"><p>In-product notices have been introduced to keep System Admins and end users informed of the latest product enhancements available in new server and desktop
 versions. <a class="reference external" href="https://docs.mattermost.com/administration/notices.html">Learn more about in-product notices</a> and how to disable them in our documentation.</p></td>
 </tr>
-<tr class="row-even"><td colspan="2"><p>Disabled the xmlsec1-based SAML library in favor of the re-enabled and improved SAML library.</p></td>
+<tr class="row-odd"><td colspan="2"><p>Disabled the xmlsec1-based SAML library in favor of the re-enabled and improved SAML library.</p></td>
 </tr>
-<tr class="row-odd"><td><p>v5.27.0</p></td>
+<tr class="row-even"><td><p>v5.27.0</p></td>
 <td colspan="2"><p>Disabled the xmlsec1-based SAML library in favor of the re-enabled and improved SAML library.</p></td>
 </tr>
-<tr class="row-even"><td rowspan="3"><p>v5.26.0</p></td>
+<tr class="row-odd"><td rowspan="4"><p>v5.26.0</p></td>
 <td colspan="2"><p>In v5.26, Elasticsearch indexes needed to be recreated. Admins should re-index Elasticsearch using the <strong>Purge index</strong> and then <strong>Index now</strong> button so that all
 the changes will be included in the index. Systems may be left with a limited search during the indexing, so it should be done during a time when there is
 little to no activity because it may take several hours.</p></td>
 </tr>
-<tr class="row-odd"><td colspan="2"><p>An <code class="docutils literal notranslate"><span class="pre">EnableExperimentalGossipEncryption</span></code> option was added under <code class="docutils literal notranslate"><span class="pre">ClusterSettings</span></code>. If this is set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, and <code class="docutils literal notranslate"><span class="pre">UseExperimentalGossip</span></code> is also <code class="docutils literal notranslate"><span class="pre">true</span></code>,
+<tr class="row-even"><td colspan="2"><p>An <code class="docutils literal notranslate"><span class="pre">EnableExperimentalGossipEncryption</span></code> option was added under <code class="docutils literal notranslate"><span class="pre">ClusterSettings</span></code>. If this is set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, and <code class="docutils literal notranslate"><span class="pre">UseExperimentalGossip</span></code> is also <code class="docutils literal notranslate"><span class="pre">true</span></code>,
 all communication through the cluster using the gossip protocol will be encrypted. The encryption uses <code class="docutils literal notranslate"><span class="pre">AES-256</span></code> by default, and it is not kept configurable
 by design. However, if one wishes, they can set the value in Systems table manually for the <code class="docutils literal notranslate"><span class="pre">ClusterEncryptionKey</span></code> row. A key is a byte array converted to
 base64. It should be either 16, 24, or 32 bytes to select AES-128, AES-192, or AES-256.</p>
@@ -282,8 +279,13 @@ base64. It should be either 16, 24, or 32 bytes to select AES-128, AES-192, or A
 all servers either will completely use encryption or not. There cannot be any partial usage.</p>
 </td>
 </tr>
-<tr class="row-even"><td colspan="2"><p>SAML Setting “Use Improved SAML Library (Beta)” was forcefully disabled. Follow instructions at
+<tr class="row-odd"><td colspan="2"><p>SAML Setting “Use Improved SAML Library (Beta)” was forcefully disabled. Follow instructions at
 <a class="reference external" href="https://docs.mattermost.com/deployment/sso-saml-before-you-begin.html">https://docs.mattermost.com/deployment/sso-saml-before-you-begin.html</a> for enabling SAML using the feature-equivalent <code class="docutils literal notranslate"><span class="pre">xmlsec1</span></code> utility.</p></td>
+</tr>
+<tr class="row-even"><td colspan="2"><p>PostgreSQL ended long-term support for <a class="reference external" href="https://www.postgresql.org/support/versioning">version 9.4 in February 2020</a>. From v5.26 Mattermost officially supports
+PostgreSQL version 10 as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our current
+ESR, will continue to be compatible with PostgreSQL 9.4. PostgreSQL 9.4 and all 9.x versions are now fully deprecated in our v5.30 release (December 16, 2020).
+Please follow the instructions under the Upgrading Section within <a class="reference external" href="https://www.postgresql.org/support/versioning/">the PostgreSQL documentation</a>.</p></td>
 </tr>
 <tr class="row-odd"><td rowspan="2"><p>v5.25.0</p></td>
 <td colspan="2"><p>Some incorrect instructions regarding SAML setup with Active Directory ADFS for setting the “Relying Party Trust Identifier” were corrected. Although the

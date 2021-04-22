@@ -95,7 +95,6 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../overview/index.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/cloud-admin-guide.html">Cloud Administrator's Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../guides/administrator.html">Self-Managed Administrator's Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../overview/architecture.html">Architecture Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../deployment/deployment.html">Deployment Overview</a></li>
@@ -200,6 +199,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../guides/administrator.html#community-managed-documentation">Community-Managed Documentation</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/cloud-admin-guide.html">Cloud Administrator's Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/user.html">User's Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/integration.html">Integration Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://developers.mattermost.com/">Developer's Guide</a></li>
@@ -374,6 +374,7 @@
 <div class="section" id="known-issues">
 <h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
+<li><p>Text alignment in right-to-left support does not work correctly <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-35084">MM-35084</a>.</p></li>
 <li><p>Deactivated users are not marked as “Deactivated” in the channel switcher <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-33910">MM-33910</a>.</p></li>
 <li><p>User nickname is not shown on channel switch <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-33897">MM-33897</a>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Config.json</span></code> can reset when running the command <code class="docutils literal notranslate"><span class="pre">systemctl</span> <span class="pre">restart</span> <span class="pre">mattermost</span></code>, and when running any commands that write to the config (e.g. <code class="docutils literal notranslate"><span class="pre">config</span></code> or <code class="docutils literal notranslate"><span class="pre">plugin</span></code>) <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-33752">MM-33752</a>, <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-32390">MM-32390</a>.</p></li>

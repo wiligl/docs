@@ -95,6 +95,7 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/administrator.html">Self-Managed Administrator's Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../guides/cloud-admin-guide.html">Cloud Administrator's Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../guides/cloud-admin-guide.html#system-administration">System Administration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../guides/cloud-admin-guide.html#user-management">User Management</a></li>
@@ -123,7 +124,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../guides/cloud-admin-guide.html#incident-management">Incident Management</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../guides/administrator.html">Self-Managed Administrator's Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guides/user.html">User's Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guides/integration.html">Integration Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://developers.mattermost.com/">Developer's Guide</a></li>
@@ -253,7 +253,11 @@
 <div class="section" id="configure-ad-ldap-synchronization">
 <h3>Configure AD/LDAP Synchronization<a class="headerlink" href="#configure-ad-ldap-synchronization" title="Permalink to this headline">¶</a></h3>
 <p>In addition to configuring AD/LDAP sign-in, you can also configure AD/LDAP synchronization. When synchronizing, Mattermost queries AD/LDAP for relevant account information and updates Mattermost accounts based on changes to attributes (first name, last name, and nickname). When accounts are disabled in AD/LDAP users are made inactive in Mattermost, and their active sessions are revoked once Mattermost synchronizes the updated attributes.</p>
-<p><strong>Note:</strong> The AD/LDAP sync depends on email. Make sure all users on your AD/LDAP server have an email address or that their account is deactivated in Mattermost.</p>
+<p><strong>Note:</strong></p>
+<ul class="simple">
+<li><p>The AD/LDAP synchronization depends on email. Make sure all users on your AD/LDAP server have an email address, or ensure their account is deactivated in Mattermost.</p></li>
+<li><p>When Mattermost is configured to use LDAP for user authentication, the following user attribute changes can’t be made through the API: first name, last name, position, nickname, email, profile image, or username. LDAP must be the authoritative source for these user attributes.</p></li>
+</ul>
 <p>To configure AD/LDAP synchronization with AD/LDAP sign-in:</p>
 <ol class="simple">
 <li><p>Go to <strong>System Console &gt; Authentication &gt; AD/LDAP</strong> and set <strong>Enable Synchronization with AD/LDAP</strong> to <strong>true</strong>.</p></li>
