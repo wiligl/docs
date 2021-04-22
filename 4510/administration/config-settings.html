@@ -911,6 +911,40 @@
 <p>If you use a proxy or load balancer in front of Mattermost its settings need to be adjusted accordingly. For NGINX use <code class="docutils literal notranslate"><span class="pre">client_max_body_size</span></code>. For Apache use <code class="docutils literal notranslate"><span class="pre">LimitRequestBody</span></code>.</p>
 </div>
 </div>
+<div class="section" id="enable-document-search-by-content">
+<h4>Enable Document Search by Content<a class="headerlink" href="#enable-document-search-by-content" title="Permalink to this headline">¶</a></h4>
+<p>Document content search is available in Mattermost Server from v5.35, with mobile support coming soon. Searching document contents adds load to your server. For large deployments, or teams that share many large, text-heavy documents, we recommended you review our <a class="reference external" href="https://docs.mattermost.com/install/requirements.html#hardware-requirements">hardware requirements</a>, and test enabling this feature in a staging environment before enabling it in a production environment.</p>
+<p><strong>True</strong>: When <strong>true</strong>, supported document types are searchable by their content. Install <a class="reference external" href="https://github.com/sajari/docconv#dependencies">these dependencies</a> to extend content searching support to include DOCX, RTF, and PAGES files.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Search results for files shared before upgrading to Mattermost Server 5.35 may be incomplete until an <a class="reference external" href="https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content">extraction command is executed using the CLI</a>.</p>
+</div>
+<p><strong>False</strong>: Supported document types aren’t searchable by their content. When document content search is disabled, users can search for files by file name only.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>This feature’s <code class="docutils literal notranslate"><span class="pre">config.json</span></code> setting is <code class="docutils literal notranslate"><span class="pre">&quot;FileSettings.ExtractContent&quot;:</span> <span class="pre">true</span></code> with options <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="enable-searching-content-of-documents-within-zip-files">
+<h4>Enable Searching Content of Documents within ZIP Files<a class="headerlink" href="#enable-searching-content-of-documents-within-zip-files" title="Permalink to this headline">¶</a></h4>
+<p>Document content search is available in Mattermost Server from v5.35, with mobile support coming soon.</p>
+<p><strong>True</strong>: When <strong>true</strong>, contents of documents within ZIP files are returned in search results. This may have an impact on server performance for large files.</p>
+<p><strong>False</strong>: The contents of documents within ZIP files aren’t returned in search results.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>This feature’s <code class="docutils literal notranslate"><span class="pre">config.json</span></code> setting is <code class="docutils literal notranslate"><span class="pre">&quot;FileSettings.ArchiveRecursion&quot;:</span> <span class="pre">false</span></code> with options <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="section" id="amazon-s3-bucket">
 <h4>Amazon S3 Bucket<a class="headerlink" href="#amazon-s3-bucket" title="Permalink to this headline">¶</a></h4>
 <p>The name of the bucket for your S3-compatible object storage instance.</p>
@@ -1070,40 +1104,6 @@
 <div class="section" id="test-connection">
 <h4>Test Connection<a class="headerlink" href="#test-connection" title="Permalink to this headline">¶</a></h4>
 <p>Ensures that the user can access the server and that the settings are valid.</p>
-</div>
-<div class="section" id="enable-document-search-by-content">
-<h4>Enable Document Search by Content<a class="headerlink" href="#enable-document-search-by-content" title="Permalink to this headline">¶</a></h4>
-<p>File search is available now in Mattermost Cloud and in Mattermost Server from v5.35, with mobile support coming soon.</p>
-<p><strong>True</strong>: When <strong>true</strong>, supported document types are searchable by their content. Install <a class="reference external" href="https://github.com/sajari/docconv#dependencies">these dependencies</a> to extend content searching support to include DOCX, RTF, and PAGES files.</p>
-<p><strong>False</strong>: Supported document types aren’t searchable by their content. When document content search is disabled, users can search for files by file name only.</p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p>This feature’s <code class="docutils literal notranslate"><span class="pre">config.json</span></code> setting is <code class="docutils literal notranslate"><span class="pre">&quot;XXX&quot;:</span> <span class="pre">true</span></code> with options <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Search results for documents shared before the file search was available may be incomplete until a <a class="reference external" href="https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content">data migration is executed using the CLI</a>.</p>
-</div>
-</div>
-<div class="section" id="enable-searching-content-of-documents-within-zip-files">
-<h4>Enable Searching Content of Documents within ZIP Files<a class="headerlink" href="#enable-searching-content-of-documents-within-zip-files" title="Permalink to this headline">¶</a></h4>
-<p>File search is available now in Mattermost Cloud and in Mattermost Server from v5.35, with mobile support coming soon.</p>
-<p><strong>True</strong>: When <strong>true</strong>, contents of documents within ZIP files are returned in search results. This may have an impact on server performance for large files.</p>
-<p><strong>False</strong>: The contents of documents within ZIP files aren’t returned in search results.</p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p>This feature’s <code class="docutils literal notranslate"><span class="pre">config.json</span></code> setting is <code class="docutils literal notranslate"><span class="pre">&quot;XXX&quot;:</span> <span class="pre">false</span></code> with options <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 <div class="section" id="image-proxy">
