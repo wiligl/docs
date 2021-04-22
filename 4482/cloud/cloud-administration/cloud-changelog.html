@@ -95,12 +95,13 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/administrator.html">Self-Managed Administrator's Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../guides/cloud-admin-guide.html">Cloud Administrator's Guide</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../../guides/cloud-admin-guide.html#system-administration">System Administration</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../cloud-billing/cloud-billing.html">Mattermost Cloud Billing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../cloud-reporting.html">Statistics</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Mattermost Cloud Changelog</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#release-2021-04-21">Release 2021-04-21</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#release-2021-04-22">Release 2021-04-22</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#release-2021-04-07">Release 2021-04-07</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#release-2021-03-24">Release 2021-03-24</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#release-2021-03-12">Release 2021-03-12</a></li>
@@ -126,7 +127,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../guides/cloud-admin-guide.html#incident-management">Incident Management</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../guides/administrator.html">Self-Managed Administrator's Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guides/user.html">User's Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guides/integration.html">Integration Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://developers.mattermost.com/">Developer's Guide</a></li>
@@ -183,20 +183,14 @@
   <div class="section" id="mattermost-cloud-changelog">
 <h1>Mattermost Cloud Changelog<a class="headerlink" href="#mattermost-cloud-changelog" title="Permalink to this headline">¶</a></h1>
 <p>This changelog summarizes updates to <a class="reference external" href="https://mattermost.com/get-started/">Mattermost Cloud</a>, an enterprise-grade SaaS offering hosted by Mattermost.</p>
-<div class="section" id="release-2021-04-21">
-<h2>Release 2021-04-21<a class="headerlink" href="#release-2021-04-21" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="release-2021-04-22">
+<h2>Release 2021-04-22<a class="headerlink" href="#release-2021-04-22" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="highlights">
 <h3>Highlights<a class="headerlink" href="#highlights" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="apps-framework-developer-preview">
 <h4>Apps Framework (Developer Preview)<a class="headerlink" href="#apps-framework-developer-preview" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>The Mattermost Apps Framework introduces a new way to integrate with external tools to allow developers to create interactive Apps in Mattermost using any development language they’re comfortable with. These Apps work seamlessly across mobile and desktop clients. This is a developer preview that is not yet intended for production instances of Mattermost. The Apps Framework will be available for self-managed customers in Mattermost v5.35 once the Apps Framework Plugin is loaded on an instance. Until then, developers can use the <code class="docutils literal notranslate"><span class="pre">cloud</span></code> branch to get a local test environment running. The launch for the Developer Preview of the Apps Framework is scheduled for April 29th, 2021. Learn more: https://developers.mattermost.com/integrate/apps/.</p></li>
-</ul>
-</div>
-<div class="section" id="files-search">
-<h4>Files Search<a class="headerlink" href="#files-search" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li><p>Searching in Mattermost now finds both relevant messages and files in your team’s conversation history. Search will return results for attachments that match the file name or contain matching text content within supported document types. <a class="reference external" href="https://mattermost.com/blog/file-search/">Learn more</a>.</p></li>
 </ul>
 </div>
 <div class="section" id="granular-access-to-system-console-pages">
@@ -251,6 +245,7 @@
 <h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Pinned posts are no longer highlighted.</p></li>
+<li><p>Posts in a channel disappear when deleting a post from a permalink view.</p></li>
 <li><p>Sometimes an “Unable to get role” error appears when changing a channel member role in <strong>System Console &gt; User Management &gt; Channels</strong>.</p></li>
 <li><p><strong>Cloud &gt; “Tips &amp; Next Steps”</strong> should not show an “Explore channels” section for guest users.</p></li>
 <li><p>System Roles shows <strong>License</strong> and <strong>Environment</strong> as possible permissions, but they are always hidden in Cloud.</p></li>

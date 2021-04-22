@@ -95,7 +95,6 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../overview/index.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/cloud-admin-guide.html">Cloud Administrator's Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../guides/administrator.html">Self-Managed Administrator's Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../overview/architecture.html">Architecture Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="deployment.html">Deployment Overview</a></li>
@@ -145,6 +144,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../guides/administrator.html#community-managed-documentation">Community-Managed Documentation</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/cloud-admin-guide.html">Cloud Administrator's Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/user.html">User's Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/integration.html">Integration Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://developers.mattermost.com/">Developer's Guide</a></li>
@@ -234,6 +234,10 @@ https://{mattermost-site-name}/signup/gitlab/complete
 </div>
 <div class="section" id="step-2-configure-mattermost-for-gitlab-sso">
 <h2>Step 2: Configure Mattermost for GitLab SSO<a class="headerlink" href="#step-2-configure-mattermost-for-gitlab-sso" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When Mattermost is configured to use OpenID Connect or OAuth 2.0 for user authentication, the following user attribute changes can’t be made through the Mattermost API: first name, last name, or username. OpenID Connect or OAuth 2.0 must be the authoritative source for these user attributes.</p>
+</div>
 <p>The steps to configure Mattermost for GitLab SSO depends on your edition of Mattermost. To confirm your Mattermost edition, go to <strong>System Console &gt; About &gt; Edition and License</strong>.</p>
 <div class="section" id="mattermost-team-edition">
 <h3>Mattermost Team Edition<a class="headerlink" href="#mattermost-team-edition" title="Permalink to this headline">¶</a></h3>

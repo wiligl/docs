@@ -95,7 +95,6 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../overview/index.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/cloud-admin-guide.html">Cloud Administrator's Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../guides/administrator.html">Self-Managed Administrator's Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../overview/architecture.html">Architecture Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="deployment.html">Deployment Overview</a></li>
@@ -147,6 +146,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../guides/administrator.html#community-managed-documentation">Community-Managed Documentation</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/cloud-admin-guide.html">Cloud Administrator's Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/user.html">User's Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/integration.html">Integration Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://developers.mattermost.com/">Developer's Guide</a></li>
@@ -218,6 +218,7 @@
 <li><p><a class="reference internal" href="#frequently-asked-questions" id="id5">Frequently Asked Questions</a></p>
 <ul>
 <li><p><a class="reference internal" href="#how-can-i-obtain-a-saml-metadata-xml-file-consumed-by-mattermost" id="id6">How can I obtain a SAML metadata XML file consumed by Mattermost?</a></p></li>
+<li><p><a class="reference internal" href="#can-i-update-user-attributes-using-the-api" id="id7">Can I update user attributes using the API?</a></p></li>
 </ul>
 </li>
 </ul>
@@ -355,6 +356,10 @@
 <h3><a class="toc-backref" href="#contents">How can I obtain a SAML metadata XML file consumed by Mattermost?</a><a class="headerlink" href="#how-can-i-obtain-a-saml-metadata-xml-file-consumed-by-mattermost" title="Permalink to this headline">¶</a></h3>
 <p>You can obtain the XML file by calling the Mattermost RESTful API endpoint at <code class="docutils literal notranslate"><span class="pre">/api/v4/saml/metadata</span></code>.</p>
 <p>For other useful SAML API calls, see the <a class="reference external" href="https://api.mattermost.com/#tag/SAML">API reference</a>.</p>
+</div>
+<div class="section" id="can-i-update-user-attributes-using-the-api">
+<h3><a class="toc-backref" href="#contents">Can I update user attributes using the API?</a><a class="headerlink" href="#can-i-update-user-attributes-using-the-api" title="Permalink to this headline">¶</a></h3>
+<p>No. When Mattermost is configured to use SAML for user authentication, the following user attribute changes can’t be made through the API:  first name, last name, position, nickname, email, profile image, or username. SAML must be the authoritative source for these user attributes.</p>
 </div>
 </div>
 </div>

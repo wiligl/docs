@@ -93,8 +93,8 @@
             
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../guides/cloud-admin-guide.html">Cloud Administrator's Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guides/administrator.html">Self-Managed Administrator's Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/cloud-admin-guide.html">Cloud Administrator's Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guides/user.html">User's Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guides/integration.html">Integration Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://developers.mattermost.com/">Developer's Guide</a></li>
@@ -189,6 +189,10 @@
 <li><p>Paste in the <strong>Client Secret</strong> from Google in Mattermost.</p></li>
 <li><p>Select <strong>Save</strong>.</p></li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When Mattermost is configured to use OpenID Connect or OAuth 2.0 for user authentication, the following user attribute changes can’t be made through the Mattermost API: first name, last name, or username. OpenID Connect or OAuth 2.0 must be the authoritative source for these user attributes.</p>
+</div>
 </div>
 </div>
 
