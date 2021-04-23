@@ -1318,7 +1318,8 @@ bin/mattermost command move newteam o8soyabwthjnf9qibfztje5a36h
 <blockquote>
 <div><dl>
 <dt>Description</dt><dd><p>Extracts and indexes the contents of files shared prior to upgrading to Mattermost Server 5.35. Running this extraction command is strongly recommended since search results for past file contents may be incomplete. If this command is not run, users can search older files based on file name only.</p>
-<p>Running this command adds load to your server. For large deployments, or teams that share many large, text-heavy documents, we recommended you review our <a class="reference external" href="https://docs.mattermost.com/install/requirements.html#hardware-requirements">hardware requirements</a>, and test <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#enable-document-search-by-content">enabling this feature</a> in a staging environment before enabling it in a production environment.</p>
+<p>If you’re using <a class="reference external" href="https://docs.mattermost.com/deployment/elasticsearch.html">Elasticsearch</a> or <a class="reference external" href="https://docs.mattermost.com/deployment/bleve.html">Bleve</a> search, you must also rebuild the search index.</p>
+<p>Running this command adds load to your server. For large deployments, or teams that share many large, text-heavy documents, we recommended you review our <a class="reference external" href="https://docs.mattermost.com/install/requirements.html#hardware-requirements">hardware requirements</a>, and test <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#enable-document-search-by-content">enabling content search</a> in a staging environment before enabling it in a production environment.</p>
 </dd>
 <dt>Format</dt><dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>mattermost extract-documents-content
 </pre></div>
