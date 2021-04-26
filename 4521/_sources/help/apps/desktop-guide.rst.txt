@@ -70,7 +70,7 @@ Show red badge on taskbar icon to indicate unread messages (Windows, Mac only)
 Flash taskbar icon when a new message is received (Windows, Linux only)
     Configure whether the taskbar icon flashes for a few messages when a new message is received on any of your active teams and servers. This setting is enabled by default.
     
-Bounce the Dock icon when receiving a notification (macOS only)
+Bounce the Dock icon when receiving a notification (Mac only)
     When enabled, the Dock icon will either bounce once or bounce until the user opens the app when receiving a notification. This setting is enabled by default.
 
 Show Mattermost icon in the menu bar (Mac only)
@@ -83,7 +83,7 @@ Leave app running in notification center when application window is closed (Linu
     When enabled, closing the application window leaves the Mattermost Desktop App running in your notification center. This can be useful if you want to check for unread mentions while away from the app. This setting is enabled by default.
     
 Use GPU hardware acceleration
-    When enabled, the Mattermost user interface is rendered more efficiently but can lead to decreased stability for some systems. This setting is enabled by default. You must restart the app to change this setting.
+    If enabled, Mattermost UI is rendered more efficiently but can lead to decreased stability for some systems. This setting is enabled by default. You must restart the app to change this setting. 
     
 Dark Theme
 ~~~~~~~~~~
