@@ -388,28 +388,28 @@
 </tbody>
 </table>
 <p>The following fragment is from a file that imports two teams, each with two channels, many users, and many posts.</p>
-<div class="highlight-javascript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;version&quot;</span><span class="p">,</span> <span class="p">...</span> <span class="p">}</span>
+<div class="highlight-javascript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;version&quot;</span><span class="p">,</span> <span class="p">...</span> <span class="p">}</span>
 <span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;team&quot;</span><span class="p">,</span> <span class="s2">&quot;team&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;TeamA&quot;</span><span class="p">,</span> <span class="p">...}</span> <span class="p">}</span>
 <span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;team&quot;</span><span class="p">,</span> <span class="s2">&quot;team&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;TeamB&quot;</span><span class="p">,</span> <span class="p">...}</span> <span class="p">}</span>
 <span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;channel&quot;</span><span class="p">,</span> <span class="s2">&quot;channel&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="s2">&quot;team&quot;</span><span class="o">:</span> <span class="s2">&quot;TeamA&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;ChannelA1&quot;</span><span class="p">,</span> <span class="p">...}</span> <span class="p">}</span>
@@ -441,7 +441,7 @@
 <p>For clarity, the object is shown using regular JSON formatting, but in the data file it cannot be spread across several lines. It must be all on one line.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;version&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="mi">1</span>
+  <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="mf">1</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -1351,7 +1351,7 @@
         <span class="s2">&quot;text&quot;</span><span class="o">:</span> <span class="s2">&quot;This is the attachment text.&quot;</span>
       <span class="p">}]</span>
     <span class="p">},</span>
-    <span class="s2">&quot;create_at&quot;</span><span class="o">:</span> <span class="mi">140012340013</span><span class="p">,</span>
+    <span class="s2">&quot;create_at&quot;</span><span class="o">:</span> <span class="mf">140012340013</span><span class="p">,</span>
     <span class="s2">&quot;flagged_by&quot;</span><span class="o">:</span> <span class="p">[</span>
       <span class="s2">&quot;username1&quot;</span><span class="p">,</span>
       <span class="s2">&quot;username2&quot;</span><span class="p">,</span>
@@ -1360,23 +1360,23 @@
     <span class="s2">&quot;replies&quot;</span><span class="o">:</span> <span class="p">[{</span>
       <span class="s2">&quot;user&quot;</span><span class="o">:</span> <span class="s2">&quot;username4&quot;</span><span class="p">,</span>
       <span class="s2">&quot;message&quot;</span><span class="o">:</span> <span class="s2">&quot;The reply message&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;create_at&quot;</span><span class="o">:</span> <span class="mi">140012352049</span><span class="p">,</span>
+      <span class="s2">&quot;create_at&quot;</span><span class="o">:</span> <span class="mf">140012352049</span><span class="p">,</span>
       <span class="s2">&quot;attachments&quot;</span><span class="o">:</span> <span class="p">[{</span>
           <span class="s2">&quot;path&quot;</span><span class="o">:</span> <span class="s2">&quot;/some/valid/file/path/1&quot;</span>
       <span class="p">}],</span>
     <span class="p">},</span> <span class="p">{</span>
       <span class="s2">&quot;user&quot;</span><span class="o">:</span> <span class="s2">&quot;username5&quot;</span><span class="p">,</span>
       <span class="s2">&quot;message&quot;</span><span class="o">:</span> <span class="s2">&quot;Other reply message&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;create_at&quot;</span><span class="o">:</span> <span class="mi">140012353057</span><span class="p">,</span>
+      <span class="s2">&quot;create_at&quot;</span><span class="o">:</span> <span class="mf">140012353057</span><span class="p">,</span>
     <span class="p">}],</span>
     <span class="s2">&quot;reactions&quot;</span><span class="o">:</span> <span class="p">[{</span>
       <span class="s2">&quot;user&quot;</span><span class="o">:</span> <span class="s2">&quot;username6&quot;</span><span class="p">,</span>
       <span class="s2">&quot;emoji_name&quot;</span><span class="o">:</span> <span class="s2">&quot;+1&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;create_at&quot;</span><span class="o">:</span> <span class="mi">140012356032</span><span class="p">,</span>
+      <span class="s2">&quot;create_at&quot;</span><span class="o">:</span> <span class="mf">140012356032</span><span class="p">,</span>
     <span class="p">},</span> <span class="p">{</span>
       <span class="s2">&quot;user&quot;</span><span class="o">:</span> <span class="s2">&quot;username7&quot;</span><span class="p">,</span>
       <span class="s2">&quot;emoji_name&quot;</span><span class="o">:</span> <span class="s2">&quot;heart&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;create_at&quot;</span><span class="o">:</span> <span class="mi">140012359034</span><span class="p">,</span>
+      <span class="s2">&quot;create_at&quot;</span><span class="o">:</span> <span class="mf">140012359034</span><span class="p">,</span>
     <span class="p">}],</span>
     <span class="s2">&quot;attachments&quot;</span><span class="o">:</span> <span class="p">[{</span>
       <span class="s2">&quot;path&quot;</span><span class="o">:</span> <span class="s2">&quot;/some/valid/file/path/1&quot;</span>
@@ -1671,7 +1671,7 @@
     <span class="p">],</span>
     <span class="s2">&quot;user&quot;</span><span class="o">:</span> <span class="s2">&quot;username2&quot;</span><span class="p">,</span>
     <span class="s2">&quot;message&quot;</span><span class="o">:</span> <span class="s2">&quot;Hello Group Channel&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;create_at&quot;</span><span class="o">:</span> <span class="mi">140012340013</span><span class="p">,</span>
+    <span class="s2">&quot;create_at&quot;</span><span class="o">:</span> <span class="mf">140012340013</span><span class="p">,</span>
     <span class="s2">&quot;flagged_by&quot;</span><span class="o">:</span> <span class="p">[</span>
       <span class="s2">&quot;username1&quot;</span><span class="p">,</span>
       <span class="s2">&quot;username2&quot;</span><span class="p">,</span>
@@ -1680,20 +1680,20 @@
     <span class="s2">&quot;replies&quot;</span><span class="o">:</span> <span class="p">[{</span>
       <span class="s2">&quot;user&quot;</span><span class="o">:</span> <span class="s2">&quot;username4&quot;</span><span class="p">,</span>
       <span class="s2">&quot;message&quot;</span><span class="o">:</span> <span class="s2">&quot;The reply message&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;create_at&quot;</span><span class="o">:</span> <span class="mi">140012352049</span><span class="p">,</span>
+      <span class="s2">&quot;create_at&quot;</span><span class="o">:</span> <span class="mf">140012352049</span><span class="p">,</span>
     <span class="p">},</span> <span class="p">{</span>
       <span class="s2">&quot;user&quot;</span><span class="o">:</span> <span class="s2">&quot;username5&quot;</span><span class="p">,</span>
       <span class="s2">&quot;message&quot;</span><span class="o">:</span> <span class="s2">&quot;Other reply message&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;create_at&quot;</span><span class="o">:</span> <span class="mi">140012353057</span><span class="p">,</span>
+      <span class="s2">&quot;create_at&quot;</span><span class="o">:</span> <span class="mf">140012353057</span><span class="p">,</span>
     <span class="p">}],</span>
     <span class="s2">&quot;reactions&quot;</span><span class="o">:</span> <span class="p">[{</span>
       <span class="s2">&quot;user&quot;</span><span class="o">:</span> <span class="s2">&quot;username6&quot;</span><span class="p">,</span>
       <span class="s2">&quot;emoji_name&quot;</span><span class="o">:</span> <span class="s2">&quot;+1&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;create_at&quot;</span><span class="o">:</span> <span class="mi">140012356032</span><span class="p">,</span>
+      <span class="s2">&quot;create_at&quot;</span><span class="o">:</span> <span class="mf">140012356032</span><span class="p">,</span>
     <span class="p">},</span> <span class="p">{</span>
       <span class="s2">&quot;user&quot;</span><span class="o">:</span> <span class="s2">&quot;username7&quot;</span><span class="p">,</span>
       <span class="s2">&quot;emoji_name&quot;</span><span class="o">:</span> <span class="s2">&quot;heart&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;create_at&quot;</span><span class="o">:</span> <span class="mi">140012359034</span><span class="p">,</span>
+      <span class="s2">&quot;create_at&quot;</span><span class="o">:</span> <span class="mf">140012359034</span><span class="p">,</span>
     <span class="p">}]</span>
   <span class="p">}</span>
 <span class="p">}</span>
