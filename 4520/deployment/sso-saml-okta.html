@@ -276,7 +276,7 @@
 <div><img alt="../_images/okta_5_advanced_saml_settings.PNG" src="../_images/okta_5_advanced_saml_settings.PNG" />
 </div></blockquote>
 </li>
-<li><p>Enter attribute statements used to map attributes between Okta and Mattermost. For more information on which attributes are configurable, see our <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#saml">documentation on SAML configuration settings</a>. Email and username attributes are required. For SAML with Okta, an <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#id17">ID attribute</a> is also required, and that ID must be mapped to <code class="docutils literal notranslate"><span class="pre">user.id</span></code>. For Mattermost servers running 3.3 and earlier, first name and last name attributes are also required.</p>
+<li><p>Enter attribute statements used to map attributes between Okta and Mattermost. For more information on which attributes are configurable, see our <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#saml">documentation on SAML configuration settings</a>. Email and username attributes are required. For SAML with Okta, an <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#id17">ID attribute</a> is also required, and that ID must be mapped to <code class="docutils literal notranslate"><span class="pre">user.id</span></code>.</p>
 <blockquote>
 <div><img alt="../_images/okta_6_attribute_statements.png" src="../_images/okta_6_attribute_statements.png" />
 </div></blockquote>
@@ -344,7 +344,6 @@
 <li><dl>
 <dt>Set attributes for the SAML Assertions used to update user information in Mattermost.</dt><dd><ul class="simple">
 <li><p>Attributes for Email, Username, and Id are required and should match the values you entered in Okta earlier.</p></li>
-<li><p>For Mattermost servers running 3.3 and earlier, the first name and last name attributes are also required fields.</p></li>
 </ul>
 <img alt="../_images/okta_13_mattermost_attributes.png" src="../_images/okta_13_mattermost_attributes.png" />
 </dd>
