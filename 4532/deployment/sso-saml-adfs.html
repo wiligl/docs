@@ -252,68 +252,68 @@
 <ol class="arabic">
 <li><p>In the ADFS management sidebar, go to <strong>AD FS &gt; Trust Relationships &gt; Relying Party Trusts</strong>, then select <strong>Add Relying Party Trust</strong>. A configuration wizard opens for adding a new relying party trust.</p>
 <blockquote>
-<div><img alt="../source/images/adfs_1_add_new_relying_party_trust.PNG" src="../source/images/adfs_1_add_new_relying_party_trust.PNG" />
+<div><img alt="../_images/adfs_1_add_new_relying_party_trust.png" src="../_images/adfs_1_add_new_relying_party_trust.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Welcome</strong> screen, select <strong>Start</strong>.</p>
 <blockquote>
-<div><img alt="../source/images/adfs_2_start_wizard.PNG" src="../source/images/adfs_2_start_wizard.PNG" />
+<div><img alt="../_images/adfs_2_start_wizard.png" src="../_images/adfs_2_start_wizard.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Select Data Source</strong> screen, select <strong>Enter data about the relying party manually</strong>.</p>
 <blockquote>
-<div><img alt="../source/images/adfs_3_select_data_source.PNG" src="../source/images/adfs_3_select_data_source.PNG" />
+<div><img alt="../_images/adfs_3_select_data_source.png" src="../_images/adfs_3_select_data_source.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Specify Display Name</strong> screen, enter a <strong>Display Name</strong> to recognize the trust, such as <code class="docutils literal notranslate"><span class="pre">Mattermost</span></code>, then add any notes you want to make.</p>
 <blockquote>
-<div><img alt="../source/images/adfs_4_specify_display_name.PNG" src="../source/images/adfs_4_specify_display_name.PNG" />
+<div><img alt="../_images/adfs_4_specify_display_name.png" src="../_images/adfs_4_specify_display_name.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Choose Profile</strong> screen, select <strong>AD FS profile</strong>.</p>
 <blockquote>
-<div><img alt="../source/images/adfs_5_choose_profile.PNG" src="../source/images/adfs_5_choose_profile.PNG" />
+<div><img alt="../_images/adfs_5_choose_profile.png" src="../_images/adfs_5_choose_profile.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Configure Certificate</strong> screen, leave the certificate settings at their default values.</p>
 <blockquote>
-<div><img alt="../source/images/adfs_6_configure_certificate_default.PNG" src="../source/images/adfs_6_configure_certificate_default.PNG" />
+<div><img alt="../_images/adfs_6_configure_certificate_default.png" src="../_images/adfs_6_configure_certificate_default.png" />
 </div></blockquote>
 </li>
 </ol>
 <p>However, if you would like to set up encryption for your SAML connection, select <strong>Browse</strong>, then upload your Service Provider Public Certificate.</p>
 <blockquote>
-<div><img alt="../source/images/adfs_7_configure_certificate_encryption.PNG" src="../source/images/adfs_7_configure_certificate_encryption.PNG" />
+<div><img alt="../_images/adfs_7_configure_certificate_encryption.png" src="../_images/adfs_7_configure_certificate_encryption.png" />
 </div></blockquote>
 <ol class="arabic" start="7">
 <li><p>On the <strong>Configure URL</strong> screen, select <strong>Enable Support for the SAML 2.0 WebSSO protocol</strong>, then enter the <strong>SAML 2.0 SSO service URL</strong>, similar to <code class="docutils literal notranslate"><span class="pre">https://&lt;your-mattermost-url&gt;/login/sso/saml</span></code> where <code class="docutils literal notranslate"><span class="pre">&lt;your-mattermost-url&gt;</span></code> should typically match the <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#site-url">Mattermost Site URL</a>.</p>
 <blockquote>
-<div><img alt="../source/images/adfs_8_configure_url.PNG" src="../source/images/adfs_8_configure_url.PNG" />
+<div><img alt="../_images/adfs_8_configure_url.png" src="../_images/adfs_8_configure_url.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Configure Identifiers</strong> screen, enter the <strong>Relying party trust identifier</strong> (also known as the <strong>Identity Provider Issuer URL</strong>) of the form <code class="docutils literal notranslate"><span class="pre">https://&lt;your-idp-url&gt;/adfs/services/trust</span></code>, then click <strong>Add</strong>.</p>
 <blockquote>
-<div><img alt="../source/images/adfs_9_configure_identifiers.PNG" src="../source/images/adfs_9_configure_identifiers.PNG" />
+<div><img alt="../_images/adfs_9_configure_identifiers.png" src="../_images/adfs_9_configure_identifiers.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Configure Multi-factor Authentication Now</strong> screen, you may enable multi-factor authentication. This is beyond the scope of this documentation.</p>
 <blockquote>
-<div><img alt="../source/images/adfs_10_configure_mfa.PNG" src="../source/images/adfs_10_configure_mfa.PNG" />
+<div><img alt="../_images/adfs_10_configure_mfa.png" src="../_images/adfs_10_configure_mfa.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Choose Issuance Authorization Rules</strong> screen, select <strong>Permit all users to access this relying party</strong>.</p>
 <blockquote>
-<div><img alt="../source/images/adfs_11_authorization.PNG" src="../source/images/adfs_11_authorization.PNG" />
+<div><img alt="../_images/adfs_11_authorization.png" src="../_images/adfs_11_authorization.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Ready to Add Trust</strong> screen, review your settings.</p>
 <blockquote>
-<div><img alt="../source/images/adfs_12_ready_to_add_trust.PNG" src="../source/images/adfs_12_ready_to_add_trust.PNG" />
+<div><img alt="../_images/adfs_12_ready_to_add_trust.png" src="../_images/adfs_12_ready_to_add_trust.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Finish</strong> screen, select <strong>Open the Edit Claim Rules dialog for this relying party trust when the wizard closes</strong>, then select <strong>Close</strong>. You exit the configuration wizard, and a <strong>Claim Rules</strong> editor opens.</p>
 <blockquote>
-<div><img alt="../source/images/adfs_13_finish_trust.PNG" src="../source/images/adfs_13_finish_trust.PNG" />
+<div><img alt="../_images/adfs_13_finish_trust.png" src="../_images/adfs_13_finish_trust.png" />
 </div></blockquote>
 </li>
 </ol>
@@ -323,12 +323,12 @@
 <ol class="arabic">
 <li><p>In the <strong>Issuance Transform Rules</strong> section of the <strong>Claim Rules</strong> editor, select <strong>Add Rule…</strong> to open an <strong>Add Transform Claim Rule Wizard</strong>.</p>
 <blockquote>
-<div><img alt="../source/images/adfs_14_claim_rules_editor.PNG" src="../source/images/adfs_14_claim_rules_editor.PNG" />
+<div><img alt="../_images/adfs_14_claim_rules_editor.png" src="../_images/adfs_14_claim_rules_editor.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Choose Rule Type</strong> screen, select <strong>Send LDAP Attributes as Claims</strong> from the drop-down menu, then select <strong>Next</strong>.</p>
 <blockquote>
-<div><img alt="../source/images/adfs_15_choose_rule_type.PNG" src="../source/images/adfs_15_choose_rule_type.PNG" />
+<div><img alt="../_images/adfs_15_choose_rule_type.png" src="../_images/adfs_15_choose_rule_type.png" />
 </div></blockquote>
 </li>
 <li><p>In the <strong>Configure Claim Rule</strong> screen, enter a <strong>Claim Rule Name</strong> of your choice, select <strong>Active Directory</strong> as the <strong>Attribute Store</strong>, then complete the following:</p></li>
@@ -346,13 +346,13 @@
 <p>Select <strong>Finish</strong> to add the rule.</p>
 <p>Note that the entries in the <strong>Outgoing Claim Type</strong> column can be chosen to be something else. They can contain dashes but no spaces. They will be used to map the corresponding fields in Mattermost later.</p>
 <blockquote>
-<div><img alt="../source/images/adfs_16_configure_claim_rule.PNG" src="../source/images/adfs_16_configure_claim_rule.PNG" />
+<div><img alt="../_images/adfs_16_configure_claim_rule.png" src="../_images/adfs_16_configure_claim_rule.png" />
 </div></blockquote>
 <ol class="arabic" start="4">
 <li><p>Create another new rule by selecting <strong>Add Rule</strong>.</p></li>
 <li><p>On the <strong>Choose Rule Type</strong> screen, select <strong>Transform an Incoming Claim</strong> from the drop-down menu, then select <strong>Next</strong>.</p>
 <blockquote>
-<div><img alt="../source/images/adfs_17_transformation_of_incoming_claim.PNG" src="../source/images/adfs_17_transformation_of_incoming_claim.PNG" />
+<div><img alt="../_images/adfs_17_transformation_of_incoming_claim.png" src="../_images/adfs_17_transformation_of_incoming_claim.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Configure Claim Rule</strong> screen, enter a <strong>Claim Rule Name</strong> of your choice, then:</p></li>
@@ -366,7 +366,7 @@
 </div></blockquote>
 <p>Select <strong>Pass through all claim values</strong>, then select <strong>Finish</strong>.</p>
 <blockquote>
-<div><img alt="../source/images/adfs_18_configure_incoming_claim.PNG" src="../source/images/adfs_18_configure_incoming_claim.PNG" />
+<div><img alt="../_images/adfs_18_configure_incoming_claim.png" src="../_images/adfs_18_configure_incoming_claim.png" />
 </div></blockquote>
 <ol class="arabic simple" start="7">
 <li><p>Select <strong>Finish</strong> to create the claim rule, then select <strong>OK</strong> to finish creating rules.</p></li>
@@ -384,28 +384,28 @@
 <ol class="arabic">
 <li><p>In the ADFS management sidebar, go to <strong>AD FS &gt; Service &gt; Certificates</strong>, then double click on the certificate under <strong>Token-signing</strong>. Alternatively, you can right-click on the field, then select <strong>View Certificate</strong>.</p>
 <blockquote>
-<div><img alt="../source/images/adfs_19_export_idp_cert_start.PNG" src="../source/images/adfs_19_export_idp_cert_start.PNG" />
+<div><img alt="../_images/adfs_19_export_idp_cert_start.png" src="../_images/adfs_19_export_idp_cert_start.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Certificate</strong> screen, go to the <strong>Details</strong> tab, then select <strong>Copy to File</strong>, followed by <strong>OK</strong>. This opens a <strong>Certificate Export Wizard</strong>.</p>
 <blockquote>
-<div><img alt="../source/images/adfs_20_export_idp_cert_copy.PNG" src="../source/images/adfs_20_export_idp_cert_copy.PNG" />
+<div><img alt="../_images/adfs_20_export_idp_cert_copy.png" src="../_images/adfs_20_export_idp_cert_copy.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Certificate Export Wizard</strong> screen, select <strong>Next</strong>, then, select the option <strong>Base-64 encoded X.509 (.CER)</strong>, and select <strong>Next</strong> again.</p>
 <blockquote>
-<div><img alt="../source/images/adfs_21_export_idp_cert_wizard.PNG" src="../source/images/adfs_21_export_idp_cert_wizard.PNG" />
+<div><img alt="../_images/adfs_21_export_idp_cert_wizard.png" src="../_images/adfs_21_export_idp_cert_wizard.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Certificate Export Wizard</strong> screen, select <strong>Browse</strong> to specify the location where you want the Identity Provider Certificate to be exported, then specify the file name.</p>
 <blockquote>
-<div><img alt="../source/images/adfs_21-2_export_idp_cert_wizard.PNG" src="../source/images/adfs_21-2_export_idp_cert_wizard.PNG" />
+<div><img alt="../_images/adfs_21-2_export_idp_cert_wizard.png" src="../_images/adfs_21-2_export_idp_cert_wizard.png" />
 </div></blockquote>
 </li>
 <li><p>Select <strong>Save</strong>. In the <strong>Certificate Export Wizard</strong> screen, verify the file path is correct, then select <strong>Next</strong>.</p></li>
 <li><p>In the <strong>Completing the Certificate Export Wizard</strong>, select <strong>Finish</strong>, then select <strong>OK</strong> to confirm the export was successful.</p>
 <blockquote>
-<div><img alt="../source/images/adfs_21-3_export_idp_cert_wizard.PNG" src="../source/images/adfs_21-3_export_idp_cert_wizard.PNG" />
+<div><img alt="../_images/adfs_21-3_export_idp_cert_wizard.png" src="../_images/adfs_21-3_export_idp_cert_wizard.png" />
 </div></blockquote>
 </li>
 </ol>
@@ -421,7 +421,7 @@
 <li><p><strong>Identity Provider Issuer URL</strong>: <code class="docutils literal notranslate"><span class="pre">Relying</span> <span class="pre">party</span> <span class="pre">trust</span> <span class="pre">identifier</span></code> from ADFS you specified earlier.</p></li>
 <li><p><strong>Identity Provider Public Certificate</strong>: <code class="docutils literal notranslate"><span class="pre">X.509</span> <span class="pre">Public</span> <span class="pre">Certificate</span></code> you downloaded earlier.</p>
 <blockquote>
-<div><img alt="../source/images/adfs_22_mattermost_basics.PNG" src="../source/images/adfs_22_mattermost_basics.PNG" />
+<div><img alt="../_images/adfs_22_mattermost_basics.png" src="../_images/adfs_22_mattermost_basics.png" />
 </div></blockquote>
 </li>
 </ul>
@@ -430,12 +430,12 @@
 <ol class="arabic" start="2">
 <li><p>Configure Mattermost to verify the signature. The <strong>Service Provider Login URL</strong> is the SAML 2.0 SSO service URL you specified in ADFS earlier.</p>
 <blockquote>
-<div><img alt="../source/images/adfs_23_mattermost_verification.PNG" src="../source/images/adfs_23_mattermost_verification.PNG" />
+<div><img alt="../_images/adfs_23_mattermost_verification.png" src="../_images/adfs_23_mattermost_verification.png" />
 </div></blockquote>
 </li>
 <li><p>Enable encryption by uploading the Service Provider Private Key and Service Provider Public Certificate you generated earlier.</p>
 <blockquote>
-<div><img alt="../source/images/adfs_24_mattermost_encryption.PNG" src="../source/images/adfs_24_mattermost_encryption.PNG" />
+<div><img alt="../_images/adfs_24_mattermost_encryption.png" src="../_images/adfs_24_mattermost_encryption.png" />
 </div></blockquote>
 </li>
 <li><p>Configure Mattermost to sign SAML requests using the Service Provider Private Key.</p></li>
@@ -443,13 +443,13 @@
 </ol>
 <p>For Mattermost servers running 3.3 and earlier, the <code class="docutils literal notranslate"><span class="pre">FirstName</span></code> and <code class="docutils literal notranslate"><span class="pre">LastName</span></code> attributes are also required fields.</p>
 <blockquote>
-<div><img alt="../source/images/adfs_25_mattermost_attributes.PNG" src="../source/images/adfs_25_mattermost_attributes.PNG" />
+<div><img alt="../_images/adfs_25_mattermost_attributes.png" src="../_images/adfs_25_mattermost_attributes.png" />
 </div></blockquote>
 <ol class="arabic simple" start="6">
 <li><p>(Optional) Customize the login button text.</p></li>
 </ol>
 <blockquote>
-<div><img alt="../source/images/adfs_26_mattermost_login_button.PNG" src="../source/images/adfs_26_mattermost_login_button.PNG" />
+<div><img alt="../_images/adfs_26_mattermost_login_button.png" src="../_images/adfs_26_mattermost_login_button.png" />
 </div></blockquote>
 <ol class="arabic simple" start="7">
 <li><p>Select <strong>Save</strong>.</p></li>

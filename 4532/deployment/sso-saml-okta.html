@@ -243,12 +243,12 @@
 <li><p>Go to <strong>Admin Dashboard &gt; Applications &gt; Add Application</strong>.</p></li>
 <li><p>Select <strong>Create New App</strong>, then choose <strong>SAML 2.0</strong> as the Sign on method.</p>
 <blockquote>
-<div><img alt="../source/images/okta_1_new_app.PNG" src="../source/images/okta_1_new_app.PNG" />
+<div><img alt="../_images/okta_1_new_app.png" src="../_images/okta_1_new_app.png" />
 </div></blockquote>
 </li>
 <li><p>Enter <strong>General Settings</strong> for the application, including <strong>App name</strong> and <strong>App logo</strong> (optional). It’s recommended to display the application icon to users, including in the Okta Mobile app. If you’d like to use a Mattermost logo for the application, you can download one <a class="reference external" href="https://mattermost.org/brand-guidelines/">from our page</a>.</p>
 <blockquote>
-<div><img alt="../source/images/okta_2_general_settings.PNG" src="../source/images/okta_2_general_settings.PNG" />
+<div><img alt="../_images/okta_2_general_settings.png" src="../_images/okta_2_general_settings.png" />
 </div></blockquote>
 </li>
 <li><p>Enter <strong>SAML Settings</strong>, including:</p></li>
@@ -260,7 +260,7 @@
 <li><p><strong>Name ID format:</strong> <code class="docutils literal notranslate"><span class="pre">unspecified</span></code></p></li>
 <li><p><strong>Application username:</strong> <code class="docutils literal notranslate"><span class="pre">Email</span></code></p>
 <blockquote>
-<div><img alt="../source/images/okta_3_initial_saml_settings.PNG" src="../source/images/okta_3_initial_saml_settings.PNG" />
+<div><img alt="../_images/okta_3_initial_saml_settings.png" src="../_images/okta_3_initial_saml_settings.png" />
 </div></blockquote>
 </li>
 </ul>
@@ -268,12 +268,12 @@
 <ol class="arabic" start="7">
 <li><p>To set up encryption for your SAML connection, select <strong>Show Advanced Settings</strong>.</p>
 <blockquote>
-<div><img alt="../source/images/okta_4_initial_saml_settings.PNG" src="../source/images/okta_4_initial_saml_settings.PNG" />
+<div><img alt="../_images/okta_4_initial_saml_settings.png" src="../_images/okta_4_initial_saml_settings.png" />
 </div></blockquote>
 </li>
 <li><p>Set <strong>Assertion Encryption</strong> as <strong>Encrypted</strong>, then upload the Service Provider Public Certificate you generated earlier to the <strong>Encryption Certificate</strong> field.</p>
 <blockquote>
-<div><img alt="../source/images/okta_5_advanced_saml_settings.PNG" src="../source/images/okta_5_advanced_saml_settings.PNG" />
+<div><img alt="../_images/okta_5_advanced_saml_settings.png" src="../_images/okta_5_advanced_saml_settings.png" />
 </div></blockquote>
 </li>
 <li><p>Enter attribute statements used to map attributes between Okta and Mattermost. For more information on which attributes are configurable, see our <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#saml">documentation on SAML configuration settings</a>. Email and username attributes are required. For SAML with Okta, an <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#id17">ID attribute</a> is also required, and that ID must be mapped to <code class="docutils literal notranslate"><span class="pre">user.id</span></code>.</p>
@@ -288,7 +288,7 @@
 <li><p><strong>I’m an Okta customer adding an internal app</strong></p></li>
 <li><p><strong>This is an internal app that we have created</strong></p>
 <blockquote>
-<div><img alt="../source/images/okta_7_support_configuration.PNG" src="../source/images/okta_7_support_configuration.PNG" />
+<div><img alt="../_images/okta_7_support_configuration.png" src="../_images/okta_7_support_configuration.png" />
 </div></blockquote>
 </li>
 </ul>
@@ -299,13 +299,13 @@
 <li><p>On the next screen, select the <strong>Sign On</strong> tab, then select <strong>View Setup Instructions</strong>.</p></li>
 <li><p>Select the <strong>Identity Provider metadata</strong> link, then copy the link from the browser URL field. This will be used during the SAML configuration steps in the next section.</p>
 <blockquote>
-<div><img alt="../source/images/okta_8_view_instructions.PNG" src="../source/images/okta_8_view_instructions.PNG" />
+<div><img alt="../_images/okta_8_view_instructions.png" src="../_images/okta_8_view_instructions.png" />
 </div></blockquote>
 </li>
 <li><p>Take note of <strong>Identity Provider Single Sign-On URL</strong> (also known as <strong>SAML SSO URL</strong>), and the Identity Provider Issuer, as both may be needed to configure SAML for Mattermost.</p></li>
 <li><p>Download the X.509 Certificate file and save it. You may need to upload it to Mattermost in a later step.</p>
 <blockquote>
-<div><img alt="../source/images/okta_9_view_instructions.PNG" src="../source/images/okta_9_view_instructions.PNG" />
+<div><img alt="../_images/okta_9_view_instructions.png" src="../_images/okta_9_view_instructions.png" />
 </div></blockquote>
 </li>
 </ol>
@@ -320,7 +320,7 @@
 <li><p><strong>Identity Provider Issuer URL:</strong> <code class="docutils literal notranslate"><span class="pre">Identity</span> <span class="pre">Provider</span> <span class="pre">Issuer</span></code> from Okta, specified earlier.</p></li>
 <li><p><strong>Identity Provider Public Certificate:</strong> X.509 Public Certificate file you downloaded from Okta earlier.</p>
 <blockquote>
-<div><img alt="../source/images/okta_10_mattermost_basics.PNG" src="../source/images/okta_10_mattermost_basics.PNG" />
+<div><img alt="../_images/okta_10_mattermost_basics.png" src="../_images/okta_10_mattermost_basics.png" />
 </div></blockquote>
 </li>
 </ul>
@@ -329,12 +329,12 @@
 <ol class="arabic" start="2">
 <li><p>Configure Mattermost to verify the signature. The <strong>Service Provider Login URL</strong> is the <code class="docutils literal notranslate"><span class="pre">Single</span> <span class="pre">sign</span> <span class="pre">on</span> <span class="pre">URL</span></code> you specified in Okta earlier.</p>
 <blockquote>
-<div><img alt="../source/images/okta_11_mattermost_verification.PNG" src="../source/images/okta_11_mattermost_verification.PNG" />
+<div><img alt="../_images/okta_11_mattermost_verification.png" src="../_images/okta_11_mattermost_verification.png" />
 </div></blockquote>
 </li>
 <li><p>Enable encryption based on the parameters provided earlier.</p>
 <blockquote>
-<div><img alt="../source/images/okta_12_mattermost_encryption.PNG" src="../source/images/okta_12_mattermost_encryption.PNG" />
+<div><img alt="../_images/okta_12_mattermost_encryption.png" src="../_images/okta_12_mattermost_encryption.png" />
 </div></blockquote>
 </li>
 <li><p>Configure Mattermost to sign SAML requests using the Service Provider Private Key.</p></li>
@@ -348,7 +348,7 @@
 </li>
 <li><p>(Optional) Customize the login button text.</p>
 <blockquote>
-<div><img alt="../source/images/okta_14_mattermost_login_button.PNG" src="../source/images/okta_14_mattermost_login_button.PNG" />
+<div><img alt="../_images/okta_14_mattermost_login_button.png" src="../_images/okta_14_mattermost_login_button.png" />
 </div></blockquote>
 </li>
 <li><p>Select <strong>Save</strong>.</p></li>
