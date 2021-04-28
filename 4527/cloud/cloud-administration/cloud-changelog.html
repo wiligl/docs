@@ -202,13 +202,13 @@
 <ul class="simple">
 <li><p>If message autoresponder is set, only one message is now sent to a given user irrespective of how many Direct Message messages the user receives.</p></li>
 <li><p>Added status icons on <strong>Add members</strong> to channel and <strong>Add members</strong> to team lists.</p></li>
-<li><p>Added a keyboard shortcut to focus search bar and search in the current channel.</p></li>
+<li><p>Added a keyboard shortcut to focus on the Search bar and search in the current channel.</p></li>
 </ul>
 </div>
 <div class="section" id="administration">
 <h4>Administration<a class="headerlink" href="#administration" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li><p>Gossip clustering mode is now in General Availability and is no longer available as an option. All cluster traffic will always use the gossip protocol. The config setting <code class="docutils literal notranslate"><span class="pre">UseExperimentalGossip</span></code> has no effect and has only been kept for compatibility purposes. The setting to use gossip has been removed from the System Console. <strong>Note:</strong> If an existing system is not using gossip, then one cannot upgrade one node in a cluster and keep the other one to the older version if a High Availability upgrade is intended. All nodes in the cluster must use a single protocol. Either the customer must use gossip if they want to do an High Availability upgrade, or shut down all nodes and bring up all of them after doing an upgrade.</p></li>
+<li><p>Gossip clustering mode is now in General Availability and is no longer available as an option. All cluster traffic will always use the gossip protocol. The config setting <code class="docutils literal notranslate"><span class="pre">UseExperimentalGossip</span></code> has no effect and has only been kept for compatibility purposes. The setting to use gossip has been removed from the System Console. <strong>Note:</strong> For High Availability upgrades, all nodes in the cluster must use a single protocol. If an existing system is not currently using gossip, one node in a cluster can’t be upgraded while other nodes in the cluster use an older version. Customers must either use gossip for their High Availability upgrade, or customers must shut down all nodes, perform the upgrade, and then bring all nodes back up.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">TCP_NO_DELAY</span></code> is disabled for Websocket connections to allow for higher throughput.</p></li>
 <li><p>Compliance Monitoring CSV files are no longer limited to 30,000 rows.</p></li>
 </ul>
@@ -224,8 +224,8 @@
 <li><p>Fixed an issue where a user with ‘No Access’ permission could still access <strong>Groups</strong>, <strong>Channels</strong> and <strong>Teams</strong> configuration pages through a URL.</p></li>
 <li><p>Fixed an issue where <strong>Remove from channel</strong> and <strong>Remove Team Member</strong> menu items were visible in a group-synced channel or team.</p></li>
 <li><p>Fixed various bugs related to hardcoded theme colours.</p></li>
-<li><p>Fixed UI issues related to hard coded variables and misalignment of the channel header with the <strong>Has guests</strong> text.</p></li>
-<li><p>Fixed an issue with SAML Sign-on where admins were unable to modify <strong>Service Provider Login URL</strong> unless <code class="docutils literal notranslate"><span class="pre">VerifySignature</span></code> was enabled.</p></li>
+<li><p>Fixed UI issues related to hardcoded variables and misalignment of the channel header with the <strong>Has guests</strong> text.</p></li>
+<li><p>Fixed an issue with SAML Sign-on where System Admins were unable to modify <strong>Service Provider Login URL</strong> unless <code class="docutils literal notranslate"><span class="pre">VerifySignature</span></code> was enabled.</p></li>
 </ul>
 </div>
 <div class="section" id="known-issues">
