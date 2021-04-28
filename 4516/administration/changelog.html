@@ -322,7 +322,6 @@
 <li><p>Moved the user status in the channel switcher to overlap with user avatars, and added URL ‘Slug’ information to channel names in the channel switcher.</p></li>
 <li><p>Added a string field to configuration for restricted domains with the key <code class="docutils literal notranslate"><span class="pre">RestrictLinkPreviews</span></code> and added a UI field for restricted domains under <strong>System Console &gt; Site Configuration &gt; Posts</strong>. Also expanded the logic that determines whether a post has a preview or not.</p></li>
 <li><p>Added an unread badge to the <strong>Main Menu</strong> icon and the <strong>Plugin Marketplace</strong> menu that displays until a System Admin visits the <strong>Plugin Marketplace</strong> for the first time.</p></li>
-<li><p>Removed Beta tags from Swedish and Bulgarian languages.</p></li>
 <li><p>Added profile pictures to the <strong>Direct Messages</strong> channel list.</p></li>
 <li><p>Added channel icons for email notifications as part of email notification redesigns.</p></li>
 <li><p>Direct Messages <strong>More…</strong> modal is now sorted by recent conversations when the modal is opened.</p></li>
@@ -373,19 +372,19 @@
 <ul class="simple">
 <li><p>Under <code class="docutils literal notranslate"><span class="pre">ServiceSettings</span></code> in <code class="docutils literal notranslate"><span class="pre">config.json</span></code>:</p>
 <ul>
-<li><p>Added <code class="docutils literal notranslate"><span class="pre">EnableFileSearch</span></code> for files search feature.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">EnableFileSearch</span></code> for file search feature.</p></li>
 <li><p>Added <code class="docutils literal notranslate"><span class="pre">EnableReliableWebSockets</span></code>.</p></li>
-<li><p>Added <code class="docutils literal notranslate"><span class="pre">RestrictLinkPreviews</span></code> setting.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">RestrictLinkPreviews</span></code> setting to allow disabling link previews from certain domains.</p></li>
 </ul>
 </li>
 <li><p>Under <code class="docutils literal notranslate"><span class="pre">FileSettings</span></code> in <code class="docutils literal notranslate"><span class="pre">config.json</span></code>:</p>
 <ul>
-<li><p>Added <code class="docutils literal notranslate"><span class="pre">ExtractContent</span></code> and <code class="docutils literal notranslate"><span class="pre">ArchiveRecursion</span></code> for files search feature.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">ExtractContent</span></code> and <code class="docutils literal notranslate"><span class="pre">ArchiveRecursion</span></code> for file search feature.</p></li>
 </ul>
 </li>
 <li><p>Under <code class="docutils literal notranslate"><span class="pre">ExperimentalSettings</span></code> in <code class="docutils literal notranslate"><span class="pre">config.json</span></code>:</p>
 <ul>
-<li><p>Added <code class="docutils literal notranslate"><span class="pre">EnableRemoteClusterService</span></code> for Shared Channels.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">EnableRemoteClusterService</span></code> for Shared Channels feature.</p></li>
 </ul>
 </li>
 <li><p>Under <code class="docutils literal notranslate"><span class="pre">SqlSettings</span></code> in <code class="docutils literal notranslate"><span class="pre">config.json</span></code>:</p>
@@ -426,6 +425,16 @@
 <h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Pinned posts are no longer highlighted.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Config.json</span></code> can reset when running the command <code class="docutils literal notranslate"><span class="pre">systemctl</span> <span class="pre">restart</span> <span class="pre">mattermost</span></code>, and when running any commands that write to the config (e.g. <code class="docutils literal notranslate"><span class="pre">config</span></code> or <code class="docutils literal notranslate"><span class="pre">plugin</span></code>) <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-33752">MM-33752</a>, <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-32390">MM-32390</a>.</p></li>
+<li><p>Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-33823">MM-33823</a>.</p></li>
+<li><p>Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-30980">MM-30980</a>.</p></li>
+<li><p>Emoji counter in the center channel doesn’t always update immediately when a reaction is added in the right-hand side <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-31994">MM-31994</a>.</p></li>
+<li><p>Google login fails on the Classic mobile apps.</p></li>
+<li><p>Status may sometimes get stuck as <strong>Away</strong> or <strong>Offline</strong> in High Availability mode with IP Hash turned off.</p></li>
+<li><p>Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.</p></li>
+<li><p>The team sidebar on the desktop app does not update when channels have been read on mobile.</p></li>
+<li><p>Slack import through the CLI fails if email notifications are enabled.</p></li>
+<li><p>Push notifications don’t always clear on iOS when running Mattermost in High Availability mode.</p></li>
 </ul>
 </div>
 <div class="section" id="contributors">
