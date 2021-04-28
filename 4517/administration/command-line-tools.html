@@ -2701,7 +2701,7 @@ bin/mattermost user invite user@example.com myteam1 myteam2
 <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">client</span><span class="o">.</span><span class="n">get_users</span><span class="p">():</span>
     <span class="n">mapping</span><span class="p">[</span><span class="n">user</span><span class="o">.</span><span class="n">email</span><span class="p">]</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">username</span>
 
-<span class="k">with</span> <span class="nb">file</span><span class="p">(</span><span class="s2">&quot;saml_users.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">file</span><span class="p">(</span><span class="s2">&quot;saml_users.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
     <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">mapping</span><span class="p">,</span> <span class="n">fd</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2726,7 +2726,7 @@ bin/mattermost user invite user@example.com myteam1 myteam2
     <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="o">.</span><span class="n">result</span><span class="p">:</span>
         <span class="n">mapping</span><span class="p">[</span><span class="n">user</span><span class="o">.</span><span class="n">profile</span><span class="o">.</span><span class="n">email</span><span class="p">]</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">profile</span><span class="o">.</span><span class="n">login</span>
 
-<span class="k">with</span> <span class="nb">file</span><span class="p">(</span><span class="s2">&quot;saml_users.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">file</span><span class="p">(</span><span class="s2">&quot;saml_users.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
     <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">mapping</span><span class="p">,</span> <span class="n">fd</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2745,11 +2745,11 @@ bin/mattermost user invite user@example.com myteam1 myteam2
 
 <span class="n">l</span> <span class="o">=</span> <span class="n">ldap</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">ldap_host</span><span class="p">)</span>
 <span class="n">l</span><span class="o">.</span><span class="n">simple_bind_s</span><span class="p">(</span><span class="n">bind_dn</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
-<span class="n">page_control</span> <span class="o">=</span> <span class="n">ldap</span><span class="o">.</span><span class="n">controls</span><span class="o">.</span><span class="n">libldap</span><span class="o">.</span><span class="n">SimplePagedResultsControl</span><span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">cookie</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">page_control</span> <span class="o">=</span> <span class="n">ldap</span><span class="o">.</span><span class="n">controls</span><span class="o">.</span><span class="n">libldap</span><span class="o">.</span><span class="n">SimplePagedResultsControl</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">cookie</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 <span class="n">r</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">search_ext</span><span class="p">(</span><span class="n">base_dn</span><span class="p">,</span> <span class="n">ldap</span><span class="o">.</span><span class="n">SCOPE_SUBTREE</span><span class="p">,</span> <span class="s1">&#39;(objectClass=&#39;</span><span class="o">+</span><span class="n">user_object_class</span><span class="o">+</span><span class="s1">&#39;)&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">username_field</span><span class="p">,</span> <span class="n">mail_field</span><span class="p">],</span>         <span class="n">serverctrls</span><span class="o">=</span><span class="p">[</span><span class="n">page_control</span><span class="p">])</span>
 
 <span class="n">mapping</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="n">rtype</span><span class="p">,</span> <span class="n">rdata</span><span class="p">,</span> <span class="n">rmsgid</span><span class="p">,</span> <span class="n">serverctrls</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">result3</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">dn</span><span class="p">,</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">rdata</span><span class="p">:</span>
@@ -2758,7 +2758,7 @@ bin/mattermost user invite user@example.com myteam1 myteam2
 
     <span class="n">controls</span> <span class="o">=</span> <span class="p">[</span><span class="n">control</span> <span class="k">for</span> <span class="n">control</span> <span class="ow">in</span> <span class="n">serverctrls</span> <span class="k">if</span> <span class="n">control</span><span class="o">.</span><span class="n">controlType</span> <span class="o">==</span> <span class="n">ldap</span><span class="o">.</span><span class="n">controls</span><span class="o">.</span><span class="n">libldap</span><span class="o">.</span><span class="n">SimplePagedResultsControl</span><span class="o">.</span><span class="n">controlType</span><span class="p">]</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">controls</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;The server ignores RFC 2696 control&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The server ignores RFC 2696 control&#39;</span><span class="p">)</span>
         <span class="k">break</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">controls</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">cookie</span><span class="p">:</span>
         <span class="k">break</span>
