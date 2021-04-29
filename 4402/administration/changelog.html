@@ -374,7 +374,7 @@
 <div class="section" id="known-issues">
 <h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Text alignment in right-to-left support does not work correctly <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-35084">MM-35084</a>.</p></li>
+<li><p>Text alignment in right-to-left support does not work correctly in v5.34. This issue is fixed in the latest version of the <a class="reference external" href="https://github.com/QueraTeam/mattermost-rtl">mattermost-rtl plugin</a>.</p></li>
 <li><p>Deactivated users are not marked as “Deactivated” in the channel switcher <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-33910">MM-33910</a>.</p></li>
 <li><p>User nickname is not shown on channel switch <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-33897">MM-33897</a>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Config.json</span></code> can reset when running the command <code class="docutils literal notranslate"><span class="pre">systemctl</span> <span class="pre">restart</span> <span class="pre">mattermost</span></code>, and when running any commands that write to the config (e.g. <code class="docutils literal notranslate"><span class="pre">config</span></code> or <code class="docutils literal notranslate"><span class="pre">plugin</span></code>) <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-33752">MM-33752</a>, <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-32390">MM-32390</a>.</p></li>
@@ -780,6 +780,11 @@
 <div class="section" id="release-v5-31-esr">
 <h2>Release v5.31 - <a class="reference external" href="https://docs.mattermost.com/administration/extended-support-release.html">ESR</a><a class="headerlink" href="#release-v5-31-esr" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
+<li><p><strong>v5.31.4, released 2021-04-23</strong></p>
+<ul>
+<li><p>Fixed an issue with client-side slash commands being processed by multiple plugins. <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-35074">MM-35074</a></p></li>
+</ul>
+</li>
 <li><p><strong>v5.31.3, released 2021-04-07</strong></p>
 <ul>
 <li><p>Fixed an issue where cluster handlers were not immediately registered after starting the server. This led to issues where jobs were not scheduled until a request hit the cluster. <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-34179">MM-34179</a></p></li>
@@ -13034,7 +13039,7 @@ See <a class="reference external" href="https://api.mattermost.com/">api.matterm
 <h3>New Features<a class="headerlink" href="#new-features" title="Permalink to this headline">¶</a></h3>
 <p>Android Application</p>
 <ul class="simple">
-<li><p>New <a class="reference external" href="https://github.com/mattermost/android">Mattermost Android App</a> supporting push notifications available for devices running Android 4.4.2+. Requires Mattermost server 2.1 and higher. See <a class="reference external" href="https://github.com/mattermost/android/blob/master/DEVICES">list of tested devices</a>.</p></li>
+<li><p>New <a class="reference external" href="https://github.com/mattermost/android">Mattermost Android App</a> supporting push notifications available for devices running Android 4.4.2+. Requires Mattermost server 2.1 and higher. See <a class="reference external" href="https://github.com/mattermost/android/blob/master/DEVICES.md">list of tested devices</a>.</p></li>
 </ul>
 <p>Desktop Application</p>
 <ul class="simple">

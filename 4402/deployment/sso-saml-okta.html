@@ -210,7 +210,7 @@
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#before-you-begin" id="id1">Before You Begin</a></p></li>
-<li><p><a class="reference internal" href="#set-up-a-connection-app-for-mattermost-sso" id="id2">Set Up a Connection App for Mattermost SSO</a></p></li>
+<li><p><a class="reference internal" href="#set-up-a-connection-app-for-mattermost-single-sign-on" id="id2">Set Up a Connection App for Mattermost Single Sign-On</a></p></li>
 <li><p><a class="reference internal" href="#configure-saml-sign-in-for-mattermost" id="id3">Configure SAML Sign-in for Mattermost</a></p></li>
 <li><p><a class="reference internal" href="#configure-saml-synchronization-with-ad-ldap" id="id4">Configure SAML synchronization with AD/LDAP</a></p>
 <ul>
@@ -235,24 +235,22 @@
 <li><p>Save the two files that are generated. They are the private key and the public key. In the System Console, they are referred to as the <strong>Service Provider Private Key</strong> and the <strong>Service Provider Public Certificate</strong> respectively.</p></li>
 </ol>
 </div>
-<div class="section" id="set-up-a-connection-app-for-mattermost-sso">
-<h2><a class="toc-backref" href="#contents">Set Up a Connection App for Mattermost SSO</a><a class="headerlink" href="#set-up-a-connection-app-for-mattermost-sso" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="set-up-a-connection-app-for-mattermost-single-sign-on">
+<h2><a class="toc-backref" href="#contents">Set Up a Connection App for Mattermost Single Sign-On</a><a class="headerlink" href="#set-up-a-connection-app-for-mattermost-single-sign-on" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p>Sign in to Okta as an administrator.</p></li>
 <li><p>Switch to the <strong>Classic UI</strong>, using the drop-down in the upper left.</p></li>
 <li><p>Go to <strong>Admin Dashboard &gt; Applications &gt; Add Application</strong>.</p></li>
 <li><p>Select <strong>Create New App</strong>, then choose <strong>SAML 2.0</strong> as the Sign on method.</p>
 <blockquote>
-<div><img alt="../_images/okta_1_new_app.PNG" src="../_images/okta_1_new_app.PNG" />
+<div><img alt="../_images/okta_1_new_app.png" src="../_images/okta_1_new_app.png" />
 </div></blockquote>
 </li>
-<li><p>Enter <strong>General Settings</strong> for the application, including <strong>App name</strong> and <strong>App logo</strong> (optional). It’s recommended to display the application icon to users, including in the Okta Mobile app.</p></li>
-</ol>
-<p>If you’d like to use a Mattermost logo for the application, you can download one <a class="reference external" href="https://mattermost.org/brand-guidelines/">from our page</a>.</p>
+<li><p>Enter <strong>General Settings</strong> for the application, including <strong>App name</strong> and <strong>App logo</strong> (optional). It’s recommended to display the application icon to users, including in the Okta Mobile app. If you’d like to use a Mattermost logo for the application, you can download one <a class="reference external" href="https://mattermost.org/brand-guidelines/">from our page</a>.</p>
 <blockquote>
-<div><img alt="../_images/okta_2_general_settings.PNG" src="../_images/okta_2_general_settings.PNG" />
+<div><img alt="../_images/okta_2_general_settings.png" src="../_images/okta_2_general_settings.png" />
 </div></blockquote>
-<ol class="arabic simple" start="6">
+</li>
 <li><p>Enter <strong>SAML Settings</strong>, including:</p></li>
 </ol>
 <blockquote>
@@ -262,7 +260,7 @@
 <li><p><strong>Name ID format:</strong> <code class="docutils literal notranslate"><span class="pre">unspecified</span></code></p></li>
 <li><p><strong>Application username:</strong> <code class="docutils literal notranslate"><span class="pre">Email</span></code></p>
 <blockquote>
-<div><img alt="../_images/okta_3_initial_saml_settings.PNG" src="../_images/okta_3_initial_saml_settings.PNG" />
+<div><img alt="../_images/okta_3_initial_saml_settings.png" src="../_images/okta_3_initial_saml_settings.png" />
 </div></blockquote>
 </li>
 </ul>
@@ -270,17 +268,17 @@
 <ol class="arabic" start="7">
 <li><p>To set up encryption for your SAML connection, select <strong>Show Advanced Settings</strong>.</p>
 <blockquote>
-<div><img alt="../_images/okta_4_initial_saml_settings.PNG" src="../_images/okta_4_initial_saml_settings.PNG" />
+<div><img alt="../_images/okta_4_initial_saml_settings.png" src="../_images/okta_4_initial_saml_settings.png" />
 </div></blockquote>
 </li>
 <li><p>Set <strong>Assertion Encryption</strong> as <strong>Encrypted</strong>, then upload the Service Provider Public Certificate you generated earlier to the <strong>Encryption Certificate</strong> field.</p>
 <blockquote>
-<div><img alt="../_images/okta_5_advanced_saml_settings.PNG" src="../_images/okta_5_advanced_saml_settings.PNG" />
+<div><img alt="../_images/okta_5_advanced_saml_settings.png" src="../_images/okta_5_advanced_saml_settings.png" />
 </div></blockquote>
 </li>
-<li><p>Enter attribute statements, which will be used to map attributes between Okta and Mattermost. For more information on which attributes are configurable, see our <a class="reference internal" href="../administration/prev-config-settings.html#saml-enterprise"><span class="std std-ref">documentation on SAML configuration settings</span></a>. Email and username attributes are required. For Mattermost servers running 3.3 and earlier, first name and last name attributes are also required.</p>
+<li><p>Enter attribute statements used to map attributes between Okta and Mattermost. For more information on which attributes are configurable, see our <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#saml">documentation on SAML configuration settings</a>. Email and username attributes are required. For SAML with Okta, an <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#id17">ID attribute</a> is also required, and that ID must be mapped to <code class="docutils literal notranslate"><span class="pre">user.id</span></code>.</p>
 <blockquote>
-<div><img alt="../_images/okta_6_attribute_statements.PNG" src="../_images/okta_6_attribute_statements.PNG" />
+<div><img alt="../_images/okta_6_attribute_statements.png" src="../_images/okta_6_attribute_statements.png" />
 </div></blockquote>
 </li>
 <li><p>Select <strong>Next</strong>. Then, set Okta support parameters for the application. Recommended settings:</p></li>
@@ -290,28 +288,31 @@
 <li><p><strong>I’m an Okta customer adding an internal app</strong></p></li>
 <li><p><strong>This is an internal app that we have created</strong></p>
 <blockquote>
-<div><img alt="../_images/okta_7_support_configuration.PNG" src="../_images/okta_7_support_configuration.PNG" />
+<div><img alt="../_images/okta_7_support_configuration.png" src="../_images/okta_7_support_configuration.png" />
 </div></blockquote>
 </li>
 </ul>
 </div></blockquote>
 <ol class="arabic" start="11">
-<li><p>Select <strong>Finish</strong>. On the next screen, select the <strong>Sign On</strong> tab, then select <strong>View Setup Instructions</strong>.</p></li>
-<li><p>Select the <strong>Identity Provider metadata</strong> link, then copy the link from the browser URL box. This will be used during the SAML configuration steps in the next section.</p>
+<li><p>Select <strong>Finish</strong>.</p></li>
+<li><p>In the Mattermost System Console, go to <strong>Authentication &gt; SAML 2.0</strong>, then set <strong>Override SAML bind data with AD/LDAP information</strong> to <strong>false</strong> if currently set to <strong>true</strong>. You can re-enable <a class="reference external" href="https://docs.mattermost.com/administration/prev-config-settings.html#override-saml-bind-data-with-ad-ldap-information">this configuration setting</a> later when once setup is complete.</p></li>
+<li><p>On the next screen, select the <strong>Sign On</strong> tab, then select <strong>View Setup Instructions</strong>.</p></li>
+<li><p>Select the <strong>Identity Provider metadata</strong> link, then copy the link from the browser URL field. This will be used during the SAML configuration steps in the next section.</p>
 <blockquote>
-<div><img alt="../_images/okta_8_view_instructions.PNG" src="../_images/okta_8_view_instructions.PNG" />
+<div><img alt="../_images/okta_8_view_instructions.png" src="../_images/okta_8_view_instructions.png" />
 </div></blockquote>
 </li>
-<li><p>Take note of <strong>Identity Provider Single Sign-On URL</strong> (also known as <strong>SAML SSO URL</strong>), and the Identity Provider Issuer, as both may be needed to configure SAML for Mattermost. Additionally, ensure you download the X.509 Certificate file and save it. You may need to upload it to Mattermost in a later step.</p>
+<li><p>Take note of <strong>Identity Provider Single Sign-On URL</strong> (also known as <strong>SAML SSO URL</strong>), and the Identity Provider Issuer, as both may be needed to configure SAML for Mattermost.</p></li>
+<li><p>Download the X.509 Certificate file and save it. You may need to upload it to Mattermost in a later step.</p>
 <blockquote>
-<div><img alt="../_images/okta_9_view_instructions.PNG" src="../_images/okta_9_view_instructions.PNG" />
+<div><img alt="../_images/okta_9_view_instructions.png" src="../_images/okta_9_view_instructions.png" />
 </div></blockquote>
 </li>
 </ol>
 </div>
 <div class="section" id="configure-saml-sign-in-for-mattermost">
 <h2><a class="toc-backref" href="#contents">Configure SAML Sign-in for Mattermost</a><a class="headerlink" href="#configure-saml-sign-in-for-mattermost" title="Permalink to this headline">¶</a></h2>
-<p>Start the Mattermost server and sign into Mattermost as a System Administrator. Go to <strong>System Console &gt; Authentication &gt; SAML</strong>, and paste the copied Identity Provider Metadata URL in the <strong>Identity Provider Metadata URL</strong> field, then select <strong>Get SAML Metadata from IdP</strong>.</p>
+<p>Start the Mattermost server and sign into Mattermost as a System Admin. Go to <strong>System Console &gt; Authentication &gt; SAML 2.0</strong>, then paste the copied Identity Provider Metadata URL in the <strong>Identity Provider Metadata URL</strong> field and select <strong>Get SAML Metadata from IdP</strong>.</p>
 <p>This populates the <strong>SAML SSO URL</strong> and the <strong>Identity Provider Issuer URL</strong> fields automatically. The Identity Provider Public Certificate is also downloaded from the server and set locally.</p>
 <dl>
 <dt>Alternatively you can enter the following fields manually:</dt><dd><ul>
@@ -319,7 +320,7 @@
 <li><p><strong>Identity Provider Issuer URL:</strong> <code class="docutils literal notranslate"><span class="pre">Identity</span> <span class="pre">Provider</span> <span class="pre">Issuer</span></code> from Okta, specified earlier.</p></li>
 <li><p><strong>Identity Provider Public Certificate:</strong> X.509 Public Certificate file you downloaded from Okta earlier.</p>
 <blockquote>
-<div><img alt="../_images/okta_10_mattermost_basics.PNG" src="../_images/okta_10_mattermost_basics.PNG" />
+<div><img alt="../_images/okta_10_mattermost_basics.png" src="../_images/okta_10_mattermost_basics.png" />
 </div></blockquote>
 </li>
 </ul>
@@ -328,25 +329,26 @@
 <ol class="arabic" start="2">
 <li><p>Configure Mattermost to verify the signature. The <strong>Service Provider Login URL</strong> is the <code class="docutils literal notranslate"><span class="pre">Single</span> <span class="pre">sign</span> <span class="pre">on</span> <span class="pre">URL</span></code> you specified in Okta earlier.</p>
 <blockquote>
-<div><img alt="../_images/okta_11_mattermost_verification.PNG" src="../_images/okta_11_mattermost_verification.PNG" />
+<div><img alt="../_images/okta_11_mattermost_verification.png" src="../_images/okta_11_mattermost_verification.png" />
 </div></blockquote>
 </li>
 <li><p>Enable encryption based on the parameters provided earlier.</p>
 <blockquote>
-<div><img alt="../_images/okta_12_mattermost_encryption.PNG" src="../_images/okta_12_mattermost_encryption.PNG" />
+<div><img alt="../_images/okta_12_mattermost_encryption.png" src="../_images/okta_12_mattermost_encryption.png" />
 </div></blockquote>
 </li>
 <li><p>Configure Mattermost to sign SAML requests using the Service Provider Private Key.</p></li>
-<li><p>Set attributes for the SAML Assertions, which will be used to update user information in Mattermost. Attributes for email and username are required and should match the values you entered in Okta earlier. See <a class="reference internal" href="../administration/prev-config-settings.html#saml-enterprise"><span class="std std-ref">documentation on SAML configuration settings</span></a> for more detail.</p></li>
-</ol>
-<p>For Mattermost servers running 3.3 and earlier, the first name and last name attributes are also required fields.</p>
-<blockquote>
-<div><img alt="../_images/okta_13_mattermost_attributes.PNG" src="../_images/okta_13_mattermost_attributes.PNG" />
-</div></blockquote>
-<ol class="arabic" start="6">
+<li><dl>
+<dt>Set attributes for the SAML Assertions used to update user information in Mattermost.</dt><dd><ul class="simple">
+<li><p>Attributes for Email, Username, and Id are required and should match the values you entered in Okta earlier.</p></li>
+</ul>
+<img alt="../_images/okta_13_mattermost_attributes.png" src="../_images/okta_13_mattermost_attributes.png" />
+</dd>
+</dl>
+</li>
 <li><p>(Optional) Customize the login button text.</p>
 <blockquote>
-<div><img alt="../_images/okta_14_mattermost_login_button.PNG" src="../_images/okta_14_mattermost_login_button.PNG" />
+<div><img alt="../_images/okta_14_mattermost_login_button.png" src="../_images/okta_14_mattermost_login_button.png" />
 </div></blockquote>
 </li>
 <li><p>Select <strong>Save</strong>.</p></li>
@@ -367,26 +369,27 @@
 </div></blockquote>
 <p>To configure SAML synchronization with AD/LDAP:</p>
 <ol class="arabic simple">
-<li><p>Go to <strong>System Console &gt; Authentication &gt; SAML 2.0</strong> (or <strong>System Console &gt; SAML</strong> in versions prior to 5.12) and set <strong>Enable Synchronizing SAML Accounts With AD/LDAP</strong> to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></li>
-<li><p>Go to  <strong>System Console &gt; Authentication &gt; AD/LDAP</strong> (or <strong>System Console &gt; AD/LDAP</strong> in versions prior to 5.12) and set <strong>Enable Synchronization with AD/LDAP</strong> to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></li>
-<li><p>To ignore guest users when sychronizing, go to <strong>System Console &gt; Authentication &gt; SAML 2.0</strong> and set <strong>Ignore Guest Users when Synchronizing with AD/LDAP</strong> to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></li>
+<li><p>Go to <strong>System Console &gt; Authentication &gt; SAML 2.0</strong>, then set <strong>Enable Synchronizing SAML Accounts With AD/LDAP</strong> to <strong>true</strong>.</p></li>
+<li><p>Go to  <strong>System Console &gt; Authentication &gt; AD/LDAP</strong>, then set <strong>Enable Synchronization with AD/LDAP</strong> to <strong>true</strong>.</p></li>
+<li><p>To ignore guest users when sychronizing, go to <strong>System Console &gt; Authentication &gt; SAML 2.0</strong>, then set <strong>Ignore Guest Users when Synchronizing with AD/LDAP</strong> to <strong>true</strong>.</p></li>
 <li><p>Set the rest of the AD/LDAP settings based on <a class="reference external" href="http://docs.mattermost.com/administration/config-settings.html#ad-ldap">configuration settings documentation</a> to connect Mattermost with your AD/LDAP server.</p></li>
 </ol>
 <blockquote>
 <div><ul class="simple">
-<li><p>If you don’t want to enable AD/LDAP sign-in, go to <strong>System Console &gt; Authentication &gt; AD/LDAP</strong> (or <strong>System Console &gt; AD/LDAP</strong> in versions prior to 5.12) and keep <strong>Enable sign-in with AD/LDAP</strong> as <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p></li>
+<li><p>If you don’t want to enable AD/LDAP sign-in, go to <strong>System Console &gt; Authentication &gt; AD/LDAP</strong>, then set <strong>Enable sign-in with AD/LDAP</strong> to <strong>false</strong>.</p></li>
 </ul>
 </div></blockquote>
 <ol class="arabic simple" start="5">
-<li><p>To specify how often Mattermost synchronizes SAML user accounts with AD/LDAP, go to <strong>System Console &gt; Authentication &gt; AD/LDAP</strong> (or <strong>System Console &gt; AD/LDAP</strong> in versions prior to 5.12) and set <strong>Synchronization Interval</strong>. The default setting is 60 minutes. If you want to synchronize immediately after disabling an account, click <strong>AD/LDAP Synchronize Now</strong>.</p></li>
-<li><p>To confirm that Mattermost can successfully connect to your AD/LDAP server, go to <strong>System Console &gt; Authentication &gt; AD/LDAP</strong> (or <strong>System Console &gt; AD/LDAP</strong> in versions prior to 5.12) and select <strong>AD/LDAP Test</strong>.</p></li>
+<li><p>To specify how often Mattermost synchronizes SAML user accounts with AD/LDAP, go to <strong>System Console &gt; Authentication &gt; AD/LDAP</strong>, then set a <strong>Synchronization Interval</strong> in minutes. The default setting is 60 minutes. If you want to synchronize immediately after disabling an account, select <strong>AD/LDAP Synchronize Now</strong>.</p></li>
+<li><p>To confirm that Mattermost can successfully connect to your AD/LDAP server, go to <strong>System Console &gt; Authentication &gt; AD/LDAP</strong>, then select <strong>AD/LDAP Test</strong>.</p></li>
 </ol>
-<p>Once the synchronization with AD/LDAP is enabled, user attributes are synchronized with AD/LDAP based on their email address. If a user with a given email address doesn’t have an AD/LDAP account, they will be deactivated in Mattermost on the next AD/LDAP sync. To re-activate the account:</p>
+<p>Once the synchronization with AD/LDAP is enabled, user attributes are synchronized with AD/LDAP based on their email address. If a user with a given email address doesn’t have an AD/LDAP account, they will be deactivated in Mattermost on the next AD/LDAP sync.</p>
+<p>To re-activate the account:</p>
 <ol class="arabic simple">
 <li><p>Add the user to your AD/LDAP server.</p></li>
-<li><p>Purge all caches in Mattermost in <strong>System Console &gt; Web Server &gt; Purge All Caches</strong> (or <strong>System Console &gt; Configuration &gt; Purge All Caches</strong> in versions prior to 5.12).</p></li>
-<li><p>Run AD/LDAP sync in <strong>System Console &gt; Authentication &gt; AD/LDAP &gt; AD/LDAP Synchronize Now</strong> (or <strong>System Console &gt; AD/LDAP &gt; AD/LDAP Synchronize Now</strong> in versions prior to 5.12).</p></li>
-<li><p>Purge all caches again in Mattermost in <strong>System Console &gt; Web Server &gt; Purge All Caches</strong> (or <strong>System Console &gt; Configuration &gt; Purge All Caches</strong> in versions prior to 5.12), which re-activates the account in Mattermost.</p></li>
+<li><p>Purge all caches in Mattermost by going to <strong>System Console &gt; Environment &gt; Web Server</strong>, then select <strong>Purge All Caches</strong>.</p></li>
+<li><p>Run AD/LDAP synchronization by going to <strong>System Console &gt; Authentication &gt; AD/LDAP</strong>, then select <strong>AD/LDAP Synchronize Now</strong>.</p></li>
+<li><p>Purge all caches again in Mattermost by going to <strong>System Console &gt; Environment &gt; Web Server</strong>, then select <strong>Purge All Caches</strong> again. This re-activates the account in Mattermost.</p></li>
 </ol>
 <blockquote>
 <div><div class="admonition note">
@@ -407,10 +410,10 @@
 <p>This process overrides SAML email address with AD/LDAP email address data or SAML Id Attribute with AD/LDAP Id Attribute if configured. We recommend using this configuration with the SAML ID Attribute to help ensure new users are not created when the email address changes for a user.</p>
 <p>To ensure existing user accounts do not get disabled in this process, ensure the SAML IDs match the LDAP IDs by exporting data from both systems and comparing the ID data. Mapping ID Attributes for both AD/LDAP and SAML within Mattermost to fields that hold the same data will ensure the IDs match as well.</p>
 <ol class="arabic simple">
-<li><p>Set the SAML <code class="docutils literal notranslate"><span class="pre">Id</span> <span class="pre">Attribute</span></code> on <strong>System Console &gt; Authentication &gt; SAML 2.0</strong> &gt; <strong>Id Attribute</strong> (or <strong>System Console &gt; SAML &gt; Id Attribute</strong> in versions prior to 5.12)</p></li>
-<li><p>Set <strong>System Console &gt; Authentication &gt; SAML 2.0 &gt; Override SAML bind data with AD/LDAP information</strong> (or <strong>System Console &gt; SAML &gt; Override SAML bind data with AD/LDAP information</strong> in versions prior to 5.12) to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></li>
-<li><p>Set <strong>System Console</strong> &gt; <strong>Authentication</strong> &gt; <strong>SAML 2.0</strong> &gt; <strong>Enable Synchronizing SAML Accounts With AD/LDAP</strong> (or <strong>System Console &gt; SAML &gt; Enable Synchronizing SAML Accounts With AD/LDAP</strong> in versions prior to 5.12) to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></li>
-<li><p>Run AD/LDAP sync in <strong>System Console &gt; Authentication &gt; AD/LDAP &gt; AD/LDAP Synchronize Now</strong> (or <strong>System Console &gt; AD/LDAP &gt; AD/LDAP Synchronize Now</strong> in versions prior to 5.12).</p></li>
+<li><p>Set the SAML <code class="docutils literal notranslate"><span class="pre">Id</span> <span class="pre">Attribute</span></code> by going to <strong>System Console &gt; Authentication &gt; SAML 2.0 &gt; Id Attribute</strong>.</p></li>
+<li><p>Set <strong>System Console &gt; Authentication &gt; SAML 2.0 &gt; Override SAML bind data with AD/LDAP information</strong> to <strong>true</strong>.</p></li>
+<li><p>Set <strong>System Console &gt; Authentication &gt; SAML 2.0 &gt; Enable Synchronizing SAML Accounts With AD/LDAP</strong> to <strong>true</strong>.</p></li>
+<li><p>Run AD/LDAP sync by going to <strong>System Console &gt; Authentication &gt; AD/LDAP</strong>, then select <strong>AD/LDAP Synchronize Now</strong>.</p></li>
 </ol>
 </div>
 </div>

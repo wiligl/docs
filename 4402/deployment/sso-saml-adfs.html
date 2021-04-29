@@ -252,68 +252,68 @@
 <ol class="arabic">
 <li><p>In the ADFS management sidebar, go to <strong>AD FS &gt; Trust Relationships &gt; Relying Party Trusts</strong>, then select <strong>Add Relying Party Trust</strong>. A configuration wizard opens for adding a new relying party trust.</p>
 <blockquote>
-<div><img alt="../_images/adfs_1_add_new_relying_party_trust.PNG" src="../_images/adfs_1_add_new_relying_party_trust.PNG" />
+<div><img alt="../_images/adfs_1_add_new_relying_party_trust.png" src="../_images/adfs_1_add_new_relying_party_trust.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Welcome</strong> screen, select <strong>Start</strong>.</p>
 <blockquote>
-<div><img alt="../_images/adfs_2_start_wizard.PNG" src="../_images/adfs_2_start_wizard.PNG" />
+<div><img alt="../_images/adfs_2_start_wizard.png" src="../_images/adfs_2_start_wizard.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Select Data Source</strong> screen, select <strong>Enter data about the relying party manually</strong>.</p>
 <blockquote>
-<div><img alt="../_images/adfs_3_select_data_source.PNG" src="../_images/adfs_3_select_data_source.PNG" />
+<div><img alt="../_images/adfs_3_select_data_source.png" src="../_images/adfs_3_select_data_source.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Specify Display Name</strong> screen, enter a <strong>Display Name</strong> to recognize the trust, such as <code class="docutils literal notranslate"><span class="pre">Mattermost</span></code>, then add any notes you want to make.</p>
 <blockquote>
-<div><img alt="../_images/adfs_4_specify_display_name.PNG" src="../_images/adfs_4_specify_display_name.PNG" />
+<div><img alt="../_images/adfs_4_specify_display_name.png" src="../_images/adfs_4_specify_display_name.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Choose Profile</strong> screen, select <strong>AD FS profile</strong>.</p>
 <blockquote>
-<div><img alt="../_images/adfs_5_choose_profile.PNG" src="../_images/adfs_5_choose_profile.PNG" />
+<div><img alt="../_images/adfs_5_choose_profile.png" src="../_images/adfs_5_choose_profile.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Configure Certificate</strong> screen, leave the certificate settings at their default values.</p>
 <blockquote>
-<div><img alt="../_images/adfs_6_configure_certificate_default.PNG" src="../_images/adfs_6_configure_certificate_default.PNG" />
+<div><img alt="../_images/adfs_6_configure_certificate_default.png" src="../_images/adfs_6_configure_certificate_default.png" />
 </div></blockquote>
 </li>
 </ol>
 <p>However, if you would like to set up encryption for your SAML connection, select <strong>Browse</strong>, then upload your Service Provider Public Certificate.</p>
 <blockquote>
-<div><img alt="../_images/adfs_7_configure_certificate_encryption.PNG" src="../_images/adfs_7_configure_certificate_encryption.PNG" />
+<div><img alt="../_images/adfs_7_configure_certificate_encryption.png" src="../_images/adfs_7_configure_certificate_encryption.png" />
 </div></blockquote>
 <ol class="arabic" start="7">
 <li><p>On the <strong>Configure URL</strong> screen, select <strong>Enable Support for the SAML 2.0 WebSSO protocol</strong>, then enter the <strong>SAML 2.0 SSO service URL</strong>, similar to <code class="docutils literal notranslate"><span class="pre">https://&lt;your-mattermost-url&gt;/login/sso/saml</span></code> where <code class="docutils literal notranslate"><span class="pre">&lt;your-mattermost-url&gt;</span></code> should typically match the <a class="reference external" href="https://docs.mattermost.com/administration/config-settings.html#site-url">Mattermost Site URL</a>.</p>
 <blockquote>
-<div><img alt="../_images/adfs_8_configure_url.PNG" src="../_images/adfs_8_configure_url.PNG" />
+<div><img alt="../_images/adfs_8_configure_url.png" src="../_images/adfs_8_configure_url.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Configure Identifiers</strong> screen, enter the <strong>Relying party trust identifier</strong> (also known as the <strong>Identity Provider Issuer URL</strong>) of the form <code class="docutils literal notranslate"><span class="pre">https://&lt;your-idp-url&gt;/adfs/services/trust</span></code>, then click <strong>Add</strong>.</p>
 <blockquote>
-<div><img alt="../_images/adfs_9_configure_identifiers.PNG" src="../_images/adfs_9_configure_identifiers.PNG" />
+<div><img alt="../_images/adfs_9_configure_identifiers.png" src="../_images/adfs_9_configure_identifiers.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Configure Multi-factor Authentication Now</strong> screen, you may enable multi-factor authentication. This is beyond the scope of this documentation.</p>
 <blockquote>
-<div><img alt="../_images/adfs_10_configure_mfa.PNG" src="../_images/adfs_10_configure_mfa.PNG" />
+<div><img alt="../_images/adfs_10_configure_mfa.png" src="../_images/adfs_10_configure_mfa.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Choose Issuance Authorization Rules</strong> screen, select <strong>Permit all users to access this relying party</strong>.</p>
 <blockquote>
-<div><img alt="../_images/adfs_11_authorization.PNG" src="../_images/adfs_11_authorization.PNG" />
+<div><img alt="../_images/adfs_11_authorization.png" src="../_images/adfs_11_authorization.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Ready to Add Trust</strong> screen, review your settings.</p>
 <blockquote>
-<div><img alt="../_images/adfs_12_ready_to_add_trust.PNG" src="../_images/adfs_12_ready_to_add_trust.PNG" />
+<div><img alt="../_images/adfs_12_ready_to_add_trust.png" src="../_images/adfs_12_ready_to_add_trust.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Finish</strong> screen, select <strong>Open the Edit Claim Rules dialog for this relying party trust when the wizard closes</strong>, then select <strong>Close</strong>. You exit the configuration wizard, and a <strong>Claim Rules</strong> editor opens.</p>
 <blockquote>
-<div><img alt="../_images/adfs_13_finish_trust.PNG" src="../_images/adfs_13_finish_trust.PNG" />
+<div><img alt="../_images/adfs_13_finish_trust.png" src="../_images/adfs_13_finish_trust.png" />
 </div></blockquote>
 </li>
 </ol>
@@ -323,12 +323,12 @@
 <ol class="arabic">
 <li><p>In the <strong>Issuance Transform Rules</strong> section of the <strong>Claim Rules</strong> editor, select <strong>Add Rule…</strong> to open an <strong>Add Transform Claim Rule Wizard</strong>.</p>
 <blockquote>
-<div><img alt="../_images/adfs_14_claim_rules_editor.PNG" src="../_images/adfs_14_claim_rules_editor.PNG" />
+<div><img alt="../_images/adfs_14_claim_rules_editor.png" src="../_images/adfs_14_claim_rules_editor.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Choose Rule Type</strong> screen, select <strong>Send LDAP Attributes as Claims</strong> from the drop-down menu, then select <strong>Next</strong>.</p>
 <blockquote>
-<div><img alt="../_images/adfs_15_choose_rule_type.PNG" src="../_images/adfs_15_choose_rule_type.PNG" />
+<div><img alt="../_images/adfs_15_choose_rule_type.png" src="../_images/adfs_15_choose_rule_type.png" />
 </div></blockquote>
 </li>
 <li><p>In the <strong>Configure Claim Rule</strong> screen, enter a <strong>Claim Rule Name</strong> of your choice, select <strong>Active Directory</strong> as the <strong>Attribute Store</strong>, then complete the following:</p></li>
@@ -346,13 +346,13 @@
 <p>Select <strong>Finish</strong> to add the rule.</p>
 <p>Note that the entries in the <strong>Outgoing Claim Type</strong> column can be chosen to be something else. They can contain dashes but no spaces. They will be used to map the corresponding fields in Mattermost later.</p>
 <blockquote>
-<div><img alt="../_images/adfs_16_configure_claim_rule.PNG" src="../_images/adfs_16_configure_claim_rule.PNG" />
+<div><img alt="../_images/adfs_16_configure_claim_rule.png" src="../_images/adfs_16_configure_claim_rule.png" />
 </div></blockquote>
 <ol class="arabic" start="4">
 <li><p>Create another new rule by selecting <strong>Add Rule</strong>.</p></li>
 <li><p>On the <strong>Choose Rule Type</strong> screen, select <strong>Transform an Incoming Claim</strong> from the drop-down menu, then select <strong>Next</strong>.</p>
 <blockquote>
-<div><img alt="../_images/adfs_17_transformation_of_incoming_claim.PNG" src="../_images/adfs_17_transformation_of_incoming_claim.PNG" />
+<div><img alt="../_images/adfs_17_transformation_of_incoming_claim.png" src="../_images/adfs_17_transformation_of_incoming_claim.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Configure Claim Rule</strong> screen, enter a <strong>Claim Rule Name</strong> of your choice, then:</p></li>
@@ -366,7 +366,7 @@
 </div></blockquote>
 <p>Select <strong>Pass through all claim values</strong>, then select <strong>Finish</strong>.</p>
 <blockquote>
-<div><img alt="../_images/adfs_18_configure_incoming_claim.PNG" src="../_images/adfs_18_configure_incoming_claim.PNG" />
+<div><img alt="../_images/adfs_18_configure_incoming_claim.png" src="../_images/adfs_18_configure_incoming_claim.png" />
 </div></blockquote>
 <ol class="arabic simple" start="7">
 <li><p>Select <strong>Finish</strong> to create the claim rule, then select <strong>OK</strong> to finish creating rules.</p></li>
@@ -384,28 +384,28 @@
 <ol class="arabic">
 <li><p>In the ADFS management sidebar, go to <strong>AD FS &gt; Service &gt; Certificates</strong>, then double click on the certificate under <strong>Token-signing</strong>. Alternatively, you can right-click on the field, then select <strong>View Certificate</strong>.</p>
 <blockquote>
-<div><img alt="../_images/adfs_19_export_idp_cert_start.PNG" src="../_images/adfs_19_export_idp_cert_start.PNG" />
+<div><img alt="../_images/adfs_19_export_idp_cert_start.png" src="../_images/adfs_19_export_idp_cert_start.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Certificate</strong> screen, go to the <strong>Details</strong> tab, then select <strong>Copy to File</strong>, followed by <strong>OK</strong>. This opens a <strong>Certificate Export Wizard</strong>.</p>
 <blockquote>
-<div><img alt="../_images/adfs_20_export_idp_cert_copy.PNG" src="../_images/adfs_20_export_idp_cert_copy.PNG" />
+<div><img alt="../_images/adfs_20_export_idp_cert_copy.png" src="../_images/adfs_20_export_idp_cert_copy.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Certificate Export Wizard</strong> screen, select <strong>Next</strong>, then, select the option <strong>Base-64 encoded X.509 (.CER)</strong>, and select <strong>Next</strong> again.</p>
 <blockquote>
-<div><img alt="../_images/adfs_21_export_idp_cert_wizard.PNG" src="../_images/adfs_21_export_idp_cert_wizard.PNG" />
+<div><img alt="../_images/adfs_21_export_idp_cert_wizard.png" src="../_images/adfs_21_export_idp_cert_wizard.png" />
 </div></blockquote>
 </li>
 <li><p>On the <strong>Certificate Export Wizard</strong> screen, select <strong>Browse</strong> to specify the location where you want the Identity Provider Certificate to be exported, then specify the file name.</p>
 <blockquote>
-<div><img alt="../_images/adfs_21-2_export_idp_cert_wizard.PNG" src="../_images/adfs_21-2_export_idp_cert_wizard.PNG" />
+<div><img alt="../_images/adfs_21-2_export_idp_cert_wizard.png" src="../_images/adfs_21-2_export_idp_cert_wizard.png" />
 </div></blockquote>
 </li>
 <li><p>Select <strong>Save</strong>. In the <strong>Certificate Export Wizard</strong> screen, verify the file path is correct, then select <strong>Next</strong>.</p></li>
 <li><p>In the <strong>Completing the Certificate Export Wizard</strong>, select <strong>Finish</strong>, then select <strong>OK</strong> to confirm the export was successful.</p>
 <blockquote>
-<div><img alt="../_images/adfs_21-3_export_idp_cert_wizard.PNG" src="../_images/adfs_21-3_export_idp_cert_wizard.PNG" />
+<div><img alt="../_images/adfs_21-3_export_idp_cert_wizard.png" src="../_images/adfs_21-3_export_idp_cert_wizard.png" />
 </div></blockquote>
 </li>
 </ol>
@@ -421,7 +421,7 @@
 <li><p><strong>Identity Provider Issuer URL</strong>: <code class="docutils literal notranslate"><span class="pre">Relying</span> <span class="pre">party</span> <span class="pre">trust</span> <span class="pre">identifier</span></code> from ADFS you specified earlier.</p></li>
 <li><p><strong>Identity Provider Public Certificate</strong>: <code class="docutils literal notranslate"><span class="pre">X.509</span> <span class="pre">Public</span> <span class="pre">Certificate</span></code> you downloaded earlier.</p>
 <blockquote>
-<div><img alt="../_images/adfs_22_mattermost_basics.PNG" src="../_images/adfs_22_mattermost_basics.PNG" />
+<div><img alt="../_images/adfs_22_mattermost_basics.png" src="../_images/adfs_22_mattermost_basics.png" />
 </div></blockquote>
 </li>
 </ul>
@@ -430,12 +430,12 @@
 <ol class="arabic" start="2">
 <li><p>Configure Mattermost to verify the signature. The <strong>Service Provider Login URL</strong> is the SAML 2.0 SSO service URL you specified in ADFS earlier.</p>
 <blockquote>
-<div><img alt="../_images/adfs_23_mattermost_verification.PNG" src="../_images/adfs_23_mattermost_verification.PNG" />
+<div><img alt="../_images/adfs_23_mattermost_verification.png" src="../_images/adfs_23_mattermost_verification.png" />
 </div></blockquote>
 </li>
 <li><p>Enable encryption by uploading the Service Provider Private Key and Service Provider Public Certificate you generated earlier.</p>
 <blockquote>
-<div><img alt="../_images/adfs_24_mattermost_encryption.PNG" src="../_images/adfs_24_mattermost_encryption.PNG" />
+<div><img alt="../_images/adfs_24_mattermost_encryption.png" src="../_images/adfs_24_mattermost_encryption.png" />
 </div></blockquote>
 </li>
 <li><p>Configure Mattermost to sign SAML requests using the Service Provider Private Key.</p></li>
@@ -443,13 +443,13 @@
 </ol>
 <p>For Mattermost servers running 3.3 and earlier, the <code class="docutils literal notranslate"><span class="pre">FirstName</span></code> and <code class="docutils literal notranslate"><span class="pre">LastName</span></code> attributes are also required fields.</p>
 <blockquote>
-<div><img alt="../_images/adfs_25_mattermost_attributes.PNG" src="../_images/adfs_25_mattermost_attributes.PNG" />
+<div><img alt="../_images/adfs_25_mattermost_attributes.png" src="../_images/adfs_25_mattermost_attributes.png" />
 </div></blockquote>
 <ol class="arabic simple" start="6">
 <li><p>(Optional) Customize the login button text.</p></li>
 </ol>
 <blockquote>
-<div><img alt="../_images/adfs_26_mattermost_login_button.PNG" src="../_images/adfs_26_mattermost_login_button.PNG" />
+<div><img alt="../_images/adfs_26_mattermost_login_button.png" src="../_images/adfs_26_mattermost_login_button.png" />
 </div></blockquote>
 <ol class="arabic simple" start="7">
 <li><p>Select <strong>Save</strong>.</p></li>
@@ -470,26 +470,27 @@
 </div></blockquote>
 <p>To configure SAML synchronization with AD/LDAP:</p>
 <ol class="arabic simple">
-<li><p>Go to <strong>System Console &gt; Authentication &gt; SAML 2.0</strong> (or <strong>System Console &gt; SAML</strong> in versions prior to 5.12) and set <strong>Enable Synchronizing SAML Accounts With AD/LDAP</strong> to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></li>
-<li><p>Go to  <strong>System Console &gt; Authentication &gt; AD/LDAP</strong> (or <strong>System Console &gt; AD/LDAP</strong> in versions prior to 5.12) and set <strong>Enable Synchronization with AD/LDAP</strong> to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></li>
-<li><p>To ignore guest users when sychronizing, go to <strong>System Console &gt; Authentication &gt; SAML 2.0</strong> and set <strong>Ignore Guest Users when Synchronizing with AD/LDAP</strong> to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></li>
+<li><p>Go to <strong>System Console &gt; Authentication &gt; SAML 2.0</strong>, then set <strong>Enable Synchronizing SAML Accounts With AD/LDAP</strong> to <strong>true</strong>.</p></li>
+<li><p>Go to  <strong>System Console &gt; Authentication &gt; AD/LDAP</strong>, then set <strong>Enable Synchronization with AD/LDAP</strong> to <strong>true</strong>.</p></li>
+<li><p>To ignore guest users when sychronizing, go to <strong>System Console &gt; Authentication &gt; SAML 2.0</strong>, then set <strong>Ignore Guest Users when Synchronizing with AD/LDAP</strong> to <strong>true</strong>.</p></li>
 <li><p>Set the rest of the AD/LDAP settings based on <a class="reference external" href="http://docs.mattermost.com/administration/config-settings.html#ad-ldap">configuration settings documentation</a> to connect Mattermost with your AD/LDAP server.</p></li>
 </ol>
 <blockquote>
 <div><ul class="simple">
-<li><p>If you don’t want to enable AD/LDAP sign-in, go to <strong>System Console &gt; Authentication &gt; AD/LDAP</strong> (or <strong>System Console &gt; AD/LDAP</strong> in versions prior to 5.12) and keep <strong>Enable sign-in with AD/LDAP</strong> as <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p></li>
+<li><p>If you don’t want to enable AD/LDAP sign-in, go to <strong>System Console &gt; Authentication &gt; AD/LDAP</strong>, then set <strong>Enable sign-in with AD/LDAP</strong> to <strong>false</strong>.</p></li>
 </ul>
 </div></blockquote>
 <ol class="arabic simple" start="5">
-<li><p>To specify how often Mattermost synchronizes SAML user accounts with AD/LDAP, go to <strong>System Console &gt; Authentication &gt; AD/LDAP</strong> (or <strong>System Console &gt; AD/LDAP</strong> in versions prior to 5.12) and set <strong>Synchronization Interval</strong>. The default setting is 60 minutes. If you want to synchronize immediately after disabling an account, click <strong>AD/LDAP Synchronize Now</strong>.</p></li>
-<li><p>To confirm that Mattermost can successfully connect to your AD/LDAP server, go to <strong>System Console &gt; Authentication &gt; AD/LDAP</strong> (or <strong>System Console &gt; AD/LDAP</strong> in versions prior to 5.12) and select <strong>AD/LDAP Test</strong>.</p></li>
+<li><p>To specify how often Mattermost synchronizes SAML user accounts with AD/LDAP, go to <strong>System Console &gt; Authentication &gt; AD/LDAP</strong>, then set a <strong>Synchronization Interval</strong> in minutes. The default setting is 60 minutes. If you want to synchronize immediately after disabling an account, select <strong>AD/LDAP Synchronize Now</strong>.</p></li>
+<li><p>To confirm that Mattermost can successfully connect to your AD/LDAP server, go to <strong>System Console &gt; Authentication &gt; AD/LDAP</strong>, then select <strong>AD/LDAP Test</strong>.</p></li>
 </ol>
-<p>Once the synchronization with AD/LDAP is enabled, user attributes are synchronized with AD/LDAP based on their email address. If a user with a given email address doesn’t have an AD/LDAP account, they will be deactivated in Mattermost on the next AD/LDAP sync. To re-activate the account:</p>
+<p>Once the synchronization with AD/LDAP is enabled, user attributes are synchronized with AD/LDAP based on their email address. If a user with a given email address doesn’t have an AD/LDAP account, they will be deactivated in Mattermost on the next AD/LDAP sync.</p>
+<p>To re-activate the account:</p>
 <ol class="arabic simple">
 <li><p>Add the user to your AD/LDAP server.</p></li>
-<li><p>Purge all caches in Mattermost in <strong>System Console &gt; Web Server &gt; Purge All Caches</strong> (or <strong>System Console &gt; Configuration &gt; Purge All Caches</strong> in versions prior to 5.12).</p></li>
-<li><p>Run AD/LDAP sync in <strong>System Console &gt; Authentication &gt; AD/LDAP &gt; AD/LDAP Synchronize Now</strong> (or <strong>System Console &gt; AD/LDAP &gt; AD/LDAP Synchronize Now</strong> in versions prior to 5.12).</p></li>
-<li><p>Purge all caches again in Mattermost in <strong>System Console &gt; Web Server &gt; Purge All Caches</strong> (or <strong>System Console &gt; Configuration &gt; Purge All Caches</strong> in versions prior to 5.12), which re-activates the account in Mattermost.</p></li>
+<li><p>Purge all caches in Mattermost by going to <strong>System Console &gt; Environment &gt; Web Server</strong>, then select <strong>Purge All Caches</strong>.</p></li>
+<li><p>Run AD/LDAP synchronization by going to <strong>System Console &gt; Authentication &gt; AD/LDAP</strong>, then select <strong>AD/LDAP Synchronize Now</strong>.</p></li>
+<li><p>Purge all caches again in Mattermost by going to <strong>System Console &gt; Environment &gt; Web Server</strong>, then select <strong>Purge All Caches</strong> again. This re-activates the account in Mattermost.</p></li>
 </ol>
 <blockquote>
 <div><div class="admonition note">
@@ -510,10 +511,10 @@
 <p>This process overrides SAML email address with AD/LDAP email address data or SAML Id Attribute with AD/LDAP Id Attribute if configured. We recommend using this configuration with the SAML ID Attribute to help ensure new users are not created when the email address changes for a user.</p>
 <p>To ensure existing user accounts do not get disabled in this process, ensure the SAML IDs match the LDAP IDs by exporting data from both systems and comparing the ID data. Mapping ID Attributes for both AD/LDAP and SAML within Mattermost to fields that hold the same data will ensure the IDs match as well.</p>
 <ol class="arabic simple">
-<li><p>Set the SAML <code class="docutils literal notranslate"><span class="pre">Id</span> <span class="pre">Attribute</span></code> on <strong>System Console &gt; Authentication &gt; SAML 2.0</strong> &gt; <strong>Id Attribute</strong> (or <strong>System Console &gt; SAML &gt; Id Attribute</strong> in versions prior to 5.12)</p></li>
-<li><p>Set <strong>System Console &gt; Authentication &gt; SAML 2.0 &gt; Override SAML bind data with AD/LDAP information</strong> (or <strong>System Console &gt; SAML &gt; Override SAML bind data with AD/LDAP information</strong> in versions prior to 5.12) to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></li>
-<li><p>Set <strong>System Console</strong> &gt; <strong>Authentication</strong> &gt; <strong>SAML 2.0</strong> &gt; <strong>Enable Synchronizing SAML Accounts With AD/LDAP</strong> (or <strong>System Console &gt; SAML &gt; Enable Synchronizing SAML Accounts With AD/LDAP</strong> in versions prior to 5.12) to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></li>
-<li><p>Run AD/LDAP sync in <strong>System Console &gt; Authentication &gt; AD/LDAP &gt; AD/LDAP Synchronize Now</strong> (or <strong>System Console &gt; AD/LDAP &gt; AD/LDAP Synchronize Now</strong> in versions prior to 5.12).</p></li>
+<li><p>Set the SAML <code class="docutils literal notranslate"><span class="pre">Id</span> <span class="pre">Attribute</span></code> by going to <strong>System Console &gt; Authentication &gt; SAML 2.0 &gt; Id Attribute</strong>.</p></li>
+<li><p>Set <strong>System Console &gt; Authentication &gt; SAML 2.0 &gt; Override SAML bind data with AD/LDAP information</strong> to <strong>true</strong>.</p></li>
+<li><p>Set <strong>System Console &gt; Authentication &gt; SAML 2.0 &gt; Enable Synchronizing SAML Accounts With AD/LDAP</strong> to <strong>true</strong>.</p></li>
+<li><p>Run AD/LDAP sync by going to <strong>System Console &gt; Authentication &gt; AD/LDAP</strong>, then select <strong>AD/LDAP Synchronize Now</strong>.</p></li>
 </ol>
 </div>
 </div>

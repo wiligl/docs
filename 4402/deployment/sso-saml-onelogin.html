@@ -383,7 +383,7 @@
 <li><p>In the <strong>Verify Signature</strong> field, select <strong>True</strong>.</p></li>
 <li><p>In the <strong>Service Provider Login URL</strong>, enter <code class="docutils literal notranslate"><span class="pre">https//&lt;your-mattermost-url&gt;/login/sso/saml</span></code>.</p></li>
 </ol>
-<img alt="../_images/okta_11_mattermost_verification.PNG" src="../_images/okta_11_mattermost_verification.PNG" />
+<img alt="../_images/okta_11_mattermost_verification.png" src="../_images/okta_11_mattermost_verification.png" />
 </div></blockquote>
 <ol class="arabic simple" start="3">
 <li><p>Configure Mattermost to sign SAML requests using the Service Provider Private Key.</p></li>
@@ -395,7 +395,7 @@
 <li><p>In the <strong>Service Provider Private Key</strong> field, upload the private key that you generated earlier.</p></li>
 <li><p>In the <strong>Service Provider Public Certificate</strong> field, upload the public key that you generated earlier.</p></li>
 </ol>
-<img alt="../_images/okta_12_mattermost_encryption.PNG" src="../_images/okta_12_mattermost_encryption.PNG" />
+<img alt="../_images/okta_12_mattermost_encryption.png" src="../_images/okta_12_mattermost_encryption.png" />
 </div></blockquote>
 <ol class="arabic simple" start="5">
 <li><p>Set attributes for the SAML Assertions, which are used for updating user information in Mattermost.</p></li>
@@ -403,7 +403,7 @@
 <blockquote>
 <div><p>The <strong>Email Atttribute</strong> field and the <strong>Username Attribute</strong> field are required, and should match the values that you entered earlier when you configured the SAML Test Connector on OneLogin.</p>
 <p>For Mattermost servers running version 3.3 and earlier, <code class="docutils literal notranslate"><span class="pre">FirstName</span></code> and <code class="docutils literal notranslate"><span class="pre">LastName</span></code> attributes are also required.</p>
-<img alt="../_images/okta_13_mattermost_attributes.PNG" src="../_images/okta_13_mattermost_attributes.PNG" />
+<img alt="../_images/okta_13_mattermost_attributes.png" src="../_images/okta_13_mattermost_attributes.png" />
 </div></blockquote>
 <ol class="arabic simple" start="6">
 <li><p>(Optional) Customize the login button text.</p></li>
@@ -425,26 +425,27 @@
 </div></blockquote>
 <p>To configure SAML synchronization with AD/LDAP:</p>
 <ol class="arabic simple">
-<li><p>Go to <strong>System Console &gt; Authentication &gt; SAML 2.0</strong> (or <strong>System Console &gt; SAML</strong> in versions prior to 5.12) and set <strong>Enable Synchronizing SAML Accounts With AD/LDAP</strong> to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></li>
-<li><p>Go to  <strong>System Console &gt; Authentication &gt; AD/LDAP</strong> (or <strong>System Console &gt; AD/LDAP</strong> in versions prior to 5.12) and set <strong>Enable Synchronization with AD/LDAP</strong> to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></li>
-<li><p>To ignore guest users when sychronizing, go to <strong>System Console &gt; Authentication &gt; SAML 2.0</strong> and set <strong>Ignore Guest Users when Synchronizing with AD/LDAP</strong> to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></li>
+<li><p>Go to <strong>System Console &gt; Authentication &gt; SAML 2.0</strong>, then set <strong>Enable Synchronizing SAML Accounts With AD/LDAP</strong> to <strong>true</strong>.</p></li>
+<li><p>Go to  <strong>System Console &gt; Authentication &gt; AD/LDAP</strong>, then set <strong>Enable Synchronization with AD/LDAP</strong> to <strong>true</strong>.</p></li>
+<li><p>To ignore guest users when sychronizing, go to <strong>System Console &gt; Authentication &gt; SAML 2.0</strong>, then set <strong>Ignore Guest Users when Synchronizing with AD/LDAP</strong> to <strong>true</strong>.</p></li>
 <li><p>Set the rest of the AD/LDAP settings based on <a class="reference external" href="http://docs.mattermost.com/administration/config-settings.html#ad-ldap">configuration settings documentation</a> to connect Mattermost with your AD/LDAP server.</p></li>
 </ol>
 <blockquote>
 <div><ul class="simple">
-<li><p>If you don’t want to enable AD/LDAP sign-in, go to <strong>System Console &gt; Authentication &gt; AD/LDAP</strong> (or <strong>System Console &gt; AD/LDAP</strong> in versions prior to 5.12) and keep <strong>Enable sign-in with AD/LDAP</strong> as <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p></li>
+<li><p>If you don’t want to enable AD/LDAP sign-in, go to <strong>System Console &gt; Authentication &gt; AD/LDAP</strong>, then set <strong>Enable sign-in with AD/LDAP</strong> to <strong>false</strong>.</p></li>
 </ul>
 </div></blockquote>
 <ol class="arabic simple" start="5">
-<li><p>To specify how often Mattermost synchronizes SAML user accounts with AD/LDAP, go to <strong>System Console &gt; Authentication &gt; AD/LDAP</strong> (or <strong>System Console &gt; AD/LDAP</strong> in versions prior to 5.12) and set <strong>Synchronization Interval</strong>. The default setting is 60 minutes. If you want to synchronize immediately after disabling an account, click <strong>AD/LDAP Synchronize Now</strong>.</p></li>
-<li><p>To confirm that Mattermost can successfully connect to your AD/LDAP server, go to <strong>System Console &gt; Authentication &gt; AD/LDAP</strong> (or <strong>System Console &gt; AD/LDAP</strong> in versions prior to 5.12) and select <strong>AD/LDAP Test</strong>.</p></li>
+<li><p>To specify how often Mattermost synchronizes SAML user accounts with AD/LDAP, go to <strong>System Console &gt; Authentication &gt; AD/LDAP</strong>, then set a <strong>Synchronization Interval</strong> in minutes. The default setting is 60 minutes. If you want to synchronize immediately after disabling an account, select <strong>AD/LDAP Synchronize Now</strong>.</p></li>
+<li><p>To confirm that Mattermost can successfully connect to your AD/LDAP server, go to <strong>System Console &gt; Authentication &gt; AD/LDAP</strong>, then select <strong>AD/LDAP Test</strong>.</p></li>
 </ol>
-<p>Once the synchronization with AD/LDAP is enabled, user attributes are synchronized with AD/LDAP based on their email address. If a user with a given email address doesn’t have an AD/LDAP account, they will be deactivated in Mattermost on the next AD/LDAP sync. To re-activate the account:</p>
+<p>Once the synchronization with AD/LDAP is enabled, user attributes are synchronized with AD/LDAP based on their email address. If a user with a given email address doesn’t have an AD/LDAP account, they will be deactivated in Mattermost on the next AD/LDAP sync.</p>
+<p>To re-activate the account:</p>
 <ol class="arabic simple">
 <li><p>Add the user to your AD/LDAP server.</p></li>
-<li><p>Purge all caches in Mattermost in <strong>System Console &gt; Web Server &gt; Purge All Caches</strong> (or <strong>System Console &gt; Configuration &gt; Purge All Caches</strong> in versions prior to 5.12).</p></li>
-<li><p>Run AD/LDAP sync in <strong>System Console &gt; Authentication &gt; AD/LDAP &gt; AD/LDAP Synchronize Now</strong> (or <strong>System Console &gt; AD/LDAP &gt; AD/LDAP Synchronize Now</strong> in versions prior to 5.12).</p></li>
-<li><p>Purge all caches again in Mattermost in <strong>System Console &gt; Web Server &gt; Purge All Caches</strong> (or <strong>System Console &gt; Configuration &gt; Purge All Caches</strong> in versions prior to 5.12), which re-activates the account in Mattermost.</p></li>
+<li><p>Purge all caches in Mattermost by going to <strong>System Console &gt; Environment &gt; Web Server</strong>, then select <strong>Purge All Caches</strong>.</p></li>
+<li><p>Run AD/LDAP synchronization by going to <strong>System Console &gt; Authentication &gt; AD/LDAP</strong>, then select <strong>AD/LDAP Synchronize Now</strong>.</p></li>
+<li><p>Purge all caches again in Mattermost by going to <strong>System Console &gt; Environment &gt; Web Server</strong>, then select <strong>Purge All Caches</strong> again. This re-activates the account in Mattermost.</p></li>
 </ol>
 <blockquote>
 <div><div class="admonition note">
@@ -465,10 +466,10 @@
 <p>This process overrides SAML email address with AD/LDAP email address data or SAML Id Attribute with AD/LDAP Id Attribute if configured. We recommend using this configuration with the SAML ID Attribute to help ensure new users are not created when the email address changes for a user.</p>
 <p>To ensure existing user accounts do not get disabled in this process, ensure the SAML IDs match the LDAP IDs by exporting data from both systems and comparing the ID data. Mapping ID Attributes for both AD/LDAP and SAML within Mattermost to fields that hold the same data will ensure the IDs match as well.</p>
 <ol class="arabic simple">
-<li><p>Set the SAML <code class="docutils literal notranslate"><span class="pre">Id</span> <span class="pre">Attribute</span></code> on <strong>System Console &gt; Authentication &gt; SAML 2.0</strong> &gt; <strong>Id Attribute</strong> (or <strong>System Console &gt; SAML &gt; Id Attribute</strong> in versions prior to 5.12)</p></li>
-<li><p>Set <strong>System Console &gt; Authentication &gt; SAML 2.0 &gt; Override SAML bind data with AD/LDAP information</strong> (or <strong>System Console &gt; SAML &gt; Override SAML bind data with AD/LDAP information</strong> in versions prior to 5.12) to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></li>
-<li><p>Set <strong>System Console</strong> &gt; <strong>Authentication</strong> &gt; <strong>SAML 2.0</strong> &gt; <strong>Enable Synchronizing SAML Accounts With AD/LDAP</strong> (or <strong>System Console &gt; SAML &gt; Enable Synchronizing SAML Accounts With AD/LDAP</strong> in versions prior to 5.12) to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></li>
-<li><p>Run AD/LDAP sync in <strong>System Console &gt; Authentication &gt; AD/LDAP &gt; AD/LDAP Synchronize Now</strong> (or <strong>System Console &gt; AD/LDAP &gt; AD/LDAP Synchronize Now</strong> in versions prior to 5.12).</p></li>
+<li><p>Set the SAML <code class="docutils literal notranslate"><span class="pre">Id</span> <span class="pre">Attribute</span></code> by going to <strong>System Console &gt; Authentication &gt; SAML 2.0 &gt; Id Attribute</strong>.</p></li>
+<li><p>Set <strong>System Console &gt; Authentication &gt; SAML 2.0 &gt; Override SAML bind data with AD/LDAP information</strong> to <strong>true</strong>.</p></li>
+<li><p>Set <strong>System Console &gt; Authentication &gt; SAML 2.0 &gt; Enable Synchronizing SAML Accounts With AD/LDAP</strong> to <strong>true</strong>.</p></li>
+<li><p>Run AD/LDAP sync by going to <strong>System Console &gt; Authentication &gt; AD/LDAP</strong>, then select <strong>AD/LDAP Synchronize Now</strong>.</p></li>
 </ol>
 </div>
 </div>

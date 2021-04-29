@@ -405,36 +405,323 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">system_read_only_admin</span></code></p></li>
 </ul>
 <p><strong>Privileges</strong></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">PERMISSION_SYSCONSOLE_READ_ABOUT</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PERMISSION_SYSCONSOLE_WRITE_ABOUT</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PERMISSION_SYSCONSOLE_READ_REPORTING</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PERMISSION_SYSCONSOLE_WRITE_REPORTING</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PERMISSION_SYSCONSOLE_READ_USERMANAGEMENT_USERS</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PERMISSION_SYSCONSOLE_WRITE_USERMANAGEMENT_USERS</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PERMISSION_SYSCONSOLE_READ_USERMANAGEMENT_GROUPS</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PERMISSION_SYSCONSOLE_WRITE_USERMANAGEMENT_GROUPS</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PERMISSION_SYSCONSOLE_READ_USERMANAGEMENT_TEAMS</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PERMISSION_SYSCONSOLE_WRITE_USERMANAGEMENT_TEAMS</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PERMISSION_SYSCONSOLE_READ_USERMANAGEMENT_CHANNELS</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PERMISSION_SYSCONSOLE_WRITE_USERMANAGEMENT_CHANNELS</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PERMISSION_SYSCONSOLE_READ_USERMANAGEMENT_PERMISSIONS</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PERMISSION_SYSCONSOLE_WRITE_USERMANAGEMENT_PERMISSIONS</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PERMISSION_SYSCONSOLE_READ_ENVIRONMENT</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PERMISSION_SYSCONSOLE_WRITE_ENVIRONMENT</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PERMISSION_SYSCONSOLE_READ_SITE</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PERMISSION_SYSCONSOLE_WRITE_SITE</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PERMISSION_SYSCONSOLE_READ_AUTHENTICATION</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PERMISSION_SYSCONSOLE_READ_PLUGINS</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PERMISSION_SYSCONSOLE_WRITE_PLUGINS</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PERMISSION_SYSCONSOLE_READ_INTEGRATIONS</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PERMISSION_SYSCONSOLE_WRITE_INTEGRATIONS</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PERMISSION_SYSCONSOLE_READ_COMPLIANCE</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PERMISSION_SYSCONSOLE_WRITE_COMPLIANCE</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PERMISSION_SYSCONSOLE_READ_EXPERIMENTAL</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PERMISSION_SYSCONSOLE_WRITE_EXPERIMENTAL</span></code></p></li>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>System Console Section</p></th>
+<th class="head"><p>Permissions</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>About</p></td>
+<td><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_ABOUT_EDITION_AND_LICENSE</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_ABOUT_EDITION_AND_LICENSE</p></li>
 </ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Reporting</p></td>
+<td><dl class="simple">
+<dt><strong>Site Statistics</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_REPORTING_SITE_STATISTICS</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_REPORTING_SITE_STATISTICS</p></li>
+</ul>
+</dd>
+<dt><strong>Team Statistics</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_REPORTING_TEAM_STATISTICS</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_REPORTING_TEAM_STATISTICS</p></li>
+</ul>
+</dd>
+<dt><strong>Server Logs</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_REPORTING_SERVER_LOGS</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_REPORTING_SERVER_LOGS</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-even"><td><p>User Management</p></td>
+<td><dl class="simple">
+<dt><strong>Users</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_USERMANAGEMENT_USERS</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_USERMANAGEMENT_USERS</p></li>
+</ul>
+</dd>
+<dt><strong>Groups</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_USERMANAGEMENT_GROUPS</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_USERMANAGEMENT_GROUPS</p></li>
+</ul>
+</dd>
+<dt><strong>Teams</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_USERMANAGEMENT_TEAMS</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_USERMANAGEMENT_TEAMS</p></li>
+</ul>
+</dd>
+<dt><strong>Channels</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_USERMANAGEMENT_CHANNELS</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_USERMANAGEMENT_CHANNELS</p></li>
+</ul>
+</dd>
+<dt><strong>Permissions</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_USERMANAGEMENT_PERMISSIONS</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_USERMANAGEMENT_PERMISSIONS</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Environment</p></td>
+<td><dl class="simple">
+<dt><strong>Web Server</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_ENVIRONMENT_WEB_SERVER</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_ENVIRONMENT_WEB_SERVER</p></li>
+</ul>
+</dd>
+<dt><strong>Database</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_ENVIRONMENT_DATABASE</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_ENVIRONMENT_DATABASE</p></li>
+</ul>
+</dd>
+<dt><strong>Elasticsearch</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_ENVIRONMENT_ELASTICSEARCH</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_ENVIRONMENT_ELASTICSEARCH</p></li>
+</ul>
+</dd>
+<dt><strong>File Storage</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_ENVIRONMENT_FILE_STORAGE</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_ENVIRONMENT_FILE_STORAGE</p></li>
+</ul>
+</dd>
+<dt><strong>Image Proxy</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_ENVIRONMENT_IMAGE_PROXY</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_ENVIRONMENT_IMAGE_PROXY</p></li>
+</ul>
+</dd>
+<dt><strong>SMTP</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_ENVIRONMENT_SMTP</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_ENVIRONMENT_SMTP</p></li>
+</ul>
+</dd>
+<dt><strong>Push Notification Server</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_ENVIRONMENT_PUSH_NOTIFICATION_SERVER</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_ENVIRONMENT_PUSH_NOTIFICATION_SERVER</p></li>
+</ul>
+</dd>
+<dt><strong>High Availability</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_ENVIRONMENT_HIGH_AVAILABILITY</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_ENVIRONMENT_HIGH_AVAILABILITY</p></li>
+</ul>
+</dd>
+<dt><strong>Rate Limiting</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_ENVIRONMENT_RATE_LIMITING</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_ENVIRONMENT_RATE_LIMITING</p></li>
+</ul>
+</dd>
+<dt><strong>Logging</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_ENVIRONMENT_LOGGING</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_ENVIRONMENT_LOGGING</p></li>
+</ul>
+</dd>
+<dt><strong>Session Lengths</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_ENVIRONMENT_SESSION_LENGTHS</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_ENVIRONMENT_SESSION_LENGTHS</p></li>
+</ul>
+</dd>
+<dt><strong>Performance Monitoring</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_ENVIRONMENT_PERFORMANCE_MONITORING</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_ENVIRONMENT_PERFORMANCE_MONITORING</p></li>
+</ul>
+</dd>
+<dt><strong>Developer</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_ENVIRONMENT_DEVELOPER</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_ENVIRONMENT_DEVELOPER</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-even"><td><p>Site Configuration</p></td>
+<td><dl class="simple">
+<dt><strong>Customization</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_SITE_CUSTOMIZATION</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_SITE_CUSTOMIZATION</p></li>
+</ul>
+</dd>
+<dt><strong>Localization</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_SITE_LOCALIZATION</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_SITE_LOCALIZATION</p></li>
+</ul>
+</dd>
+<dt><strong>Users and Teams</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_SITE_USERS_AND_TEAMS</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_SITE_USERS_AND_TEAMS</p></li>
+</ul>
+</dd>
+<dt><strong>Notifications</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_SITE_NOTIFICATIONS</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_SITE_NOTIFICATIONS</p></li>
+</ul>
+</dd>
+<dt><strong>Announcement Banner</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_SITE_ANNOUNCEMENT_BANNER</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_SITE_ANNOUNCEMENT_BANNER</p></li>
+</ul>
+</dd>
+<dt><strong>Emoji</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_SITE_EMOJI</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_SITE_EMOJI</p></li>
+</ul>
+</dd>
+<dt><strong>Posts</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_SITE_POSTS</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_SITE_POSTS</p></li>
+</ul>
+</dd>
+<dt><strong>File Sharing and Downloads</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_SITE_FILE_SHARING_AND_DOWNLOADS</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_SITE_FILE_SHARING_AND_DOWNLOADS</p></li>
+</ul>
+</dd>
+<dt><strong>Public Links</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_SITE_PUBLIC_LINKS</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_SITE_PUBLIC_LINKS</p></li>
+</ul>
+</dd>
+<dt><strong>Notices</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_SITE_NOTICES</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_SITE_NOTICES</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Authentication</p></td>
+<td><dl class="simple">
+<dt><strong>Signup</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_AUTHENTICATION_SIGNUP</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_SIGNUP</p></li>
+</ul>
+</dd>
+<dt><strong>Email</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_AUTHENTICATION_EMAIL</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_EMAIL</p></li>
+</ul>
+</dd>
+<dt><strong>Password</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_AUTHENTICATION_PASSWORD</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_PASSWORD</p></li>
+</ul>
+</dd>
+<dt><strong>MFA</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_AUTHENTICATION_MFA</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_MFA</p></li>
+</ul>
+</dd>
+<dt><strong>AD/LDAP</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_AUTHENTICATION_MFA</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_MFA</p></li>
+</ul>
+</dd>
+<dt><strong>SAML 2.0</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_AUTHENTICATION_SAML</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_SAML</p></li>
+</ul>
+</dd>
+<dt><strong>OpenID Connect</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_AUTHENTICATION_OPENID</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_OPENID</p></li>
+</ul>
+</dd>
+<dt><strong>Guest Access (Beta)</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_AUTHENTICATION_GUEST_ACCESS</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_GUEST_ACCESS</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-even"><td><p>Plugin (Beta)</p></td>
+<td><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_PLUGINS</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_PLUGINS</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Integrations</p></td>
+<td><dl class="simple">
+<dt><strong>Integration Management</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_INTEGRATIONS_INTEGRATION_MANAGEMENT</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_INTEGRATIONS_INTEGRATION_MANAGEMENT</p></li>
+</ul>
+</dd>
+<dt><strong>Bot Accounts</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_INTEGRATIONS_BOT_ACCOUNTS</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_INTEGRATIONS_BOT_ACCOUNTS</p></li>
+</ul>
+</dd>
+<dt><strong>GIF (Beta)</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_INTEGRATIONS_GIF</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_INTEGRATIONS_GIF</p></li>
+</ul>
+</dd>
+<dt><strong>CORS</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_INTEGRATIONS_CORS</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_INTEGRATIONS_CORS</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-even"><td><p>Compliance</p></td>
+<td><dl class="simple">
+<dt><strong>Data Retention Policy</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_COMPLIANCE_DATA_RETENTION_POLICY</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_COMPLIANCE_DATA_RETENTION_POLICY</p></li>
+</ul>
+</dd>
+<dt><strong>Compliance Export (Beta)</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_COMPLIANCE_COMPLIANCE_EXPORT</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_COMPLIANCE_COMPLIANCE_EXPORT</p></li>
+</ul>
+</dd>
+<dt><strong>Compliance Monitoring</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_COMPLIANCE_COMPLIANCE_MONITORING</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_COMPLIANCE_COMPLIANCE_MONITORING</p></li>
+</ul>
+</dd>
+<dt><strong>Custom Terms of Service (Beta)</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_COMPLIANCE_CUSTOM_TERMS_OF_SERVICE</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_COMPLIANCE_CUSTOM_TERMS_OF_SERVICE</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Experimental</p></td>
+<td><dl class="simple">
+<dt><strong>Features</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_EXPERIMENTAL_FEATURES</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_EXPERIMENTAL_FEATURES</p></li>
+</ul>
+</dd>
+<dt><strong>Feature Flags</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_EXPERIMENTAL_FEATURE_FLAGS</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_EXPERIMENTAL_FEATURE_FLAGS</p></li>
+</ul>
+</dd>
+<dt><strong>Bleve</strong></dt><dd><ul class="simple">
+<li><p>PERMISSION_SYSCONSOLE_READ_EXPERIMENTAL_BLEVE</p></li>
+<li><p>PERMISSION_SYSCONSOLE_WRITE_EXPERIMENTAL_BLEVE</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="frequently-asked-questions">
 <h2>Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permalink to this headline">¶</a></h2>
