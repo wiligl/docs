@@ -264,7 +264,7 @@
 <div class="section" id="important-upgrade-notes">
 <h3>Important Upgrade Notes<a class="headerlink" href="#important-upgrade-notes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Due to the introduction of backend database architecture required for upcoming new features, Shared Channels and Collapsed Reply Threads, the performance of the migration process for the v5.35 release (May 16, 2021) has been noticeably affected. Depending on the size, type, and version of the database, longer than usual upgrade times should be expected. This can vary from a couple of minutes (average case) to hours (worst case, MySQL 5.x only). A moderate to significant spike in database CPU usage should also be expected during this process. <a class="reference external" href="https://gist.github.com/streamer45/9aee4906639a49ebde68b2f3c0f924c1">More details on the performance impact of the migration and possible mitigation strategies are provided here</a>.</p></li>
+<li><p>Due to the introduction of backend database architecture required for upcoming new features, including Shared Channels and Collapsed Reply Threads, the performance of the migration process for the v5.35 release (May 16, 2021) has been noticeably affected. Depending on the size, type, and version of the database, longer than usual upgrade times should be expected. This can vary from a couple of minutes (average case) to hours (worst case, MySQL 5.x only). A moderate to significant spike in database CPU usage should also be expected during this process. <a class="reference external" href="https://gist.github.com/streamer45/9aee4906639a49ebde68b2f3c0f924c1">More details on the performance impact of the migration and possible mitigation strategies are provided here</a>.</p></li>
 <li><p>In the v5.38 release (August 16, 2021), we will deprecate “config watcher” (the mechanism that automatically reloads the <code class="docutils literal notranslate"><span class="pre">config.json</span> <span class="pre">file</span></code>), in favor of an mmctl command that will need to be run to apply configuration changes after they are made. This change will improve configuration performance and robustness.</p></li>
 </ul>
 <p><strong>IMPORTANT:</strong> If you upgrade from a release earlier than v5.34, please read the other <a class="reference external" href="https://docs.mattermost.com/administration/important-upgrade-notes.html">Important Upgrade Notes</a>.</p>
@@ -286,7 +286,7 @@
 <div class="section" id="granular-access-to-system-console-pages-e20-edition">
 <h4>Granular Access to System Console Pages (E20 Edition)<a class="headerlink" href="#granular-access-to-system-console-pages-e20-edition" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li><p>Migrated Experimental, About, Reporting, Environment, Site Configuration, Authentication, Integrations, Compliance sections to their respective sub-section permissions.</p></li>
+<li><p>Migrated Experimental, About, Reporting, Environment, Site Configuration, Authentication, Integrations, and Compliance sections to their respective sub-section permissions.</p></li>
 </ul>
 </div>
 <div class="section" id="shared-channels-experimental-e20-edition">
@@ -304,7 +304,7 @@
 <div class="section" id="incident-collaboration-e20-edition">
 <h4>Incident Collaboration (E20 Edition)<a class="headerlink" href="#incident-collaboration-e20-edition" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li><p>Updated prepackaged Incident Collaboration plugin with updates to Ad hoc tasks, stakeholder overview, and more.</p></li>
+<li><p>Updated prepackaged Incident Collaboration plugin with to include Ad hoc tasks, stakeholder overview, and more.</p></li>
 </ul>
 </div>
 </div>
@@ -320,7 +320,7 @@
 <li><p>Ephemeral message created from call response <code class="docutils literal notranslate"><span class="pre">markdown</span></code> field is now posted by bot.</p></li>
 <li><p>Added improvements and fixes for the custom status feature. For example, fixed an issue where recently selected statuses were missing from the <strong>Set a Status</strong> confirmation screen, and updated the <strong>Mobile Push Notifications</strong> text in <strong>Account Settings</strong> to refer to user <strong>availability</strong> instead of <strong>online status</strong>.</p></li>
 <li><p>Moved the user status in the channel switcher to overlap with user avatars, and added URL ‘Slug’ information to channel names in the channel switcher.</p></li>
-<li><p>Added a string field to configuration for restricted domains with the key <code class="docutils literal notranslate"><span class="pre">RestrictLinkPreviews</span></code> and added a UI field for restricted domains under <strong>System Console &gt; Site Configuration &gt; Posts</strong>. Also expanded the logic that determines whether a post has a preview or not.</p></li>
+<li><p>Added a string field to restricted domains configuration with the key <code class="docutils literal notranslate"><span class="pre">RestrictLinkPreviews</span></code>, and added a UI field for restricted domains under <strong>System Console &gt; Site Configuration &gt; Posts</strong>. Also expanded the logic that determines whether a post has a preview or not.</p></li>
 <li><p>Added an unread badge to the <strong>Main Menu</strong> icon and the <strong>Plugin Marketplace</strong> menu that displays until a System Admin visits the <strong>Plugin Marketplace</strong> for the first time.</p></li>
 <li><p>Added profile pictures to the <strong>Direct Messages</strong> channel list.</p></li>
 <li><p>Added channel icons for email notifications as part of email notification redesigns.</p></li>
