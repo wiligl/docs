@@ -278,16 +278,16 @@
 <li><p>Apps Framework is a new way to integrate with external tools, and allows developers to create interactive Apps in Mattermost, using any development language they’re comfortable with. The new Apps work seamlessly across mobile and desktop clients. This is a developer preview and is not intended for production instances of Mattermost yet. This feature is available for self-managed customers with v5.35.0 when the Apps Framework Plugin is loaded on an instance. Learn more: https://developers.mattermost.com/integrate/apps/.</p></li>
 </ul>
 </div>
-<div class="section" id="search-results-are-returned-on-file-search">
-<h4>Search results are returned on file search<a class="headerlink" href="#search-results-are-returned-on-file-search" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="search-for-files-and-document-contents">
+<h4>Search for files and document contents<a class="headerlink" href="#search-for-files-and-document-contents" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li><p>Searching in Mattermost now finds both relevant messages and files in your team’s conversation history. Search will return results for attachments that match the file name or contain matching text content within supported document types. <a class="reference external" href="https://mattermost.com/blog/file-search/">Learn more</a>. To be available for mobile apps in a later release.</p></li>
+<li><p>Searching in Mattermost now finds both relevant messages and files in your team’s conversation history. Search will return results for attachments that match the file name or contain matching text content within supported document types. <a class="reference external" href="https://mattermost.com/blog/file-search/">Learn more</a>.</p></li>
 </ul>
 </div>
 <div class="section" id="granular-access-to-system-console-pages-e20-edition">
 <h4>Granular Access to System Console Pages (E20 Edition)<a class="headerlink" href="#granular-access-to-system-console-pages-e20-edition" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li><p>Migrated Experimental, About, Reporting, Environment, Site Configuration, Authentication, Integrations, and Compliance sections to their respective sub-section permissions.</p></li>
+<li><p>Migrated <strong>Experimental</strong>, <strong>About</strong>, <strong>Reporting</strong>, <strong>Environment</strong>, <strong>Site Configuration</strong>, <strong>Authentication</strong>, <strong>Integrations</strong>, and <strong>Compliance</strong> sections to their respective sub-section permissions.</p></li>
 </ul>
 </div>
 <div class="section" id="shared-channels-experimental-e20-edition">
@@ -296,8 +296,8 @@
 <li><p>Experimental support added for sharing channels between Mattermost clusters. Requires an E20 license. The Shared Channels feature is disabled by default.</p></li>
 </ul>
 </div>
-<div class="section" id="enterprise-trial-enhancements">
-<h4>Enterprise Trial Enhancements<a class="headerlink" href="#enterprise-trial-enhancements" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="enterprise-trial-enhancements-e20-edition">
+<h4>Enterprise Trial Enhancements (E20 Edition)<a class="headerlink" href="#enterprise-trial-enhancements-e20-edition" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Added banners to alert System Admins when an E20 trial has started, when there are three days left of the trial, and when the trial is on the last day.</p></li>
 </ul>
@@ -305,7 +305,7 @@
 <div class="section" id="incident-collaboration-e20-edition">
 <h4>Incident Collaboration (E20 Edition)<a class="headerlink" href="#incident-collaboration-e20-edition" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li><p>Updated prepackaged Incident Collaboration plugin with to include Ad hoc tasks, stakeholder overview, and more.</p></li>
+<li><p>Updated prepackaged Incident Collaboration plugin with to include ad hoc tasks, stakeholder overview, and more.</p></li>
 </ul>
 </div>
 </div>
@@ -316,14 +316,14 @@
 <ul class="simple">
 <li><p>Added support to collapse in-line images over 100px in height.</p></li>
 <li><p>Implemented maximum length validation on the status modal for custom statuses.</p></li>
-<li><p>Synchronized collapsed channel sidebar categories on the server.</p></li>
+<li><p>Synchronized collapsed channel sidebar categories on the server to keep category collapse states in-sync across devices.</p></li>
 <li><p>Empty state is no longer off-centered in the <strong>Channel Switcher</strong>.</p></li>
 <li><p>Ephemeral message created from call response <code class="docutils literal notranslate"><span class="pre">markdown</span></code> field is now posted by bot.</p></li>
-<li><p>Added improvements and fixes for the custom status feature. For example, fixed an issue where recently selected statuses were missing from the <strong>Set a Status</strong> confirmation screen, and updated the <strong>Mobile Push Notifications</strong> text in <strong>Account Settings</strong> to refer to user <strong>availability</strong> instead of <strong>online status</strong>.</p></li>
-<li><p>Moved the user status in the channel switcher to overlap with user avatars, and added URL ‘Slug’ information to channel names in the channel switcher.</p></li>
+<li><p>Added various enhancements to custom status to allow users to switch to recent statuses with less clicks.</p></li>
+<li><p>Users can now see online status on user profile images in the channel switcher.</p></li>
 <li><p>Added a string field to restricted domains configuration with the key <code class="docutils literal notranslate"><span class="pre">RestrictLinkPreviews</span></code>, and added a UI field for restricted domains under <strong>System Console &gt; Site Configuration &gt; Posts</strong>. Also expanded the logic that determines whether a post has a preview or not.</p></li>
 <li><p>Added an unread badge to the <strong>Main Menu</strong> icon and the <strong>Plugin Marketplace</strong> menu that displays until a System Admin visits the <strong>Plugin Marketplace</strong> for the first time.</p></li>
-<li><p>Added profile pictures to the <strong>Direct Messages</strong> channel list.</p></li>
+<li><p>Profile images are now visible on <strong>Direct Messages</strong> in the channel sidebar.</p></li>
 <li><p>Added channel icons for email notifications as part of email notification redesigns.</p></li>
 <li><p>Direct Messages <strong>More…</strong> modal is now sorted by recent conversations when the modal is opened.</p></li>
 <li><p>Removed legacy Open-Sans fonts and upgraded Open-Sans to v18.</p></li>
