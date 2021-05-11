@@ -275,7 +275,7 @@
 <div class="section" id="apps-framework-developer-preview">
 <h4>Apps Framework (Developer Preview)<a class="headerlink" href="#apps-framework-developer-preview" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li><p>Apps Framework is a new way to integrate with external tools, and allows developers to create interactive Apps in Mattermost, using any development language they’re comfortable with. The new Apps work seamlessly across mobile and desktop clients. This is a developer preview and is not intended for production instances of Mattermost yet. This feature is available for self-managed customers with v5.35.0 when the Apps Framework Plugin is loaded on an instance. Learn more: https://developers.mattermost.com/integrate/apps/.</p></li>
+<li><p>Apps Framework is a new way to integrate with external tools, and allows developers to create interactive apps in Mattermost, using any development language they’re comfortable with. The new apps work seamlessly across mobile and desktop clients. This is a developer preview and is not intended for production instances of Mattermost yet. This feature is available for self-managed customers with v5.35 when the Apps Framework Plugin is loaded on an instance. Learn more: https://developers.mattermost.com/integrate/apps/.</p></li>
 </ul>
 </div>
 <div class="section" id="search-for-files-and-document-contents">
@@ -290,20 +290,20 @@
 <li><p>Migrated <strong>Experimental</strong>, <strong>About</strong>, <strong>Reporting</strong>, <strong>Environment</strong>, <strong>Site Configuration</strong>, <strong>Authentication</strong>, <strong>Integrations</strong>, and <strong>Compliance</strong> sections to their respective sub-section permissions.</p></li>
 </ul>
 </div>
-<div class="section" id="shared-channels-experimental-e20-edition">
-<h4>Shared Channels (Experimental, E20 Edition)<a class="headerlink" href="#shared-channels-experimental-e20-edition" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="shared-channels-experimental-enterprise-edition-e20">
+<h4>Shared Channels (Experimental, Enterprise Edition E20)<a class="headerlink" href="#shared-channels-experimental-enterprise-edition-e20" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li><p>Experimental support added for sharing channels between Mattermost clusters. Requires an E20 license. The Shared Channels feature is disabled by default.</p></li>
+<li><p>Experimental support added for sharing channels between Mattermost clusters. Requires an Enterprise Edition E20 license. The Shared Channels feature is disabled by default.</p></li>
 </ul>
 </div>
 <div class="section" id="enterprise-trial-enhancements-e20-edition">
 <h4>Enterprise Trial Enhancements (E20 Edition)<a class="headerlink" href="#enterprise-trial-enhancements-e20-edition" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li><p>Added banners to alert System Admins when an E20 trial has started, when there are three days left of the trial, and when the trial is on the last day.</p></li>
+<li><p>Added banners to alert System Admins when an Enterprise Edition E20 trial has started, when there are three days left of the trial, and when the trial is on the last day.</p></li>
 </ul>
 </div>
-<div class="section" id="incident-collaboration-e20-edition">
-<h4>Incident Collaboration (E20 Edition)<a class="headerlink" href="#incident-collaboration-e20-edition" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="incident-collaboration-enterprise-edition-e20">
+<h4>Incident Collaboration (Enterprise Edition E20)<a class="headerlink" href="#incident-collaboration-enterprise-edition-e20" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Updated prepackaged Incident Collaboration plugin with to include ad hoc tasks, stakeholder overview, and more.</p></li>
 </ul>
@@ -332,7 +332,7 @@
 <div class="section" id="administration">
 <h4>Administration<a class="headerlink" href="#administration" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li><p>Paused admin advisor notifications from triggering.</p></li>
+<li><p>Paused Admin Advisor notifications from triggering.</p></li>
 <li><p>Added a command line document extraction command that allows indexing documents by content.</p></li>
 <li><p>Removed the utility function <code class="docutils literal notranslate"><span class="pre">model.GeneratePassword()</span></code> for security reasons. An improved version is now being used internally to generate passwords for bulk-imported users.</p></li>
 <li><p>Only the System Admin is allowed to have the ability to assign system roles.</p></li>
@@ -354,10 +354,10 @@
 <li><p>Fixed an issue where users were unable to drag the vertical scroll bar on a PDF preview.</p></li>
 <li><p>Fixed an issue with animations on long posts when highlighted as a permalink.</p></li>
 <li><p>Fixed an issue where the user’s nickname was not shown on channel switch.</p></li>
-<li><p>Fixed an issue where deactivated users were not marked as “Deactivated” in the channel switcher.</p></li>
+<li><p>Fixed an issue where deactivated users were not marked as <strong>Deactivated</strong> in the channel switcher.</p></li>
 <li><p>Fixed an issue where queries executed during the upgrade process would preemptively time out on the application side.</p></li>
 <li><p>Fixed an issue where users were unable to deactivate MFA for their accounts even if MFA was disabled on the server.</p></li>
-<li><p>Fixed an issue where user settings on API could be set if LDAP Sync was on. For LDAP and SAML users, the following fields cannot be changed via the API if the corresponding LDAP/SAML attributes have been set: first name, last name, position, nickname, email, profile picture. For OAUTH users (i.e., Gitlab, Google, Office365 and OpenID), the following fields cannot be changed via the API: first name, last name. All users who authenticate via a method other than email cannot change their username via the API.</p></li>
+<li><p>Fixed an issue where user settings on API could be set if LDAP Sync was on. For LDAP and SAML users, the following fields cannot be changed via the API if the corresponding LDAP/SAML attributes have been set: first name, last name, position, nickname, email, profile picture. For OAuth users (i.e., GitLab, Google, Office365, and OpenID), the following fields cannot be changed via the API: first name, last name. All users who authenticate via a method other than email cannot change their username via the API.</p></li>
 <li><p>Fixed a possible panic on post creation when the collapsed threads feature was enabled.</p></li>
 <li><p>Fixed a database deadlock that could happen if a sidebar category was updated and deleted at the same time.</p></li>
 <li><p>Fixed an issue where the sidebar <strong>Text Hover BG Theme</strong> color didn’t work on the left-hand side.</p></li>
@@ -398,15 +398,15 @@
 <div class="section" id="database-changes">
 <h3>Database Changes<a class="headerlink" href="#database-changes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Added new column in <code class="docutils literal notranslate"><span class="pre">ChannelMembers</span></code> table called <code class="docutils literal notranslate"><span class="pre">MentionCountRoot</span></code>. Please note that on installations with large amount of Channels/Users the migration can take up to a few minutes.</p></li>
-<li><p>Added <code class="docutils literal notranslate"><span class="pre">TotalMsgCountRoot</span></code> to <code class="docutils literal notranslate"><span class="pre">Channels</span></code> table and <code class="docutils literal notranslate"><span class="pre">MsgCountRoot</span></code> column to <code class="docutils literal notranslate"><span class="pre">ChannelMembers</span></code> table. Please note that the migration on large MySQL instances can take several minutes to complete.</p></li>
+<li><p>Added new column in <code class="docutils literal notranslate"><span class="pre">ChannelMembers</span></code> table called <code class="docutils literal notranslate"><span class="pre">MentionCountRoot</span></code>. Please note that the migration can take up to a few minutes on installations with large numbers of channels/users.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">TotalMsgCountRoot</span></code> to <code class="docutils literal notranslate"><span class="pre">Channels</span></code> table and <code class="docutils literal notranslate"><span class="pre">MsgCountRoot</span></code> column to <code class="docutils literal notranslate"><span class="pre">ChannelMembers</span></code> table. Please note that the migration can take several minutes to complete on large MySQL instances.</p></li>
 </ul>
 </div>
 <div class="section" id="api-changes">
 <h3>API Changes<a class="headerlink" href="#api-changes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Added <code class="docutils literal notranslate"><span class="pre">/teams/{team_id}/files/search</span></code> API endpoint for files search.</p></li>
-<li><p>For LDAP and SAML users, the following fields cannot be changed via the API if the corresponding LDAP/SAML attributes have been set: first name, last name, position, nickname, email, profile picture. For OAUTH users (i.e. Gitlab, Google, Office365 and OpenID), the following fields cannot be changed via the API: first name, last name. All users who authenticate via a method other than email cannot change their username via the API.</p></li>
+<li><p>For LDAP and SAML users, the following fields cannot be changed via the API if the corresponding LDAP/SAML attributes have been set: first name, last name, position, nickname, email, profile picture. For OAuth users (i.e., GitLab, Google, Office365, and OpenID), the following fields cannot be changed via the API: first name, last name. All users who authenticate via a method other than email cannot change their username via the API.</p></li>
 </ul>
 </div>
 <div class="section" id="go-version">
@@ -425,7 +425,7 @@
 <h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Pinned posts are no longer highlighted.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Config.json</span></code> can reset when running the command <code class="docutils literal notranslate"><span class="pre">systemctl</span> <span class="pre">restart</span> <span class="pre">mattermost</span></code>, and when running any commands that write to the config (e.g. <code class="docutils literal notranslate"><span class="pre">config</span></code> or <code class="docutils literal notranslate"><span class="pre">plugin</span></code>) <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-33752">MM-33752</a>, <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-32390">MM-32390</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">config.json</span></code> can reset when running the command <code class="docutils literal notranslate"><span class="pre">systemctl</span> <span class="pre">restart</span> <span class="pre">mattermost</span></code>, and when running any commands that write to the config (e.g. <code class="docutils literal notranslate"><span class="pre">config</span></code> or <code class="docutils literal notranslate"><span class="pre">plugin</span></code>) <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-33752">MM-33752</a>, <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-32390">MM-32390</a>.</p></li>
 <li><p>Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-33823">MM-33823</a>.</p></li>
 <li><p>Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-30980">MM-30980</a>.</p></li>
 <li><p>Emoji counter in the center channel doesn’t always update immediately when a reaction is added in the right-hand side <a class="reference external" href="https://mattermost.atlassian.net/browse/MM-31994">MM-31994</a>.</p></li>
