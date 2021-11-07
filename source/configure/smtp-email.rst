@@ -97,6 +97,8 @@ Amazon SES
 Postfix
 ~~~~~~~
 
+Note: You also have to configure the Mattermost Console > "Notifications" settings.
+
 -  Make sure Postfix is installed on the machine where Mattermost is
    installed
 -  Set **SMTP Username** to **(empty)**
